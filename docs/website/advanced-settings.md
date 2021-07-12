@@ -1,6 +1,6 @@
 # Advanced Settings
 
-## High Quality Pen
+## High Quality Pen {#high-quality-pen}
 
 High Quality Pen makes the pen change resolution to match the size it's displayed at rather than being stuck at 480x360.
 
@@ -19,7 +19,7 @@ Project pictured: https://scratch.mit.edu/projects/437594584/ with seed 803258.
 
 Note that this may affect performance and it may make some projects (especially those use tiled stamps or precise pen) look worse.
 
-## Interpolation
+## Interpolation {#interpolation}
 
 Interpolation is an experimental feature that tries to make project motion smoother without making projects run faster than expected. (If you've ever tried to play a game at 60 FPS and realized it was running at double speed, that's the problem interpolation tries to solve)
 
@@ -27,11 +27,11 @@ Pen cannot be interpolated and you may see some occasional graphical glitches.
 
 Note: This feature may drastically reduce performance.
 
-## Infinite Clones
+## Infinite Clones {#infinite-clones}
 
 It turns off the clone limit.
 
-## Warp Timer
+## Warp Timer {#warp-timer}
 
 (Previously called "Stuck Checking")
 
@@ -39,6 +39,6 @@ Warp timer makes scripts check to see if they are stuck in a long or infinite lo
 
 This has a performance impact (up to 3x slower in some cases), which is why it's not enabled by default.
 
-## Disable Compiler
+## Disable Compiler {#disable-compiler}
 
 This turns off the TurboWarp compiler. This is only useful when debugging bugs in the compiler or when using the editor to create a project.

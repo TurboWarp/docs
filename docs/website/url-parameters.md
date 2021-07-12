@@ -2,18 +2,18 @@
 
 
 :::caution
-## Only "hidden" URL parameters are listed here
+## Only "hidden" URL parameters are listed here {#only-hidden-url-parameters-are-listed-here}
 TurboWarp will automatically store settings such as turbo mode, 60 FPS, high quality pen, etc. in the URL. Some advanced options still need to be manually applied. This page only documents these advanced options.
 :::
 
 
-## `username`
+## `username` {#username}
 
 The `username` option controls the initial value of the username block.
 
 https://turbowarp.org/443603478?username=ExampleUsername
 
-## `cloud_host`
+## `cloud_host` {#cloud_host}
 
 The `cloud_host` option lets you change the cloud variable server that TurboWarp will connect to, for example:
 
@@ -23,7 +23,7 @@ Inclusion of `ws://` or `wss://` is optional but recommended. `wss://clouddata.t
 
 It is not possible to use this to connect to Scratch's cloud variable server as their server requires password authentication, which TurboWarp will never ask for.
 
-## `extension`
+## `extension` {#extension}
 
 **Experimental, subject to change. Do not rely upon.**
 
@@ -31,19 +31,19 @@ Load a Scratch extension from a remote URL.
 
 https://turbowarp.org/editor?extension=https://extensions.turbowarp.org/fetch.js
 
-## `scale`
+## `scale` {#scale}
 
 Controls the maximum relative scale of the player when in fullscreen mode.
 
 https://turbowarp.org/fullscreen?scale=2
 
-## `nocompile`
+## `nocompile` {#nocompile}
 
 It turns off the compiler. You probably shouldn't enable this.
 
 https://turbowarp.org/?nocompile
 
-## `project_url`
+## `project_url` {#project_url}
 
 If specified, TurboWarp will download project data from this URL. Do not use together with a regular project ID.
 

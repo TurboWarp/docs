@@ -14,11 +14,11 @@ This is what they look like:
  - The comment *must* be attached to the hat block of a script, for example "when green flag clicked" or "define procedure". Adding it to the first block in the script or any other block in the script will not work.
  - The comment is case sensitive.
 
-## `tw stuck`
+## `tw stuck` {#stuck}
 
 Adding this comment to a script will make it use Warp Timer/Stuck Checking regardless of whether the stuck checking global option is enabled or not.
 
-## `tw nocompile`
+## `tw nocompile` {#nocompile}
 
 Adding this comment to a script will cause it to not be compiled.
 

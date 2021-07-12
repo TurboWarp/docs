@@ -8,7 +8,7 @@ These are the instructions for setting up the TurboWarp development environment 
 
 If you just want to use TurboWarp, visit https://turbowarp.org/. You don't need to follow these instructions.
 
-### Dependencies
+### Dependencies {#dependencies}
 
 Make sure you have these installed:
 
@@ -17,7 +17,7 @@ Make sure you have these installed:
 
 You might have to restart your terminal or computer for them to be fully installed. We assume you have some familiarity with the command line. Note that TurboWarp is a large app that may take a lot of resources to build.
 
-### A note on how Scratch is organized
+### A note on how Scratch is organized {#organization}
 
 Scratch 3 is organized into a bunch of different repositories. Each implements a part of the app. Here's the ones that TurboWarp cares enough about to fork:
 
@@ -28,7 +28,7 @@ Scratch 3 is organized into a bunch of different repositories. Each implements a
  - scratch-paint is the costume editor
  - scratch-l10n contains translations
 
-### Building the GUI
+### Building the GUI {#gui}
 
 The GUI is the minimum to build TurboWarp.
 
@@ -43,7 +43,7 @@ http://localhost:8601/
 
 If you just want to build the GUI, you can stop here.
 
-### Build
+### Build {#build}
 
 While `npm start` is useful for development, at some point you'll need to get HTML, JS, etc. out. To do this, run this in the scratch-gui folder:
 
@@ -70,7 +70,7 @@ npm run build
 
 By default TurboWarp generates links like https://turbowarp.org/editor.html#123 However, by setting `ROOT=/` and `ROUTING_STYLE=wildcard` (in the same way that you set `NODE_ENV=production`), you can get routes like https://turbowarp.org/123/editor instead. Note that this requires a server that will setup the proper aliases. The webpack development server in scratch-gui is setup for this. For production you'd want something more like https://github.com/TurboWarp/turbowarp.org
 
-### Linking other packages
+### Linking other packages {#linking}
 
 If you're interested in changing parts of TurboWarp other than the GUI, you have to do extra steps. You do not need to do this if you are only interesting in scratch-gui.
 

@@ -8,7 +8,7 @@ These blocks are **incompatible** with Scratch. Projects that using them **can n
 If you don't use any TurboWarp-exclusive blocks, then there should be no issue with making your project in TurboWarp and uploading it to Scratch. (it will just look like a project made with the offline editor)
 :::
 
-## last key pressed
+## last key pressed {#last-key-pressed}
 
 ![last key pressed](./assets/last-key-pressed.png)
 
@@ -16,7 +16,7 @@ It tells you the last key that was pressed. It's intended to be used something l
 
 ![when any key pressed, do something with last key pressed](./assets/how-to-use-last-key-pressed.png)
 
-## mouse button down?
+## mouse button down? {#mouse-button-down}
 
 ![primary mouse button down?](./assets/mouse-button-down.png)
 
