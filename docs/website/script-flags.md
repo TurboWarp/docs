@@ -4,10 +4,6 @@ slug: /script-flags
 
 # Script Flags
 
-:::caution
-Honestly I have no idea if these even work anymore
-:::
-
 TurboWarp lets you control how your scripts are compiled through "Script Flags". These are comments attached to the hat block of a script that start with `tw`.
 
 This is what they look like:

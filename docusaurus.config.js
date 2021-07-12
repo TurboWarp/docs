@@ -13,14 +13,8 @@ module.exports = {
   trailingSlash: false,
   themeConfig: {
     navbar: {
-      title: 'TurboWarp',
+      title: 'TurboWarp Documentation',
       items: [
-        {
-          type: 'doc',
-          docId: 'intro',
-          position: 'left',
-          label: 'Documentation',
-        },
         {
           href: 'https://github.com/TurboWarp/docs',
           label: 'GitHub',

@@ -6,7 +6,7 @@ slug: /blocks
 
 TurboWarp has a section of blocks that allows you to use certain features previously not accessible to Scratch projects.
 
-:::caution
+:::note
 These blocks are **incompatible** with Scratch. Projects that using them **can not** be uploaded to the Scratch website. The only exception to this is "is compiled?", which will work perfectly fine in Scratch (it's not actually a hacked or modded block; you can obtain it using an unmodified Scratch editor)
 
 If you don't use any TurboWarp-exclusive blocks, then there should be no issue with making your project in TurboWarp and uploading it to Scratch. (it will just look like a project made with the offline editor)

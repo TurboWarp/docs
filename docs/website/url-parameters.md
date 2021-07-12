@@ -5,7 +5,7 @@ slug: /url-parameters
 # URL Parameters
 
 
-:::caution
+:::note
 ## Only "hidden" URL parameters are listed here {#only-hidden-url-parameters-are-listed-here}
 TurboWarp will automatically store settings such as turbo mode, 60 FPS, high quality pen, etc. in the URL. Some advanced options still need to be manually applied. This page only documents these advanced options.
 :::
@@ -29,17 +29,16 @@ It is not possible to use this to connect to Scratch's cloud variable server as 
 
 ## `extension` {#extension}
 
-**Experimental, subject to change. Do not rely upon.**
+See [Custom Extensions](/development/custom-extensions).
 
-Load a Scratch extension from a remote URL.
-
-https://turbowarp.org/editor?extension=https://extensions.turbowarp.org/fetch.js
-
+<!-- Commented due to possible removal -->
+<!--
 ## `scale` {#scale}
 
 Controls the maximum relative scale of the player when in fullscreen mode.
 
 https://turbowarp.org/fullscreen?scale=2
+-->
 
 ## `nocompile` {#nocompile}
 
