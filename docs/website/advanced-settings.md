@@ -5,14 +5,16 @@
 High Quality Pen makes the pen change resolution to match the size it's displayed at rather than being stuck at 480x360.
 
 <table>
-<tr>
-<th>High Quality Pen Off</th>
-<th>High Quality Pen On</th>
-</tr>
-<tr>
-<td><img src={require('./assets/hqp-off.png').default} height="457" width="457" height="425" /></td>
-<td><img src={require('./assets/hqp-on.png').default} height="457" width="457" height="425" /></td>
-</tr>
+  <tbody>
+    <tr>
+      <th>High Quality Pen Off</th>
+      <th>High Quality Pen On</th>
+    </tr>
+    <tr>
+      <td><img src={require('./assets/hqp-off.png').default} height="457" width="457" height="425" /></td>
+      <td><img src={require('./assets/hqp-on.png').default} height="457" width="457" height="425" /></td>
+    </tr>
+  </tbody>
 </table>
 
 Project pictured: https://scratch.mit.edu/projects/437594584/ with seed 803258.
