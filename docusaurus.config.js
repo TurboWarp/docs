@@ -44,11 +44,11 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
-          editUrl: 'https://github.com/TurboWarp/docs/edit/master/website/',
+          editUrl: 'https://github.com/TurboWarp/docs/edit/master/'
         },
         blog: {
           showReadingTime: true,
-          editUrl: 'https://github.com/TurboWarp/docs/edit/master/website/blog/',
+          editUrl: 'https://github.com/TurboWarp/docs/edit/master/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
