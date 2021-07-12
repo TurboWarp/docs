@@ -1,7 +1,6 @@
-name: Deploy
+name: Validate
 
-on:
-  workflow_dispatch:
+on: [push, pull_request]
 
 jobs:
   build:
@@ -14,9 +13,3 @@ jobs:
         node-version: 14.x
     - run: npm ci
     - run: npm run build
-    - run: npm test
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@4.1.4
-      with:
-        branch: gh-pages
-        folder: build
