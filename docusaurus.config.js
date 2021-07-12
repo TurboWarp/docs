@@ -10,7 +10,7 @@ module.exports = {
   onBrokenMarkdownLinks: 'warn',
   organizationName: 'TurboWarp',
   projectName: 'docs',
-  trailingSlash: true,
+  trailingSlash: false,
   themeConfig: {
     navbar: {
       title: 'TurboWarp',
