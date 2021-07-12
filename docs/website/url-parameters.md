@@ -7,7 +7,7 @@ slug: /url-parameters
 
 :::note
 ## Only "hidden" URL parameters are listed here {#only-hidden-url-parameters-are-listed-here}
-TurboWarp will automatically store settings such as turbo mode, 60 FPS, high quality pen, etc. in the URL. Some advanced options still need to be manually applied. This page only documents these advanced options.
+TurboWarp will automatically store settings such as turbo mode, 60 FPS, high quality pen, etc. in the URL, but some advanced options still need to be manually applied. This page only documents these advanced options.
 :::
 
 
