@@ -2,6 +2,7 @@
 sidebar_position: 1
 slug: /
 title: Intro
+hide_table_of_contents: true
 ---
 
 # TurboWarp Documentation

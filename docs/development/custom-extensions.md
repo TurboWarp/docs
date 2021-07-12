@@ -1,5 +1,6 @@
 ---
 slug: /development/custom-extensions
+hide_table_of_contents: true
 ---
 
 # Custom Extensions

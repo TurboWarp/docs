@@ -1,5 +1,6 @@
 ---
 slug: /javascript
+hide_table_of_contents: true
 ---
 
 # How to copy the JavaScript
