@@ -8,7 +8,6 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
   organizationName: 'TurboWarp',
   projectName: 'docs',
   trailingSlash: true,
