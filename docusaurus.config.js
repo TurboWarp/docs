@@ -11,6 +11,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'TurboWarp',
   projectName: 'docs',
+  trailingSlash: true,
   themeConfig: {
     navbar: {
       title: 'TurboWarp',
