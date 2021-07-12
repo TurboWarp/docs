@@ -10,7 +10,7 @@ Replace `414716080` with the ID of your project. The dimensions above of 499x416
 
 ## URL parameters
 
-All [standard URL Parameters](https://github.com/TurboWarp/scratch-gui/wiki/URL-Parameters) are still available. You can use these to control usernames and other things.
+All [standard URL Parameters](url-parameters.md) are still available. You can use these to control usernames and other things.
 
 There are also some special values only available in embeds:
 
