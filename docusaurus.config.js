@@ -3,7 +3,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'TurboWarp',
+  title: 'TurboWarp Documentation',
   url: 'https://docs.turbowarp.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -16,7 +16,12 @@ module.exports = {
       title: 'TurboWarp Documentation',
       items: [
         {
-          href: 'https://github.com/TurboWarp/docs',
+          href: 'https://turbowarp.org/',
+          label: 'TurboWarp',
+          position: 'right'
+        },
+        {
+          href: 'https://github.com/TurboWarp',
           label: 'GitHub',
           position: 'right',
         },
