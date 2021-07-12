@@ -10,8 +10,8 @@ High Quality Pen makes the pen change resolution to match the size it's displaye
 <th>High Quality Pen On</th>
 </tr>
 <tr>
-<td><img src="https://user-images.githubusercontent.com/33787854/100396272-314f0300-300a-11eb-851c-7a982a2fb0a3.png" height="457" width="457" height="425" /></td>
-<td><img src="https://user-images.githubusercontent.com/33787854/100396476-c2be7500-300a-11eb-837b-a12050c243c9.png" height="457" width="457" height="425" /></td>
+<td><img src={require('./assets/hqp-off.png').default} height="457" width="457" height="425" /></td>
+<td><img src={require('./assets/hqp-on.png').default} height="457" width="457" height="425" /></td>
 </tr>
 </table>
 
