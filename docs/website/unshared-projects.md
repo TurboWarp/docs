@@ -1,3 +1,7 @@
+---
+slug: /unshared-projects
+---
+
 # Unshared Projects
 
 You've probably noticed that TurboWarp, forkphorus, etc. can load unshared projects, and you might be concerned about that.

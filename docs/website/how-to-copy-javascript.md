@@ -1,3 +1,7 @@
+---
+slug: /javascript
+---
+
 # How to copy the JavaScript
 
 ## Short Answer {#short}

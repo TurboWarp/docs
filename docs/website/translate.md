@@ -1,3 +1,7 @@
+---
+slug: /translate
+---
+
 # Help Translate TurboWarp
 
 We're looking for people to help translate TurboWarp into languages other than English. If that interests you, read on.

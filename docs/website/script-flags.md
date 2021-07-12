@@ -1,3 +1,7 @@
+---
+slug: /script-flags
+---
+
 # Script Flags
 
 :::caution

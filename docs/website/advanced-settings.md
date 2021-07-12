@@ -1,3 +1,8 @@
+---
+slug: /advanced-settings
+---
+
+
 # Advanced Settings
 
 ## High Quality Pen {#high-quality-pen}

@@ -1,3 +1,7 @@
+---
+slug: /blocks
+---
+
 # TurboWarp Blocks
 
 TurboWarp has a section of blocks that allows you to use certain features previously not accessible to Scratch projects.

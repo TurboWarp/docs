@@ -1,3 +1,7 @@
+---
+slug: /embedding
+---
+
 # Embedding
 
 Embedding TurboWarp is very similar to how you embed Scratch 3:
