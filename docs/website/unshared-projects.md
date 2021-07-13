@@ -33,7 +33,7 @@ This is a problem that can only be fixed by the Scratch Team implementing proper
 
 ## What is project ID 1? {#what-is-1}
 
-Curious people have visited https://turbowarp.org/1 or https://llk.github.io/scratch-gui/develop/#1 and found a strange project. That's just what the Scratch API returns when you ask for the project with ID 1. Some story applies to all the other low project IDs.
+Curious people have visited https://turbowarp.org/1 or https://llk.github.io/scratch-gui/develop/#1 and found a strange project. That's just what the Scratch API returns when you ask for the project with ID 1. Same story applies to all the other low project IDs.
 
 ## The project is shared. Why am I seeing this link? {#project-was-shared}
 
