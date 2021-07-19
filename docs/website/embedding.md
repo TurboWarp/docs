@@ -1,5 +1,6 @@
 ---
 slug: /embedding
+hide_table_of_contents: true
 ---
 
 # Embedding

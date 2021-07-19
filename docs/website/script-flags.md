@@ -1,5 +1,6 @@
 ---
 slug: /script-flags
+hide_table_of_contents: true
 ---
 
 # Script Flags

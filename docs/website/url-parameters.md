@@ -1,5 +1,6 @@
 ---
 slug: /url-parameters
+hide_table_of_contents: true
 ---
 
 # URL Parameters

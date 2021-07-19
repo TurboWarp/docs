@@ -1,5 +1,6 @@
 ---
 slug: /translate
+hide_table_of_contents: true
 ---
 
 # Help Translate TurboWarp

@@ -1,5 +1,6 @@
 ---
 slug: /advanced-settings
+hide_table_of_contents: true
 ---
 
 
