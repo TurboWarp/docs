@@ -27,6 +27,7 @@ module.exports = {
         },
       ],
     },
+    hideableSidebar: true,
     colorMode: {
       respectPrefersColorScheme: true,
     },
