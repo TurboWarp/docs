@@ -1,6 +1,6 @@
 ---
-sidebar_position: 1
 slug: /development/getting-started
+sidebar_position: 2
 hide_table_of_contents: true
 ---
 

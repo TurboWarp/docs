@@ -16,6 +16,11 @@ module.exports = {
       title: 'TurboWarp Documentation',
       items: [
         {
+          href: '/development/',
+          label: 'Development',
+          position: 'left'
+        },
+        {
           href: 'https://turbowarp.org/',
           label: 'TurboWarp',
           position: 'right'
