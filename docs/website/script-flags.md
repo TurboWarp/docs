@@ -15,6 +15,10 @@ This is what they look like:
  - The comment *must* be attached to the hat block of a script, for example "when green flag clicked" or "define procedure". Adding it to the first block in the script or any other block in the script will not work.
  - The comment is case sensitive.
 
+:::warning
+Scripts flags are not actively tested and should be avoided.
+:::
+
 ## `tw stuck` {#stuck}
 
 Adding this comment to a script will make it use Warp Timer/Stuck Checking regardless of whether the stuck checking global option is enabled or not.

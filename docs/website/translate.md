@@ -22,7 +22,7 @@ Create a new discussion if you have questions following this guide: https://gith
 ### Request to join {#request-to-join}
  
  - Go to [our Transifex page](https://www.transifex.com/turbowarp/turbowarp/), and click on the blue "Help Translate TurboWarp" button.
- - You'll probably have to create a Transifex account. Try to use the same username as your Scratch account so that we can add you to the [credits page](https://turbowarp.org/credits.html). Enter your email, a new password, then Sign Up.
+ - You'll probably have to create a Transifex account. Enter your email, a new password, then Sign Up.
  - When asked for your name, enter your username as your name and surname instead of your real name. For "department" and "job title", select "localization" and "individual contributor".
  - On then next step, select "join an existing project".
  - Choose the language(s) you want to translate into.
@@ -39,4 +39,4 @@ Read https://docs.transifex.com/translation/translating-with-the-web-editor to l
 
 Translations are periodically pulled from Transifex and put into the website.
 
-The most important resource to translate is `gui.json`. You should start with this one.
+The most important resource to translate is `gui.json`. Everything else is secondary.

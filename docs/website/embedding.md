@@ -5,13 +5,13 @@ hide_table_of_contents: true
 
 # Embedding
 
-Embedding TurboWarp is very similar to how you embed Scratch 3:
+TurboWarp can be embedded with a standard iframe:
 
 ```html
 <iframe src="https://turbowarp.org/414716080/embed" width="499" height="416" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
 ```
 
-Replace `414716080` with the ID of your project. The dimensions above of 499x416 will result in the stage itself being rendered without distortion at the default stage size (480x360), but you can change it to anything and the player will automatically resize to fit.
+Replace `414716080` with the ID of your project. You can change the width and height of the iframe and the player will automatically resize to fit (499x416 will result in the stage rendering at an undistorted 480x360).
 
 ## URL parameters {#url-parameters}
 
