@@ -14,6 +14,12 @@ Even the official Scratch development builds maintained by the Scratch Team can 
 
 If this concerns you, please voice your concerns to the Scratch Team. They are the only people that can change this. [See below for more information.](#why-not-fix)
 
+## Why doesn't TurboWarp refuse to load unshared projects? {#why-not-fix}
+
+Even if TurboWarp refused to load unshared projects, the root cause is still the Scratch API. Unshared projects could still be trivially viewed using the official Scratch development builds or [any other tool](https://www.google.com/search?hl=en&q=unshared%20project%20viewer%20scratch). As much of Scratch and all of TurboWarp is open source, someone could easily make their own website with the code to check if a project is unshared removed. Unshared projects would not be any safer.
+
+This is a problem that can only be fixed by the Scratch Team implementing access control for projects.scratch.mit.edu (where project data is downloaded from) as they've already done for api.scratch.mit.edu (where project titles and descriptions are loaded from). If you think this is important, let the Scratch Team know.
+
 ## How to protect your unshared projects {#prevention}
 
 Don't share the project ID (the numbers in the project URL) with others. That includes links to your project and screenshots/videos that include your browser's URL bar.
@@ -24,16 +30,6 @@ This would be a good opportunity to download a backup of the project to your com
 
 Another alternative to keep your project safe would be to use an offline editor. We recommend [TurboWarp Desktop](https://desktop.turbowarp.org/).
 
-## Couldn't TurboWarp fix it? {#why-not-fix}
-
-Even if TurboWarp refused to load unshared projects, the root cause is still the Scratch API. Unshared projects could still be trivially viewed using the official Scratch development builds or [any other tool](https://www.google.com/search?hl=en&q=unshared%20project%20viewer%20scratch). Unshared projects would not be any safer.
-
-This is a problem that can only be fixed by the Scratch Team implementing proper access control for unshared projects. If you think this is important, let the Scratch Team know.
-
 ## What is project ID 1? {#what-is-1}
 
 Curious people have visited https://turbowarp.org/1 or https://llk.github.io/scratch-gui/develop/#1 and found a strange project. That's just what the Scratch API returns when you ask for the project with ID 1. Same story applies to all the other low project IDs.
-
-## The project is shared. Why am I seeing this link? {#project-was-shared}
-
-This is normal if the project was shared very recently. It will probably fix itself within a few hours, otherwise let me know on [Scratch](https://scratch.mit.edu/users/GarboMuffin/#comments).
