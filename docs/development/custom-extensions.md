@@ -5,10 +5,124 @@ hide_table_of_contents: true
 
 # Custom Extensions
 
-TurboWarp supports sandboxed extensions specified via URL parameter, for example: https://turbowarp.org/editor?extension=https://extensions.turbowarp.org/fetch.js
-
-This is an experimental feature.
+TurboWarp supports sandboxed extensions specified via URL parameter, for example: https://turbowarp.org/editor?extension=https://extensions.turbowarp.org/fetch.js. Multiple extensions can be loaded by setting extension multiple times. Reload to apply changes.
 
 Projects made using this feature are incompatible with Scratch and cannot be uploaded to the Scratch website. The extension must be loaded by TurboWarp using the same URL that it was saved with.
 
-More documentation will be written at a future date.
+## Writing custom extensions
+
+:::info
+This guide assumes you are already familiar with JavaScript. At a bare minimum, you should be familiar with arrays, objects, JSON syntax, functions, data types, and your browser's JavaScript console.
+
+If this does not describe you, you will struggle to follow this guide and likely not learn much. You should learn JavaScript first.
+:::
+
+:::info
+This guide is a work in progress.
+:::
+
+Custom extensions run in a sandboxed Worker. They have virtually zero access to any Scratch internals. Extensions themselves cannot move sprites or even get their position. You still have access to most Web APIs such as `fetch`. Every call to a block defined by a custom extension will take at least one full frame due to technical limitations. In the future, we hope to improve the capabilities of custom extensions in a way that doesn't compromise security.
+
+Custom extensions need to be loaded from a website, for example GitHub Pages. For development, you may find it best to set up a local HTTP server. If you happen to have Python installed, that can be as easy as `python -m http.server`.
+
+The simplest custom extension looks something like this:
+
+```js
+class MyExtension {
+  getInfo() {
+    return {
+      id: 'myextensionexample', // change this if you make an actual extension!
+      name: 'Cool Extension',
+      blocks: [
+        {
+          opcode: 'hello',
+          blockType: Scratch.BlockType.REPORTER,
+          text: 'Hello, world!'
+        }
+      ]
+    };
+  }
+  hello() {
+    return 'Hello, world!';
+  }
+}
+Scratch.extensions.register(new MyExtension());
+```
+
+Save this in a file on your computer and use a local HTTP server to load it using the extension parameter. If you have a local HTTP server started with `python -m http.server`, you might visit https://turbowarp.org/editor?extension=http://localhost:8000/extension.js. The extension will add a new category that contains a single reporter block that outputs "Hello, world!"
+
+In this example, the block with opcode `hello` will be executed by the class function named `hello`. Blocks can return simple strings, numbers, or booleans. Additionally, they can return a Promise instead. Scratch will wait for the promise to resolve before reporting a value or continuing to the next block.
+
+`getInfo` is a function that tells Scratch about your extension and what blocks it supports.
+
+ - `id` is a string that represents a unique ID that this extension uses. It should only contain the characters a-z and 0-9. The same extension should always use the same ID as changing it will break existing projects.
+ - `name` is a string that tells Scratch what name to display in the sidebar
+ - `blocks` is a list of objects that defines which blocks your extension contains.
+   - `opcode` is the internal name of the block, and also corresponds to the method that will be called when the block is run. Opcodes should never be changed.
+   - `blockType` defines the type of block
+     - `Scratch.BlockType.REPORTER` makes a round reporter
+     - `Scratch.BlockType.BOOLEAN` makes a triangle shaped reporter that can fit into boolean inputs
+     - `Scratch.BlockType.COMMAND` makes a stacked block
+   - `text` is a string that defines what the block will be named in the editor. Text in \[brackets\] will be converted to slots for arguments (see below examples)
+   - `arguments` is an object that defines the arguments that the block accepts. Each argument has:
+     - `type` which defines the input shape to make. Note that regardless of the type set here, the values actually passed to the block are not guaranteed to be casted to the right type. You should manually convert arguments to numbers, for example, as they will often be passed as strings.
+       - `Scratch.ArgumentType.STRING` for string inputs
+       - `Scratch.ArgumentType.NUMBER` for number inputs
+       - `Scratch.ArgumentType.BOOLEAN` for boolean inputs (defaultValue is ignored)
+       - `Scratch.ArgumentType.ANGLE` for angles
+       - `Scratch.ArgumentType.COLOR` for colors (#123abc string format)
+       - `Scratch.ArgumentType.MATRIX` for a 5x5 matrix (passed in 11101010101... string format)
+       - `Scratch.ArgumentType.NOTE` for music notes
+     - `defaultValue` is the initial value when the block is created from the library
+
+Okay, there's a lot of text there that you probably didn't understand. Here's a more thorough example that uses arguments:
+
+```js
+class StrictEqualityExtension {
+  getInfo() {
+    return {
+      id: 'strictequalityexample', // change this if you make an actual extension!
+      name: 'Strict Equality',
+      blocks: [
+        {
+          opcode: 'strictlyEquals',
+          blockType: Scratch.BlockType.BOOLEAN,
+          text: '[ONE] strictly equals [TWO]',
+          arguments: {
+            ONE: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'First value'
+            },
+            TWO: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'Second value'
+            }
+          }
+        }
+      ]
+    };
+  }
+  strictlyEquals(args) {
+    // Note strict equality: Inputs must match exactly: in type, case, etc.
+    return args.ONE === args.TWO;
+  }
+}
+Scratch.extensions.register(new StrictEqualityExtension());
+```
+
+Remember that you must reload to apply changes.
+
+For more examples, you can visit our curated library of open source extensions: https://github.com/TurboWarp/extensions
+
+### Debugging
+
+If for some reason the extension is not appearing, or if the page never finished loading, open up your developer console and search for errors. Chances are there's going to be something in there.
+
+### Backwards Compatibility
+
+Extensions should strive to be as backwards compatible as possible. Notably, that means:
+
+ - NEVER change the extension ID
+ - NEVER remove blocks
+ - NEVER change opcodes
+ - Extensively test your extension
