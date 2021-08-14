@@ -6,10 +6,12 @@ hide_table_of_contents: true
 # Custom Extensions
 
 import CodeBlock from '@theme/CodeBlock';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 export const ExampleExtensionLink = ({name}) => {
-  const url = `https://turbowarp.org/editor?extension=${location.origin}/example-extensions/${name}`;
+  const {siteConfig} = useDocusaurusContext();
+  const base = typeof location !== 'undefined' ? location.origin : siteConfig.url;
+  const url = `https://turbowarp.org/editor?extension=${base}/example-extensions/${name}`;
   return <p>
     <a href={url}>Test this example here.</a> (Do not use this link to make real projects!)
   </p>;
