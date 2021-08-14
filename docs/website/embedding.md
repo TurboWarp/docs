@@ -33,7 +33,7 @@ Useful addons and their IDs:
 
  - "Pause button" is `pause`
  - "Muted project player mode" is `mute-project`
- - "Remove curved stage border" `remove-curved-stage-border`
+ - "Remove curved stage border" is `remove-curved-stage-border`
  - "File drag and drop" is `drag-drop`
  - "Gamepad support" is `gamepad` (settings modal will not work poorly in small embeds and browsers seem to be locking down gamepad API access, we will look into that more in the future)
 
