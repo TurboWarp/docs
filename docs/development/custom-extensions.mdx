@@ -5,20 +5,32 @@ hide_table_of_contents: true
 
 # Custom Extensions
 
-TurboWarp supports sandboxed extensions specified via URL parameter, for example: https://turbowarp.org/editor?extension=https://extensions.turbowarp.org/fetch.js. Multiple extensions can be loaded by setting extension multiple times. Reload to apply changes.
+import CodeBlock from '@theme/CodeBlock';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Projects made using this feature are incompatible with Scratch and cannot be uploaded to the Scratch website. The extension must be loaded by TurboWarp using the same URL that it was saved with.
+export const ExampleExtensionLink = ({name}) => {
+  const url = `https://turbowarp.org/editor?extension=${location.origin}/example-extensions/${name}`;
+  return <p>
+    <a href={url}>Test this example here.</a> (Do not use this link to make real projects!)
+  </p>;
+};
+
+TurboWarp supports experimental sandboxed extensions specified via URL parameter, for example: https://turbowarp.org/editor?extension=https://extensions.turbowarp.org/fetch.js. Multiple extensions can be loaded by setting extension multiple times.
+
+:::warning
+Projects that use custom extensions cannot be uploaded to the Scratch website. The project can only be loaded by a TurboWarp instance with the same extensions already loaded from the URL.
+:::
 
 ## Writing custom extensions
 
 :::info
-This guide assumes you are already familiar with JavaScript. At a bare minimum, you should be familiar with arrays, objects, JSON syntax, functions, data types, and your browser's JavaScript console.
+This page assumes you are already familiar with JavaScript. At a bare minimum, you should be familiar with arrays, objects, JSON syntax, functions, data types, and your browser's JavaScript console. If that does not describe you, you will find this page very hard to follow. You should learn JavaScript first.
 
-If this does not describe you, you will struggle to follow this guide and likely not learn much. You should learn JavaScript first.
+This page is still a work in progress. You're welcome and encouraged to suggest or even write improvements on GitHub.
 :::
 
-:::info
-This guide is a work in progress.
+:::warning
+The example extension URLs found in this document should NOT be used in real projects. There is no guarantee they will continue to work in the future.
 :::
 
 Custom extensions run in a sandboxed Worker. They have virtually zero access to any Scratch internals. Extensions themselves cannot move sprites or even get their position. You still have access to most Web APIs such as `fetch`. Every call to a block defined by a custom extension will take at least one full frame due to technical limitations. In the future, we hope to improve the capabilities of custom extensions in a way that doesn't compromise security.
@@ -27,29 +39,12 @@ Custom extensions need to be loaded from a website, for example GitHub Pages. Fo
 
 The simplest custom extension looks something like this:
 
-```js
-class MyExtension {
-  getInfo() {
-    return {
-      id: 'myextensionexample', // change this if you make an actual extension!
-      name: 'Cool Extension',
-      blocks: [
-        {
-          opcode: 'hello',
-          blockType: Scratch.BlockType.REPORTER,
-          text: 'Hello, world!'
-        }
-      ]
-    };
-  }
-  hello() {
-    return 'Hello, world!';
-  }
-}
-Scratch.extensions.register(new MyExtension());
-```
+<CodeBlock className="language-js" title="example.js">
+  {require("!!raw-loader!@site/static/example-extensions/example.js").default}
+</CodeBlock>
+<ExampleExtensionLink name="example.js" />
 
-Save this in a file on your computer and use a local HTTP server to load it using the extension parameter. If you have a local HTTP server started with `python -m http.server`, you might visit https://turbowarp.org/editor?extension=http://localhost:8000/extension.js. The extension will add a new category that contains a single reporter block that outputs "Hello, world!"
+Save this in a file on your computer and use a local HTTP server to load it using the extension parameter. If you have a local HTTP server started with `python -m http.server`, you might visit https://turbowarp.org/editor?extension=http://localhost:8000/example.js. The extension will add a new category that contains a single reporter block that outputs "Hello, world!"
 
 In this example, the block with opcode `hello` will be executed by the class function named `hello`. Blocks can return simple strings, numbers, or booleans. Additionally, they can return a Promise instead. Scratch will wait for the promise to resolve before reporting a value or continuing to the next block.
 
@@ -77,38 +72,10 @@ In this example, the block with opcode `hello` will be executed by the class fun
 
 Okay, there's a lot of text there that you probably didn't understand. Here's a more thorough example that uses arguments:
 
-```js
-class StrictEqualityExtension {
-  getInfo() {
-    return {
-      id: 'strictequalityexample', // change this if you make an actual extension!
-      name: 'Strict Equality',
-      blocks: [
-        {
-          opcode: 'strictlyEquals',
-          blockType: Scratch.BlockType.BOOLEAN,
-          text: '[ONE] strictly equals [TWO]',
-          arguments: {
-            ONE: {
-              type: Scratch.ArgumentType.STRING,
-              defaultValue: 'First value'
-            },
-            TWO: {
-              type: Scratch.ArgumentType.STRING,
-              defaultValue: 'Second value'
-            }
-          }
-        }
-      ]
-    };
-  }
-  strictlyEquals(args) {
-    // Note strict equality: Inputs must match exactly: in type, case, etc.
-    return args.ONE === args.TWO;
-  }
-}
-Scratch.extensions.register(new StrictEqualityExtension());
-```
+<CodeBlock className="language-js" title="strict-equality.js">
+  {require("!!raw-loader!@site/static/example-extensions/strict-equality.js").default}
+</CodeBlock>
+<ExampleExtensionLink name="strict-equality.js" />
 
 Remember that you must reload to apply changes.
 
