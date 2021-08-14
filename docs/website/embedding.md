@@ -25,6 +25,20 @@ Embeds also support the `autoplay` parameter, which will automatically hit the g
 
 Note that sound blocks may not work until the user interacts with the project (for example, by clicking). This is a restriction imposed by browsers. There is nothing TurboWarp can do to work around this.
 
+## Addons {#addons}
+
+By default, embeds have no addons enabled. This can be overridden with the `addons` parameter, which is a comma separated list of addons to enable. For example: https://turbowarp.org/15832807/embed?addons=pause,gamepad,mute-project
+
+Useful addons and their IDs:
+
+ - "Pause button" is `pause`
+ - "Muted project player mode" is `mute-project`
+ - "Remove curved stage border" `remove-curved-stage-border`
+ - "File drag and drop" is `drag-drop`
+ - "Gamepad support" is `gamepad` (settings modal will work poorly in small embeds and browsers seem to be locking down gamepad API access, we will look into that more in the future)
+
+Other addons will have no effect on the embed.
+
 ## Security considerations {#security}
 
 If you use user-supplied information to generate embed links, please make sure to sanitize properties so that users cannot specify arbitrary parameters, as some parameters can result in unexpected behaviors and possibly **remote code execution**.
