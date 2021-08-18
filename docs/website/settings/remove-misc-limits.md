@@ -11,4 +11,4 @@ Controls various limits that aren't significant enough to get their own dedicate
  - Blocks that set or change sound effect or volume levels run instantly instead of stopping the script for a full frame
  - Minimum pen size is reduced to 0 (normally 1) and maximum pen size (normally 1200) is removed
 
-This list will be expanded over time.
+This list may be expanded over time.

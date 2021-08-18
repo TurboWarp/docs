@@ -5,7 +5,7 @@ hide_table_of_contents: true
 
 # Interpolation
 
-Interpolation makes projects appear smoother by interpolating movement of sprite between frames.
+Interpolation makes projects appear smoother by interpolating movement of sprites between frames.
 
 Interpolation should not be used on:
 
@@ -14,8 +14,8 @@ Interpolation should not be used on:
  - Pen projects
  - Laggy projects
 
-Because interpolation is unlikely to make them look smoother, but will hurt performance.
+Interpolation is unlikely to make these projects look smoother because interpolation can't interpolate pen, but it will hurt performance.
 
-Interpolation is based on the positions of sprites and how they change from one frame to the next. It can introduce slight input latency.
+Interpolation can introduce slight (up to 1/30th of a second) input latency.
 
-Complex projects such as scrolling platformers can experience occasional visual glitches.
+Complex projects such as scrolling platformers can experience graphical glitches.
