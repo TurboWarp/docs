@@ -35,7 +35,7 @@ Useful addons and their IDs:
  - "Muted project player mode" is `mute-project`
  - "Remove curved stage border" is `remove-curved-stage-border`
  - "File drag and drop" is `drag-drop`
- - "Gamepad support" is `gamepad` (settings modal will work poorly in small embeds and browsers seem to be locking down gamepad API access, we will look into that more in the future)
+ - "Gamepad support" is `gamepad`
 
 Other addons will have no effect on the embed.
 
