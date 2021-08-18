@@ -2,6 +2,9 @@
   --ifm-color-primary: #ff4c4c;
   --ifm-code-font-size: 95%;
   --ifm-font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --ifm-container-width: 800px;
+  --ifm-container-width-xl: 1000px;
+  --docusaurus-announcement-bar-height: 0 !important;
 }
 
 h1 {
