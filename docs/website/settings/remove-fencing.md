@@ -8,3 +8,7 @@ hide_table_of_contents: true
 Allows sprites to move offscreen and become as large or as small as they want.
 
 This may slightly improve performance in some projects.
+
+:::caution
+This may break some projects.
+:::

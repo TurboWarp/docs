@@ -14,8 +14,8 @@ Interpolation should not be used on:
  - Pen projects
  - Laggy projects
 
-Because interpolation is unlikely to make them look smoother, but will impact performance.
+Because interpolation is unlikely to make them look smoother, but will hurt performance.
 
-Interpolation is based on the positions of sprites and how they change from one frame to the next.
+Interpolation is based on the positions of sprites and how they change from one frame to the next. It can introduce slight input latency.
 
-Complex projects such as scrolling platformers can have experience occasional visual glitches.
+Complex projects such as scrolling platformers can experience occasional visual glitches.

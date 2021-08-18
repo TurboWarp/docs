@@ -6,9 +6,7 @@ sidebar_label: Overview
 
 # Advanced Settings
 
-Advanced settings allow you to extend the capabilities of your project.
-
-Most of these options are highly opinionated and certain options work better for certain types of projects.
+Advanced settings allow you to reconfigure your project to do things that Scratch normally wouldn't let you do.
 
 Navigate using the sidebar on the left.
 
