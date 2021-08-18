@@ -8,4 +8,4 @@ hide_table_of_contents: true
 
 This is the place where documentation about developing TurboWarp goes.
 
-Most people will not be interested in this.
+Most people should read the [documentation intended to be read by end users](/) instead.
