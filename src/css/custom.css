@@ -20,3 +20,7 @@ h1 {
   -ms-user-select: none;
   user-select: none;
 }
+
+.navbar__title {
+  font-weight: bold;
+}
