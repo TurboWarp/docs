@@ -21,7 +21,7 @@ module.exports = {
       ]
     },
     'website/embedding',
-    'website/how-to-copy-javascript',
+    'website/javascript',
     'website/turbowarp-blocks',
     'website/translate',
     'website/url-parameters',

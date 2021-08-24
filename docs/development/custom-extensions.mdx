@@ -24,10 +24,10 @@ TurboWarp supports experimental sandboxed extensions specified via URL parameter
 Projects that use custom extensions cannot be uploaded to the Scratch website. The project can only be loaded by a TurboWarp instance with the same extensions already loaded from the URL.
 :::
 
-## Writing custom extensions
+## Introduction to writing custom extensions {#introduction}
 
 :::info
-This page assumes you are already familiar with JavaScript. At a bare minimum, you should be familiar with arrays, objects, JSON syntax, functions, data types, and your browser's JavaScript console. If that does not describe you, you will find this page very hard to follow. You should learn JavaScript first.
+This page assumes you are already familiar with JavaScript. If you don't already understand JavaScript, reading this page will not be an enjoyable experience.
 
 This page is still a work in progress. You're welcome and encouraged to suggest or even write improvements on GitHub.
 :::
@@ -36,9 +36,13 @@ This page is still a work in progress. You're welcome and encouraged to suggest 
 The example extension URLs found in this document should NOT be used in real projects. There is no guarantee they will continue to work in the future.
 :::
 
-Custom extensions run in a sandboxed Worker. They have virtually zero access to any Scratch internals. Extensions themselves cannot move sprites or even get their position. You still have access to most Web APIs such as `fetch`. Every call to a block defined by a custom extension will take at least one full frame due to technical limitations. In the future, we hope to improve the capabilities of custom extensions in a way that doesn't compromise security.
+Custom extensions run in a [sandbox](#sandbox) and have limited access to scratch internals. This is indeed very limiting, but custom extensions can still access powerful APIs such as `fetch`, `WebSocket`, and other web APIs.
+
+Due to technical limitations of the sandbox, every call to a custom extension will stop the current script for a full frame, regardless of turbo mode or run without screen refresh.
 
 Custom extensions need to be loaded from a website, for example GitHub Pages. For development, you may find it best to set up a local HTTP server. If you happen to have Python installed, that can be as easy as `python -m http.server`.
+
+## Hello, world! {#hello-world}
 
 The simplest custom extension looks something like this:
 
@@ -49,7 +53,7 @@ The simplest custom extension looks something like this:
 
 Save this in a file on your computer and use a local HTTP server to load it using the extension parameter. If you have a local HTTP server started with `python -m http.server`, you might visit https://turbowarp.org/editor?extension=http://localhost:8000/example.js. The extension will add a new category that contains a single reporter block that outputs "Hello, world!"
 
-In this example, the block with opcode `hello` will be executed by the class function named `hello`. Blocks can return simple strings, numbers, or booleans. Additionally, they can return a Promise instead. Scratch will wait for the promise to resolve before reporting a value or continuing to the next block.
+## getInfo {#getInfo}
 
 `getInfo` is a function that tells Scratch about your extension and what blocks it supports.
 
@@ -73,7 +77,9 @@ In this example, the block with opcode `hello` will be executed by the class fun
        - `Scratch.ArgumentType.NOTE` for music notes
      - `defaultValue` is the initial value when the block is created from the library
 
-Okay, there's a lot of text there that you probably didn't understand. Here's a more thorough example that uses arguments:
+## A more complex example {#strict-equality}
+
+You probably didn't understand a word of the above. Here's a more thorough example that uses arguments:
 
 <CodeBlock className="language-js" title="strict-equality.js">
   {require("!!raw-loader!@site/static/example-extensions/strict-equality.js").default}
@@ -82,17 +88,38 @@ Okay, there's a lot of text there that you probably didn't understand. Here's a 
 
 Remember that you must reload to apply changes.
 
-For more examples, you can visit our curated library of open source extensions: https://github.com/TurboWarp/extensions
-
-### Debugging
+### Debugging {#debugging}
 
 If for some reason the extension is not appearing, or if the page never finished loading, open up your developer console and search for errors. Chances are there's going to be something in there.
 
-### Backwards Compatibility
+Aside from that, custom extensions are just JavaScript scripts. You can use `console.log` and `debugger` as much as you'd like.
+
+### Sandbox {#sandbox}
+
+Custom extensions run in a sandbox that limits what they can access for security reasons.
+
+The exact details of this sandbox and how restrictive it is are still being worked out, but here's how it is right now:
+
+ - Extensions cannot access VM internals
+ - Extensions cannot access any variable that wasn't explicitly passed in as an argument
+ - Extensions cannot directly interact with sprites at all
+ - Extensions CAN access most web APIs and make arbitrary requests
+
+We know it's restrictive and intend to improve the situation in the future in a way that doesn't impact security of the engine.
+
+### Backwards Compatibility {#backwards-compatibility}
 
 Extensions should strive to be as backwards compatible as possible. Notably, that means:
 
  - NEVER change the extension ID
  - NEVER remove blocks
  - NEVER change opcodes
- - Extensively test your extension
+ - NEVER significantly change behavior of blocks
+   - That doesn't mean you can't change it slightly or fix bugs, but any valid call to your blocks should always do the same thing, in perpetuity
+ - Extensively test your extension on existing projects
+
+Failing to follow these guidelines may effectively corrupt projects.
+
+### Additional resources {#resources}
+
+ - [Scratch extension documentation](https://github.com/LLK/scratch-vm/blob/develop/docs/extensions.md) (Note: much of this is not relavent to custom/unofficial extensions)
