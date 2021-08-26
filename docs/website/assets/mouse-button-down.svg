@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   id="svg871"
+   sodipodi:docname="test4.svg"
+   width="317.19199"
+   height="41"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs875" />
+  <sodipodi:namedview
+     id="namedview873"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="4.8366667"
+     inkscape:cx="78.359752"
+     inkscape:cy="75.465196"
+     inkscape:window-width="1920"
+     inkscape:window-height="974"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg871" />
+  <style
+     id="style851">
+  .blocklyText {
+      fill: #fff;
+      font-family: &quot;Helvetica Neue&quot;, Helvetica, sans-serif;
+      font-size: 12pt;
+      font-weight: 500;
+  }
+  .blocklyNonEditableText&gt;text, .blocklyEditableText&gt;text {
+      fill: #575E75;
+  }
+  .blocklyDropdownText {
+      fill: #fff !important;
+  }
+  </style>
+  <g
+     data-id="|7d:IzDuTZKo_R,B)(Ft"
+     class="blocklyDraggable blocklySelected"
+     data-shapes="reporter boolean"
+     data-category="TurboWarp"
+     id="g869"
+     transform="translate(0.70710678,0.5)">
+    <path
+       class="blocklyPath blocklyBlockBackground"
+       stroke="#cc3d3d"
+       fill="#ff4c4c"
+       fill-opacity="1"
+       d="m 0,0 m 20,0 h 275.77778 l 20,20 -20,20 H 20 L 0,20 Z"
+       id="path853" />
+    <g
+       data-id="2gdn(}zFFt=Tz{PKoNPV"
+       data-argument-type="dropdown"
+       data-shapes="argument round"
+       transform="translate(20,4)"
+       id="g863">
+      <path
+         class="blocklyPath blocklyBlockBackground"
+         stroke="#cc3d3d"
+         fill="#e64444"
+         fill-opacity="1"
+         d="m 0,0 m 16,0 h 87.33334 a 16,16 0 0 1 0,32 H 16 A 16,16 0 0 1 16,0 Z"
+         id="path855" />
+      <g
+         class="blocklyEditableText"
+         transform="translate(8)"
+         id="g861">
+        <text
+           class="blocklyText blocklyDropdownText"
+           x="41.666668"
+           y="18"
+           dominant-baseline="middle"
+           dy="0"
+           text-anchor="middle"
+           id="text857">(0) primary</text>
+        <image
+           height="12"
+           width="12"
+           xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4="
+           transform="translate(87.333336,11)"
+           id="image859" />
+      </g>
+    </g>
+    <path
+       class="blocklyPath"
+       style="visibility:hidden"
+       d=""
+       fill="#cc3d3d"
+       id="path865" />
+    <text
+       class="blocklyText"
+       y="2"
+       text-anchor="middle"
+       dominant-baseline="middle"
+       dy="0"
+       x="74.222221"
+       transform="translate(147.33334,20)"
+       id="text867">mouse button down?</text>
+  </g>
+</svg>
