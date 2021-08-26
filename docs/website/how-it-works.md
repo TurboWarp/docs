@@ -25,7 +25,7 @@ The section is simplified to make things easier to understand. The removed thing
 
 Consider the following script:
 
-![When green flag clicked, forever, move my variable steps](./assets/forever-move-my-variable-steps.png)
+![When green flag clicked, forever, move my variable steps](./assets/forever-move-my-variable-steps.svg)
 
 Scratch's interpreter interprets an [abstract syntax tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree) at runtime. Internally that looks something like this:
 

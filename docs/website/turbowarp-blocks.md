@@ -15,15 +15,15 @@ If you don't use any TurboWarp-exclusive blocks, then there should be no issue w
 
 ## last key pressed {#last-key-pressed}
 
-![last key pressed](./assets/last-key-pressed.png)
+![last key pressed](./assets/last-key-pressed.svg)
 
 It tells you the last key that was pressed. It's intended to be used something like this:
 
-![when any key pressed, do something with last key pressed](./assets/how-to-use-last-key-pressed.png)
+![when any key pressed, do something with last key pressed](./assets/how-to-use-last-key-pressed.svg)
 
 ## mouse button down? {#mouse-button-down}
 
-![primary mouse button down?](./assets/mouse-button-down.png)
+![primary mouse button down?](./assets/mouse-button-down.svg)
 
 It's like "mouse down?" but lets you check each individual button. Keep in mind that due to how Scratch interprets mouse input, it's possible for a block like "is primary mouse button down?" to report true while the standard "mouse down?" reports false.
 
