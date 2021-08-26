@@ -84,7 +84,8 @@ Whenever Scratch executes any block, it has to do a lot of things:
  - It has to figure out whether the block has any inputs or fields (similar but different), and evaluate those if it has any. Inputs themselves are blocks that also have to be executed the same as any other, and so are their inputs, and so on.
  - It has to see whether or not there is another block to execute after the current one
  - It has to maintain an internal stack and other state to know what block it's executing at what time
- - It has to constantly check to make sure that no blocks have been modified or deleted since it was last checked
+ - It has to constantly check to make sure that no scripts have changed
+ - etc. There is a *lot* going on in Scratch whenever it executes even a single block
 
 The code that does all this is written in JavaScript. Your browser is already doing a similar variety of tasks whenever it executes any JavaScript code (it's much more complicated, don't worry too much about it), but now the overhead of the interpreter has to be added on top of that.
 
