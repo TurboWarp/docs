@@ -21,6 +21,7 @@ module.exports = {
       ]
     },
     'website/embedding',
+    'website/how-it-works',
     'website/javascript',
     'website/turbowarp-blocks',
     'website/translate',
