@@ -20,6 +20,7 @@ If you want to convert Scratch projects to readable and editable JavaScript, use
 
 <details>
 <summary>If you really know what you're doing...</summary>
+
 Run this in the JavaScript console before starting the project:
 
 ```js
