@@ -11,11 +11,11 @@ These cannot be used from custom extensions.
 
 ## `vm`
 
-Refers to the [scratch-vm](https://github.com/LLK/scratch-vm) instance.
+Refers to the [scratch-vm](https://github.com/TurboWarp/scratch-vm) instance.
 
 ## `ScratchBlocks`
 
-Refers to the *real* [scratch-blocks](https://github.com/LLK/scratch-blocks) (`Blockly` has very little stuff on it). Only available after opening the editor.
+Refers to the *real* [scratch-blocks](https://github.com/TurboWarp/scratch-blocks) (`Blockly` has very little stuff on it). Only available after opening the editor.
 
 ## `paper`
 
