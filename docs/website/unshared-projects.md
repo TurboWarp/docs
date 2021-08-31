@@ -12,11 +12,11 @@ You've probably noticed that TurboWarp, forkphorus, etc. can load unshared proje
 
 Even the official Scratch development builds maintained by the Scratch Team can view unshared projects (for example: https://llk.github.io/scratch-gui/develop/#1) which implies to us that the Scratch Team does not consider this a serious issue. As TurboWarp loads projects the same way as Scratch, it's also able to load unshared projects.
 
-If this concerns you, please voice your concerns to the Scratch Team. They are the only people that can change this. [See below for more information.](#why-not-fix)
+If this concerns you, please voice your concerns to the Scratch Team. They are the only people that can change this.
 
 ## Why doesn't TurboWarp refuse to load unshared projects? {#why-not-fix}
 
-Even if TurboWarp refused to load unshared projects, the root cause is still the Scratch API. Unshared projects could still be trivially viewed using the official Scratch development builds or [any other tool](https://www.google.com/search?hl=en&q=unshared%20project%20viewer%20scratch). As TurboWarp is open source, someone could easily make their own website with the code to check if a project is unshared removed. Unshared projects would not be any safer.
+Even if TurboWarp refused to load unshared projects, the root cause is still the Scratch API. Unshared projects could still be easily viewed using the official Scratch development builds or [any other tool](https://www.google.com/search?hl=en&q=unshared%20project%20viewer%20scratch). As TurboWarp is open source, someone could easily make their own website with the code to check if a project is unshared removed. Unshared projects would not be any safer.
 
 This is a problem that can only be fixed by the Scratch Team implementing access control for projects.scratch.mit.edu (where project data is downloaded from) as they've already done for api.scratch.mit.edu (where project titles and descriptions are loaded from). If you think this is important, let the Scratch Team know.
 
