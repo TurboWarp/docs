@@ -24,3 +24,7 @@ h1 {
 .navbar__title {
   font-weight: bold;
 }
+
+[class*="backToTopButton_"] {
+  display: none !important;
+}
