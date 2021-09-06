@@ -32,4 +32,4 @@ Another alternative to keep your project safe would be to use an offline editor.
 
 ## What is project ID 1? {#what-is-1}
 
-Curious people have visited https://turbowarp.org/1 or https://llk.github.io/scratch-gui/develop/#1 and found a strange project. That's just what the Scratch API returns when you ask for the project with ID 1. Same story applies to all the other low project IDs.
+Curious people have visited https://turbowarp.org/1 or https://llk.github.io/scratch-gui/develop/#1 and found a strange project. That's just what the Scratch API returns when you ask for the project with ID 1.
