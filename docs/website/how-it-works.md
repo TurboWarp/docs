@@ -5,7 +5,7 @@ hide_table_of_contents: true
 
 # How TurboWarp runs projects faster
 
-TurboWarp uses a *compiler* to while Scratch uses an *interpreter*. This allows TurboWarp to run up to 20x faster, but it makes live script editing impracticable<sup>[\[1\]](#footnote-1)</sup>.
+TurboWarp uses a *compiler* to while Scratch uses an *interpreter*. This allows TurboWarp to run up to 20x faster, but it makes live script editing impracticable<sup>[\[a\]](#footnote-1)</sup>.
 
 ## An analogy {#analogy}
 
@@ -106,11 +106,12 @@ Things to notice:
  - No more looking up opcodes by hand: all the logic is just in the JavaScript
  - No more looking up inputs or fields by hand: they're just JavaScript arguments
  - No more manual state maintaining: your browser is very good at executing simple JavaScript functions and loops on its own
- - As this is a JavaScript function, there is no way to modify its behavior after it's been created<sup>[\[1\]](#footnote-1)</sup>
+ - As this is a JavaScript function, there is no way to modify its behavior after it's been created<sup>[\[a\]](#footnote-1)</sup>
+ - This JavaScript looks very strange compared to typical human-written JavaScript and runs slower because we have to maintain compatibility with certain strange Scratch behaviors.
 
 Of course, this is a very simple example where the interpreter overhead will be virtually meaningless. For the vast majority of projects, the interpreter is more than good enough. It's only when you start executing hundreds of thousands of blocks per frame that the interpreter overhead begins to become problematic.
 
 ----
 
 <a name="footnote-1" />
-[1] - It's not strictly impossible to edit JavaScript functions in some ways, but it's very difficult to do without hurting performance or adding significant complexity.
+[a] - It's not strictly impossible to edit JavaScript functions in some ways, but it's very difficult to do without hurting performance or adding significant complexity.
