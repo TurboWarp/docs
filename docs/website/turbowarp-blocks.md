@@ -30,3 +30,23 @@ It's like "mouse down?" but lets you check each individual button. Keep in mind 
  * (0) primary is usually left
  * (1) middle is usually scroll wheel
  * (2) secondary is usually right (running this block once will disable right click on the stage)
+
+The "Debugger" Addon adds the following blocks:
+
+![image](https://user-images.githubusercontent.com/50552317/132577403-0d6fa7a0-17ea-4c00-ab1b-f091455964c0.png)
+
+It pauses the project.
+
+![image](https://user-images.githubusercontent.com/50552317/132577532-e22b8e58-20cb-4814-b319-86e31ca3dd74.png)
+
+It prints something to the log. You can open the log with the button next to the fullscreen button.
+
+![image](https://user-images.githubusercontent.com/50552317/132577928-5e30cf06-b8e5-4b4e-8046-723a69d7dfaf.png)
+
+It prints a warning to the log.
+
+![image](https://user-images.githubusercontent.com/50552317/132578191-d5596473-ba71-4bf5-9588-6629c430e2a7.png)
+
+It prints an error message to the log.
+
+The Debugger blocks are compatible with Scratch, but they will work only on TurboWarp or with [Scratch Addons](https://scratchaddons.com) enabled.
