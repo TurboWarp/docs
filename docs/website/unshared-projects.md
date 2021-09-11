@@ -15,7 +15,7 @@ Even the official Scratch development builds maintained by the Scratch Team can 
 If this concerns you, please voice your concerns to the Scratch Team. They are the only people that can change this.
 
 :::warning
-Unshared projects are not actively moderated by Scratch or by TurboWarp and might not be safe for all users. However, you should still [report](https://scratch.mit.edu/contact-us/) unshared projects that violate the Scratch community guidelines so that Scratch can remove the project from their servers. Unshared projects are not magically exempt from the community guidelines.
+Unshared projects are not as actively moderated by Scratch as shared projects. However, you should still [report](https://scratch.mit.edu/contact-us/) unshared projects that severely violate the Scratch community guidelines so that Scratch can remove the project from their servers. [Using TurboWarp links to try to bypass the community guidelines is not okay](https://scratch.mit.edu/discuss/topic/540866/?page=3#post-5593893).
 :::
 
 ## Why doesn't TurboWarp refuse to load unshared projects? {#why-not-fix}
