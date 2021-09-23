@@ -39,9 +39,9 @@ Useful addons and their IDs:
 
 Other addons will have no effect on the embed.
 
-## Security considerations {#security}
+## Sanitize URL parameters {#security}
 
-If you use user-supplied information to generate embed links, please make sure to sanitize properties so that users cannot specify arbitrary parameters, as some parameters can result in unexpected behaviors and possibly **remote code execution**.
+If you use user-supplied information to generate embed links, consider sanitizing any arguments to make sure users can't supply arbitrary arguments as some can lead to unexpected behaviors.
 
 ## License {#license}
 
