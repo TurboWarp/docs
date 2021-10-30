@@ -49,4 +49,4 @@ TurboWarp is licensed under the [GPLv3.0](https://github.com/TurboWarp/scratch-g
 
 ## Need more control? {#packager}
 
-Use the [TurboWarp Packager](https://packager.turbowarp.org/) for more control over the loading screen, accent colors, controls, and more.
+Use the [TurboWarp Packager](https://packager.turbowarp.org/) for more control over the loading screen, accent colors, controls, and more. You can also [embed the output of the packager](/packager/embedding) very easily.
