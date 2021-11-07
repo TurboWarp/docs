@@ -14,10 +14,6 @@ Even the official Scratch development builds maintained by the Scratch Team can 
 
 If this concerns you, please voice your concerns to the Scratch Team. They are the only people that can change this.
 
-:::warning
-Unshared projects are not as actively moderated by Scratch as shared projects.
-:::
-
 ## Why doesn't TurboWarp refuse to load unshared projects? {#why-not-fix}
 
 Even if TurboWarp refused to load unshared projects, the root cause is still the Scratch API. Unshared projects could still be easily viewed using the official Scratch development builds or [any other tool](https://www.google.com/search?hl=en&q=unshared%20project%20viewer%20scratch). As TurboWarp is open source, someone could easily make their own website with the code to check if a project is unshared removed. Unshared projects would not be any safer.
