@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   id="svg10"
+   sodipodi:docname="is-compiled.svg"
+   width="130"
+   height="41"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs14" />
+  <sodipodi:namedview
+     id="namedview12"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="2.215"
+     inkscape:cx="98.419865"
+     inkscape:cy="93.679458"
+     inkscape:window-width="1920"
+     inkscape:window-height="1015"
+     inkscape:window-x="1366"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg10" />
+  <style
+     id="style2">
+  .blocklyText {
+      fill: #fff;
+      font-family: &quot;Helvetica Neue&quot;, Helvetica, sans-serif;
+      font-size: 12pt;
+      font-weight: 500;
+  }
+  .blocklyNonEditableText&gt;text, .blocklyEditableText&gt;text {
+      fill: #575E75;
+  }
+  .blocklyDropdownText {
+      fill: #fff !important;
+  }
+  </style>
+  <g
+     data-id="Ah|$|28cN$(=!F,c--ZG"
+     class="blocklyDraggable blocklySelected"
+     data-shapes="reporter boolean"
+     id="g8">
+    <path
+       class="blocklyPath blocklyBlockBackground"
+       stroke="#ff3355"
+       fill="#ff6680"
+       fill-opacity="1"
+       d="m 0,0 m 20,0 h 89.08334 l 20,20 -20,20 H 20 L 0,20 Z"
+       id="path4" />
+    <text
+       class="blocklyText"
+       y="2"
+       text-anchor="middle"
+       dominant-baseline="middle"
+       dy="0"
+       x="44.541668"
+       transform="translate(20,20)"
+       id="text6">is compiled?</text>
+  </g>
+</svg>

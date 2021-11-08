@@ -7,10 +7,18 @@ hide_table_of_contents: true
 
 TurboWarp has a section of blocks that allows you to use certain features previously not accessible to Scratch projects.
 
-:::warning
-These blocks are **incompatible** with Scratch. Projects that using them **can not** be uploaded to the Scratch website. The only exception to this is "is compiled?", which will work perfectly fine in Scratch because it's not actually a hacked block. If you don't use any TurboWarp-exclusive blocks, then there should be no issue with making your project in TurboWarp and uploading it to Scratch.
+## is compiled? {#is-compiled}
 
-These blocks primarily exist for backwards compatibility with existing projects that use them. **We do not recommend using them. No new blocks will be added in the forseeable future**.
+![is compiled?](./assets/is-compiled.svg)
+
+See https://scratch.mit.edu/projects/414716080/
+
+This block is "compatible" with Scratch because it's actually just a modified argument reporter.
+
+:::warning
+Every block beyond this warning is **incompatible** with Scratch. Projects that using them **can not** be uploaded to the Scratch website. If you don't use any TurboWarp-exclusive blocks, then there should be no issue with making your project in TurboWarp and uploading it to Scratch.
+
+**We do not recommend using these blocks. No new blocks will be added in the forseeable future**.
 :::
 
 ## last key pressed {#last-key-pressed}
