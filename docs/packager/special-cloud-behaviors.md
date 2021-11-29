@@ -23,7 +23,7 @@ The value of `☁ url` will be set to the page's current URL. Changing the value
 
 When the value of `☁ redirect` is set to a URL, the current tab will navigate to that URL.
 
-## ☁ redirect {#redirect}
+## ☁ open link {#open-link}
 
 When the value of `☁ open link` is set to a URL, the project will attempt to open a new tab with that URL open. Note that this isn't always reliable due to the popup blockers built in to most browsers.
 
