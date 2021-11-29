@@ -36,6 +36,7 @@ module.exports = {
   packager: [
     'packager/home',
     'packager/embedding',
-    'packager/dynamic-stage-resize'
+    'packager/dynamic-stage-resize',
+    'packager/special-cloud-behaviors',
   ]
 };

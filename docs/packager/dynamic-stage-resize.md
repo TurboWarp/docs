@@ -6,7 +6,7 @@ hide_table_of_contents: true
 # Dynamic stage resize
 
 :::info
-This page only applies to the [TurboWarp Packager](https://turbowarp.org/).
+This page is about the [TurboWarp Packager](https://turbowarp.org/).
 :::
 
 Dynamic stage resize will change the size of the stage to match whatever aspect ratio and resolution it's being displayed at.
