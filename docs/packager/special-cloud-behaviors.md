@@ -31,6 +31,24 @@ When the value of `☁ open link` is set to a URL, the project will attempt to o
 
 When the value of `☁ username` is changed, the value of the `username` block in the sensing category will change.
 
+## ☁ eval {#eval}
+
+:::warning
+This option requires "Unsafe special cloud behaviors" to be enabled.
+
+Unsafe cloud behaviors allows the packaged project to execute arbitrary code outside of the "sandbox" that projects are typically executed in. Depending on the environment you're packaging for, this grants projects full control over your computer, including the ability to install viruses.
+
+If you do not trust the project you're packaging or don't make use of this feature, please turn off this option.
+:::
+
+When the value of `☁ eval` is changed, its value will be evaluated as JavaScript.
+
+If the JavaScript is successfully evaluated, its output will be stored in `☁ eval output`.
+
+If there was an error evaluating the JavaScript, the error will be stored in `☁ eval error`.
+
+If the JavaScript returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), it will store the resolved value in `☁ eval output` if the promise resolves, or the error in `☁ eval error` if it rejects. Note that setting `☁ eval` is always an instant process, so the output variables may not update immediately.
+
 ## Further information and discussion {#further-information}
 
 See https://github.com/TurboWarp/packager/issues/48
