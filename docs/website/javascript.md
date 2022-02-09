@@ -3,7 +3,7 @@ slug: /javascript
 hide_table_of_contents: true
 ---
 
-# How to see the JavaScript
+# How to download the JavaScript
 
 ## Short Answer {#short}
 
