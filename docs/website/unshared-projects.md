@@ -7,8 +7,8 @@ hide_table_of_contents: true
 
 You've probably noticed that TurboWarp, forkphorus, etc. can load unshared projects, and you may be concerned about that.
 
-<!-- Reference for "eight years" is https://github.com/scratchblocks/scratchblocks/issues/1 -->
-<h3>This is a problem with the Scratch API that's been around for over eight years. It's not a TurboWarp bug.</h3>
+<!-- Reference for "nine years" is https://github.com/scratchblocks/scratchblocks/issues/1 -->
+<h3>This is a problem with the Scratch API that's been around for nine years. It's not a TurboWarp bug.</h3>
 
 Even the official Scratch development builds maintained by the Scratch Team can view unshared projects (example: https://llk.github.io/scratch-gui/develop/#1) which implies to us that the Scratch Team does not consider this a serious issue. As TurboWarp loads projects the same way as scratch-gui, it's also able to load unshared projects. This problem can only be properly solved by the Scratch Team.
 
