@@ -8,5 +8,5 @@ hide_table_of_contents: true
 Infinite Clones disables Scratch's 300 clone limit.
 
 :::caution
-This may break some projects.
+Sometimes, this may break some projects.
 :::
