@@ -22,3 +22,5 @@ jobs:
         branch: gh-pages
         folder: build
         single-commit: true
+        git-config-name: "docs build bot"
+        git-config-email: "docsbuildbot@turbowarp.org"
