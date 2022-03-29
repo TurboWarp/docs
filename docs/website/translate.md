@@ -37,6 +37,13 @@ Find your language on https://www.transifex.com/turbowarp/turbowarp/dashboard/ a
 
 Read https://docs.transifex.com/translation/translating-with-the-web-editor to learn how to use the Transifex translator.
 
-Translations are periodically pulled from Transifex and put into the website.
+Translations are pulled from Transifex periodically.
 
-The most important resource to translate is `gui.json`. Everything else is secondary.
+Our translations are broken up into a different resource for each subproject:
+
+ - `gui.json` is for the [website and editor](https://turbowarp.org). This is the most important file to translate.
+ - `desktop.json` is for [the desktop app](https://desktop.turbowarp.org/).
+ - `desktop-web.json` is for [the desktop app's website](https://desktop.turbowarp.org/).
+ - `addons.json` is for the [addon settings page](https://turbowarp.org/addons) (not the addons themselves).
+ - Translations for the addons themselves are maintained externally. Due to Scratch's policy on browser extensions, we will not link that page here, sorry.
+ - `packager.json` is for [the packager](https://packager.turbowarp.org/).
