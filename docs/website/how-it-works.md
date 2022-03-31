@@ -114,4 +114,4 @@ Of course, this is a very simple example where the interpreter overhead will be 
 ----
 
 <a name="footnote-1" />
-[a] - It's not strictly impossible to edit JavaScript functions in some ways, but it's very difficult to do without hurting performance or adding significant complexity.
+[a] - This is a simplification. There are some ways we could make live script editing work, but they will hurt performance or add significant complexity. It's something we want to implement eventually, but not now.
