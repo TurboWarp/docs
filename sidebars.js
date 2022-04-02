@@ -38,5 +38,6 @@ module.exports = {
     'packager/embedding',
     'packager/dynamic-stage-resize',
     'packager/special-cloud-behaviors',
+    'packager/offline',
   ]
 };
