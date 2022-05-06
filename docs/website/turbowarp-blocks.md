@@ -1,3 +1,4 @@
+![Goldy](https://user-images.githubusercontent.com/104700249/167195988-6a8edb1e-f870-497e-a980-d4d8f1d2b990.png)
 ---
 slug: /blocks
 hide_table_of_contents: true
