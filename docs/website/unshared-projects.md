@@ -5,12 +5,23 @@ hide_table_of_contents: true
 
 # Unshared Projects
 
-You've probably noticed that TurboWarp, forkphorus, etc. can load unshared projects, and you may be concerned about that.
+:::info
+**May 7, 2022 - The latest code changes to Scratch indicate the Scratch Team is finally making unshared projects inaccessible to anyone who isn't the owner of the project.**
 
-<!-- Reference for "nine years" is https://github.com/scratchblocks/scratchblocks/issues/1 -->
-<h3>This is a problem with the Scratch API that's been around for nine years. It's not a TurboWarp bug.</h3>
+We aren't sure when the changes will happen or their exact impact, but we expect that unshared projects will no longer be viewable or embeddable in TurboWarp or other third-party websites. This includes your own unshared projects.
 
-Even the official Scratch development builds maintained by the Scratch Team can view unshared projects (example: https://llk.github.io/scratch-gui/develop/#1) which implies to us that the Scratch Team does not consider this a serious issue. As TurboWarp loads projects the same way as scratch-gui, it's also able to load unshared projects. This problem can only be properly solved by the Scratch Team.
+If you are relying on these tools to view unshared projects, we suggest you share any relevant projects or update links as soon as possible.
+
+You will still be able to use the File > Save to your computer and File > Load from your computer options to manually load projects without sharing them on Scratch. Most third-party Scratch tools have options to load these files instead of a project ID/URL.
+
+If you think that making projects accessible only to specific people is important to you, let the Scratch Team know. They are the only people that can implement such as feature. Third-party developers are unable to do anything about this without completely compromising the security of your account.
+
+Viewing unshared projects in TurboWarp has always been an afterthought and just a result of how the Scratch API worked, not the intended primary use. Other TurboWarp features such as the compiler, addons, etc. will not be affected.
+
+The information below still applies until the changes go into effect.
+
+This page will be updated as more is learned over time.
+:::
 
 ## Why doesn't TurboWarp refuse to load unshared projects? {#why-not-fix}
 
