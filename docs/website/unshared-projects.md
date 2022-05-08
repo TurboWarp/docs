@@ -28,7 +28,7 @@ It's also possible that this token is used for some other feature and that nothi
 
 We also don't know when or even *if* the changes will be implemented. Scratch has not given a timeline. It could be next week, next month, next year, or never for all we know. We can say with some certainty that nothing will be changing in the next few days and probably not the next week either. You can keep doing what you're doing for now, but be aware that your workflow may be forced to change eventually.
 
-There are a lot of very valid reasons to make unshared projects more secure. Don't pretend that no one has had their project stolen because they didn't know that unshared projects aren't actually private.
+There are a lot of very valid reasons to make unshared projects more secure. Don't pretend that no one has had their project stolen because they didn't know that unshared projects aren't actually private. In any other website a bug that made "private" or "deleted" projects effectively public would be treated with extremely high severity.
 
 Regardless of the change, you are always be able to use the File > Save to your computer and File > Load from your computer options to manually load projects without sharing them on Scratch. Most third-party Scratch tools have an option to load these files instead of a project ID/URL. This is actually a better way to do it in many cases because the project should load faster as it won't have to download the assets again.
 
