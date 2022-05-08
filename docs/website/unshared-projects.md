@@ -14,6 +14,8 @@ sidebar_label: Unshared Projects
 
 **Updated May 8, 2022** - The future of loading unshared projects in TurboWarp, forkphorus, the packager, and other third-party sites is *unknown* due to upcoming Scratch API changes that *may* happen at an *unknown* date in the future.
 
+At this time, it's not dark and gloomy, it's just *unknown*.
+
 :::info
 Disregard any earlier version of this section you have seen as it may have been misleading -- specifically anything with "May 7" as the date.
 
