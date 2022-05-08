@@ -24,7 +24,7 @@ We know that there are a lot of old links and third-party embeds that rely on ac
 
 The developers of TurboWarp and forkphorus want to make it clear the viewing unshared projects with these sites was always just a side-effect of how the Scratch API worked and not the intended primary use. It currently looks like there will be nothing third-party websites will be able to do to view unshared projects without completely compromising the security of your Scratch account. The primary features of TurboWarp such as the compiler, addons, dark mode, etc. will continue to function as they always have.
 
-If you think having a way to limit access to a project to only certain people is important, let the Scratch Team know. They will be the only ones that will be able to implement such a feature.
+If you think having a way to limit access to a project to only certain people is important, let the Scratch Team know. They will be the only ones that will be able to implement such a feature. Remember that the Scratch Team are real people who probably have very good reasons to be making these changes. Insults and flame wars will not help anyone.
 
 Depending on how the change is implemented, it's possible that third-party sites may temporarily be unable to load *any* projects for a short duration until some code is updated to accommodate the changes.
 
