@@ -10,6 +10,8 @@ hide_table_of_contents: true
 
 We aren't sure when the changes will happen or their exact impact, but we expect that unshared projects will no longer be viewable or embeddable in TurboWarp, the packager, forkphorus, or any other third-party websites in the future. This includes your own unshared projects even if you're logged into Scratch in the same browser.
 
+We're thinking about ways to mitigate the effect of this on, for example, old links and third-party embeds. Check back later when we know more.
+
 If you are relying on these tools to view unshared projects, we suggest you share any relevant projects or update links as soon as possible.
 
 You will still be able to use the File > Save to your computer and File > Load from your computer options to manually load projects without sharing them on Scratch. Most third-party Scratch tools have options to load these files instead of a project ID/URL.
@@ -20,7 +22,7 @@ Viewing unshared projects in TurboWarp has always been just a result of how the 
 
 The information below still applies until the changes go into effect.
 
-This page will be updated as more is learned over time.
+This page will be updated as more is learned over time. We're figuring things out slowly and a lot remains unknown.
 :::
 
 ## Why doesn't TurboWarp refuse to load unshared projects? {#why-not-fix}
