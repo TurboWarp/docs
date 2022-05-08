@@ -8,7 +8,7 @@ hide_table_of_contents: true
 :::info
 **May 7, 2022 - The latest code changes to Scratch indicate the Scratch Team is finally making unshared projects inaccessible to anyone who isn't the owner of the project.**
 
-We aren't sure when the changes will happen or their exact impact, but we expect that unshared projects will no longer be viewable or embeddable in TurboWarp, the packager, forkphorus, or any other third-party websites. This includes your own unshared projects even if you're logged into Scratch in the same browser.
+We aren't sure when the changes will happen or their exact impact, but we expect that unshared projects will no longer be viewable or embeddable in TurboWarp, the packager, forkphorus, or any other third-party websites in the future. This includes your own unshared projects even if you're logged into Scratch in the same browser.
 
 If you are relying on these tools to view unshared projects, we suggest you share any relevant projects or update links as soon as possible.
 
