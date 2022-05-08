@@ -14,8 +14,6 @@ sidebar_label: Unshared Projects
 
 **Updated May 8, 2022** - The future of loading unshared projects in TurboWarp, forkphorus, the packager, and other third-party sites is *unknown* due to upcoming Scratch API changes that *may* happen at an *unknown* date in the future.
 
-At this time, it's not dark and gloomy, it's just *unknown*.
-
 :::info
 Disregard any earlier version of this section you have seen as it may have been misleading -- specifically anything with "May 7" as the date.
 
@@ -26,7 +24,7 @@ We want to make it clear: We know very little solid information about what's goi
 
 Scratch is changing how project loading works and it looks like downloading a project will use a token that only the author of the project can access when the project is unshared. It's likely that without that token, the project can't be downloaded. If that's the case, it would make it impossible to load an unshared project in TurboWarp just by knowing its ID/URL, including your own projects. However, we think there *might* be a way to make unshared projects still load in third-party sites, but the author of the project would have to do some very complex, convoluted, and dangerous steps and the end result wouldn't be guaranteed to be reliable. We can't promise that we would implement such a solution even if it is technically possible.
 
-It's also possible (but admittedly, unlikely) that this token is used for some other feature and that nothing is changing about loading unshared project.
+It's also possible that this token is used for some other feature and that nothing is changing about loading unshared project, but we think that's very unlikely.
 
 We also don't know when or even *if* the changes will be implemented. Scratch has not given a timeline. It could be next week, next month, next year, or never for all we know. We can say with some certainty that nothing will be changing in the next few days and probably not the next week either. You can keep doing what you're doing for now, but be aware that your workflow may be forced to change eventually.
 
