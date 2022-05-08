@@ -6,6 +6,12 @@ sidebar_label: Unshared Projects
 
 # The future of unshared projects is uncertain
 
+<!-- 
+  I won't link these in the public website because there will be way too much spam if we do that, but here are relevant links:
+  https://github.com/LLK/scratch-gui/pull/8269
+  https://github.com/LLK/scratch-www/pull/6773
+-->
+
 **Updated May 7, 2022** - The future of loading unshared projects in TurboWarp, forkphorus, and other third-party sites is uncertain and may no longer be possible at an unknown time in the future due to upcoming API changes from the Scratch Team.
 
 We do not know when the changes will be implemented. It could be a week, month, or even a year, but based on limited public source code changes we believe it will be "soon". We also don't know what the exact impact will be, but we believe Scratch will finally be fixing the decade-old bug that makes unshared projects effectively public to anyone with the ID. We're expecting that unshared projects will now only be accessible by the owner of a project and only on the scratch.mit.edu website. Third-party sites will most likely not be able to load unshared projects any more. This includes your own unshared projects even if you're logged into Scratch in the same browser.
@@ -22,7 +28,7 @@ Depending on how the change is implemented, it's possible that third-party sites
 
 This page will be updated as more is learned over time. We're figuring things out slowly and a lot remains unknown.
 
-# Original page
+## Original page {#original}
 
 :::info
 This information will remain accurate until the changes are implemented.
@@ -35,13 +41,13 @@ You've probably noticed that TurboWarp, forkphorus, etc. can load unshared proje
 
 Even the official Scratch development builds maintained by the Scratch Team can view unshared projects (example: https://llk.github.io/scratch-gui/develop/#1) which implies to us that the Scratch Team does not consider this a serious issue. As TurboWarp loads projects the same way as scratch-gui, it's also able to load unshared projects. This problem can only be properly solved by the Scratch Team.
 
-## Why doesn't TurboWarp refuse to load unshared projects? {#why-not-fix}
+### Why doesn't TurboWarp refuse to load unshared projects? {#why-not-fix}
 
 Even if TurboWarp refused to load unshared projects, the root cause is still the Scratch API. Unshared projects could still be easily viewed using the official Scratch development builds or many other tools. TurboWarp is fully open source, so someone could easily make their own version without the code to check if a project is unshared. Unshared projects would not be any safer.
 
 This is a problem that can only be fixed by the Scratch Team implementing access control for projects.scratch.mit.edu (where project data is downloaded from) as they've already done for api.scratch.mit.edu (where project titles and descriptions are loaded from). If you think this is important, let the Scratch Team know.
 
-## How to protect your unshared projects {#prevention}
+### How to protect your unshared projects {#prevention}
 
 Don't share the project ID (the numbers in the URL to your project) with others. That includes links to your project and screenshots/videos that include your browser's URL bar.
 
@@ -58,6 +64,6 @@ Another way to keep your project safe would be to use an offline editor such as 
 
 This is also a good opportunity to save a backup of your project to somewhere safe on your computer so that you don't have to learn the importance of backups the [hard way](https://ocular.jeffalo.net/search?q=project%20disappeared&sort=relevance).
 
-## What is project ID 1? {#what-is-1}
+### What is project ID 1? {#what-is-1}
 
 Curious people have visited https://turbowarp.org/1 or https://llk.github.io/scratch-gui/develop/#1 and found a strange project. That's just what the Scratch API returns when you ask for the project with ID 1.
