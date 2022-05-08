@@ -24,7 +24,7 @@ Engage in good faith. The Scratch Team is made of real people and there are good
 
 We want to make it clear: We know very little solid information about what's going to change.
 
-We don't entirely know what the impact will be. Scratch is changing how project loading works and it looks like downloading an unshared project will require a token that only the author of the project can access. We think there *might* be a very convoluted way to make unshared projects still load in third-party sites, but it would require the author of the project to do some very strange (and possibly dangerous) things and isn't guaranteed to be reliable. We can't promise that we would implement such a solution even if it is technically possible.
+We don't entirely know what the impact will be. Scratch is changing how project loading works and it looks like downloading an unshared project will require a token that only the author of the project can access. This would make it impossible to load an unshared project just by knowing its ID/URL. However, we think there *might* be a way to make unshared projects still load in third-party sites, but it would require the author of the project to do some very complex, convoluted, and dangerous steps and wouldn't be guaranteed to be reliable. We can't promise that we would implement such a solution even if it is technically possible.
 
 We also don't know when or even *if* the changes will be implemented. It could be next week, or next month, or next year, or never for all we know. We can say with a bit of certainty that nothing will be changing in the next few days and probably at least a week. You can keep doing what you're doing for now, but be aware that your workflow may be forced to change in the future.
 
