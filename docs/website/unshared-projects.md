@@ -12,7 +12,7 @@ sidebar_label: Unshared Projects
   https://github.com/LLK/scratch-www/pull/6773
 -->
 
-**Updated May 8, 2022** - The future of loading unshared projects in TurboWarp, forkphorus, and other third-party sites is *unknown* due to upcoming Scratch API changes that *may* happen at an *unknown* date in the future.
+**Updated May 8, 2022** - The future of loading unshared projects in TurboWarp, forkphorus, the packager, and other third-party sites is *unknown* due to upcoming Scratch API changes that *may* happen at an *unknown* date in the future.
 
 :::info
 Disregard any earlier version of this section you have seen as it may have been misleading -- specifically anything with "May 7" as the date.
@@ -26,17 +26,17 @@ We want to make it clear: We know very little solid information about what's goi
 
 We don't entirely know what the impact will be. Scratch is changing how project loading works and it looks like downloading an unshared project will require a token that only the author of the project can access. We think there *might* be a very convoluted way to make unshared projects still load in third-party sites, but it would require the author of the project to do some very strange (and possibly dangerous) things and isn't guaranteed to be reliable. We can't promise that we would implement such a solution even if it is technically possible.
 
-We also don't know when or even *if* the changes will be implemented. It could be next week, or next month, or next year, or never for all we know. We can say with a bit of certainty that nothing will be changing in the next few days and probably at least a week. You can keep doing what you're doing, but be aware that your workflow may be forced to change in the future.
+We also don't know when or even *if* the changes will be implemented. It could be next week, or next month, or next year, or never for all we know. We can say with a bit of certainty that nothing will be changing in the next few days and probably at least a week. You can keep doing what you're doing for now, but be aware that your workflow may be forced to change in the future.
 
-Regardless of the change, you are always be able to use the File > Save to your computer and File > Load from your computer options to manually load projects without sharing them on Scratch. Most third-party Scratch tools should have options to load these files instead of a project ID/URL. This is actually a better way to do it in many cases because the project should load faster as it won't have to download the assets again.
+Regardless of the change, you are always be able to use the File > Save to your computer and File > Load from your computer options to manually load projects without sharing them on Scratch. Most third-party Scratch tools have an option to load these files instead of a project ID/URL. This is actually a better way to do it in many cases because the project should load faster as it won't have to download the assets again.
 
-We know that there are a lot of old links and third-party embeds that rely on accessing unshared projects. We're looking into ways to mitigate the impact of the API changes on these. Check back in a few days, hopefully we'll know more by then.
+We know that there are a lot of old links and third-party embeds that rely on accessing unshared projects that will never be updated. We're looking into ways to mitigate the impact of the API changes on these. Check back in a few days. Hopefully we'll know more by then.
 
 <!-- The developers of TurboWarp and forkphorus want to make it clear the viewing unshared projects with these sites was always just a side-effect of how the Scratch API worked and not the intended primary use. -->
 
 <!-- Depending on how the change is implemented, it's possible that third-party sites may temporarily be unable to load *any* projects for a short duration until some code is updated to accommodate the changes. -->
 
-This page will be updated as more is learned over time. We're figuring things out slowly and a lot remains unknown.
+This page will be updated as more is learned over time.
 
 ## Original page {#original}
 
