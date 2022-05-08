@@ -34,7 +34,7 @@ Regardless of the change, you are always be able to use the File > Save to your 
 
 We know that there are a lot of old links and third-party embeds that rely on accessing unshared projects that will never be updated. We're looking into ways to mitigate the impact of the API changes on these.
 
-<!-- The developers of TurboWarp and forkphorus want to make it clear the viewing unshared projects with these sites was always just a side-effect of how the Scratch API worked and not the intended primary use. -->
+The developers of TurboWarp and forkphorus want to make it clear the viewing unshared projects with these sites was always just a side-effect of how the Scratch API worked and not the intended primary use. Things like the compilers, addons, etc. are still the primary features and won't be going anywhere.
 
 <!-- Depending on how the change is implemented, it's possible that third-party sites may temporarily be unable to load *any* projects for a short duration until some code is updated to accommodate the changes. -->
 
