@@ -11,13 +11,15 @@ hide_table_of_contents: true
 
 We do not know when the changes will be implemented or their exact impact, but we believe it's likely Scratch will finally be fixing the decade-old bug that lets third-party sites view unshared projects. We're expecting that unshared projects will now only be accessible by the owner of a project and only on the scratch.mit.edu website. Third-party sites will probably not be able to load unshared projects any more. This includes your own unshared projects even if you're logged into Scratch in the same browser.
 
-Depending on how the change is implemented, it's possible that third-party sites may temporarily be unable to load *any* projects for a short duration. Not a lot is known quite yet.
-
-We know that there are a lot of old links and third-party embeds that rely on viewing unshared projects. We're thinking about ways to mitigate the impact of Scratch's changes on these. Check this page again later when we know more.
-
 You will still be able to use the File > Save to your computer and File > Load from your computer options to manually load projects without sharing them on Scratch. Most third-party Scratch tools should have options to load these files instead of a project ID/URL.
 
+We know that there are a lot of old links and third-party embeds that rely on accessing unshared projects. We're thinking about ways to mitigate the impact of Scratch's changes on these. Check this page again later when we know more.
+
 The developers of TurboWarp and forkphorus want to make it clear the viewing unshared projects with these sites was always just a side-effect of how the Scratch API worked and not the intended primary use. There is currently nothing third-party websites can do to bypass this restriction without completely compromising the security of your Scratch account. The primary features of TurboWarp such as the compiler, addons, dark mode, etc. will continue to function as they always have.
+
+If you think having a way to limit access to a project to only certain people is important, let the Scratch Team know. They are the only ones that can change this.
+
+Depending on how the change is implemented, it's possible that third-party sites may temporarily be unable to load *any* projects for a short duration until some code is updated to accommodate the changes.
 
 This page will be updated as more is learned over time. We're figuring things out slowly and a lot remains unknown.
 
