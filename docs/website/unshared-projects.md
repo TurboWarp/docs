@@ -14,7 +14,9 @@ sidebar_label: Unshared Projects
 
 **Updated May 7, 2022** - The future of loading unshared projects in TurboWarp, forkphorus, and other third-party sites is uncertain and may no longer be possible at an unknown time in the future due to upcoming API changes from the Scratch Team.
 
-We do not know when the changes will be implemented. It could be a week, month, or even a year, but based on limited public source code changes we believe it will be "soon". We also don't know what the exact impact will be, but we believe Scratch will finally be fixing the decade-old bug that makes unshared projects effectively public to anyone with the ID. We're expecting that unshared projects will now only be accessible by the owner of a project and only on the scratch.mit.edu website. Third-party sites will most likely not be able to load unshared projects any more. This includes your own unshared projects even if you're logged into Scratch in the same browser.
+We want to make it clear: We know very little about what's going on.
+
+We do not know when the changes will be implemented. It could be a week, month, or even a year. It's also possible Scratch gives up on this and things stay as they are. We also don't know what the exact impact will be, but we believe Scratch will finally be fixing the decade-old bug that makes unshared projects effectively public to anyone with the ID. We're expecting that unshared projects will now only be accessible by the owner of a project and only on the scratch.mit.edu website. Third-party sites will most likely not be able to load unshared projects at that point. This includes your own unshared projects even if you're logged into Scratch in the same browser.
 
 You will still be able to use the File > Save to your computer and File > Load from your computer options to manually load projects without sharing them on Scratch. Most third-party Scratch tools should have options to load these files instead of a project ID/URL.
 
