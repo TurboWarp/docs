@@ -12,7 +12,7 @@ sidebar_label: Unshared Projects
   https://github.com/LLK/scratch-www/pull/6773
 -->
 
-**Updated May 8, 2022** - The future of loading unshared projects in TurboWarp, forkphorus, the packager, and other third-party sites is *unknown* due to upcoming Scratch API changes that *may* happen at an *unknown* date in the future.
+**Updated May 9, 2022** - The future of loading unshared projects in TurboWarp, forkphorus, the packager, and other third-party sites is *unknown* due to upcoming Scratch API changes that *may* happen at an *unknown* date in the future.
 
 :::info
 Disregard any earlier version of this section you have seen as it may have been misleading -- specifically anything with "May 7" as the date.
@@ -22,9 +22,9 @@ Engage in good faith and put down your pitchforks until we actually know what's 
 
 We want to make it clear: We know very little solid information about what's going to change. We can only speculate based on a couple bits of published code changes.
 
-Scratch is changing how project loading works and it looks like downloading a project will use a token that only the author of the project can access when the project is unshared. It's likely that without that token, the project can't be downloaded. If that's the case, it would make it impossible to load an unshared project in TurboWarp just by knowing its ID/URL, including your own projects. However, we think there *might* be a way to make unshared projects still load in third-party sites, but the author of the project would have to do some very complex, convoluted, and dangerous steps and the end result wouldn't be guaranteed to be reliable. We can't promise that we would implement such a solution even if it is technically possible.
+Scratch is changing how project loading works and it looks like downloading a project will use a token that only the author of the project can access when the project is unshared. It's likely that without that token, the project can't be downloaded. We can't think of any other reason for this token to be added than restricting access to projects that you aren't supposed to view. If that's the case, it would make it impossible to load an unshared project in TurboWarp just by knowing its ID/URL, including your own projects.
 
-It's also possible that this token is used for some other feature and that nothing is changing about loading unshared project, but we think that's very unlikely.
+It's possible that if you somehow also share this token as well of the project ID, this can be bypassed. We don't know whether that's viable yet and can't make any promises about that. Even if it is *technically* possible we can't guarantee we would implement such a solution if it's too complex or unsafe.
 
 We also don't know when or even *if* the changes will be implemented. Scratch has not given a timeline. It could be next week, next month, next year, or never for all we know. We can say with some certainty that nothing will be changing in the next few days and probably not the next week either. You can keep doing what you're doing for now, but be aware that your workflow may be forced to change eventually.
 
