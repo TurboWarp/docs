@@ -24,7 +24,7 @@ We want to make it clear: We know very little solid information about what's goi
 
 Scratch is changing how project loading works and it looks like downloading a project will use a token that only the author of the project can access when the project is unshared. It's likely that without that token, the project can't be downloaded. We can't think of any other reason for this token to be added than restricting access to projects that you aren't supposed to view. If that's the case, it would make it impossible to load an unshared project in TurboWarp just by knowing its ID/URL, including your own projects.
 
-It's possible that if you somehow also share this token as well of the project ID, it may be possible to continue viewing unshared projects. This would require the owner of the project to share the token know whether that will be viable yet. Even if it is *technically* possible we can't guarantee we would implement such a solution if it's too complex or unsafe.
+It's possible that if the owner of the project somehow shares this token in additon to the project ID, it may be possible to continue viewing unshared projects. We don't know whether that will be viable yet or how that process would work. Even if it is *technically* possible we can't guarantee we would implement such a solution if it's too complex or unsafe.
 
 We also don't know when or even *if* the changes will be implemented. Scratch has not given a timeline. It could be next week, next month, next year, or never for all we know. We can say with some certainty that nothing will be changing in the next few days and probably not the next week either. You can keep doing what you're doing for now, but be aware that your workflow may be forced to change eventually.
 
