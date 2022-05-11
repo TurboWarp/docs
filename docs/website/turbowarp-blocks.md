@@ -16,7 +16,7 @@ See https://scratch.mit.edu/projects/414716080/
 These blocks are "compatible" with Scratch because they're actually just modified argument reporters.
 
 :::warning
-Every block beyond this warning is **incompatible** with Scratch. Projects that using them **can not** be uploaded to the Scratch website. If you don't use any TurboWarp-exclusive blocks, then there should be no issue with making your project in TurboWarp and uploading it to Scratch.
+Every block beyond this warning is **incompatible** with Scratch. Projects that use them **can not** be uploaded to the Scratch website. If you don't use any TurboWarp-exclusive blocks, then there should be no issue with making your project in TurboWarp and uploading it to Scratch.
 
 **We do not recommend using these blocks. No new blocks will be added in the forseeable future**.
 :::
