@@ -12,25 +12,23 @@ sidebar_label: Unshared Projects
   https://github.com/LLK/scratch-www/pull/6773
 -->
 
-**Updated May 9, 2022** - The future of loading unshared projects in TurboWarp, forkphorus, the packager, and other third-party sites is *unknown* due to upcoming Scratch API changes that *may* happen at an *unknown* date in the future.
+**Updated May 10, 2022** - The future of loading unshared projects in TurboWarp, forkphorus, the packager, and other third-party sites is *unknown* due to upcoming Scratch API changes that *may* happen at an *unknown* date in the future.
 
 :::info
-Disregard any earlier version of this section you have seen as it may have been misleading -- specifically anything with "May 7" as the date.
-
-Engage in good faith and put down your pitchforks until we actually know what's happening. We know that some earlier versions of this document used some pretty scary phrasing and were definitely part of the problem. We apologize for that.
+Please read this entire section before spreading information about this topic to protect yourself and others from misinformation.
 :::
 
 We want to make it clear: We know very little solid information about what's going to change. We can only speculate based on a couple bits of published code changes.
 
-Scratch is changing how project loading works and it looks like downloading a project will use a token that only the author of the project can access when the project is unshared. It's likely that without that token, the project can't be downloaded. We can't think of any other reason for this token to be added than restricting access to projects that you aren't supposed to view. If that's the case, it would make it impossible to load an unshared project in TurboWarp just by knowing its ID/URL, including your own projects.
+Scratch is changing how project loading works to use a token that only the author of the project can access when the project is unshared. We can't think of any other reason for this token being added except to restrict access to anyone that isn't the owner of the project. Assuming this is the case, it would become impossible to load an unshared project in TurboWarp, forkphorus, scratch-gui, or any other third-party site just by knowing its ID. These changes would also affect your own unshared projects even if you are signed into Scratch in the same browser.
 
-It's possible that if the owner of the project somehow shares this token in additon to the project ID, it may be possible to continue viewing unshared projects. We don't know whether that will be viable yet or how that process would work. Even if it is *technically* possible we can't guarantee we would implement such a solution if it's too complex or unsafe.
+If the owner of the project somehow shares this token in additon to the project ID, it might be possible to continue viewing unshared projects. We don't know whether that will be viable yet or how that process would work. Even if it is *technically* possible we can't guarantee we would implement it if it's too complex or unsafe.
 
-We also don't know when or even *if* the changes will be implemented. Scratch has not given a timeline. It could be next week, next month, next year, or never for all we know. We can say with some certainty that nothing will be changing in the next few days and probably not the next week either. You can keep doing what you're doing for now, but be aware that your workflow may be forced to change eventually.
+We also don't know when or even *if* the changes will be implemented. It could be next week, next month, next year, or never for all we know. We can say with some certainty that nothing will be changing in the immediate future. You can keep doing what you're doing for now, but be aware that your workflow may be forced to change eventually.
 
 There are a lot of very valid reasons to make unshared projects more secure. Don't pretend that no one has had their project stolen because they didn't know that unshared projects aren't actually private. In any other website a bug that made "private" or "deleted" projects effectively public would be treated with extremely high severity.
 
-Regardless of the change, you are always be able to use the File > Save to your computer and File > Load from your computer options to manually load projects without sharing them on Scratch. Most third-party Scratch tools have an option to load these files instead of a project ID/URL. This is actually a better way to do it in many cases because the project should load faster as it won't have to download the assets again.
+Regardless of the change, you can always use the File > Save to your computer and File > Load from your computer options to manually load projects without sharing them on Scratch. Most third-party Scratch tools have an option to load these files instead of a project ID/URL. This is often a better way to do it because it won't have to download all the assets again.
 
 We know that there are a lot of old links and third-party embeds that rely on accessing unshared projects that will never be updated. We're looking into ways to mitigate the impact of the API changes on these.
 
