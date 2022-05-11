@@ -31,6 +31,14 @@ When the value of `☁ open link` is set to a URL, the project will attempt to o
 
 When the value of `☁ username` is changed, the value of the `username` block in the sensing category will change.
 
+## ☁ pasted {#pasted}
+
+When the user pastes some text onto the page using a shortcut like ctrl+v, the text is stored in `☁ pasted`.
+
+## ☁ set clipboard {#set-clipboard}
+
+When the value of `☁ set clipboard` is changed, the page will try to store the text in the user's clipboard. This might not always work.
+
 ## ☁ eval {#eval}
 
 :::warning
