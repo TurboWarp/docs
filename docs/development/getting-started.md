@@ -28,6 +28,9 @@ Scratch 3 is organized into a bunch of different repositories. Each implements a
  - scratch-blocks is the script editor
  - scratch-gui implements the outer interface, connects everything together, and is where addons live
  - scratch-paint is the costume editor
+ - scratch-parser extracts sb2 and sb3 files
+ - scratch-svg-render renders SVG files
+ - scratch-storage downloads and uploads files
  - scratch-l10n contains translations
 
 ### Building the GUI {#gui}
