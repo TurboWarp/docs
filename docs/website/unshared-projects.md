@@ -12,11 +12,27 @@ sidebar_label: Unshared Projects
   https://github.com/LLK/scratch-www/pull/6773
 -->
 
-**Updated May 10, 2022** - The future of loading unshared projects in TurboWarp, forkphorus, the packager, and other third-party sites is *unknown* due to upcoming Scratch API changes that *may* happen at an *unknown* date in the future.
+**Updated May 19, 2022** - The future of loading unshared projects in TurboWarp, forkphorus, the packager, and other third-party sites is *unknown* due to upcoming Scratch API changes that *may* happen at an *unknown* date in the future.
 
-:::info
-Please read this entire section before spreading information about this topic to protect yourself and others from misinformation.
-:::
+### May 19 {#may-19}
+
+<!-- Special developer commentary available in the code comments! -->
+
+Some clarifications and updates:
+
+ - The developer of TurboWarp thinks that securing unshared projects should have happened a decade ago, but late is better than never. <!-- I am glad to see this finally happening. -->
+    - Don't pretend that no one has had their project stolen because they didn't know unshared projects aren't actually private even though the Scratch website says "only you can see it".
+    - Scratch is used primarily by children. Some unshared projects include pictures and videos of themselves, their friends, their family, and any other personal information under the assumption that unshared projects are actually private. The privacy of anyone, and especially children, is very important.
+    - For why TurboWarp never blocked loading unshared projects: [see below](#why-not-fix)
+ - The developers of TurboWarp have no control over what the Scratch Team does to the Scratch API. These changes are being made by the Scratch Team, not by TurboWarp.
+ - TurboWarp's primary purpose has never been to view unshared projects. <!-- Around 38% of unique projects loaded in TurboWarp are unshared, if you were curious. That's a lot, but not a majority. -->
+ - The developer of TurboWarp commits to making sure shared projects will ALWAYS be visible in TurboWarp and forkphorus regardless of any Scratch API changes. <!-- Yes, including the likely mandatory token requirement. --> No promises can be made for unshared projects.
+ - The developer of TurboWarp is looking into solutions for things such as collaborations, but makes no promises.
+ - The API changes have not yet been implemented, so you can still view unshared projects for the time being. We still don't know when the API changes will actually happen.
+ - When the API changes finally happen, it's possible TurboWarp and other mods will be unable to load any projects for a short duration until changes can be implemented. <!-- This has to due to with that likely mandatory token requirement -->
+ <!-- - Any projects that seek to archive *and distribute* all Scratch projects before the API changes happen are almost certainly violating a very large amount of copyright law and are holding themselves liable to be sued into the ground, ignoring the large cost in storing so much data in the first place. The TurboWarp project does not seek to violate copyright laws. -->
+
+### May 10 {#may-10}
 
 We want to make it clear: We know very little solid information about what's going to change. We can only speculate based on a couple bits of published code changes.
 
