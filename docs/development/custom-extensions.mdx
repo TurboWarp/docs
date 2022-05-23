@@ -36,7 +36,7 @@ This page is still a work in progress. You're welcome and encouraged to suggest 
 The example extension URLs found in this document should NOT be used in real projects. There is no guarantee they will continue to work in the future.
 :::
 
-Custom extensions run in a [sandbox](#sandbox) and have limited access to scratch internals. This is indeed very limiting, but custom extensions can still access powerful APIs such as `fetch`, `WebSocket`, and other web APIs.
+Custom extensions run in a [sandbox](#sandbox) and have limited access to scratch internals. This is very limiting, but custom extensions can still access powerful APIs such as `fetch`, `WebSocket`, and other web APIs.
 
 Due to technical limitations of the sandbox, every call to a custom extension will stop the current script for a full frame, regardless of turbo mode or run without screen refresh.
 
@@ -76,6 +76,7 @@ Save this in a file on your computer and use a local HTTP server to load it usin
        - `Scratch.ArgumentType.MATRIX` for a 5x5 matrix (passed in 11101010101... string format)
        - `Scratch.ArgumentType.NOTE` for music notes
      - `defaultValue` is the initial value when the block is created from the library
+   - `disableMonitor` can be set to `true` to force remove the checkbox by a block to create a monitor
 
 ## A more complex example {#strict-equality}
 
@@ -96,16 +97,12 @@ Aside from that, custom extensions are just JavaScript scripts. You can use `con
 
 ### Sandbox {#sandbox}
 
-Custom extensions run in a sandbox that limits what they can access for security reasons.
+Custom extensions run in a sandbox that limits what they can access for security reasons. This "sandbox" is actually a sandboxed invisible `<iframe>` (using the sandbox attribute) and a restricted feature policy. Note that this [differs from regular Scratch](#scratch-changes).
 
-The exact details of this sandbox and how restrictive it is are still being worked out, but here's how it is right now:
-
- - Extensions cannot access VM internals
- - Extensions cannot access any variable that wasn't explicitly passed in as an argument
- - Extensions cannot directly interact with sprites at all
- - Extensions CAN access most web APIs and make arbitrary requests
-
-We know it's restrictive and intend to improve the situation in the future in a way that doesn't impact security of the engine.
+ - Custom extensions cannot access VM internals
+ - Custom extensions cannot access any variable that wasn't explicitly passed in as an argument
+ - Custom extensions cannot directly interact with sprites at all
+ - Custom extensions CAN access most web APIs and open connections to servers (as long as CORS allows it)
 
 ### Backwards Compatibility {#backwards-compatibility}
 
@@ -119,6 +116,14 @@ Extensions should strive to be as backwards compatible as possible. Notably, tha
  - Extensively test your extension on existing projects
 
 Failing to follow these guidelines may effectively corrupt projects.
+
+### Differences compared to Scratch {#scratch-changes}
+
+TurboWarp's custom extensions have a few notable changes compared to custom extensions in Scratch or E羊icques.
+
+ - TurboWarp runs custom extensions in a sandboxed third-party `<iframe>` while Scratch uses a first-party `Worker`. This means the custom extension runs on a separate origin (it can't access turbowarp.org's indexedDB, for example), but it has access to more DOM APIs such as the Gamepad API.
+ <!-- - TurboWarp will convert invalid return values like "undefined", "null", or complex objects to strings before letting scripts interact with the values. This fixes undefined behavior. -->
+ <!-- - TurboWarp will convert errors to strings while Scratch will return a literal undefined. This makes it easier to debug errors. -->
 
 ### Additional resources {#resources}
 
