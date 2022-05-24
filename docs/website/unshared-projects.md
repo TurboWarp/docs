@@ -4,7 +4,7 @@ hide_table_of_contents: true
 sidebar_label: Unshared Projects
 ---
 
-# The future of unshared projects is unknown
+# The end of viewing unshared projects is soon, probably
 
 <!-- 
   I won't link these in the public website because there will be way too much spam if we do that, but here are relevant links:
@@ -12,7 +12,19 @@ sidebar_label: Unshared Projects
   https://github.com/LLK/scratch-www/pull/6773
 -->
 
-**Updated May 19, 2022** - The future of loading unshared projects in TurboWarp, forkphorus, the packager, and other third-party sites is *unknown* due to upcoming Scratch API changes that *may* happen at an *unknown* date in the future.
+**Updated May 23, 2022** - Loading unshared projects in TurboWarp, forkphorus, the packager, and other third-party will *probably* no longer be possible in the near future due to upcoming changes to the Scratch API.
+
+### May 23 {#may-23}
+
+It's looking like the changes will be going live quite soon, although we still don't know exactly when. Could be as early as this week.
+
+Our first priority is making sure that shared projects continue to work without interruption. Work to make sure this is the case is ongoing. Anything else related to unshared projects would happen later *if at all*.
+
+You should assume there will be no workaround for viewing unshared projects until proven otherwise. To avoid interruption, the easiest solution is to simply share your projects. <!-- Considering that projects were effectively public before, this really doesn't change that much. -->
+
+We've seen a couple people suggest something like this so we want to make it clear: **Any site other than scratch.mit.edu that asks you for your Scratch password is a phishing site. You WILL lose your entire account and all of your projects irrecoverably. Legitimate sites will NEVER ask you for your Scratch password. No exceptions.**
+
+<!-- We previously considered making a large archive of all popular unshared projects to avoid interruptions to old links. However, this probably won't happen because of this little thing called "copyright law". -->
 
 ### May 19 {#may-19}
 
@@ -46,7 +58,7 @@ There are a lot of very valid reasons to make unshared projects more secure. Don
 
 Regardless of the change, you can always use the File > Save to your computer and File > Load from your computer options to manually load projects without sharing them on Scratch. Most third-party Scratch tools have an option to load these files instead of a project ID/URL. This is often a better way to do it because it won't have to download all the assets again.
 
-We know that there are a lot of old links and third-party embeds that rely on accessing unshared projects that will never be updated. We're looking into ways to mitigate the impact of the API changes on these.
+We know that there are a lot of old links and third-party embeds that rely on accessing unshared projects that will never be updated. We're looking into ways to mitigate the impact of the API changes on these, but make no promises.
 
 The developers of TurboWarp and forkphorus want to make it clear the viewing unshared projects with these sites was always just a side-effect of how the Scratch API worked and not the intended primary use. Things like the compilers, addons, etc. are still the primary features and won't be going anywhere.
 
