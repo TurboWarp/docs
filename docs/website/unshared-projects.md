@@ -24,7 +24,7 @@ Our suggested workarounds are:
 
 1. Just share the project. The Scratch community is really nice.
 2. Save the project to your computer (File > Save to your computer) and load the downloaded file. Most Scratch-related tools support this.
-<!-- 3. There may be another option that we are unable to talk about depending on the details of the implementation. -->
+3. There **MIGHT** end up being some ways to continue viewing unshared projects with permission of the project's creator but they would involve tools that we can not discuss here.
 
 We've seen a couple people suggest something like this so we want to make it clear: **Any site other than scratch.mit.edu that asks you for your Scratch password is a phishing site. You WILL lose your entire account and all of your projects irrecoverably. Legitimate sites will NEVER ask you for your Scratch password. No exceptions.**
 
