@@ -4,7 +4,7 @@ hide_table_of_contents: true
 sidebar_label: Unshared Projects
 ---
 
-# The end of viewing unshared projects is soon, probably
+# The end of viewing unshared projects is soon
 
 <!-- 
   I won't link these in the public website because there will be way too much spam if we do that, but here are relevant links:
@@ -12,15 +12,19 @@ sidebar_label: Unshared Projects
   https://github.com/LLK/scratch-www/pull/6773
 -->
 
-**Updated May 23, 2022** - Loading unshared projects in TurboWarp, forkphorus, the packager, and other third-party will *probably* no longer be possible in the near future due to upcoming changes to the Scratch API.
+**Updated May 24, 2022** - Loading unshared projects in TurboWarp, forkphorus, the packager, and other third-party will no longer be possible in the near future due to upcoming changes to the Scratch API that we do not have control over.
 
-### May 23 {#may-23}
+### May 23 and 24 {#may-23}
 
-It's looking like the changes will be going live quite soon, although we still don't know exactly when. Could be as early as this week.
+It's looking like the changes will be going live quite soon, although we still don't know exactly when. Could be as early as this week, could be much later too.
 
-Our first priority is making sure that shared projects continue to work without interruption. Work to make sure this is the case is ongoing. Anything else related to unshared projects would happen later *if at all*.
+Our first priority is making sure that shared projects continue to work with minimal interruption. Work to make sure this happens is ongoing. Anything else related to unshared projects would happen later.
 
-You should assume there will be no workaround for viewing unshared projects until proven otherwise. To avoid interruption, the easiest solution is to simply share your projects. <!-- Considering that projects were effectively public before, this really doesn't change that much. -->
+Our suggested workarounds are:
+
+1. Just share the project. The Scratch community is really nice.
+2. Save the project to your computer (File > Save to your computer) and load the downloaded file. Most Scratch-related tools support this.
+<!-- 3. There may be another option that we are unable to talk about depending on the details of the implementation. -->
 
 We've seen a couple people suggest something like this so we want to make it clear: **Any site other than scratch.mit.edu that asks you for your Scratch password is a phishing site. You WILL lose your entire account and all of your projects irrecoverably. Legitimate sites will NEVER ask you for your Scratch password. No exceptions.**
 
