@@ -16,7 +16,7 @@ sidebar_label: Unshared Projects
 
 ### May 25 {#may-25}
 
-It's probably not happening this Thursday (May 26). You probably have at least a week before anything changes.
+It's probably not happening this Thursday (May 26). You probably have at least a week before anything changes, maybe more.
 
 ### May 23 and 24 {#may-23}
 
