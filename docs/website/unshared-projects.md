@@ -12,7 +12,7 @@ sidebar_label: Unshared Projects
   https://github.com/LLK/scratch-www/pull/6773
 -->
 
-**Updated May 27, 2022** - Loading unshared projects in TurboWarp, forkphorus, the packager, and other third-party will **PROBABLY** no longer be possible in the near future due to upcoming changes to the Scratch API that we do not have control over.
+**Updated May 27, 2022** - Loading unshared projects in TurboWarp, forkphorus, the packager, and other third-party will **PROBABLY** no longer be possible at some point in the future due to upcoming changes to the Scratch API that we do not have control over.
 
 :::caution
 Everything here is **speculation** based on open source developments. It's possible (but we think unlikely) that this is all a big misunderstanding.
@@ -21,7 +21,7 @@ We ask that you don't go around saying things that will just scare people like "
 
 **We know nothing about what will happen "by next week" or at any time. Some versions of this document had some wording that could have been read like that. That was not the intended interpretation.**
 
-We will no longer provide time guesses because there is no way for us to predict beyond blind guesses which don't help anyone, and all of our time estimates are consistently misinterpreted anyways.
+We will no longer provide time guesses beyond "in the future" because there is no way for us to predict that isn't just a blind guess.
 :::
 
 ### What's actually happening {#whats-happening}
