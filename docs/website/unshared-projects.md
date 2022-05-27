@@ -19,9 +19,9 @@ sidebar_label: Unshared Projects
 :::caution
 Everything here is **speculation** based on open source developments. It's possible (but we think unlikely) that this is all a big misunderstanding.
 
-We ask that you don't go around saying things that will just scare people like "unshared project have one week left" (which is *not* proven) and instead link to this page which is always updated.
+We ask that you don't go around saying things that will just scare people like "unshared project have one week left" (which is *not* proven) and instead link to this page.
 
-We no longer provide time estimates because there is no way for us to predict that beyond blind guesses.
+We will no longer provide time guesses because there is no way for us to predict that beyond blind guesses which don't help anyone.
 :::
 
 ### What's actually happening {#whats-happening}
@@ -38,11 +38,11 @@ Don't pretend that no one has had their project stolen because they didn't know 
 
 Scratch is used primarily by children. Some unshared projects include pictures and videos of themselves, their friends, their family, and other personal information under the assumption that unshared projects are actually private.
 
-For why TurboWarp never blocked loading unshared projects (and still doesn't): [see below](#why-not-fix) (short version: it wouldn't actually fix anything)
+We've always had the stance that if people want unshared projects to actually be private, they should talk to the Scratch Team, and now they might be listening. For why TurboWarp never blocked (and still doesn't block) loading unshared projects): [see below](#why-not-fix)
 
 ### Workarounds {#workarounds}
 
-Our first priority is making sure that shared projects continue to work with minimal interruption. Work to make sure this happens is ongoing. Anything else related to unshared projects would happen later if at all.
+Our first priority is making sure that shared projects continue to work with minimal interruption. Anything else related to unshared projects would happen later if at all.
 
 We know that there are a lot of old links and third-party embeds that rely on accessing unshared projects that will never be updated. We can't make promises that these links will continue to function without changes, but are looking into it.
 
@@ -51,6 +51,8 @@ Here's our current list of suggested workarounds:
 1. Just share the project on Scratch. The Scratch community is really nice.
 2. Save the project to your computer (File > Save to your computer) and load the downloaded file. Most Scratch-related tools support this.
 3. Previously, we said there might end up being same ways to continue viewing unshared projects with "permission" from the project's creator. We aren't saying that won't or can't happen now, but absolutely do not rely on this until proven otherwise.
+
+Some other workarounds for things like collaborations may or may not be being looked into. No promises can be made.
 
 We've seen a couple people suggest something like this so we want to make it clear: **Any site other than scratch.mit.edu that asks you for your Scratch password is a scam. You WILL lose your entire account and all of your projects irrecoverably. Legitimate sites will NEVER ask you for your Scratch password. No exceptions.**
 
