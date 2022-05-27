@@ -28,11 +28,11 @@ We will no longer provide time guesses beyond "in the future" because there is n
 
 Scratch is changing how project loading works to use a "project token". For unshared projects, this token can only be accessed by the owner of the project.
 
-The most likely reason we can think of for adding this token is to make sure that only people who should be able to access a project can access it. *If* this is the case, it would become impossible to load an unshared project in TurboWarp, forkphorus, scratch-gui, or any other third-party site just by knowing its ID. These changes would also affect your own unshared projects even if you are signed into Scratch in the same browser.
+The most likely reason we can think of for adding this token is to make unshared projects only accessible by their owner. If this is the case, it would become impossible to load an unshared project in TurboWarp, forkphorus, scratch-gui, or any other third-party site just by knowing its ID. These changes would also affect your own unshared projects even if you are signed into Scratch in the same browser.
 
 ### We think this is a good thing {#good-thing}
 
-The developer of TurboWarp thinks that securing unshared projects should have happened a decade ago, but late is better than never.
+The developer of TurboWarp and forkphorus thinks that securing unshared projects should have happened a decade ago, but late is better than never.
 
 Don't pretend that no one has had their project stolen because they didn't know unshared projects aren't actually private even though the Scratch website says "only you can see it".
 
