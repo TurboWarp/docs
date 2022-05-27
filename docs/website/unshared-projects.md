@@ -52,13 +52,13 @@ Here's our current list of suggested workarounds:
 2. Save the project to your computer (File > Save to your computer) and load the downloaded file. Most Scratch-related tools support this.
 3. Previously, we said there might end up being same ways to continue viewing unshared projects with "permission" from the project's creator. We aren't saying that won't or can't happen now, but absolutely do not rely on this until proven otherwise.
 
-Some other workarounds for things like collaborations may or may not be being looked into. No promises can be made.
+Some other workarounds for things like collaborations may or may not be being looked into. No promises can be made. Do keep in mind Scratch is 15 years old while TurboWarp is less than two years old. Collaborations did happen during those 13 years without TurboWarp.
 
 :::caution
-We've seen a couple people suggest something like this so we want to make it clear: **ANY site other than scratch.mit.edu that asks you for your Scratch password is a SCAM. You WILL lose your entire account and all of your projects irrecoverably. Legitimate sites will NEVER ask you for your Scratch password. No exceptions.**
+We've seen a couple people suggesting this so we want to be clear: **ANY site other than scratch.mit.edu that asks you for your Scratch password is a SCAM. You WILL lose your entire account and all of your projects irrecoverably. Legitimate sites will NEVER ask you for your Scratch password. No exceptions.**
 :::
 
-The developers of TurboWarp and forkphorus want to make it clear the viewing unshared projects with these sites was always just a side-effect of how the Scratch API worked and not the intended primary use. Things like the compilers, addons, etc. are still the primary features and won't be going anywhere.
+The developer of TurboWarp and forkphorus wants to make it clear the viewing unshared projects with these sites was always just a side-effect of how the Scratch API worked and not the intended primary use. We won't deny that it was certainly a use, but things like the compilers, addons, etc. are still the primary features and won't be going anywhere.
 
 ## Original page {#original}
 
