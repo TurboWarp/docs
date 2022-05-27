@@ -54,7 +54,9 @@ Here's our current list of suggested workarounds:
 
 Some other workarounds for things like collaborations may or may not be being looked into. No promises can be made.
 
-We've seen a couple people suggest something like this so we want to make it clear: **Any site other than scratch.mit.edu that asks you for your Scratch password is a scam. You WILL lose your entire account and all of your projects irrecoverably. Legitimate sites will NEVER ask you for your Scratch password. No exceptions.**
+:::caution
+We've seen a couple people suggest something like this so we want to make it clear: **ANY site other than scratch.mit.edu that asks you for your Scratch password is a SCAM. You WILL lose your entire account and all of your projects irrecoverably. Legitimate sites will NEVER ask you for your Scratch password. No exceptions.**
+:::
 
 The developers of TurboWarp and forkphorus want to make it clear the viewing unshared projects with these sites was always just a side-effect of how the Scratch API worked and not the intended primary use. Things like the compilers, addons, etc. are still the primary features and won't be going anywhere.
 
