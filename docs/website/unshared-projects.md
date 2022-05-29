@@ -12,7 +12,7 @@ sidebar_label: Unshared Projects
   https://github.com/LLK/scratch-www/pull/6773
 -->
 
-**Updated May 27, 2022** - Loading unshared projects in TurboWarp, forkphorus, the packager, and other third-party will **PROBABLY** no longer be possible at some point in the future due to upcoming changes to the Scratch API that we do not have control over.
+**Updated May 29, 2022** - Loading unshared projects in TurboWarp, forkphorus, the packager, and other third-party will **PROBABLY** no longer be possible at some point in the future due to upcoming changes to the Scratch API that we do not have control over.
 
 :::caution
 This section is **speculation** based on open source developments. It's possible (but we think unlikely) that we've misunderstood something.
@@ -30,13 +30,15 @@ Scratch is changing how project loading works to use a "project token". For unsh
 
 The most likely reason we can think of for adding this token is to make unshared projects only accessible by their owner. If this is the case, it would become impossible to load an unshared project in TurboWarp, forkphorus, scratch-gui, or any other third-party site just by knowing its ID. These changes would also affect your own unshared projects even if you are signed into Scratch in the same browser.
 
-### We think this is a good thing {#good-thing}
+### This is a good thing {#good-thing}
 
-The developer of TurboWarp and forkphorus thinks that securing unshared projects should have happened a decade ago, but late is better than never.
+The developer of TurboWarp and forkphorus thinks that securing unshared projects is a decade overdue.
 
 Don't pretend that no one has had their project stolen because they didn't know unshared projects aren't actually private even though the Scratch website says "only you can see it".
 
 Scratch is used primarily by children. Some unshared projects include pictures and videos of themselves, their friends, their family, and other personal information under the assumption that unshared projects are actually private.
+
+In any other large website, "unshared" or "private" things actually being effectively public would be considered a critical security bug and would usually be eligible for a very large bug bounty. ([example](https://bugs.xdavidhu.me/google/2021/01/11/stealing-your-private-videos-one-frame-at-a-time/))
 
 We've always had the stance that if people want unshared projects to actually be private, they should talk to the Scratch Team, and perhaps enough people did that for the Scratch Team to listen. For why TurboWarp never blocked (and still doesn't block) loading unshared projects: [see section below](#why-not-fix)
 
