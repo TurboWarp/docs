@@ -40,9 +40,11 @@ The GUI is the minimum to build TurboWarp.
 ```bash
 git clone https://github.com/TurboWarp/scratch-gui
 cd scratch-gui
-npm install
+npm ci
 npm start
 ```
+
+We recommend using `npm ci` instead of `npm install`.
 
 http://localhost:8601/
 
@@ -86,12 +88,12 @@ git clone https://github.com/TurboWarp/scratch-vm
 git clone https://github.com/TurboWarp/scratch-render
 
 cd scratch-vm
-npm install
+npm ci
 npm link
 cd ..
 
 cd scratch-render
-npm install
+npm ci
 npm link
 cd ..
 
