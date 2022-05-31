@@ -12,7 +12,7 @@ sidebar_label: Unshared Projects
   https://github.com/LLK/scratch-www/pull/6773
 -->
 
-**Updated May 29, 2022** - Loading unshared projects in TurboWarp, forkphorus, the packager, and other third-party will **PROBABLY** no longer be possible at some point in the future due to upcoming changes to the Scratch API that we do not have control over.
+**Updated May 29, 2022** - Loading unshared projects in TurboWarp, forkphorus, the packager, and other third-party sites will **PROBABLY** no longer be possible at some point in the future due to upcoming changes to the Scratch API that we do not have control over.
 
 :::caution
 This section is **speculation** based on open source developments. It's possible (but we think unlikely) that we've misunderstood something.
