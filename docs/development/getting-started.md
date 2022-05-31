@@ -44,7 +44,7 @@ npm ci
 npm start
 ```
 
-We recommend using `npm ci` instead of `npm install`.
+If the repository has a package-lock.json, we recommend using `npm ci` instead of `npm install`.
 
 http://localhost:8601/
 
