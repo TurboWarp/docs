@@ -25,6 +25,8 @@ A Scratch Team forum post confirms what we've been speculating for a while: thes
 When the changes will happen remains unknown. We will not provide time estimates beyond "at some point in the future". Blind guesses won't help. Angrily venting about your disagreement on the forums also won't help.
 
 There are [good reasons](#good-thing) for this change to be made.
+
+Please direct people to this page instead of just paraphrasing to reduce misinformation.
 :::
 
 ## What's actually happening {#whats-happening}
