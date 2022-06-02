@@ -1,6 +1,5 @@
 ---
 slug: /unshared-projects
-hide_table_of_contents: true
 sidebar_label: Unshared Projects
 ---
 
@@ -14,41 +13,37 @@ sidebar_label: Unshared Projects
 
 **Updated June 1, 2022** - Loading unshared projects in TurboWarp, forkphorus, the packager, and other third-party site will no longer be possible at some point in the future due to upcoming changes to the Scratch API that will make unshared projects actually private.
 
-We think this is a [good thing](#good-thing), but depending your workflow, you may have to find [workarounds](#workarounds).
+We think this is a [good thing](#good-thing) overall, but you may have to find [workarounds](#workarounds) depending on your workflow.
 
-### June 1 Update {#june-1}
+## June 1 Update {#june-1}
 
 :::caution Update
 
 <!-- https://scratch.mit.edu/discuss/topic/602417/?page=55#post-6356705 -->
 A Scratch Team forum post confirms what we've been speculating for a while: these changes will make unshared projects actually private as they should've been from the start. This rest of this page has been updated to reflect this.
 
-When the changes will happen remains unknown. We will not provide time estimates beyond "at some point in the future". Blind guesses won't help anyone.
-
-Angrily venting your disagreement with this change on the forums, similarity, won't help anyone.
+When the changes will happen remains unknown. We will not provide time estimates beyond "at some point in the future". Blind guesses won't help. Angrily venting about your disagreement on the forums also won't help.
 
 There are [good reasons](#good-thing) for this change to be made.
 :::
 
-### What's actually happening {#whats-happening}
+## What's actually happening {#whats-happening}
 
 Scratch is changing how project loading works to use a "project token". For unshared projects, this token can only be accessed by the owner of the project.
 
 Access to this token will be required to download a project, which will make it will be impossible to load an unshared project in TurboWarp, forkphorus, scratch-gui, or any other third-party site by knowing just the project ID. These changes will affect your own unshared projects even if you are signed into Scratch in the same browser.
 
-### This is a good thing {#good-thing}
+## This is a good thing {#good-thing}
 
 Securing unshared projects is a decade overdue.
 
-Don't pretend that no one has had their project stolen because they didn't know unshared projects aren't actually private even though the Scratch website says "only you can see it".
-
-Scratch is used primarily by children. Some unshared projects include pictures and videos of themselves, their friends, their family, and other personal information under the assumption that unshared projects are actually private.
+Don't pretend that no one has had their project stolen because they didn't know unshared projects aren't actually private even though the Scratch website says "only you can see it". Many unshared projects include pictures and videos of children, their friends, their family, and other personal information under the assumption that unshared projects are actually private.
 
 In most other large websites, "unshared" or "private" things actually being effectively public would be considered a critical security bug and would usually be eligible for a very large bug bounty. ([example](https://bugs.xdavidhu.me/google/2021/01/11/stealing-your-private-videos-one-frame-at-a-time/))
 
-We've always had the stance that if people want unshared projects to actually be private, they should talk to the Scratch Team, and perhaps enough people did that for the Scratch Team to listen. For why TurboWarp never blocked (and still doesn't block) loading unshared projects: [see section below](#why-not-fix)
+We've always had the stance that if people want unshared projects to actually be private, they should talk to the Scratch Team, and perhaps enough people did that for the Scratch Team to listen.
 
-### Workarounds {#workarounds}
+## Workarounds {#workarounds}
 
 Our first priority is making sure that shared projects continue to work with minimal interruption. Anything else related to unshared projects will happen later if at all.
 
@@ -57,10 +52,10 @@ You should assume that existing links relying on viewing unshared projects, incl
 Here's our current list of suggested workarounds:
 
 1. The best way to share a project with other people is to share it on the Scratch website. The Scratch community is really nice. This is what Scratch encourages you to do.
-1. If you just want to test your project in a third-party site without sharing it, you can download the project to your computer (File > Save to your computer) and load the downloaded file. Most Scratch-related tools support this.
-1. You may find that you prefer making your projects in TurboWarp rather than Scratch, in which case you can make it in TurboWarp and upload to Scratch later.
+1. If you just want to test your project in a third-party site without sharing it, you can download the project to your computer (File > Save to your computer) and load the downloaded file. Most tools support this.
+1. For embedding Scratch projects into other sites, use [TurboWarp Packager](https://packager.turbowarp.org/), [forkphorus packager](https://forkphorus.github.io/packager/), or [HTMLifier](https://sheeptester.github.io/htmlifier/) ([guide on embedding](/packager/embedding)). These could be an alternative to sharing your projects on Scratch if you find a place to upload the generated files.
 
-More workarounds for things like collaborations may or may not be being looked into, but no promises can be made. Assume that nothing will happen until proven otherwise. Scratch is 15 years old while TurboWarp is less than two years old. Collaborations happened just fine during the 13 years without TurboWarp and will continue just fine.
+More workarounds for things like collaborations may or may not be being looked into, but no promises can be made. Assume that nothing will happen. Scratch is 15 years old while TurboWarp is less than two years old. Collaborations happened just fine during the 13 years without TurboWarp and will continue just fine.
 
 :::caution
 We've seen a couple people suggesting this so we want to be clear: **ANY site other than scratch.mit.edu that asks you for your Scratch password is a SCAM. You WILL lose your entire account and all of your projects irrecoverably. Legitimate sites will NEVER ask you for your Scratch password. <span style={{textDecoration: 'underline'}}>No exceptions</span>.**
