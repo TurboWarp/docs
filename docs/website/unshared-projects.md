@@ -17,8 +17,6 @@ We think this is a [good thing](#good-thing), but you may have to find [workarou
 
 ## June 1 Update {#june-1}
 
-:::caution Update
-
 <!-- https://scratch.mit.edu/discuss/topic/602417/?page=55#post-6356705 -->
 A Scratch Team forum post confirms what we've been speculating for a while: these changes will make unshared projects actually private as they should've been from the start. This rest of this page has been updated to reflect this.
 
@@ -26,8 +24,7 @@ When the changes will happen remains unknown. We will not provide time estimates
 
 There are [good reasons](#good-thing) for this change to be made.
 
-Please direct people to this page instead of just paraphrasing to reduce misinformation.
-:::
+Consider directing people to this page instead of just paraphrasing to reduce confusion.
 
 ## What's actually happening {#whats-happening}
 
