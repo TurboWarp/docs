@@ -35,6 +35,10 @@ When the value of `☁ username` is changed, the value of the `username` block i
 
 When the user pastes some text onto the page using a shortcut like ctrl+v, the text is stored in `☁ pasted`.
 
+## ☁ set clipboard {#set-clipboard}
+
+When the value of `☁ set clipboard` is changed, the page will try to store the text in the user's clipboard. This might not always work.
+
 ## ☁ room id {#room-id}
 
 This is experimental and subject to change.
@@ -44,10 +48,6 @@ When the value of `☁ room id` is changed, the project's ID is changed. For exa
 This affects cloud variables that are set to synchronize with other users. All of these cloud variables will be moved to a completely separate room disconnected from the original. Only people with the same room ID will have variables synced between them. It could take a couple seconds for cloud variables to update as it has to reconnect to the cloud variable server.
 
 This does not affect locally stored cloud variables.
-
-## ☁ set clipboard {#set-clipboard}
-
-When the value of `☁ set clipboard` is changed, the page will try to store the text in the user's clipboard. This might not always work.
 
 ## ☁ eval {#eval}
 
