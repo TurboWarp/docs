@@ -10,3 +10,5 @@ This option turns off the TurboWarp compiler. This is only useful when debugging
 :::warning
 Never change this unless you really know what you're doing.
 :::
+
+You can enable the "Disable compiler in editor" addon to turn the compiler off by default in the editor.
