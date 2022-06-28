@@ -54,7 +54,7 @@ Here's our current list of suggested workarounds:
 1. If you just want to test your project in a third-party site without sharing it, you can download the project to your computer (File > Save to your computer) and load the downloaded file. Most tools support this.
 1. For embedding Scratch projects into other sites without sharing them on Scratch, use [TurboWarp Packager](https://packager.turbowarp.org/), [forkphorus packager](https://forkphorus.github.io/packager/), or [HTMLifier](https://sheeptester.github.io/htmlifier/) ([guide on embedding](/packager/embedding)). These could be an alternative to sharing your projects on Scratch if you find a place to upload the generated files.
 
-More workarounds for things like collaborations may or may not be being looked into, but no promises can be made. Assume that nothing will happen. Scratch is 15 years old while TurboWarp is less than two years old. Collaborations happened just fine during the 13 years without TurboWarp and will continue just fine.
+More workarounds for things like collaborations may or may not be being looked into, but no promises can be made. Assume that nothing will happen. Scratch is 15 years old while TurboWarp is two years old. Collaborations happened just fine during the 13 years without TurboWarp and will continue just fine.
 
 :::caution
 We've seen a couple people suggesting this so we want to be clear: **ANY site other than scratch.mit.edu that asks you for your Scratch password is a SCAM. You WILL lose your entire account and all of your projects irrecoverably. Legitimate sites will NEVER ask you for your Scratch password. <span style={{textDecoration: 'underline'}}>No exceptions</span>.**
