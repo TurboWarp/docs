@@ -26,6 +26,7 @@ module.exports = {
     'website/turbowarp-blocks',
     'website/translate',
     'website/url-parameters',
+    'website/donate',
   ],
   development: [
     {
