@@ -6,7 +6,7 @@ sidebar_label: Offline Packager
 
 # Offline Packager
 
-There are ways to use the [TurboWarp Packager](https://turbowarp.org/) offline which can be useful in various circumstances (for example, perhaps your school blocks turbowarp.org).
+There are ways to use the [TurboWarp Packager](https://packager.turbowarp.org/) offline which can be useful in various circumstances (for example, perhaps your school blocks turbowarp.org).
 
 We aim to update the offline packager about once a month.
 
