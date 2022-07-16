@@ -96,7 +96,7 @@ const b0 = stage.variables["`jEk@4|i[#Fk?(8x)AV.-my variable"];
 return function* () {
   while (true) {
     runtime.ext_scratch3_motion._moveSteps((+b0.value || 0), target);
-    if (thread.warp === 0 || isStuck()) yield;
+    yield;
   }
 };
 ```
