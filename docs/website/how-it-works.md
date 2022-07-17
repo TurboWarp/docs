@@ -98,10 +98,10 @@ The code that does all this is written in JavaScript. Your browser is already do
 TurboWarp's compiler removes all of that overhead by converting scripts directly to JavaScript functions, for example, the above script becomes:
 
 ```js
-const b0 = stage.variables["`jEk@4|i[#Fk?(8x)AV.-my variable"];
+const myVariable = stage.variables["`jEk@4|i[#Fk?(8x)AV.-my variable"];
 return function* () {
   while (true) {
-    runtime.ext_scratch3_motion._moveSteps((+b0.value || 0), target);
+    runtime.ext_scratch3_motion._moveSteps((+myVariable.value || 0), target);
     yield;
   }
 };
@@ -113,9 +113,61 @@ Things to notice:
  - No more looking up inputs manually: they're just JavaScript arguments.
  - No more manual state maintaining: your browser does it all for us.
  - As this is a single JavaScript function, we can't implement live script editing<sup>[\[a\]](#footnote-1)</sup>
- - This JavaScript looks very strange compared to typical human-written JavaScript and runs slower because we have to maintain compatibility with certain strange Scratch behaviors.
+ - This JavaScript looks very strange compared to typical human-written JavaScript and runs slower because we maintain compatibility with edge case Scratch behaviors.
+ - We manually formatted the JavaScript and renamed some variables to make it more readable.
 
 Of course, this is a very simple example where the interpreter overhead is negligible. For the most projects, the interpreter is good enough. It's only when you start executing hundreds of thousands of blocks per frame that the interpreter becomes problematic.
+
+Here's a more complex example: a naive sorting algorithm.
+
+```js
+const length = stage.variables["O;aH~(njYNn}Bl@}!%pS-length-"];
+const list = stage.variables["O;aH~(njYNn}Bl@}!%pS-list-list"];
+const newLength = stage.variables["O;aH~(njYNn}Bl@}!%pS-new-"];
+const i = stage.variables["O;aH~(njYNn}Bl@}!%pS-i-"];
+const temp = stage.variables["O;aH~(njYNn}Bl@}!%pS-tmp-"];
+
+return function fun1_sort () {
+  length.value = list.value.length;
+
+  // repeat until length = 0
+  while (!compareEqual(length.value, 0)) {
+    newLength.value = 0;
+    i.value = 1;
+
+    // repeat length - 1 times
+    for (var counter = ((+length.value || 0) - 1) || 0; counter >= 0.5; counter--) {
+      // change i by 1
+      i.value = ((+i.value || 0) + 1);
+
+      // if item i - 1 of list is greater than item i of list
+      if (
+        compareGreaterThan(
+          list.value[((((i.value || 0) - 1) || 0) | 0) - 1] ?? "",
+          list.value[((i.value || 0) | 0) - 1] ?? ""
+        )
+      ) {
+        // swap item i and i - 1 of list
+        temp.value = listGet(list.value, i.value);
+        listReplace(
+          list,
+          i.value,
+          list.value[((((+i.value || 0) - 1) || 0) | 0) - 1] ?? ""
+        );
+        listReplace(
+          list,
+          (+i.value || 0) - 1,
+          temp.value
+        );
+        newLength.value = i.value;
+      }
+    }
+
+    // set length to new length
+    length.value = newLength.value;
+  }
+};
+```
 
 ----
 
