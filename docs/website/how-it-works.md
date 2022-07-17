@@ -5,7 +5,7 @@ hide_table_of_contents: true
 
 # How TurboWarp runs Scratch projects faster
 
-TurboWarp uses a *compiler* to while Scratch uses an *interpreter*. This allows TurboWarp to run somewhere between 10-200x faster depending on the project, but it makes live script editing impracticable<sup>[\[a\]](#footnote-1)</sup>.
+TurboWarp uses a *compiler* to while Scratch uses an *interpreter*. This allows TurboWarp to run somewhere between 10-200x faster depending on the project, but it makes live script editing [impracticable](#live-script-editing).
 
 export const Test = ({name, id, scratch, tw}) => (
   <tr>
@@ -112,7 +112,7 @@ Things to notice:
  - No more looking up block IDs or opcodes: it's all just JavaScript.
  - No more looking up inputs manually: they're just JavaScript arguments.
  - No more manual state maintaining: your browser does it all for us.
- - As this is a single JavaScript function, we can't implement live script editing<sup>[\[a\]](#footnote-1)</sup>
+ - As this is a single JavaScript function, we can't implement [live script editing](#live-script-editing)
  - This JavaScript looks very strange compared to typical human-written JavaScript and runs slower because we maintain compatibility with edge case Scratch behaviors.
  - We manually formatted the JavaScript and renamed some variables to make it more readable.
 
@@ -126,20 +126,16 @@ const list = stage.variables["O;aH~(njYNn}Bl@}!%pS-list-list"];
 const newLength = stage.variables["O;aH~(njYNn}Bl@}!%pS-new-"];
 const i = stage.variables["O;aH~(njYNn}Bl@}!%pS-i-"];
 const temp = stage.variables["O;aH~(njYNn}Bl@}!%pS-tmp-"];
-
 return function fun1_sort () {
   length.value = list.value.length;
-
   // repeat until length = 0
   while (!compareEqual(length.value, 0)) {
     newLength.value = 0;
     i.value = 1;
-
     // repeat length - 1 times
     for (var counter = ((+length.value || 0) - 1) || 0; counter >= 0.5; counter--) {
       // change i by 1
       i.value = ((+i.value || 0) + 1);
-
       // if item i - 1 of list is greater than item i of list
       if (
         compareGreaterThan(
@@ -162,14 +158,11 @@ return function fun1_sort () {
         newLength.value = i.value;
       }
     }
-
-    // set length to new length
     length.value = newLength.value;
   }
 };
 ```
 
-----
+### Live script editing {#live-script-editing}
 
-<a name="footnote-1" />
-[a] - This means if you start a script, you won't be able to move, remove, or add blocks and have the changes be reflected in real time as they are in Scratch. We believe there are some ways we could make this work, but they will hurt performance or add significant complexity. It's something we want to implement eventually, but not now.
+If you start a script using the compiler, you won't be able to move, remove, or add blocks and have the changes be reflected in real time as they are in Scratch. The script has to be restarted. We believe there are some ways we could make this work, but they will hurt performance or add significant complexity. It's something we want to implement eventually, but not now.
