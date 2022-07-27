@@ -88,14 +88,15 @@ Scratch's interpreter walks an [abstract syntax tree](https://en.wikipedia.org/w
 Whenever Scratch executes any block, it has to do a lot of things:
 
  - It has to look up the block using its ID and which function the block's opcode corresponds to.
- - If the block has any inputs, those are also blocks, and must be run first.
+ - If the block has inputs, those are also blocks, and must go through the same steps as any other block, and so must any deeper inputs.
+ - It manually maintains a stack of blocks, loops, conditions, procedures, etc.
  - Scratch scripts can be yielded, so all of this has to happen in a way that can be paused and resumed later.
- - Scratch scripts can also be changed at any time so it's harder to cache everything ahead of time.
+ - Scratch scripts can be changed while they're running, so caching everything ahead of time is difficult.
  - etc. There is a *lot* going on in Scratch whenever it executes even a single block.
 
-The code that does all this is written in JavaScript. Your browser is already doing a similar variety of tasks whenever it executes any JavaScript code (it's much more complicated, don't worry too much about it), but now the overhead of the interpreter has to be added on top of that.
+The interpreter overhead is added on top of the overhead of JavaScript itself which is not insignificant as this code is very dynamic and can be hard for the JIT to optimize.
 
-TurboWarp's compiler removes all of that overhead by converting scripts directly to JavaScript functions, for example, the above script becomes:
+TurboWarp's compiler removes all of that overhead by converting scripts directly to JavaScript functions. For example, the above script becomes:
 
 ```js
 const myVariable = stage.variables["`jEk@4|i[#Fk?(8x)AV.-my variable"];
@@ -114,9 +115,9 @@ Things to notice:
  - No more manual state maintaining: your browser does it all for us.
  - As this is a single JavaScript function, we can't implement [live script editing](#live-script-editing)
  - This JavaScript looks very strange compared to typical human-written JavaScript and runs slower because we maintain compatibility with edge case Scratch behaviors.
- - We manually formatted the JavaScript and renamed some variables to make it more readable.
+ - We manually formatted the JavaScript and renamed some variables to make it more readable. The real code uses variable names like `b0` and has no formatting.
 
-Of course, this is a very simple example where the interpreter overhead is negligible. For the most projects, the interpreter is good enough. It's only when you start executing hundreds of thousands of blocks per frame that the interpreter becomes problematic.
+Of course, this is a very simple script where the interpreter overhead is negligible. This is the case for most projects. It's only when you start executing thousands of blocks per frame that the interpreter's overhead becomes significant.
 
 Here's a more complex example: a naive sorting algorithm.
 
