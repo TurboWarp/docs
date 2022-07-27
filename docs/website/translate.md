@@ -22,7 +22,7 @@ Create a new discussion if you have questions following this guide: https://gith
 
 ### Request to join {#request-to-join}
  
- - Go to [our Transifex page](https://www.transifex.com/turbowarp/turbowarp/), and click on the blue "Help Translate TurboWarp" button.
+ - Go to [our Transifex page](https://www.transifex.com/turbowarp/turbowarp/), and click on the purple "Join this project" button.
  - You'll probably have to create a Transifex account. Enter your email, a new password, then Sign Up.
  - When asked for your name, enter your username as your name and surname instead of your real name. For "department" and "job title", select "localization" and "individual contributor".
  - On then next step, select "join an existing project".
@@ -30,7 +30,7 @@ Create a new discussion if you have questions following this guide: https://gith
 
 The request will be accepted within a few days.
 
-If the request is rejected, that most likely means that Scratch (and by extension, TurboWarp) does not support that language or that we already have enough translators for that language.
+If the request is rejected, that most likely means that Scratch (and by extension, TurboWarp) does not support that language.
 
 ## Writing translations {#writing-translations}
 
@@ -48,3 +48,4 @@ Our translations are broken up into a different resource for each subproject:
  - `addons.json` is for the [addon settings page](https://turbowarp.org/addons) (not the addons themselves).
  - Translations for the addons themselves are maintained externally. Due to Scratch's policy on browser extensions, we will not link that page here, sorry.
  - `packager.json` is for [the packager](https://packager.turbowarp.org/).
+ - `store-listings.yaml` is for the desktop app's listings in places like the [Microsoft Store](https://apps.microsoft.com/store/detail/9P4DPZGV5ZKL)
