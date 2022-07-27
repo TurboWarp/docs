@@ -49,8 +49,18 @@ https://turbowarp.org/?nocompile
 
 ## Project URL {#project_url}
 
-The `project_url` tells TurboWarp to download project data from an arbitrary URL. Do not use together with a regular project ID.
+The `project_url` option tells TurboWarp to download project data from an arbitrary URL. Do not use together with a regular project ID.
 
 https://turbowarp.org/?project_url=projects.scratch.mit.edu/10128407
 
 This works with any URL that supports CORS, not just projects.scratch.mit.edu. https:// is optional, but it is recommended to not put it for brevity. http:// URLs generally will generally not work for security reasons. Note that the URL needs to be a direct download and must support CORS (`Access-Control-Allow-Origin: *`). [GitHub Pages](https://pages.github.com/) will do this automatically and is known to work well.
+
+## Project token {#token}
+
+The `token` option tells TurboWarp what it should use as the project token when it fetches a project from Scratch. This is an experimental feature related to the [upcoming unshared project changes](/unshared-projects) to possibly allow the creator of a project to share their own unshared projects.
+
+The process to obtain a project token is not described here.
+
+Note that tokens seem to be designed to expire after five minutes as the tokens returned from Scratch contain a timestamp 300 seconds in the future, so links that use this feature should be expected to stop working very quickly.
+
+Some may be uncomfortable putting the project token in the URL because it will be sent to TurboWarp's servers. **We do not log project tokens specified using a URL parameter in any way.** If this promise isn't enough for you, you can also put the token in the fragment or hash part of the URL which won't be sent to our server. For example: `https://turbowarp.org/1#?token=1234567_abcdef...` You can examine the requests made by the website to verify that this token is only ever used to download the project directly from Scratch.
