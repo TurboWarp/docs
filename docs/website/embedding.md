@@ -23,7 +23,7 @@ You should be aware of [upcoming changes to the Scratch API that will prevent th
 
 All [standard URL Parameters](url-parameters.md) are still available. You can use these to control usernames and other things.
 
-There are also some special values only available in embeds:
+There are also some special parameters only available in embeds:
 
 ### Autoplay {#autoplay}
 
@@ -35,6 +35,14 @@ Note that sound blocks may not work until the user interacts with the project (f
 ### Settings button {#settings-button}
 
 You can optionally enable a settings button in embeds with the `settings-button` parameter that opens a similar menu to the "Advanced settings" menu found in the website and editor. For example: https://turbowarp.org/15832807/embed?autoplay&settings-button
+
+### Fullscreen background color {#fullscreen-background}
+
+Outside of fullscreen mode, the embed is transparent so you can style the parent element if you want to change the background color.
+
+In fullscreen mode, the embed will either use a white or an almost black color depending on whether the user's computer is configured to dark mode or not.
+
+To override this behavior, set the `fullscreen-background` parameter to a CSS color value like `black` or `#abc123`. For example: https://turbowarp.org/15832807/embed?fullscreen-background=yellow
 -->
 
 ### Addons {#addons}
