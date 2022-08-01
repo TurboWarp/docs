@@ -31,7 +31,6 @@ Embeds support the `autoplay` parameter, which will automatically hit the green 
 
 Note that sound blocks may not work until the user interacts with the project (for example, by clicking). This is a restriction imposed by browsers. There is nothing TurboWarp can do to work around this.
 
-<!--
 ### Settings button {#settings-button}
 
 You can optionally enable a settings button in embeds with the `settings-button` parameter that opens a similar menu to the "Advanced settings" menu found in the website and editor. For example: https://turbowarp.org/15832807/embed?autoplay&settings-button
@@ -42,8 +41,7 @@ Outside of fullscreen mode, the embed is transparent so you can style the parent
 
 In fullscreen mode, the embed will either use a white or an almost black color depending on whether the user's computer is configured to dark mode or not.
 
-To override this behavior, set the `fullscreen-background` parameter to a CSS color value like `black` or `#abc123`. For example: https://turbowarp.org/15832807/embed?fullscreen-background=yellow
--->
+To override this behavior, set the `fullscreen-background` parameter to a CSS color value like `black` or `rgb(50,90,100)`. You can also use hex colors if you escape the `#` like so: `%23abc123`. For example: https://turbowarp.org/15832807/embed?fullscreen-background=yellow
 
 ### Addons {#addons}
 
