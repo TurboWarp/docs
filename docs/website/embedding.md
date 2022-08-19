@@ -70,7 +70,7 @@ Use the [TurboWarp Packager](https://packager.turbowarp.org/) for more control o
 
 ## Donations {#donations}
 
-If you use a TurboWarp embed in a commercial website, it is in your best interest to [donate](/donate) to us and the projects we rely upon to ensure the embed continues to function smoothly.
+If you use a TurboWarp embed in a commercial website, it is in your best interest to [donate to us and the projects we rely upon](/donate) to ensure the embed continues to function smoothly. ❤️
 
 ## License {#license}
 

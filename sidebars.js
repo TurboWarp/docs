@@ -37,6 +37,7 @@ module.exports = {
   packager: [
     'packager/home',
     'packager/embedding',
+    'packager/commercial-use',
     'packager/dynamic-stage-resize',
     'packager/special-cloud-behaviors',
     'packager/offline',
