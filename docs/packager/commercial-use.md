@@ -11,7 +11,7 @@ hide_table_of_contents: true
 We are not lawyers. This page is not legal advice. If this is important, talk to a real lawyer.
 :::
 
-If you have the rights to all the costumes, sounds, and scripts inside the project you package, you can sell it.
+We won't comment on whether this is a good idea or not, but if you if you have the rights to all the costumes, sounds, and scripts inside the project you package, it is *possible* to sell it.
 
 The open source components of Scratch and TurboWarp used by the packager are available under permissive open source licenses that allow you to use, modify, distribute, and sell your projects with almost no restrictions.
 
