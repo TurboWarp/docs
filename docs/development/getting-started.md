@@ -6,7 +6,7 @@ hide_table_of_contents: true
 
 # Getting Started
 
-These are the instructions for setting up the TurboWarp development environment or making custom builds on your own computer.
+These are the instructions for setting up the TurboWarp GUI development environment or making custom builds on your own computer.
 
 If you just want to use TurboWarp, visit https://turbowarp.org/. You don't need to follow these instructions.
 
@@ -16,6 +16,8 @@ Make sure you have these installed:
 
  - [Git](https://git-scm.com)
  - [Node.js](https://nodejs.org/en/)
+
+The process will work best with Node.js v14.x and npm v6.x. Later versions usually work, but they will be slower and might encounter some issues.
 
 You might have to restart your terminal or computer for them to be fully installed. We assume you have some familiarity with the command line. Note that TurboWarp is a large app that may take a lot of resources to build.
 
@@ -29,13 +31,11 @@ Scratch 3 is organized into a bunch of different repositories. Each implements a
  - scratch-gui implements the outer interface, connects everything together, and is where addons live
  - scratch-paint is the costume editor
  - scratch-parser extracts sb2 and sb3 files
- - scratch-svg-render renders SVG files
+ - scratch-svg-renderer renders SVG files
  - scratch-storage downloads and uploads files
  - scratch-l10n contains translations
 
 ### Building the GUI {#gui}
-
-The GUI is the minimum to build TurboWarp.
 
 ```bash
 git clone https://github.com/TurboWarp/scratch-gui
@@ -46,13 +46,13 @@ npm start
 
 If the repository has a package-lock.json, we recommend using `npm ci` instead of `npm install`.
 
-http://localhost:8601/
+scratch-gui's development playground is accessible on http://localhost:8601/
 
 If you just want to build the GUI, you can stop here.
 
 ### Build {#build}
 
-While `npm start` is useful for development, at some point you'll need to get HTML, JS, etc. out. To do this, run this in the scratch-gui folder:
+While `npm start` is useful for development, at some point you'll need to get files out. To do this, run this in the scratch-gui folder:
 
 ```
 npm run build
