@@ -11,7 +11,7 @@ The open source components of Scratch and TurboWarp used by the packager are ava
 
 If you used costumes, sounds, or scripts created by other people, make sure you have permission from these people to sell their work. Most things you find on the Scratch website are supposed to be available under the [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) license which technically doesn't prevent you from re-selling the work, but it requires attribution and the share-alike clause may have significant license implications on the rest of your project. Project creators can grant you additional permissions on top of the CC BY-SA 2.0 if they choose.
 
-Note that the Scratch trademarks such as the Scratch Logo, Scratch cat, Gobo, Pico, etc. are an exception to the CC BY-SA 2.0 license and you might not have permission to use them.
+Note that the Scratch trademarks such as the Scratch Logo, Scratch cat, Gobo, Pico, etc. are an exception to the CC BY-SA 2.0 license, and you might not have permission to use them.
 
 For more information, see "May I use / remix Scratch support materials, sprites, images, sounds or sample projects I’ve found on the website?" and "Can I sell my Scratch projects?" in https://scratch.mit.edu/faq
 
