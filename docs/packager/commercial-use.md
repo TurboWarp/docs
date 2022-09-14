@@ -5,7 +5,7 @@ hide_table_of_contents: true
 
 # Can I sell projects made with the TurboWarp Packager?
 
-We won't comment on whether this is a good idea or not, but if you if you have the rights to all the costumes, sounds, and scripts inside the project you package, it is *possible* to sell it.
+We won't comment on whether this is a good idea or not, but if you have the rights to all the costumes, sounds, and scripts inside the project you package, it is *possible* to sell it.
 
 The open source components of Scratch and TurboWarp used by the packager are available under permissive open source licenses that allow you to use, modify, distribute, and sell your projects with almost no restrictions. There are no license fees and no royalties. It is also worthwhile to note that these licenses explicitly do not offer a warranty of any kind; the authors are not responsible for damage caused by things like bugs.
 
