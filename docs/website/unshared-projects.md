@@ -3,7 +3,7 @@ slug: /unshared-projects
 sidebar_label: Unshared Projects
 ---
 
-# Unshared projects will be actually private eventually
+# Unshared projects will be actually private eventually (probably)
 
 <!-- 
   I won't link these in the public website because there will be way too much spam if we do that, but here are relevant links:
