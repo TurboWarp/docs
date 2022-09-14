@@ -6,6 +6,8 @@ sidebar_label: Custom Extensions
 
 # Custom Extensions for Developers
 
+TurboWarp supports experimental sandboxed extensions specified via URL parameter, for example: https://turbowarp.org/editor?extension=https://extensions.turbowarp.org/fetch.js. Multiple extensions can be loaded by setting extension multiple times.
+
 import CodeBlock from '@theme/CodeBlock';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
@@ -17,8 +19,6 @@ export const ExampleExtensionLink = ({name}) => {
     <a href={url}>Test this example here.</a> (Do not use this link to make real projects!)
   </p>;
 };
-
-TurboWarp supports experimental sandboxed extensions specified via URL parameter, for example: https://turbowarp.org/editor?extension=https://extensions.turbowarp.org/fetch.js. Multiple extensions can be loaded by setting extension multiple times.
 
 :::warning
 Projects that use custom extensions cannot be uploaded to the Scratch website. The project can only be loaded by a TurboWarp instance with the same extensions already loaded from the URL.
