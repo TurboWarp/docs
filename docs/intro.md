@@ -12,6 +12,6 @@ Related projects:
 
  - [TurboWarp Desktop](https://desktop.turbowarp.org/)
  - [TurboWarp Packager](https://packager.turbowarp.org/)
- - [TurboWarp Unpackager] <link needed; please insert it here>
+ - [TurboWarp Unpackager](https://turbowarp.github.io/unpackager/)
 
 These pages are [open source](https://github.com/TurboWarp/docs). Contributions are welcome.
