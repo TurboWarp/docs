@@ -11,20 +11,20 @@ sidebar_label: Unshared Projects
   https://github.com/LLK/scratch-www/pull/6773
 -->
 
-**Updated June 1, 2022** - Loading unshared projects in TurboWarp, forkphorus, the packager, and other third-party site will no longer be possible **at some point in the future** due to upcoming changes to the Scratch API that will make unshared projects actually private.
+**Updated September 26, 2022** - Loading unshared projects in TurboWarp, forkphorus, the packager, and other third-party site will no longer be possible **at some point in the future** due to upcoming changes to the Scratch API that will make unshared projects actually private.
 
 We think this is a [good thing](#good-thing), but you may have to find [workarounds](#workarounds) depending on your workflow.
 
-## June 1 Update {#june-1}
+## September 26 Update {#september-26}
 
 <!-- https://scratch.mit.edu/discuss/topic/602417/?page=55#post-6356705 -->
-A Scratch Team forum post confirms what we've been speculating for a while: these changes will make unshared projects actually private as they should've been from the start. This rest of this page has been updated to reflect this.
+<!-- https://archive.ph/O7bZN -->
 
-When the changes will happen remains unknown. We will not provide time estimates beyond "at some point in the future". Blind guesses won't help. Angrily venting about your disagreement on the forums also won't help.
+It's taking longer than we expected for the changes to actually be implemented.
 
-There are [good reasons](#good-thing) for this change to be made.
+We're still pretty sure it will happen. We don't know when.
 
-Consider directing people to this page instead of just paraphrasing to reduce confusion.
+We still think this is a [good thing](#good-thing) for the Scratch community as a whole.
 
 ## What's actually happening {#whats-happening}
 
