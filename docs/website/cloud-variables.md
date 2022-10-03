@@ -1,20 +1,19 @@
 ---
 slug: /cloud-variables
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # Cloud Variables
 
-TurboWarp has its own cloud variable server independent of Scratch.
+urboWarp tiene su propio servidor variable en la nube independiente de Scratch.
 
-Some things to keep in mind:
+Algunas cosas a tener en cuenta:
 
- - Anyone can change their username using the "Edit > Change Username" menu. A user who appears to be named "griffpatch" is most likely not the real griffpatch.
- - To reduce abuse, the cloud variable server rejects any username that doesn't belong to an existing Scratch account.
- - Names of Scratch Team members cannot be used due to potential abuse. That includes ScratchCat.
- - The variable length limit has been significantly increased to allows tens of thousands of characters.
- - Cloud variables can still only hold numbers.
- - Cloud variables are reset whenever the server restarts or when no one is in the project for a short period of time, so things like leaderboards won't be saved very long.
- - Cloud variables are disabled when the editor is opened.
- - Do not abuse cloud variables to make unmoderated chat rooms.
- - There are no public cloud variable history logs.
+ - Sí, esto es real Mr.Cha xd.
+ - Las variables de la nube aún pueden contener sólo números.
+ - Las variables de la nube se restablecen cada vez que el servidor se reinicia o cuando no hay nadie en el proyecto durante un corto período de tiempo, por lo que cosas como las tablas de clasificación no se guardarán mucho tiempo.
+ - Las variables de la nube se desactivan cuando se abre el editor.
+ - No abuses de las variables de la nube para hacer salas de chat sin moderación.
+ - No hay registros públicos del historial de variables en la nube.
+
+
