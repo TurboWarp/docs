@@ -3,11 +3,11 @@ slug: /packager/commercial-use
 hide_table_of_contents: true
 ---
 
+# Can I sell projects made with the TurboWarp Packager?
+
 :::note
 We are not lawyers. This page is not legal advice. If this is important, talk to a real lawyer.
 :::
-
-# Can I sell projects made with the TurboWarp Packager?
 
 We won't comment on whether this is a good idea or not, but if you have the rights to all the costumes, sounds, and scripts inside the project you package, it is *possible* to sell it.
 
