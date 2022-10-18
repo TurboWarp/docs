@@ -3,6 +3,10 @@ slug: /packager/commercial-use
 hide_table_of_contents: true
 ---
 
+:::note
+We are not lawyers. This page is not legal advice. If this is important, talk to a real lawyer.
+:::
+
 # Can I sell projects made with the TurboWarp Packager?
 
 We won't comment on whether this is a good idea or not, but if you have the rights to all the costumes, sounds, and scripts inside the project you package, it is *possible* to sell it.
@@ -16,7 +20,3 @@ Note that the Scratch trademarks such as the Scratch Logo, Scratch cat, Gobo, Pi
 For more information, see "May I use / remix Scratch support materials, sprites, images, sounds or sample projects I’ve found on the website?" and "Can I sell my Scratch projects?" in https://scratch.mit.edu/faq
 
 If you make money off of the packager, you are encouraged to [donate to us and the projects we rely upon](/donate). ❤️
-
-:::note
-We are not lawyers. This page is not legal advice. If this is important, talk to a real lawyer.
-:::
