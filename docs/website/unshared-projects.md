@@ -57,7 +57,7 @@ Here's our current list of suggested workarounds:
 More workarounds for things like collaborations may or may not be being looked into, but no promises can be made. Assume that nothing will happen. Scratch is 15 years old while TurboWarp is two years old. Collaborations happened just fine during the 13 years without TurboWarp and will continue just fine.
 
 :::caution
-We've seen a couple people suggesting this so we want to be clear: **ANY site other than scratch.mit.edu that asks you for your Scratch password is a SCAM. You WILL lose your entire account and all of your projects irrecoverably. Legitimate sites will NEVER ask you for your Scratch password. <span style={{textDecoration: 'underline'}}>No exceptions</span>.**
+We've seen a couple people suggesting this so we want to be clear: **ALL sites that ask you for your Scratch password are usually a SCAM, unless the siteis Scratch.mit.edu. You ARE VERY LIKELY to lose your entire account and all of your projects irrecoverably. Legitimate sites will ALMOST NEVER ask you for your Scratch password. <span style={{textDecoration: 'underline'}}>Very few exceptions. </span>.**
 :::
 
 ## Original page {#original}
