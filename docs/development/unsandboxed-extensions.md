@@ -77,3 +77,5 @@ if (!Scratch.extensions.unsandboxed) {
   throw new Error('MyExtension must be run unsandboxed');
 }
 ```
+
+Some older "unsandboxed extensions" worked by calling the extension registration functions directly on `window.vm`. Unsandboxed extensions as described in this document MUST NOT use that API. All extensions must be registered through `Scratch.extensions.register`.
