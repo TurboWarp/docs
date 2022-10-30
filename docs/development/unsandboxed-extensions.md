@@ -38,7 +38,7 @@ Scratch.extensions.register(new MyExtension());
 })(Scratch);
 ```
 
-Using an immediately-invoked-function-expression (IIFE) and 'use strict' prevents your variables from accidentally leaking to the global scope. This will prevent errors when two different extensions try to define a `MyExtension` class. Additionally, each extension gets its own copy of the `Scratch` API, and using an IIFE like this means that the global one can change without affecting each extension's individual version.
+Using an immediately-invoked-function-expression (IIFE) and 'use strict' prevents your variables from accidentally leaking to the global scope. This will prevent errors when two different extensions try to define a `MyExtension` class. Additionally, each extension gets its own copy of the `Scratch` API, and using an IIFE like this means that the global one can change without affecting each extension's individual version. This new format also does not break compatibility with the old way of running extensions, so there really isn't anything to lose.
 
 getInfo() and everything like that is the exact same as sandboxed extensions.
 
