@@ -49,6 +49,11 @@ Because the sandbox no longer exists, unsandboxed extensions have a few notable 
  - Blocks will be run instantly, without the forced 1 frame delay that sandboxed extensions suffer
  - The extension has full access to the VM internals (elaboration below)
 
+They also have some increased responsibilities:
+
+ - Blocks MUST NOT throw errors or return promises that reject. While sandboxed extensions are okay to, unsandboxed extensions that do this will break scripts.
+ - Input and boolean blocks MUST ALWAYS return a valid value. While sandboxed extensions are free to neglect this, unsandboxed extensions that don't return values could break things in unknown ways, including *corrupting projects*.
+
 The big thing is that extensions can access the VM like so:
 
 ```js
