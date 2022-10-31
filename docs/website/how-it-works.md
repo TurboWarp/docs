@@ -3,9 +3,9 @@ slug: /how
 hide_table_of_contents: true
 ---
 
-# How TurboWarp runs Scratch projects faster
+# How TurboWarp runs Scratch projects 10-100x faster
 
-TurboWarp uses a *compiler* to while Scratch uses an *interpreter*. This allows TurboWarp to run somewhere between 10-200x faster depending on the project, but it makes live script editing [impracticable](#live-script-editing).
+TurboWarp uses a *compiler* to while Scratch uses an *interpreter*. This allows TurboWarp to run somewhere between 10-100x faster depending on the project, but it makes live script editing [impracticable](#live-script-editing).
 
 export const Test = ({name, id, scratch, tw}) => (
   <tr>
@@ -94,7 +94,7 @@ Whenever Scratch executes any block, it has to do a lot of things:
  - Scratch scripts can be changed while they're running, so caching everything ahead of time is difficult.
  - etc. There is a *lot* going on in Scratch whenever it executes even a single block.
 
-The interpreter overhead is added on top of the overhead of JavaScript itself which is not insignificant as this code is very dynamic and can be hard for the JIT to optimize.
+The interpreter overhead is added on top of the overhead of JavaScript itself. As this code involes many dynamic types, it can be hard for the JavaScript JIT to optimize it.
 
 TurboWarp's compiler removes all of that overhead by converting scripts directly to JavaScript functions. For example, the above script becomes:
 
@@ -110,16 +110,16 @@ return function* () {
 
 Things to notice:
 
- - No more looking up block IDs or opcodes: it's all just JavaScript.
+ - No more looking up block IDs or opcodes: it's just JavaScript.
  - No more looking up inputs manually: they're just JavaScript arguments.
- - No more manual state maintaining: your browser does it all for us.
- - As this is a single JavaScript function, we can't implement [live script editing](#live-script-editing)
+ - No more manual state maintaining: it's just JavaScript.
+ - As this is a single JavaScript function, we can't easily implement [live script editing](#live-script-editing)
  - This JavaScript looks very strange compared to typical human-written JavaScript and runs slower because we maintain compatibility with edge case Scratch behaviors.
  - We manually formatted the JavaScript and renamed some variables to make it more readable. The real code uses variable names like `b0` and has no formatting.
 
-Of course, this is a very simple script where the interpreter overhead is negligible. This is the case for most projects. It's only when you start executing thousands of blocks per frame that the interpreter's overhead becomes significant.
+Of course, this is a very simple script where the interpreter overhead is negligible, which is the case for most projects. It's only when you execute thousands of blocks per frame that the interpreter's overhead becomes significant.
 
-Here's a more complex example: a naive sorting algorithm.
+Here's a more complex example: a naive sorting algorithm (bubble sort).
 
 ```js
 const length = stage.variables["O;aH~(njYNn}Bl@}!%pS-length-"];
@@ -166,4 +166,4 @@ return function fun1_sort () {
 
 ### Live script editing {#live-script-editing}
 
-If you start a script using the compiler, you won't be able to move, remove, or add blocks and have the changes be reflected in real time as they are in Scratch. The script has to be restarted. We believe there are some ways we could make this work, but they will hurt performance or add significant complexity. It's something we want to implement eventually, but not now.
+If you start a script using the compiler, you won't be able to move, remove, or add blocks and have the changes be reflected in real time as they would be in Scratch. The script has to be restarted for changes to apply. We believe there are some ways we could make this work, but they will hurt performance or add significant complexity. It's something we want to implement eventually, but not yet.
