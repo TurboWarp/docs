@@ -96,6 +96,6 @@ Another way to keep your project safe would be to use an offline editor such as 
 
 This is also a good opportunity to save a backup of your project to somewhere safe on your computer so that you don't have to learn the importance of backups the [hard way](https://ocular.jeffalo.net/search?q=project%20disappeared&sort=relevance).
 
-### What is project ID 1? {#what-is-1}
+### What is the project with the ID 1? {#what-is-1}
 
-Curious people have visited https://turbowarp.org/1 or https://llk.github.io/scratch-gui/develop/#1 and found a strange project. That's just what the Scratch API returns when you ask for the project with ID 1.
+Curious people have visited https://turbowarp.org/1 or https://llk.github.io/scratch-gui/develop/#1 and found a strange project, that's just what the Scratch API returns when you ask for the project with the ID 1.
