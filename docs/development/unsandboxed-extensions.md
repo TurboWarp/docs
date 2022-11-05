@@ -13,6 +13,15 @@ Unsandboxed extensions are an early prototype. This page is a draft.
 
 Test the experiment here: https://experiments.turbowarp.org/unsandboxed-extensions/
 
+## Limitations
+
+Currently, custom extensions loaded from URLs that start with any of these strings will be loaded without the sandbox:
+
+ - `https://extensions.turbowarp.org/`
+ - `http://localhost:8000` (temporarily for testing; will be removed when we figure out how local development will work)
+
+All other extensions will be loaded with the sandbox, same as before.
+
 ## Syntax
 
 We've designed the API to be similar to the existing custom extension API. In fact, your existing custom extension will probably just work as an unsandboxed extension. However, because extensions run in a `<script>` tag rather than an `<iframe>`, we will require that extensions on extensions.turbowarp.org use this format:
