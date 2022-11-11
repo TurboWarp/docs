@@ -21,7 +21,7 @@ Downloading a project from the Scratch API now requires a "project token" that, 
 
 **For collaborations:** The best way to share a project with other people is to share it on the Scratch website. The Scratch community is really nice. This is what Scratch encourages you to do. Scratch is 15 years old while TurboWarp is two years old. Collaborations happened just fine during the 13 years without TurboWarp and will continue just fine.
 
-**For embeds:** To embed unshared projects in other websites, download the project to your computer with the File > Save to your computer menu in the Scratch editor, and use the [TurboWarp Packager](https://packager.turbowarp.org/) to convert this project to a standalone file that can be embedded.
+**For embedding in other websites:** To embed unshared projects in other websites, download the project to your computer with the File > Save to your computer menu in the Scratch editor, and use the [TurboWarp Packager](https://packager.turbowarp.org/) to convert this project to a standalone file that [can be embedded](/packager/embedding).
 
 There is a way to generate a link that include a temporary project token that will work for a few minutes, but we can't mention it here unfortunately.
 
