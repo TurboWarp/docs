@@ -7,6 +7,8 @@ hide_table_of_contents: true
 
 **Updated November 11, 2022.** Unshared projects can no longer be opened on TurboWarp, forkphorus, and other third-party sites due to changes to the Scratch API.
 
+This page answers most of the questions people have. Please read it in full before discussing these changes with other people to avoid misinformation.
+
 You've had nearly 6 months notice to update your workflows, so hopefully you've done so by now.
 
 *This page will be updated a lot over the next few days.*
