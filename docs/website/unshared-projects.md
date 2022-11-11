@@ -13,9 +13,9 @@ You've had nearly 6 months notice to update your workflows, so hopefully you've 
 
 ## What happened {#what-happened}
 
-Downloading a project from the Scratch API now requires a "project token" that, for unshared projects, can only be accessed by the owner of the project. Even if you're signed in to your Scratch account in the same browser, TurboWarp can't access it. These tokens are temporary and expire after a few minutes, so the owner can't just provide the token to keep it visible forever.
+We want to be clear: These changes were not our choice. Downloading a project from the Scratch API now requires a "project token" that, for unshared projects, can only be accessed by the owner of the project. Even if you're signed in to your Scratch account in the same browser, TurboWarp can't access it. These tokens are temporary and expire after a few minutes, so the owner can't just provide the token to keep it visible forever.
 
-We want to be clear: These changes were not our choice.
+Unshared projects were always something that just happened to work and weren't the intended main use of TurboWarp. Things like the compiler and addons have always been the focus and will continue to work for shared projects, projects loaded from files, and the desktop app.
 
 ## Workarounds {#workarounds}
 
