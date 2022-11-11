@@ -15,9 +15,9 @@ Replace `414716080` with the ID of your project. You can change the width and he
 
 TurboWarp's embeds will have a transparent background if the iframe is allowed to be transparent. TurboWarp's embeds will have a fullscreen button if the iframe is allowed to become fullscreen. The example code above enables both of these feature.
 
-## Be careful with unshared projects {#unshared-projects}
+## Unshared projects can't be embedded {#unshared-projects}
 
-You should be aware of [upcoming changes to the Scratch API that will prevent the embed from accessing unshared Scratch projects](/unshared-projects). These changes will affect embeds. To work around this you can make sure the projects you embed are shared or use the [TurboWarp Packager](https://packager.turbowarp.org/) instead.
+Unshared projects [can not be shown in embeds](unshared-projects). Make sure the projects you embed are shared or use the [TurboWarp Packager](https://packager.turbowarp.org/) instead.
 
 ## URL parameters {#url-parameters}
 
