@@ -59,6 +59,8 @@ This works with any URL that supports CORS, not just projects.scratch.mit.edu. h
 
 The `token` option tells TurboWarp what it should use as the project token when it fetches a project from Scratch. This can allow users to work around the [unshared projects changes](unshared-projects).
 
-Note that project tokens expire after around 300 seconds, so links that use this feature should be considered temporary. When sharing a project with a friend, this might be enough, but if you need the link to last longer, you will have to find another option.
+Finding the project token either requires running JavaScript or installing a browser extension, we don't think we can talk about it here unfortunately. We also want to be clear that project tokens are not session tokens. Project tokens are not stored as cookies. Please do not send your session tokens to us.
 
-Some may be uncomfortable putting the project token in the URL because it will be sent to TurboWarp's servers. **We do not log project tokens specified using a URL parameter.** If this promise isn't enough for you, you can also put the token in the fragment or hash part of the URL which won't be sent to our server. For example: `https://turbowarp.org/1#?token=1234567_abcdef...`. Note that some apps remove the fragment part of URLs to make them shorter, which of course breaks the link.
+Note that project tokens expire after around 300 seconds, so links that use this feature should be considered temporary. When sharing a project with a friend, this might be enough, but if you need the link to last longer, you will have to find another option (Remember: File > Save to your computer and File > Load from your computer always work).
+
+Some may be uncomfortable putting the project token in the URL because it will be sent to TurboWarp's servers. We do not log project tokens specified using a URL parameter. If this promise isn't enough for you, you can also put the token in the fragment or hash part of the URL which won't be sent to our server. For example: `https://turbowarp.org/1#?token=1234567_abcdef...`. Note that some apps remove the fragment part of URLs you share which would break the link.
