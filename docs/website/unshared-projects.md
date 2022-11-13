@@ -5,7 +5,7 @@ hide_table_of_contents: true
 
 # Unshared projects are no longer visible
 
-**Updated November 11, 2022.** Unshared projects can no longer be opened on TurboWarp, forkphorus, and other third-party sites due to changes to the Scratch API.
+**Updated November 12, 2022.** Unshared projects can no longer be opened on TurboWarp, forkphorus, and other third-party sites due to changes to the Scratch API.
 
 This page answers most of the questions people have. Please read it in full before discussing these changes with other people to avoid misinformation.
 
@@ -27,7 +27,7 @@ Unshared projects were always something that just happened to work and weren't t
 
 **For collaborations:** The best way to share a project with other people is to share it on the Scratch website. The Scratch community is really nice. This is what Scratch wants you to do. Perhaps you can share certain projects on a second account. It's okay to share unfinished projects. Scratch is 15 years old while TurboWarp is two years old. Collaborations happened just fine during the 13 years without TurboWarp and will continue just fine.
 
-**For embedding in other websites:** To embed unshared projects in other websites, download the project to your computer with the File > Save to your computer menu in the Scratch editor, and use the [TurboWarp Packager](https://packager.turbowarp.org/) to convert this project to a standalone file that [can be embedded](/packager/embedding).
+**For embedding in other websites:** To embed unshared projects in other websites, either Share the project on Scratch or download the project to your computer with the File > Save to your computer menu in the Scratch editor, and use the [TurboWarp Packager](https://packager.turbowarp.org/) to convert this project to a standalone file that [can be embedded](/packager/embedding).
 
 There is a way to generate a link that include a temporary project token that will work for a few minutes, but we can't mention it here due to Scratch policies.
 
