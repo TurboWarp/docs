@@ -13,6 +13,10 @@ You've had nearly 6 months notice to update your workflows, so hopefully you've 
 
 *This page will be updated a lot over the next few days.*
 
+:::warning
+ANY website other than scratch.mit.edu that asks for your Scratch password is a SCAM, even if it supposedly lets you share your unshared projects with other users. You WILL have your account stolen and projects deleted. There are NO EXCEPTIONS to this rule.
+:::
+
 ## What happened {#what-happened}
 
 We want to be clear: These changes were made by the Scratch Team, not the TurboWarp maintainers. TurboWarp is not affiliated with the Scratch Team in any way.
