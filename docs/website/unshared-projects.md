@@ -33,9 +33,9 @@ Unshared projects were always something that just happened to work and weren't t
 
 **For embedding in other websites:** To embed unshared projects in other websites, either Share the project on Scratch or download the project to your computer with the File > Save to your computer menu in the Scratch editor, and use the [TurboWarp Packager](https://packager.turbowarp.org/) to convert this project to a standalone file that [can be embedded](/packager/embedding).
 
-There is a way to generate a link that include a temporary project token that will work for a few minutes, but we can't mention it here due to Scratch policies.
+There are ways to generate links that include a temporary project token that will work for a few minutes using browser tools, but we can't mention them here due to Scratch policies. For more, see [?token=](url-parameters#token).
 
-We might be looking into some more workarounds. If we are, it will be a while before you find out.
+We might be looking into developing more workarounds. If we are, it will be a while before you find out.
 
 ## This is a good thing {#good-thing}
 
