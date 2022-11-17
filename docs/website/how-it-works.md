@@ -94,7 +94,7 @@ Whenever Scratch executes any block, it has to do a lot of things:
  - Scratch scripts can be changed while they're running, so caching everything ahead of time is difficult.
  - etc. There is a *lot* going on in Scratch whenever it executes even a single block.
 
-The interpreter overhead is added on top of the overhead of JavaScript itself. As this code involes many dynamic types, it can be hard for the JavaScript JIT to optimize it.
+The interpreter overhead is added on top of the overhead of JavaScript itself. As this code involves many dynamic types, it can be hard for the JavaScript JIT to optimize it.
 
 TurboWarp's compiler removes all of that overhead by converting scripts directly to JavaScript functions. For example, the above script becomes:
 
