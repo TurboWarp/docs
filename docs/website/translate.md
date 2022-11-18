@@ -17,7 +17,7 @@ We're looking for people to help translate TurboWarp into languages other than E
 
 If you do not meet these requirements, please DO NOT request to join our Transifex. It will do a favor for both of us.
 
-Joining the translation team DOES NOT confer you any extra benefits, clout, or get your name listed on the credits page. ONLY joining if you want to help translate and are *actually* fluent.
+Joining the translation team DOES NOT confer you any extra benefits, clout, or get your name listed on the credits page. ONLY join if you want to help translate and are *actually* fluent.
 
 ## Request to join {#request-to-join}
  
