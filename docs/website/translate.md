@@ -7,20 +7,19 @@ hide_table_of_contents: true
 
 We're looking for people to help translate TurboWarp into languages other than English. If that interests you, read on.
 
-Create a new discussion if you have questions following this guide: https://github.com/TurboWarp/scratch-gui/discussions
+## Requirements {#requirements}
 
-## Joining the translation team {#joining-the-translation-team}
+**We would rather have no translations than bad translations.**
 
-### Requirements {#requirements}
+ - You MUST be **at least 18 years old**. We know this is a significant barrier, but **if you are less than 18 years old, your language skills are not sufficient for us to trust you with translating our project**.
+ - You MUST be fluent in both English and another language. Taking a couple years of a language class in school DOES NOT make you fluent.
+ - You MUST write translations yourself. **NO Google Translate or other machine translators**.
 
- - You are expected to read this entire document.
- - You must be fluent in both English and another language.
- - We want translations written by humans, not by machines. That means **NO Google Translate** or other machine translators.
- - Requests to translate new languages that aren't already supported by Scratch will be rejected.
- - The initial translation for new languages may take a while but future updates will be very quick. Please check occasionally to translate any newly added strings.
- - This won't be a large time commitment. Don't lose sleep over this. We're all volunteers.
+If you do not meet these requirements, please DO NOT request to join our Transifex. It will do a favor for both of us.
 
-### Request to join {#request-to-join}
+Joining the translation team DOES NOT confer you any extra benefits, clout, or get your name listed on the credits page. ONLY joining if you want to help translate and are *actually* fluent.
+
+## Request to join {#request-to-join}
  
  - Go to [our Transifex page](https://www.transifex.com/turbowarp/turbowarp/), and click on the purple "Join this project" button.
  - You'll probably have to create a Transifex account. Enter your email, a new password, then Sign Up.
