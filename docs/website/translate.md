@@ -7,11 +7,15 @@ hide_table_of_contents: true
 
 We're looking for people to help translate TurboWarp into languages other than English. If that interests you, read on.
 
+## Requests to join the translation team are currently on hold {#on-hold}
+
+We've found evidence of widespread use of machine translation and other exceptionally low quality translations. We will clean up this mess before letting anyone else make a bigger mess.
+
 ## Requirements {#requirements}
 
 **We would rather have no translations than bad translations.**
 
- - You MUST be **at least 16 years old**. We know this is a significant barrier, but **if you are less than 16 years old, your language skills are not sufficient for us to trust you with translating our project**.
+ - You MUST be **at least 18 years old**. We know this is a significant barrier, but if you are less than 18 years old, your language skills are not sufficient for us to trust you with translating our project, and creating a Transifex account would violate the Transifex Terms of Service.
  - You MUST be fluent in both English and another language. Taking a couple years of a language class in school DOES NOT make you fluent.
  - You MUST write translations yourself. **NO Google Translate or other machine translators**.
 
