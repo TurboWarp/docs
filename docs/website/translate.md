@@ -11,7 +11,7 @@ We're looking for people to help translate TurboWarp into languages other than E
 
 **We would rather have no translations than bad translations.**
 
- - You MUST be **at least 16 years old**. We know this is a significant barrier, but **if you are less than 18 years old, your language skills are not sufficient for us to trust you with translating our project**.
+ - You MUST be **at least 16 years old**. We know this is a significant barrier, but **if you are less than 16 years old, your language skills are not sufficient for us to trust you with translating our project**.
  - You MUST be fluent in both English and another language. Taking a couple years of a language class in school DOES NOT make you fluent.
  - You MUST write translations yourself. **NO Google Translate or other machine translators**.
 
