@@ -5,7 +5,7 @@ hide_table_of_contents: true
 
 # Interpolation
 
-Interpolation makes projects appear smoother by interpolating movement of sprites between frames.
+Interpolation makes motion animations in projects appear smoother by interpolating movement of sprites between frames. It's basically higher framerate without affecting how fast scripts run.
 
 Interpolation should not be used on:
 
@@ -18,4 +18,4 @@ Interpolation is unlikely to make these projects look smoother because interpola
 
 Interpolation can introduce slight (up to 1/30th of a second) input latency.
 
-Complex projects such as scrolling platformers can experience graphical glitches.
+You may see some graphical glitches on complex projects such as scrolling platformers.
