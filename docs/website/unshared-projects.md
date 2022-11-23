@@ -11,8 +11,6 @@ This page answers most of the questions people have. Please read it in full befo
 
 You've had nearly 6 months notice to update your workflows, so hopefully you've done so by now.
 
-*This page is still being updated frequently.*
-
 :::warning
 ANY website other than scratch.mit.edu that asks for your Scratch password is a SCAM, even if it supposedly lets you share your unshared projects with other users. You WILL have your account stolen and projects deleted. There are NO EXCEPTIONS to this rule.
 :::
