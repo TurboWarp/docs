@@ -5,20 +5,16 @@ hide_table_of_contents: true
 
 # Unsandboxed extensions
 
-A TurboWarp experiment adds support for unsandboxed custom extensions.
-
-:::warning
-Unsandboxed extensions are an early prototype. This page is a draft.
-:::
-
-Test the experiment here: https://experiments.turbowarp.org/unsandboxed-extensions/
+TurboWarp now supports unsandboxed extensions.
 
 ## Limitations
 
-Currently, custom extensions loaded from URLs that start with any of these strings will be loaded without the sandbox:
+Custom extensions from these domains will be run unsandboxed:
 
  - `https://extensions.turbowarp.org/`
- - `http://localhost:8000` (temporarily for testing; will be removed when we figure out how local development will work)
+ - `http://localhost:8000/`
+
+For development, start a local HTTP server on port 8000. If you have Python installed, this can be as simple as `python3 -m http.server`.
 
 All other extensions will be loaded with the sandbox, same as before.
 
@@ -47,7 +43,7 @@ Scratch.extensions.register(new MyExtension());
 })(Scratch);
 ```
 
-Using an immediately-invoked-function-expression (IIFE) and 'use strict' prevents your variables from accidentally leaking to the global scope. This will prevent errors when two different extensions try to define a `MyExtension` class. Additionally, each extension gets its own copy of the `Scratch` API, and using an IIFE like this means that the global one can change without affecting each extension's individual version. This new format also does not break compatibility with the old way of running extensions, so there really isn't anything to lose.
+Using an immediately-invoked-function-expression (IIFE) and `'use strict'` prevents your variables from accidentally leaking to the global scope. This will prevent errors when two different extensions try to define a `MyExtension` class. Additionally, each extension gets its own copy of the `Scratch` API (Theoretically you could have two different VMs on the same page, although this typicaly doesn't happen in practice), and using an IIFE like this means that the global one can change without affecting each extension's individual instance. Also, extensions written like this can still be loaded as sandboxed extensions, so nothing is lost.
 
 getInfo() and everything like that is the exact same as sandboxed extensions.
 
@@ -69,7 +65,7 @@ The big thing is that extensions can access the VM like so:
 const vm = Scratch.vm;
 ```
 
-Theoretically you can also access all of the [globals](./globals), but we'd prefer you stick to `Scratch.*`.
+Theoretically you can also access all of the [globals](./globals), but we'd prefer you stick to `Scratch.*` for portability.
 
 Once you have the vm, you can really do whatever you want. As an example, this would enable turbo mode:
 
@@ -77,7 +73,7 @@ Once you have the vm, you can really do whatever you want. As an example, this w
 vm.setTurboMode(true)
 ```
 
-Dig around a while to find what you're looking for.
+Dig around a while to find what you're looking for. You may find the [scratch-vm source code](https://github.com/TurboWarp/scratch-vm/) or [@turbowarp/types](https://github.com/turboWarp/types) to be useful resources. If you set up the TurboWarp/extensions repository completely, you get type completions for large chunks of the API by default.
 
 If your extension uses APIs only available to unsandboxed extensions, you should add this to the start somewhere to make it easier for people to figure out why the extension doesn't work if it is loaded as a sandboxed extension:
 

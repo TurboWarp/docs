@@ -6,11 +6,13 @@ sidebar_label: Custom Extensions
 
 # Custom Extensions for Developers
 
-:::warning
-We're working on changes to custom extensions to make them more powerful and useful than before. Parts of this documentation are likely to be inaccurate soon. Documentation will be updated when details are finalized.
+TurboWarp supports custom extensions specified via URL parameter.
+
+:::note
+Our documentation about custom extensions in general leaves a lot to be desired, especially for [unsandboxed extensions](unsandboxed-extensions). We know. We're working on it.
 :::
 
-TurboWarp supports experimental sandboxed extensions specified via URL parameter, for example: https://turbowarp.org/editor?extension=https://extensions.turbowarp.org/fetch.js. Multiple extensions can be loaded by setting extension multiple times.
+The easiest way to load a custom extension is to open the add extension library then select "Custom Extension". You can also use the `?extension=` URL parameter.
 
 import CodeBlock from '@theme/CodeBlock';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -126,8 +128,6 @@ Failing to follow these guidelines may effectively corrupt projects.
 TurboWarp's custom extensions have a few notable changes compared to custom extensions in Scratch or E羊icques.
 
  - TurboWarp runs custom extensions in a sandboxed third-party `<iframe>` while Scratch uses a first-party `Worker`. This means the custom extension runs on a separate origin (it can't access turbowarp.org's indexedDB, for example), but it has access to more DOM APIs such as the Gamepad API.
- <!-- - TurboWarp will convert invalid return values like "undefined", "null", or complex objects to strings before letting scripts interact with the values. This fixes undefined behavior. -->
- <!-- - TurboWarp will convert errors to strings while Scratch will return a literal undefined. This makes it easier to debug errors. -->
 
 ### Additional resources {#resources}
 
