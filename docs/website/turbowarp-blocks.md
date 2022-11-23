@@ -7,6 +7,8 @@ hide_table_of_contents: true
 
 TurboWarp has a section of blocks that allows you to use certain features previously not accessible to Scratch projects.
 
+NEW: TurboWarp now supports unsandboxed extensions which add new blocks! https://extensions.turbowarp.org/
+
 ## is compiled? and is TurboWarp? {#is-compiled}
 
 ![is compiled?](./assets/is-compiled.svg)
@@ -17,8 +19,6 @@ These blocks are "compatible" with Scratch because they're actually just modifie
 
 :::warning
 Every block beyond this warning is **incompatible** with Scratch. Projects that use them **can not** be uploaded to the Scratch website. If you don't use any TurboWarp-exclusive blocks, then there should be no issue with making your project in TurboWarp and uploading it to Scratch.
-
-**We do not recommend using these blocks. No new blocks will be added in the forseeable future**.
 :::
 
 ## last key pressed {#last-key-pressed}
