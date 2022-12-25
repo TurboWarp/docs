@@ -5,7 +5,7 @@ hide_table_of_contents: true
 
 # Interpolation
 
-Interpolation makes motion animations in projects appear smoother by interpolating movement of sprites between frames. It's basically higher framerate without affecting how fast scripts run.
+Interpolation makes motion animations in projects appear smoother by interpolating movement of sprites between frames. It's basically a higher framerate without affecting how fast scripts run. It is really affective on projects like Appel and Getting Over It. :)
 
 Interpolation should not be used on:
 
