@@ -20,10 +20,10 @@ All other extensions will be loaded with the sandbox, same as before.
 
 ## Syntax
 
-We've designed the API to be similar to the existing custom extension APIs. In fact, your existing custom extension will probably just work as an unsandboxed extension. However, because extensions run in a `<script>` tag rather than an `<iframe>`, we will require changes for extensions submitted to extensions.turbowarp.org:
+The new unsandboxed extension API is similar to existing custom extension APIs. In fact, your existing custom extension will probably mostly work as an unsandboxed extension even if you make no changes. However, to ensure that your extension integrates properly, we require a certain syntax:
 
 ```js
-// OLD SANDBOXED EXTENSIONS:
+// Old sandboxed extensions (worker or <iframe> sandbox):
 class MyExtension {
   getInfo () {
     return { /* ... */ };
@@ -31,7 +31,7 @@ class MyExtension {
 }
 Scratch.extensions.register(new MyExtension());
 
-// OLD UNSANDBOXED EXTENSIONS:
+// Old unsandboxed extensions or "plugins":
 class MyExtension {
   getInfo () {
     return { /* ... */ };
@@ -43,7 +43,7 @@ class MyExtension {
   window.vm.extensionManager._loadedExtensions.set(extensionInstance.getInfo().id, serviceName)
 })();
 
-// NEW FORMAT:
+// New format for unsandboxed extensions:
 (function(Scratch) {
   'use strict';
   class MyExtension {
@@ -55,16 +55,20 @@ class MyExtension {
 })(Scratch);
 ```
 
-Using an immediately-invoked-function-expression (IIFE) and `'use strict'` prevents your variables from accidentally leaking to the global scope. This will prevent errors when two different extensions try to define a `MyExtension` class. Additionally, each extension gets its own copy of the `Scratch` API (Theoretically you could have two different VMs on the same page, although this typicaly doesn't happen in practice), and using an IIFE like this means that the global one can change without affecting each extension's individual instance. Also, extensions written like this can still be loaded as sandboxed extensions, so nothing is lost.
+Unlike sandboxed extensions, unsandboxed extensions all run with the same global scope. To ensure that extensions don't break each other when they define variables with the same name, we require an [immediately-invoked-function-expression (IIFE)](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) and [`'use strict'`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode).
 
-getInfo() and everything like that is the exact same as sandboxed extensions.
+*All* functions and variables defined by the extension must be defined within the IIFE. Additionally, each extension must make sure to use its own copy of the `Scratch` API, which the IIFE template above will do automatically.
+
+For extensions that were previously sandboxed extensions, this is a backwards compatible change. Extensions written in the new unsandboxed extension format can still work as sandboxed extensions if they don't use any of the advanced features available to unsandboxed extensions.
+
+getInfo() and everything like that is the same as sandboxed extensions.
 
 ## New functionality
 
-Because the sandbox no longer exists, unsandboxed extensions have a few notable advantages:
+By removing the sandbox, unsandboxed extensions have greatly improved capabilities:
 
- - Blocks will be run instantly, without the forced 1 frame delay that sandboxed extensions suffer
- - The extension has full access to the VM internals (elaboration below)
+ - Blocks can run instantly, without the forced 1 frame delay for sandboxed extensions
+ - The extension has full access to nearly all VM internals
 
 They also have some increased responsibilities:
 
