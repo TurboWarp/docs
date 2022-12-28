@@ -20,10 +20,10 @@ All other extensions will be loaded with the sandbox, same as before.
 
 ## Syntax
 
-We've designed the API to be similar to the existing custom extension API. In fact, your existing custom extension will probably just work as an unsandboxed extension. However, because extensions run in a `<script>` tag rather than an `<iframe>`, we will require that extensions on extensions.turbowarp.org use this format:
+We've designed the API to be similar to the existing custom extension APIs. In fact, your existing custom extension will probably just work as an unsandboxed extension. However, because extensions run in a `<script>` tag rather than an `<iframe>`, we will require changes for extensions submitted to extensions.turbowarp.org:
 
 ```js
-// OLD:
+// OLD SANDBOXED EXTENSIONS:
 class MyExtension {
   getInfo () {
     return { /* ... */ };
@@ -31,7 +31,19 @@ class MyExtension {
 }
 Scratch.extensions.register(new MyExtension());
 
-// NEW:
+// OLD UNSANDBOXED EXTENSIONS:
+class MyExtension {
+  getInfo () {
+    return { /* ... */ };
+  }
+}
+(function() {
+  var extensionInstance = new MyExtension(window.vm.extensionManager.runtime)
+  var serviceName = window.vm.extensionManager._registerInternalExtension(extensionInstance)
+  window.vm.extensionManager._loadedExtensions.set(extensionInstance.getInfo().id, serviceName)
+})();
+
+// NEW FORMAT:
 (function(Scratch) {
   'use strict';
   class MyExtension {
