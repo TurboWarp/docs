@@ -57,6 +57,7 @@ Useful addons and their IDs:
  - "File drag and drop" is `drag-drop`
  - "Gamepad support" is `gamepad`
  - "Reverse order of project controls" is `editor-buttons-reverse-order`
+ - "Clone counter" is `clones`
 
 Other addons will have no effect on the embed.
 
