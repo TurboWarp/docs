@@ -99,4 +99,12 @@ if (!Scratch.extensions.unsandboxed) {
 }
 ```
 
+If your extension does not work in the [packager](https://packager.turbowarp.org) for any reason, add this to the start:
+
+```js
+if (typeof scaffolding !== 'undefined') {
+  throw new Error('MyExtension does not support the packager');
+}
+```
+
 Some older "unsandboxed extensions" worked by calling the extension registration functions directly on `window.vm`. Unsandboxed extensions as described in this document MUST NOT use that API. All extensions must be registered through `Scratch.extensions.register`.
