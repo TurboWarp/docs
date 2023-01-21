@@ -52,11 +52,8 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
-          editUrl: 'https://github.com/TurboWarp/docs/edit/master/'
-        },
-        blog: {
-          showReadingTime: true,
-          editUrl: 'https://github.com/TurboWarp/docs/edit/master/blog/',
+          editUrl: 'https://github.com/TurboWarp/docs/edit/master/',
+          breadcrumbs: false,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

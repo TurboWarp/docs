@@ -1,10 +1,8 @@
 :root {
   --ifm-color-primary: #ff4c4c;
-  --ifm-code-font-size: 95%;
   --ifm-font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --ifm-container-width: 800px;
   --ifm-container-width-xl: 1000px;
-  --docusaurus-announcement-bar-height: 0 !important;
 }
 
 h1 {
@@ -13,18 +11,4 @@ h1 {
 
 .pagination-nav {
   display: none;
-}
-
-.hash-link {
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.navbar__title {
-  font-weight: bold;
-}
-
-[class*="backToTopButton_"] {
-  display: none !important;
 }
