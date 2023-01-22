@@ -41,13 +41,11 @@ When the value of `☁ set clipboard` is changed, the page will try to store the
 
 ## ☁ room id {#room-id}
 
-This is experimental and subject to change.
+When the value of `☁ room id` is changed, the project ID used for syncronizing cloud variables is changed. For example, if the the project's original ID is 1234 and `☁ room id` is set to `xyz`, the new project ID will be `1234-xyz`. To reset the project ID to the original ID, set the value of `☁ room id` to an empty string.
 
-When the value of `☁ room id` is changed, the project's ID is changed. For example, if the the project's original ID is 1234 and `☁ room id` is set to `xyz`, the new project ID will be `1234-xyz`. To reset the project ID to the original ID, set the value of `☁ room id` to a blank string.
+This can be useful as a way to add a server selector to cloud variable projects without having to create a bunch of extra variables. Only people with the same room ID will have variables synced between them. It could take a couple seconds for cloud variables to begin working again as it has to reconnect to the cloud variable server.
 
-This affects cloud variables that are set to synchronize with other users. All of these cloud variables will be moved to a completely separate room disconnected from the original. Only people with the same room ID will have variables synced between them. It could take a couple seconds for cloud variables to update as it has to reconnect to the cloud variable server.
-
-This does not affect locally stored cloud variables.
+The room ID does not affect locally stored cloud variables.
 
 ## ☁ eval {#eval}
 
