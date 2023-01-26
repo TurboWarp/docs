@@ -59,7 +59,7 @@ This works with any URL that supports CORS, not just projects.scratch.mit.edu. h
 
 The `token` option tells TurboWarp what it should use as the project token when it fetches a project from Scratch. This can allow users to work around the [unshared projects changes](unshared-projects).
 
-Finding the project token for an unshared project requires using tools that we can't discuss here due to Scratch policies. We want to be clear that project tokens are not session tokens; you won't find a project token in your cookies. Please do not send your session cookies to us. We will give you a hint: project tokens are from api.scratch.mit.edu/projects/id, but including authentication to fetch unshared project metadata is left as an exercise to the reader.
+Finding the project token for an unshared project requires using tools that we can't discuss here due to Scratch policies. We want to be clear that project tokens are not session tokens; you won't find a project token in your cookies. Please do not send your session cookies to us. Project tokens are from the "project_token" field in `https://api.scratch.mit.edu/projects/ID`. Including authentication to fetch unshared project metadata is left as an exercise to the reader.
 
 Note that project tokens expire after around 300 seconds, so links that use this feature are temporary. When sharing a project with a friend, this might be enough, but if you need the link to last longer, you will have to find another option (Remember: File > Save to your computer and File > Load from your computer always work).
 
