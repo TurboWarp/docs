@@ -42,3 +42,42 @@ In most other large websites, "unshared" or "private" things being effectively p
 We've always had the stance that if people want unshared projects to actually be private, they should talk to the Scratch Team. Perhaps enough people did that for the Scratch Team to listen.
 
 <!-- It's impressive that Scratch wasn't sued into the ground for the countless privacy violations this has surely caused -->
+
+## For developers {#developers}
+
+This section is for people developing third-party Scratch-related tools. The new procedure to download projects is to first fetch "project_token" field from `https://api.scratch.mit.edu/projects/ID` then use that to generate the URL `https://projects.scratch.mit.edu/ID?token=TOKEN`
+
+If you're using JavaScript, here's some sample code to get you started. If your code runs in a web browser, you need to replace `https://api.scratch.mit.edu/projects/` with `https://trampoline.turbowarp.org/proxy/projects/` as Scratch doesn't let other websites directly access it from a browser (We make no guarantees about the uptime or service level of trampoline.turbowarp.org; use at your own risk). You may also be interested in [sb-downloader](https://github.com/forkphorus/sb-downloader) for a complete project downloader.
+
+```js
+const getProjectMetadata = async (projectId) => {
+    const response = await fetch(`https://api.scratch.mit.edu/projects/${projectId}`);
+    if (response.status === 404) {
+        throw new Error('The project is unshared or does not exist');
+    }
+    if (!response.ok) {
+        throw new Error(`HTTP error ${response.status} fetching metadata from trampoline`);
+    }
+    const json = await response.json();
+    return json;
+};
+
+const getProjectData = async (projectId) => {
+    const metadata = await getProjectMetadata(projectId);
+    const token = metadata.project_token;
+    const response = await fetch(`https://projects.scratch.mit.edu/${projectId}?token=${token}`);
+    if (!response.ok) {
+        throw new Error(`HTTP error ${response.status} fetching project data`);
+    }
+    const data = await response.arrayBuffer();
+    return data;
+};
+
+getProjectData('60917032').then((data) => {
+    console.log(data);
+}).catch((error) => {
+    console.error(error);
+});
+```
+
+We release this code segment under the [Unlicense](https://unlicense.org/).
