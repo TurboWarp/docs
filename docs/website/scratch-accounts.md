@@ -5,11 +5,13 @@ hide_table_of_contents: true
 
 # Scratch Accounts & TurboWarp
 
-You can't sign in to your Scratch account on TurboWarp. Any site other than scratch.mit.edu that asks for your Scratch password is trying to steal your Scratch account and will delete all of your projects irrecoverably. There are no exceptions to this rule.
+While you can't sign in to your Scratch account on TurboWarp (any website other than scratch.mit.edu that asks you for your Scratch password is a SCAM - no exception), that doesn't mean you can't run your projects or use your username.
 
-To run a project made in Scratch using TurboWarp: Use File > Save to your computer in TurboWarp's editor to save the project to a file on your computer, and use File > Load from your computer in Scratch's editor to upload the file to Scratch.
+**To run a project made in Scratch using TurboWarp**: Use File > Save to your computer in the Scratch editor to save the project to a file on your computer, and use File > Load from your computer in TurboWarp to run your project without sharing it.
 
-To change your username: Use the Edit > Change Username menu.
+**To upload a project made in TurboWarp to Scratch**: Use File > Save to your computer in TurboWarp's editor to save the project to a file on your computer, and use File > Load from your computer in Scratch's editor to upload the file to Scratch.
+
+**To change your username in TurboWarp**: Use the Edit > Change Username menu.
 
 Even if you're signed in to Scratch in another tab, TurboWarp can't access it because browsers prevent websites from being able to access login credentials of other websites (This is how online banking can be safe). We would have to ask you for your Scratch password which would add unfixable security horrors and probably get us blocked by Scratch.
 
