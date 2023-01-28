@@ -6,9 +6,11 @@ hide_table_of_contents: true
 
 # Getting Started
 
-These are the instructions for setting up the TurboWarp GUI development environment or making custom builds on your own computer.
+These are the instructions for setting a development environment for TurboWarp/scratch-gui, scratch-vm, scratch-render, etc. or making custom builds on your own computer.
 
 If you just want to use TurboWarp, visit https://turbowarp.org/. You don't need to follow these instructions.
+
+If you want to develop custom extensions, see [the custom extension documentation](./extensions/introduction.md) instead.
 
 ### Dependencies {#dependencies}
 

@@ -7,7 +7,7 @@ hide_table_of_contents: true
 
 Global variables that can be accessed using the developer console, for convenience.
 
-These cannot be used from custom extensions.
+These can not be used in sandboxed custom extensions and should not be used in unsandboxed custom extensions.
 
 ## `vm`
 

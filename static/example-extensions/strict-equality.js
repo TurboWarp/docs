@@ -1,17 +1,17 @@
 class StrictEqualityExtension {
   getInfo() {
     return {
-      id: 'strictequalityexample', // change this if you make an actual extension!
+      id: 'strictequalityexample',
       name: 'Strict Equality',
       blocks: [
+        // highlight-start
         {
           opcode: 'strictlyEquals',
           blockType: Scratch.BlockType.BOOLEAN,
           text: '[ONE] strictly equals [TWO]',
           arguments: {
             ONE: {
-              type: Scratch.ArgumentType.STRING,
-              defaultValue: 'First value'
+              type: Scratch.ArgumentType.STRING
             },
             TWO: {
               type: Scratch.ArgumentType.STRING,
@@ -19,12 +19,15 @@ class StrictEqualityExtension {
             }
           }
         }
+        // highlight-end
       ]
     };
   }
+
+  // highlight-start
   strictlyEquals(args) {
-    // Note strict equality: Inputs must match exactly: in type, case, etc.
     return args.ONE === args.TWO;
   }
+  // highlight-end
 }
 Scratch.extensions.register(new StrictEqualityExtension());

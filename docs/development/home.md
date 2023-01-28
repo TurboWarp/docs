@@ -6,6 +6,6 @@ hide_table_of_contents: true
 
 # Development
 
-This is the place where documentation about developing TurboWarp goes.
+If you want to build TurboWarp itself (scratch-gui, scratch-vm, etc.), see [Getting Started](./getting-started.md).
 
-Most people should read the [documentation intended to be read by end users](/) instead.
+If you want to build custom extensions, see [Custom Extensions](./extensions/introduction.md)

@@ -1,5 +1,5 @@
 ---
-slug: /development/custom-extensions
+slug: /development/extensions/2
 hide_table_of_contents: true
 sidebar_label: Custom Extensions
 ---
@@ -53,7 +53,7 @@ Custom extensions need to be loaded from a website, for example GitHub Pages. Fo
 The simplest custom extension looks something like this:
 
 <CodeBlock className="language-js" title="example.js">
-  {require("!!raw-loader!@site/static/example-extensions/example.js").default}
+  {require("!!raw-loader!@site/static/example-extensions/hello-world.js").default}
 </CodeBlock>
 <ExampleExtensionLink name="example.js" />
 
@@ -84,32 +84,6 @@ Save this in a file on your computer and use a local HTTP server to load it usin
      - `defaultValue` is the initial value when the block is created from the library
    - `disableMonitor` can be set to `true` to force remove the checkbox by a block to create a monitor
 
-## A more complex example {#strict-equality}
-
-You probably didn't understand a word of the above. Here's a more thorough example that uses arguments:
-
-<CodeBlock className="language-js" title="strict-equality.js">
-  {require("!!raw-loader!@site/static/example-extensions/strict-equality.js").default}
-</CodeBlock>
-<ExampleExtensionLink name="strict-equality.js" />
-
-Remember that you must reload to apply changes.
-
-### Debugging {#debugging}
-
-If for some reason the extension is not appearing, or if the page never finished loading, open up your developer console and search for errors. Chances are there's going to be something in there.
-
-Aside from that, custom extensions are just JavaScript scripts. You can use `console.log` and `debugger` as much as you'd like.
-
-### Sandbox {#sandbox}
-
-Custom extensions run in a sandbox that limits what they can access for security reasons. This "sandbox" is actually a sandboxed invisible `<iframe>` (using the sandbox attribute) and a restricted feature policy. Note that this [differs from regular Scratch](#scratch-changes).
-
- - Custom extensions cannot access VM internals
- - Custom extensions cannot access any variable that wasn't explicitly passed in as an argument
- - Custom extensions cannot directly interact with sprites at all
- - Custom extensions CAN access most web APIs and open connections to servers (as long as CORS allows it)
-
 ### Backwards Compatibility {#backwards-compatibility}
 
 Extensions should strive to be as backwards compatible as possible. Notably, that means:
@@ -122,13 +96,3 @@ Extensions should strive to be as backwards compatible as possible. Notably, tha
  - Extensively test your extension on existing projects
 
 Failing to follow these guidelines may effectively corrupt projects.
-
-### Differences compared to Scratch {#scratch-changes}
-
-TurboWarp's custom extensions have a few notable changes compared to custom extensions in Scratch or E羊icques.
-
- - TurboWarp runs custom extensions in a sandboxed third-party `<iframe>` while Scratch uses a first-party `Worker`. This means the custom extension runs on a separate origin (it can't access turbowarp.org's indexedDB, for example), but it has access to more DOM APIs such as the Gamepad API.
-
-### Additional resources {#resources}
-
- - [Scratch extension documentation](https://github.com/LLK/scratch-vm/blob/develop/docs/extensions.md) (Note: much of this is not relavent to custom/unofficial extensions)
