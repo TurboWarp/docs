@@ -9,9 +9,7 @@ TurboWarp now has primitive support for using [ScratchX](https://scratchx.org) e
 
 ScratchX was a modified version of Scratch 2 created by the Scratch Team that allowed using unofficial extensions. ScratchX no longer functions due to Flash being removed from all major browsers, but the website, scratchx.org, is still accessible.
 
-To use a ScratchX extension in TurboWarp, find the URL to the extension's JavaScript source code and load it as you would any other [custom extension](/development/custom-extensions).
-
-You can find the extension URL on the extension's website or by looking at the scratchx.org URL. For example, the URL to load for `http://scratchx.org/?url=http://khanning.github.io/scratch-weather-extension/weather_extension.js` is `http://khanning.github.io/scratch-weather-extension/weather_extension.js`.
+To use a ScratchX extension in TurboWarp, find the URL to the extension's JavaScript source code and load it as you would any other [custom extension](/development/custom-extensions). In most cases you can copy the extension's scratchx.org link and we will parse the URL for you.
 
 ## Important limitations {#limitations}
 
