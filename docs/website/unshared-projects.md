@@ -51,6 +51,7 @@ If you're using JavaScript, here's some sample code to get you started. If your 
 
 ```js
 const getProjectMetadata = async (projectId) => {
+    // SEE ABOVE: If you're in a web browser, use https://trampoline.turbowarp.org/proxy/projects/ instead.
     const response = await fetch(`https://api.scratch.mit.edu/projects/${projectId}`);
     if (response.status === 404) {
         throw new Error('The project is unshared or does not exist');
