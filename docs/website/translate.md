@@ -7,9 +7,9 @@ hide_table_of_contents: true
 
 We're looking for people to help translate TurboWarp into languages other than English. If that interests you, read on.
 
-## Requests to join the translation team are currently on hold {#on-hold}
+## Requests to join are on hold and will be ignored {#on-hold}
 
-We've found evidence of widespread use of machine translation and other exceptionally low quality translations. We will clean up this mess before letting anyone else make a bigger mess.
+Due to persistent and pervasive translation quality issues, requests to join the translation team sent through Transifex **WILL BE IGNORED**. We apologize for the inconvenience.
 
 ## Requirements {#requirements}
 
