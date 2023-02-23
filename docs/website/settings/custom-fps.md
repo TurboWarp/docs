@@ -11,7 +11,7 @@ A value of 0 is special: It will make the project run at the same framerate as t
 
 A vast majority of projects will not work properly with custom framerates. For these projects, [interpolation](interpolation) should be used instead. For example, consider the following simple script:
 
-![When flag clicked, forever move 1 step](./forever-move-1-step.svg)
+![When flag clicked, forever move 10 step](./forever-move-1-step.svg)
 
 When running at 30 FPS (as Scratch typically does), this script will run 30 times per second so the sprite will move 30 steps per second. However, if the framerate is changed to 60, the script will run 60 times per second so the sprite will move twice as many steps in a second.
 
