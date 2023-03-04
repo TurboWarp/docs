@@ -5,10 +5,7 @@ sidebar_label: Overview
 ---
 
 # Advanced Settings
-
-Advanced settings allow you to reconfigure your project to do things that Scratch normally wouldn't let you do.
-
-Navigate using the sidebar on the left. Look under the "Advanced settings" category.
+https://scratch.mit.edu/users/haraharagisugisu2 ←this is good!
 
 <!-- Migration for old links to https://docs.turbowarp.org/advanced-settings#high-quality-pen -->
 import BrowserOnly from "@docusaurus/BrowserOnly";
