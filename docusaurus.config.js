@@ -1,6 +1,3 @@
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'TurboWarp Documentation',
@@ -47,8 +44,8 @@ module.exports = {
       respectPrefersColorScheme: true,
     },
     prism: {
-      theme: lightCodeTheme,
-      darkTheme: darkCodeTheme,
+      theme: require('./code-themes/light'),
+      darkTheme: require('./code-themes/dark'),
     },
   },
   presets: [
