@@ -1,74 +1,74 @@
 module.exports = {
   plain: {
-    color: "#393A34",
-    backgroundColor: "#f6f8fa",
+    color: "#000000",
+    backgroundColor: "#ffffff",
   },
   styles: [
     {
-      types: ["comment", "prolog", "doctype", "cdata"],
+      types: ['control-flow'],
       style: {
-        color: "#999988",
-        fontStyle: "italic",
-      },
+        color: '#af00db'
+      }
     },
     {
-      types: ["namespace"],
+      types: ['keyword', 'boolean'],
       style: {
-        opacity: 0.7,
-      },
+        color: '#0000ff'
+      }
     },
     {
-      types: ["string", "attr-value"],
+      types: ['class-name', 'constant'],
       style: {
-        color: "#e3116c",
-      },
+        color: '#267f99'
+      }
     },
     {
-      types: ["punctuation", "operator"],
+      types: ['string'],
       style: {
-        color: "#393A34",
-      },
+        color: '#a31515'
+      }
     },
     {
-      types: [
-        "entity",
-        "url",
-        "symbol",
-        "number",
-        "boolean",
-        "variable",
-        "constant",
-        "property",
-        "regex",
-        "inserted",
-      ],
+      types: ['number'],
       style: {
-        color: "#36acaa",
-      },
+        color: '#098658'
+      }
     },
     {
-      types: ["atrule", "keyword", "attr-name", "selector"],
+      types: ['function'],
       style: {
-        color: "#00a4db",
-      },
+        color: '#795e26'
+      }
     },
     {
-      types: ["function", "deleted", "tag"],
+      types: ['comment'],
       style: {
-        color: "#d73a49",
-      },
+        color: '#008000'
+      }
     },
     {
-      types: ["function-variable"],
+      types: ['tag'],
       style: {
-        color: "#6f42c1",
-      },
+        color: '#800000'
+      }
     },
     {
-      types: ["tag", "selector", "keyword"],
+      types: ['attr-name'],
       style: {
-        color: "#00009f",
-      },
+        color: '#e50000'
+      }
     },
-  ],
+    {
+      types: ['attr-value'],
+      style: {
+        color: '#0000ff'
+      }
+    },
+    {
+      types: ['attr-equals'],
+      style: {
+        color: '#000000'
+      }
+    }
+  ]
 };

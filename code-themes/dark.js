@@ -1,63 +1,74 @@
 module.exports = {
   plain: {
-    color: "#F8F8F2",
-    backgroundColor: "#282A36",
+    color: "#d4d4d4",
+    backgroundColor: "#1e1e1e",
   },
   styles: [
     {
-      types: ["prolog", "constant", "builtin"],
+      types: ['control-flow'],
       style: {
-        color: "rgb(189, 147, 249)",
-      },
+        color: '#c586c0'
+      }
     },
     {
-      types: ["inserted", "function"],
+      types: ['keyword', 'boolean'],
       style: {
-        color: "rgb(80, 250, 123)",
-      },
+        color: '#569cd6'
+      }
     },
     {
-      types: ["deleted"],
+      types: ['class-name', 'constant'],
       style: {
-        color: "rgb(255, 85, 85)",
-      },
+        color: '#4ec9b0'
+      }
     },
     {
-      types: ["changed"],
+      types: ['string'],
       style: {
-        color: "rgb(255, 184, 108)",
-      },
+        color: '#ce9178'
+      }
     },
     {
-      types: ["punctuation", "symbol"],
+      types: ['number'],
       style: {
-        color: "rgb(248, 248, 242)",
-      },
+        color: '#b5cea8'
+      }
     },
     {
-      types: ["string", "char", "tag", "selector"],
+      types: ['function'],
       style: {
-        color: "rgb(255, 121, 198)",
-      },
+        color: '#dcdcaa'
+      }
     },
     {
-      types: ["keyword", "variable"],
+      types: ['comment'],
       style: {
-        color: "rgb(189, 147, 249)",
-        fontStyle: "italic",
-      },
+        color: '#6a9955'
+      }
     },
     {
-      types: ["comment"],
+      types: ['tag'],
       style: {
-        color: "rgb(98, 114, 164)",
-      },
+        color: '#569cd6'
+      }
     },
     {
-      types: ["attr-name"],
+      types: ['attr-name'],
       style: {
-        color: "rgb(241, 250, 140)",
-      },
+        color: '#9cdcfe'
+      }
     },
-  ],
+    {
+      types: ['attr-value'],
+      style: {
+        color: '#ce9178'
+      }
+    },
+    {
+      types: ['attr-equals'],
+      style: {
+        color: '#d4d4d4'
+      }
+    }
+  ]
 };
