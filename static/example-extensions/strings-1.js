@@ -1,7 +1,7 @@
 class Strings1 {
   getInfo() {
     return {
-      id: 'stringsexample1',
+      id: 'strings1example',
       name: 'Encoding',
       blocks: [
         {
@@ -39,7 +39,7 @@ class Strings1 {
       // so we have to make sure to convert it to a string first so that
       // it has a toUpperCase() function, otherwise we will get an error!
       // Remember: the argument's "type" is just a suggestion for the
-      // editor; it's not a hard requirement.
+      // editor; it's never enforced.
       return args.TEXT.toString().toUpperCase();
     } else {
       return args.TEXT.toString().toLowerCase();

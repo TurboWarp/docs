@@ -6,21 +6,21 @@ hide_table_of_contents: true
 
 import {ExtensionCode} from './utils.js';
 
-Often you will want your blocks to take something in as an "input", "argument", or "parameter". Let's learn how to do that.
+Often you will want your blocks to take something in as an "input", "argument", or "parameter". Let's learn how to do that with a new example:
 
 <ExtensionCode title="strict-equality">{require("!raw-loader!@site/static/example-extensions/strict-equality.js")}</ExtensionCode>
 
 Save this code to a file called "strict-equality.js" besides "hello-world.js", and load it the same way you loaded the hello world extension. Most of the code is very similar to the hello world extension. Notice that the strictly equals block in this extension will differentiate between "a" and "A" unlike the normal Scratch equals block.
 
-Again, you shouldn't use the extensions listed in this tutorial in actual projects. If you want to use this block in your projects, see the "Utilities" extension on https://extensions.turbowarp.org/.
+(If you want to use this block in your projects, see the "Utilities" extension on https://extensions.turbowarp.org/)
 
 Now let's talk about the arguments.
 
 :::info
-The argument system in general can be a bit finicky. If something's not working, make a bug report.
+The argument system can be a bit finicky. If something's not working, make a bug report.
 :::
 
-To add arguments to a block, you give it an `arguments` property. It should be set to an object that contains other objects. Each property you put in `arguments` corresponds to a single argument. Each one has a name. Conventionally we use all capital letters for the argument name, but you don't need to.
+To add arguments to a block, you give it an `arguments` property. It should be set to an object that contains other objects. Each property you put in `arguments` corresponds to a single argument. Each one has a name. The names can be all capitals or any format you desire.
 
 Here's a summary of the most common properties to set for an argument:
 
@@ -38,7 +38,7 @@ These are the acceptible values for type:
 |Scratch.ArgumentType.NUMBER|Any number|123|
 |Scratch.ArgumentType.BOOLEAN|True or false. This one is special as it tries to prevent users from dropping non-booleans into the input.|true|
 |Scratch.ArgumentType.COLOR|A hex color code|#ff4c4c|
-|Scratch.ArgumentType.ANGLE|A direction input. 90 means to the right. Increases counter clockwise, same as sprite direction.|90, 180|
+|Scratch.ArgumentType.ANGLE|A direction input. 90 means to the right. Increases counter clockwise. Same as sprite direction.|90, 180|
 |Scratch.ArgumentType.MATRIX|A 5x5 matrix represented in binary| 11101010101... |
 |Scratch.ArgumentType.NOTE|A note on a piano keyboard.| ? |
 
@@ -89,12 +89,12 @@ There are some instances where you want the text that is displayed to the user i
 
 Notice that, although the dropdown displays UPPERCASE in the editor, the block actually receives "up".
 
-Dynamic menus, that is, changing menus, will be discussed later.
+Dynamic menus, that is, menus that can change, will be discussed later.
 
 ## Exercises
 
 1. Add a block that does the same thing as the builtin Scratch "join" block. It should take two arguments and produce a new string joining them together. Make sure your block casts the arguments to strings so when someone runs "join ((1 + 2)) ((3 + 4))" they get "37" not "10".
-1. Create a boolean block that takes a number argument and a menu argument with the options "odd" and "even". The block should return whether the given number is either odd or even, as the menus says.
+1. Create a boolean block that takes a number argument and a menu argument with the options "odd" and "even". The block should return whether the given number is either odd or even, as the menu says.
 
 ## Next steps
 

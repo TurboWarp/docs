@@ -34,7 +34,13 @@ If you're not familiar with these, we encourage you to learn them first (your fa
 
 You can use either the web app or the desktop app. We assume you have access to the developer tools in to your browser. Typically this is Right click > Inspect element. In the desktop app it can be shown with Ctrl+Shift+I or on macOS, Option+Command+I. Writing JavaScript without access to the developer tools is extremely painful and not something we can provide help for.
 
-## Development environment
+## Tutorial structure
+
+This tutorial is follows a "fundamentals up" order. We're going to start with the most basic extensions imaginable, ones that are effectively useless, and gradually build up to things that are more useful.
+
+We know that some of you will be eager to start sharing your extensions around, but **we ask that you read through this whole tutorial before publishing your extensions or submitting them to us** so that the extensions you share are actually useful.
+
+## Prepare a development environment
 
 Custom extension development requires a place for TurboWarp to be able to fetch your extension from. Most often this is in the form of a local static HTTP server. There are a lot of options for installing one of these. However, if you have Python installed, you already have one:
 
@@ -45,9 +51,9 @@ python3 -m http.server 8080
 
 This will start a local HTTP server on http://localhost:8080/ in whatever folder you ran that command in.
 
-The port that your server runs on does matter. For now, we suggest using a part *other* than 8000 if possible as this is reserved for unsandboxed extensions. We will talk about this more later, but the short version is that unsandboxed extensions have some extra responsibilities that we won't be talking about until later, so use another port for now.
+For now, we suggest using a part *other* than 8000 if possible. We will talk more about this later, but for now we want the extensions you write to run in the sandbox. We will talk about what this means later, but the short version is that unsandboxed extensions have some extra responsibilities that we don't want to bore you with yet.
 
-Create a file called `hello-world.js` and put any text in it (we will discuss what to put in it later). Make sure you're able to read the contents of the file in your browser by visiting a link like http://localhost:8080/hello-world.js.
+Create a file called `hello-world.js` and put any text in it (we will discuss what to put in it later). Make sure you're able to read the contents of the file in your browser by visiting a link like [http://localhost:8080/hello-world.js](http://localhost:8080/hello-world.js).
 
 ## Next steps
 

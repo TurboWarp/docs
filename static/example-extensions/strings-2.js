@@ -1,7 +1,7 @@
 class Strings2 {
   getInfo() {
     return {
-      id: 'stringsexample2',
+      id: 'strings2example',
       name: 'Encoding',
       blocks: [
         {

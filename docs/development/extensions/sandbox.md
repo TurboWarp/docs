@@ -13,7 +13,7 @@ This difference has a significant impact on your extensions. So far we've primar
 
 ## The sandbox
 
-The sandbox is actually an `<iframe>`. Sandboxed extensions are run in a sandboxed iframe that can't directly access the main page with the editor and the VM; it's stuck in its own isolated world.
+The sandbox is actually an `<iframe>`. Sandboxed extensions are run in a sandboxed cross-origin iframe that can't directly access the main page with the editor and the VM; it's stuck in its own isolated world.
 
 For this reason, sandboxed extensions:
 
@@ -23,10 +23,10 @@ For this reason, sandboxed extensions:
 
 They can, however:
 
- - Access most webiste APIs, as long as CORS allows
- - Access some JavaScript APIs, such as the Gamepad API
+ - Access most public APIs, as long as [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) allows
+ - Access some JavaScript Web APIs, such as the [Gamepad API](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
 
-Something you may want to be aware of is that the reference scratch-vm from the Scratch Team's sandbox code uses a Worker instead of an iframe. Using an iframe instead of a Worker means that your code runs on a third-party origin (improving security) and can access many DOM APIs (improving functionality). While this is not important to know for developing extensions for TurboWarp, it may be good to know if you try to port your extensions to another Scratch-based platform that still the Worker sandbox.
+It is worthwhile to note that in other Scratch mods, the extension sandbox may be a `Worker` instead of an `<iframe>`. We use an `<iframe>` instead as it is more secure (cross origin vs. same origin) and allows access to more Web APIs.
 
 And perhaps the biggest limitation of all is that *every* time a block runs, the script will pause for at least 1 frame, regardless of how simple the script is. It doesn't matter whether run without screen refresh or turbo mode is enabled. It will always wait.
 
@@ -46,9 +46,10 @@ And perhaps most importantly, running a block from an unsandboxed extension is a
 
 ## Exercises
 
-1. Create an extension with a command block that does nothing. Create a new empty project and create a repeat (10) loop that runs this block 4 times. Observe that, even though the blocks don't do anything, it takes more than a second for the loop to complete.
-1. Do the same, but use "set my variable to 0" blocks instead of the block from your extension. Observe that the loop completes instantly. This is how blocks from unsandboxed extensions will behave.
+1. Create a sandboxed extension (same as we've been building so far) with a COMMAND block that does nothing. Create a new empty project and create a repeat (10) loop that runs this block 4 times. Observe that, even though the blocks don't do anything, it takes more than a second for the loop to complete.
+1. In the repeat loop, replace the block from the extension with a "set my variable to 0" blocks instead. Observe that the loop completes instantly. This is how blocks from unsandboxed extensions will behave.
+1. Inside a custom extension, use console.log to output the value of `window.origin`. Compare this to running `window.origin` in your browser's develoepr console on turbowarp.org.
 
 ## Next steps
 
-Let's [write an unsandboxed extension](./unsandboxed).
+Unsandboxed extensions are clearly better, so [let's write one](./unsandboxed).

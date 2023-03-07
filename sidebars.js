@@ -35,7 +35,6 @@ module.exports = {
       label: 'Custom Extension Tutorial',
       collapsed: false,
       items: [
-        'development/extensions/todo',
         'development/extensions/introduction',
         'development/extensions/hello-world',
         'development/extensions/inputs',
@@ -43,6 +42,7 @@ module.exports = {
         'development/extensions/sandbox',
         'development/extensions/unsandboxed',
         'development/extensions/share',
+        'development/extensions/todo',
       ]
     },
     'development/getting-started',

@@ -1,7 +1,7 @@
 class AsyncExtension {
   getInfo() {
     return {
-      id: 'asyncextension',
+      id: 'asyncexample',
       name: 'Async Blocks',
       blocks: [
         {

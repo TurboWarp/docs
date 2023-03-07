@@ -7,14 +7,14 @@ class HelloWorld {
         {
           opcode: 'hello',
           blockType: Scratch.BlockType.REPORTER,
-          text: 'Hello, world!'
+          text: 'Hello!'
         }
       ]
     };
   }
 
   hello() {
-    return 'Hello, world!';
+    return 'World!';
   }
 }
 
