@@ -44,4 +44,4 @@ In the future, we may consider adding more development features.
 
 ## Next steps
 
-Next, let's use our improved development experience to [learn about more of the APIs and options available to extensions](./block-options).
+Next, let's use our improved development experience to [learn about more of the APIs and options available to extensions](./assorted-apis).
