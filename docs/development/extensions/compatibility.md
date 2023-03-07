@@ -8,7 +8,7 @@ Once projects exist using your extension, it is critical that you do not change 
 
 ## What you must never change
 
-**The extension ID must never change.**
+### The extension ID must never change
 
 ```js
   getInfo() {
@@ -22,7 +22,7 @@ Once projects exist using your extension, it is critical that you do not change 
   }
 ```
 
-**Block opcodes and types must never changed.**
+### Block opcodes and types must never changed
 
 Instead, create a new block and mark the old one as `hideFromPalette: true`.
 
@@ -44,7 +44,7 @@ Instead, create a new block and mark the old one as `hideFromPalette: true`.
   }
 ```
 
-**Blocks must never be removed.**
+### Blocks must never be removed
 
 Instead, create a new block and mark the old one as `hideFromPalette: true`.
 
@@ -66,7 +66,7 @@ Instead, create a new block and mark the old one as `hideFromPalette: true`.
   }
 ```
 
-**Argument IDs and types must never change or be removed.**
+### Argument IDs and types must never change or be removed
 
 ```js
   getInfo() {
@@ -91,7 +91,7 @@ Instead, create a new block and mark the old one as `hideFromPalette: true`.
   }
 ```
 
-**Arguments must never be added to existing blocks.**
+### Arguments must never be added to existing blocks
 
 Instead, create a new block and mark the old one as `hideFromPalette: true`. The new block can be reimplemented in terms of the old one:
 
@@ -132,13 +132,34 @@ Instead, create a new block and mark the old one as `hideFromPalette: true`. The
   }
 ```
 
-**Don't significantly change block behavior.**
+### Don't significantly change block behavior
 
 Trivial bug fixes are typically fine, but significant changes may break projects. This is a bit harder to quanitfy; the best way to make sure your changes don't break projects is extensive testing.
+
+## What you can change
+
+You can always change these parts of extension metadata:
+
+ - name
+ - docsURI
+ - color1, color2, color3
+ - icons
+
+You can always change these parts of blocks:
+
+ - text, as long as it contains the same arguments (you can change argument order)
+ - disableMonitor
+ - hideFromPalette
+ - filter
+ - argument defaultValue
+
+For menus, you can always change `text`, but you should not change `value` without careful consideration.
 
 ## What if you need to break compatibility?
 
 There are times where old version of an extension has a fundamental flaw and there is no way for existing projects to continue working with the update. In these instances, you should **create a brand new extension with an entirely new ID** and leave the old version untouched.
+
+For example, if your extension `fetch` needs a complete redesign, you could create a new extension with the ID `fetch2`.
 
 ## Next steps
 

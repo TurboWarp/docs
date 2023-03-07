@@ -24,6 +24,8 @@ docsURI adds a button at the start of the block list that opens a page for peopl
 
 Scratch will automatically show a checkbox to show a variable monitor by REPORTER blocks with no arguments (other people call this a "readout" or "watcher"). To disable this, set disableMonitor to true on the block.
 
+Note that, even if disableMonitor is set, it is still possible for someone to manually create a monitor using a modified (or old) version of the extension or other tools.
+
 <ExtensionCode title="unmonitorable">{require("!raw-loader!@site/static/example-extensions/unmonitorable.js")}</ExtensionCode>
 
 ## Scratch.Cast
