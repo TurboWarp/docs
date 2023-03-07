@@ -20,7 +20,7 @@
             text: 'set turbo mode to [ENABLED]',
             arguments: {
               ENABLED: {
-                type: Scratch.BlockType.STRING,
+                type: Scratch.ArgumentType.STRING,
                 menu: 'ENABLED_MENU'
               }
             }

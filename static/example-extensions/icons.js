@@ -18,6 +18,7 @@ class IconsExample {
       // highlight-end
       blocks: [
         {
+          blockType: Scratch.BlockType.REPORTER,
           opcode: 'defaultIcon',
           text: 'reporter with default icon [INPUT]',
           arguments: {
@@ -28,6 +29,7 @@ class IconsExample {
           }
         },
         {
+          blockType: Scratch.BlockType.COMMAND,
           opcode: 'overridden icon',
           text: 'command with overridden icon [INPUT]',
           // highlight-next-line

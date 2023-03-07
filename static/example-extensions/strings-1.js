@@ -30,7 +30,7 @@ class Strings1 {
         }
       }
       // highlight-end
-    }
+    };
   }
 
   convert (args) {

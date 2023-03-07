@@ -37,7 +37,7 @@ class Strings2 {
           // highlight-end
         }
       }
-    }
+    };
   }
 
   convert (args) {

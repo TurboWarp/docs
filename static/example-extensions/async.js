@@ -49,7 +49,7 @@ class AsyncExtension {
       })
       .catch((error) => {
         console.error(error);
-        return 'Uh oh! Something went wrong.'
+        return 'Uh oh! Something went wrong.';
       });
   }
   // highlight-end

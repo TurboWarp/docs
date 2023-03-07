@@ -144,6 +144,59 @@ If the extension MUST be run unsandboxed, add this around the start:
   }
 ```
 
+## Permissions
+
+Whereas sandboxed extensions are free to use APIs such as fetch() as they please (there is no way for us to prevent that after all), unsandboxed extensions should instead ask for permission before making a request to any website to give the user agency over their privacy with these APIs:
+
+ - Scratch.fetch() - analogous to fetch()
+ - Scratch.canFetch()
+ - Scratch.open() - analogous to open()
+ - Scratch.canOpen()
+ - Scratch.redirect() - analogous to location.href = ...
+ - Scratch.canRedirect()
+
+These methods are all asyncronous and return a Promise as they may involve user interaction. The canXYZ methods return a boolean that resolves with true or false while the others return a Promise that either resolves with an appropriate response or rejects with an error. These APIs are available in both sandboxed and unsandboxed methods.
+
+```js
+// Do not do this:
+const response = await fetch(url);
+// Do this instead:
+const response = await Scratch.fetch(url);
+
+// Do not do this:
+const win = window.open(url);
+// Do this instead:
+const win = await Scratch.open(url);
+
+// Do not do this:
+location.href = url;
+// Do this instead:
+await Scratch.redirect(url);
+
+// Do not do this:
+const ws = new WebSocket(url);
+// Do this instead:
+if (await Scratch.canFetch(url)) {
+  const ws = new WebSocket(url);
+}
+
+// Do not do this:
+const image = new Image(url);
+// Do this instead:
+if (await Scratch.canFetch(url)) {
+  const image = new Image(url);
+}
+
+// Do not do this:
+const audio = new Audio(url);
+// Do this instead:
+if (await Scratch.canFetch(url)) {
+  const audio = new Audio(url);
+}
+```
+
+Technically, this isn't a requirement, but it is mandatory for extensions submitted to extensions.turbowarp.org.
+
 ## Exercises
 
 We encourage you to try to figure these out without the hints. It will make you much more familiar with how VM internals work.

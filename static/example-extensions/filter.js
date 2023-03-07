@@ -25,7 +25,7 @@ class FilterExample {
         },
         {
           opcode: 'none',
-          blockType: Scratch.BlockType.NONE,
+          blockType: Scratch.BlockType.COMMAND,
           text: 'available in NEITHER sprites or the stage',
           // highlight-start
           // NOTE: Use hideFromPalette instead of filter: []

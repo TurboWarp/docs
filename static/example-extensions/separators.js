@@ -5,27 +5,27 @@ class SeparatorExample {
       name: 'Separator Example',
       blocks: [
         {
-          type: Scratch.ArgumentType.COMMAND,
           opcode: 'block1',
+          blockType: Scratch.BlockType.COMMAND,
           text: 'group 1'
         },
         {
-          type: Scratch.ArgumentType.COMMAND,
           opcode: 'block2',
+          blockType: Scratch.BlockType.COMMAND,
           text: 'also group 1',
         },
         // highlight-next-line
         '---',
         {
-          type: Scratch.ArgumentType.COMMAND,
           opcode: 'block3',
+          blockType: Scratch.BlockType.COMMAND,
           text: 'group 2'
         },
         // highlight-next-line
         '---',
         {
-          type: Scratch.ArgumentType.COMMAND,
           opcode: 'block4',
+          blockType: Scratch.BlockType.COMMAND,
           text: 'group 3',
         },
       ]
