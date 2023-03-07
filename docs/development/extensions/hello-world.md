@@ -12,7 +12,7 @@ Here is a simple extension that adds a block that reports "Hello, world!"
 
 <ExtensionCode title="hello-world">{require('!raw-loader!@site/static/example-extensions/hello-world.js')}</ExtensionCode>
 
-The above is a standard component we will use for showing extension code. Make note of the "Try this extension" button by the title -- that link will let you see what this extension does without having to do anything locally. Note that while we will modify these extensions in such a way that you can theoretically safely build projects using them, there will typically be another extension on [extensions.turbowarp.org](https://extensions.turbowarp.org/) that does it better.
+The above is a standard component we will use for showing extension code. Make note of the "Try this extension" button by the title -- that link will let you see what this extension does without having to do anything locally. Note that these extensions are primarily for demonstrating API features; they are not intended to be actually used in projects. There will almost always be another extension on [extensions.turbowarp.org](https://extensions.turbowarp.org/) that does the same thing, but better.
 
 Save this code into the hello-world.js you created earlier so that you can access it using your HTTP server. Now, go to the TurboWarp editor, go to the extension menu, scroll down to and choose the Custom Extension option, then enter the full URL to your HTTP server that gets the extension's source code.
 

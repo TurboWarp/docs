@@ -16,12 +16,12 @@ A common choice is [GitHub Pages](https://pages.github.com/). Note that GitHub's
 
 ## Unsandboxed extensions
 
-You must submit it to the TurboWarp Extension Gallery: https://github.com/TurboWarp/extensions/blob/master/CONTRIBUTING.md
+The best way to share your unsandboxed extension is to submit it to extensions.turbowarp.org: https://github.com/TurboWarp/extensions/blob/master/CONTRIBUTING.md
 
 ## Exercises
 
-1. Explore the TurboWarp Extension Gallery issue tracker: https://github.com/TurboWarp/extensions/issues
+1. Explore the TurboWarp Extension Gallery issue tracker for inspiration: https://github.com/TurboWarp/extensions/issues
 
 ## Next steps
 
-🎉
+[Wrapping up](./wrapping-up).

@@ -36,7 +36,6 @@ export const Spoiler = ({children}) => {
   return (
     <span
       style={{
-        display: 'inline-block',
         transition: '.2s background-color',
         borderRadius: '2px',
         ...(opened ? {

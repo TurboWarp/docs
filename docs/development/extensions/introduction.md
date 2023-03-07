@@ -22,9 +22,13 @@ When people refer to "extensions", there are a few things they could be referrin
 |Sandboxed custom extensions|❌|✅|
 |Unsandboxed custom extensions|✅|✅|
 
-The documentation in these segments refer only to custom extensions. While core extensions have many of the same fundamental ideas, the process of developing them is radically different. See [getting started](../getting-started) as a starting point for building core extensions.
+The documentation in these segments refer only to custom extensions. While core extensions have many of the same fundamental ideas, the process of developing them is significantly different. See [getting started](../getting-started) as a starting point for building core extensions.
 
 We will discuss the difference between sandboxed and unsandboxed extensions at a later time.
+
+## Compatibility
+
+Custom extensions are not compatible with Scratch. Projects made using custom extensions cannot be uploaded to the Scratch website. They can, however, be packaged using the [TurboWarp Packager](https://packager.turbowarp.org/).
 
 ## Prerequisites
 
@@ -51,7 +55,9 @@ python3 -m http.server 8080
 
 This will start a local HTTP server on http://localhost:8080/ in whatever folder you ran that command in.
 
-For now, we suggest using a part *other* than 8000 if possible. We will talk more about this later, but for now we want the extensions you write to run in the sandbox. We will talk about what this means later, but the short version is that unsandboxed extensions have some extra responsibilities that we don't want to bore you with yet.
+We will eventually introduce the official development server, but given that this is a fundamentals-up tutorial, we will start using the most primitive server possible.
+
+For now, you should use a part **other than 8000**. We will talk more about this later, but for now we want the extensions you write to run in the sandbox. We will talk about what this means later.
 
 Create a file called `hello-world.js` and put any text in it (we will discuss what to put in it later). Make sure you're able to read the contents of the file in your browser by visiting a link like [http://localhost:8080/hello-world.js](http://localhost:8080/hello-world.js).
 

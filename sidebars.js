@@ -41,8 +41,11 @@ module.exports = {
         'development/extensions/async',
         'development/extensions/sandbox',
         'development/extensions/unsandboxed',
+        'development/extensions/better-development-server',
+        'development/extensions/assorted-apis',
+        'development/extensions/compatibility',
         'development/extensions/share',
-        'development/extensions/todo',
+        'development/extensions/wrapping-up',
       ]
     },
     'development/getting-started',

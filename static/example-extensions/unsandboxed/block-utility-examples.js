@@ -4,7 +4,6 @@
   if (!Scratch.extensions.unsandboxed) {
     throw new Error('This Turbo Mode example must run unsandboxed');
   }
-  const vm = Scratch.vm;
 
   class BlockUtilityExamples {
     getInfo() {
@@ -28,7 +27,8 @@
               },
               TYPE: {
                 type: Scratch.ArgumentType.STRING,
-                menu: 'TYPE_MENU'
+                menu: 'TYPE_MENU',
+                defaultValue: 'list'
               }
             }
           }
@@ -38,7 +38,7 @@
             acceptReporters: true,
             items: [
               // Value here corresponds to the internal types of the variables
-              // in scratch-vm. And yes, broadcasts are variables.
+              // in scratch-vm. And yes, broadcasts are actually variables.
               // https://github.com/TurboWarp/scratch-vm/blob/20c60193c1c567a65cca87b16d22c51963565a43/src/engine/variable.js#L43-L67
               {
                 text: 'variable',

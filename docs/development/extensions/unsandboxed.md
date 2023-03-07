@@ -154,4 +154,4 @@ We encourage you to try to figure these out without the hints. It will make you 
 
 ## Next steps
 
-Let's suppose you have an extension you want to share with the world. [How do you do that?](./share)
+Depending on the server you've been using, you might be tired of remembering to hard-reload all of the time. Let's learn about [a better development server](./better-development-server).
