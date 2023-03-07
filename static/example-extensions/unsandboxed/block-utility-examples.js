@@ -2,7 +2,7 @@
   'use strict';
 
   if (!Scratch.extensions.unsandboxed) {
-    throw new Error('This Turbo Mode example must run unsandboxed');
+    throw new Error('This Block Utility example must run unsandboxed');
   }
 
   class BlockUtilityExamples {
@@ -67,4 +67,3 @@
   }
   Scratch.extensions.register(new BlockUtilityExamples());
 })(Scratch);
-  
