@@ -3,6 +3,7 @@
   --ifm-font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --ifm-container-width: 800px;
   --ifm-container-width-xl: 1000px;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 215, 0, 0.15);
 }
 
 h1 {
