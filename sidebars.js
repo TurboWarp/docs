@@ -44,6 +44,7 @@ module.exports = {
         'development/extensions/unsandboxed',
         'development/extensions/better-development-server',
         'development/extensions/assorted-apis',
+        'development/extensions/hats',
         'development/extensions/compatibility',
         'development/extensions/share',
         'development/extensions/wrapping-up',

@@ -26,6 +26,8 @@ Once projects exist using your extension, it is critical that you do not change 
 
 Instead, create a new block and mark the old one as `hideFromPalette: true`.
 
+It is generally safe to change blockType from REPORTER to BOOLEAN or from HAT to EVENT, but a conversion of HAT to BOOLEAN would be problematic.
+
 ```js
   getInfo() {
     return {

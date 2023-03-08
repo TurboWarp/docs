@@ -84,4 +84,4 @@ If your extension has a lot of blocks you may want to put some space between gro
 
 ## Next steps
 
-We know a lot of APIs now, but [how do we make sure that the changes we make won't break projects?](./compatibility)
+Next, let's see [how to make blocks like "when I receive" or "when timer greater than.](./hats)

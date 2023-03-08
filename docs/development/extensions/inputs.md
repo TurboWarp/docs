@@ -76,11 +76,11 @@ To make an argument into a menu, set its `type` to `Scratch.ArgumentType.STRING`
 | |Type|Description|
 |:-:|:-:|:-:|
 |items|array|An array of strings. Alternatively, the itemes in the array can be objects containing a `text` and `value` property, both strings.|
-|acceptReporters|boolean|Allows people to drop complex blocks into the menu. You almost always want this to be true.|
+|acceptReporters|boolean|Allows people to drop complex blocks into the menu. You almost always want this to be `true`.|
 
 A field is an argument that can only be set to a fixed string. As an example, see the input in the "stop all" block. An input is an arugment that can be set to any value. As an example, see the steps input in the "move 10 steps" block or the costume input in the "switch costume" block. You almost always want an input, not a field.
 
-While it is possible to set the menu object itself to an array, this is highly discouraged as it implicitly sets `acceptReporters` to false which, again, is almost never what you want. Almost every menu you use should explicitly set `acceptReporters` to true so that it is an "input" instead of a "field". Note that switching an argument from a field to an input or the other way around is a backwards-incompatible change.
+While it is possible to set the menu object itself to an array, this is highly discouraged as it implicitly sets `acceptReporters` to `false` which, again, is almost never what you want. Almost every menu you use should explicitly set `acceptReporters` to true so that it is an "input" instead of a "field". Note that switching an argument from a field to an input or the other way around is a backwards-incompatible change. The only exception to this rule is when using [event-based hat blocks](./hats), which will be discussed much later.
 
 The default value will typically be the first item in the menu's item list. The item list must not be empty.
 

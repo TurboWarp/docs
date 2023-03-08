@@ -14,5 +14,10 @@ Thank you for reading this far.
 
 ## Remaining topics to include in the future
 
- - Hat blocks: event-based and edge activated
  - Dynamic menus
+ - Block utility stack frames
+
+## Things that are not supported yet
+
+ - Buttons
+ - C-shape blocks such as "if", "if else", "repeat"
