@@ -144,34 +144,23 @@ If the extension MUST be run unsandboxed, add this around the start:
   }
 ```
 
-## Permissions
+## Permissioned APIs
 
-Whereas sandboxed extensions are free to use APIs such as fetch() as they please (there is no way for us to prevent that after all), unsandboxed extensions should instead ask for permission before making a request to any website to give the user agency over their privacy with these APIs:
+Whereas sandboxed extensions are free to use APIs such as fetch() as they please, unsandboxed extensions should instead ask for permission before making a request to any remote service. This gives the user control over their privacy. While there is no technical measures enforcing this at runtime, it is required for all extensions on [extensions.turbowarp.org](https://extensions.turbowarp.org).
 
- - Scratch.fetch() - analogous to fetch()
- - Scratch.canFetch()
- - Scratch.open() - analogous to open()
- - Scratch.canOpen()
- - Scratch.redirect() - analogous to location.href = ...
- - Scratch.canRedirect()
+Requests to some popular services such as [GitHub Pages](https://pages.github.com/) or [GitLab Pages](https://about.gitlab.com/stages-devops-lifecycle/pages/) may be automatically approved, while requests to other random websites may show a prompt to the user. You shouldn't make any assumptions about this, and your code needs to ensure that it can gracefully handle the user rejecting the prompt (the extension should behave the same as it does when there is no internet connection).
 
-These methods are all asynchronous and return a Promise as they may involve user interaction. The canXYZ methods return a boolean that resolves with true or false while the others return a Promise that either resolves with an appropriate response or rejects with an error. These APIs are available in both sandboxed and unsandboxed methods.
+These permissioned APIs will also automatically prevent projects from running arbitrary JavaScript by attempting to, for example, redirect to a `javascript:` URL.
+
+### Fetching APIs, WebSockets, images, audio files, etc.
+
+Use `Scratch.fetch(url)` instead of `fetch(url)`. Check `await Scratch.canFetch(url)` before using other APIs that connect to remote websites.
 
 ```js
 // Do not do this:
 const response = await fetch(url);
 // Do this instead:
 const response = await Scratch.fetch(url);
-
-// Do not do this:
-const win = window.open(url);
-// Do this instead:
-const win = await Scratch.open(url);
-
-// Do not do this:
-location.href = url;
-// Do this instead:
-await Scratch.redirect(url);
 
 // Do not do this:
 const ws = new WebSocket(url);
@@ -181,10 +170,12 @@ if (await Scratch.canFetch(url)) {
 }
 
 // Do not do this:
-const image = new Image(url);
+const image = new Image();
+image.src = src;
 // Do this instead:
 if (await Scratch.canFetch(url)) {
-  const image = new Image(url);
+  const image = new Image();
+  image.src = src;
 }
 
 // Do not do this:
@@ -195,7 +186,32 @@ if (await Scratch.canFetch(url)) {
 }
 ```
 
-Technically, this isn't a requirement, but it is mandatory for extensions submitted to extensions.turbowarp.org.
+### Opening new tabs or windows
+
+Use `Scratch.openWindow(url)` instead of `window.open(url)`. `Scratch.openWindow` always sets the target to `"_blank"` to open a new tab or window. If you can't use `Scratch.openWindow(url)` for some reason, check `await Scratch.canOpenWindow(url)` before calling `window.open(url)`.
+
+```js
+// Do not do this:
+const win = window.open(url);
+// Do this instead:
+const win = await Scratch.openWindow(url);
+
+// Do not do this:
+const win = window.open(url, '_blank', 'width=400,height=400')
+// Do this instead:
+const win = await Scratch.openWindow(url, 'width=400,height=400');
+```
+
+### Redirecting the current page
+
+Use `Scratch.redirect(url)` instead of `location.href = url`. If you can't use `Scratch.redirect(url)`, check `await Scratch.canRedirect(url)` before running `location.href = url`.
+
+```js
+// Do not do this:
+location.href = url;
+// Do this instead:
+await Scratch.redirect(url);
+```
 
 ## Exercises
 
