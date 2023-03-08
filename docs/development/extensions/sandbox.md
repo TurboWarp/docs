@@ -28,7 +28,7 @@ They can, however:
 
 It is worthwhile to note that in other Scratch mods, the extension sandbox may be a `Worker` instead of an `<iframe>`. We use an `<iframe>` instead as it is more secure (cross origin vs. same origin) and allows access to more Web APIs.
 
-And perhaps the biggest limitation of all is that *every* time a block runs, the script will pause for at least 1 frame, regardless of how simple the script is. It doesn't matter whether run without screen refresh or turbo mode is enabled. It will always wait.
+And perhaps the biggest limitation of all is that *every* time a block runs, the script will pause for at least 1 frame, regardless of how simple the script is. It doesn't matter whether "run without screen refresh" or turbo mode is enabled. It will always wait.
 
 This is a very significant limitation and it makes custom extensions almost useless, which is why we introduced support for...
 
@@ -47,8 +47,8 @@ And perhaps most importantly, running a block from an unsandboxed extension is a
 ## Exercises
 
 1. Create a sandboxed extension (same as we've been building so far) with a COMMAND block that does nothing. Create a new empty project and create a repeat (10) loop that runs this block 4 times. Observe that, even though the blocks don't do anything, it takes more than a second for the loop to complete.
-1. In the repeat loop, replace the block from the extension with a "set my variable to 0" blocks instead. Observe that the loop completes instantly. This is how blocks from unsandboxed extensions will behave.
-1. Inside a custom extension, use console.log to output the value of `window.origin`. Compare this to running `window.origin` in your browser's develoepr console on turbowarp.org.
+1. In the repeat loop, replace the block from the extension with a "set my variable to 0" block instead. Observe that the loop completes instantly. This is how blocks from unsandboxed extensions will behave.
+1. Inside a custom extension, use console.log to output the value of `window.origin`. Compare this to running `window.origin` in your browser's developer console on turbowarp.org.
 
 ## Next steps
 

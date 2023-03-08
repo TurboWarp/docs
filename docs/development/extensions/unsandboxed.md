@@ -17,11 +17,11 @@ Only extensions loaded from URLs that start with these strings *exactly* will be
 
 As you don't have control over extensions.turbowarp.org, you will have to use the latter option. For this, you will *need* a local HTTP server running on port 8000 *exactly*.
 
-Up until this point we've suggested using a port other than 8000, but now that we're going to write extensions without the sandbox, you should start using **port 8000 exactly.**
+Up until this point, we've suggested using a port other than 8000, but now that we're going to write extensions without the sandbox, you should start using **port 8000 exactly.**
 
 ## Syntax
 
-The syntax for unsandboxed extensions is very familiar, but has some differences. Technically, if you just copy and paste your old sandboxed extensions as unsandboxed extensions, it will appear to just work. However, this is dangerous and is likely to cause bugs later.
+The syntax for unsandboxed extensions is very familiar but has some differences. Technically, if you just copy and paste your old sandboxed extensions as unsandboxed extensions, it will appear to just work. However, this is dangerous and is likely to cause bugs later.
 
 If your sandboxed extension has code like like this:
 
@@ -64,11 +64,11 @@ The unsandboxed version would have code like this:
 })(Scratch);
 ```
 
-Using this templates prevents unsandboxed extensions from interfering with each other when they try to define variables, classes, or functions with the same name. By requiring everything to be defined in an [immediately-invoked-function-expression (IIFE)](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) and enabling [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode), we prevent variables from accidentally leaking to the global scope.
+Using this template prevents unsandboxed extensions from interfering with each other when they try to define variables, classes, or functions with the same name. By requiring everything to be defined in an [immediately-invoked-function-expression (IIFE)](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) and enabling [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode), we prevent variables from accidentally leaking to the global scope.
 
 *All* functions and variables defined by the extension must be defined within the IIFE. Additionally, each extension must make sure to use its own personal copy of the `Scratch` API, which this template does automatically.
 
-An interesting thing to note about this template is that it is backwards compatible with sandboxed extensions. As long as the extension doesn't use any of the features given to unsandboxed extensions, it will continue to work exactly the same as a sandboxed extension.
+An interesting thing to note about this template is that it is backward compatible with sandboxed extensions. As long as the extension doesn't use any of the features given to unsandboxed extensions, it will continue to work the same as a sandboxed extension.
 
 ## A more complete example
 
@@ -86,7 +86,7 @@ Observe that the majority of the code is still identical: You still create a cla
 
 Before we talk about the new APIs, we want to note some additional requirements for unsandboxed extensions:
 
- - Blocks must not throw errors. While sandboxed extensions were okay to, unsandboxed extensions that do this may break scripts.
+ - Blocks must not throw errors. While sandboxed extensions could, unsandboxed extensions that do this may break scripts.
  - Input and boolean blocks must return a valid value. While sandboxed extensions are free to neglect this, unsandboxed extensions that don't return proper values (string, number, or boolean) can break scripts in unknown ways.
  - Blocks must not get stuck in infinite loops. While sandboxed extensions will usually not be able to freeze the entire window if they get stuck in a loop, unsandboxed extensions will. This can result in **data loss**.
 
@@ -116,7 +116,7 @@ const vm = Scratch.vm;
 }(Scratch));
 ```
 
-Dig around a while to find what you're looking for. Your developer tools will be immensley useful as you can access `Scratch` from there after an extension is loaded, or use the other [debugging global variables](../globals) that are available (but please don't use those in extensions). You may find the [scratch-vm source code](https://github.com/TurboWarp/scratch-vm/) or [@turbowarp/types](https://github.com/turboWarp/types) to be useful resources.
+Dig around for a while to find what you're looking for. Your developer tools will be immensely useful as you can access `Scratch` from there after an extension is loaded, or use the other [debugging global variables](../globals) that are available (but please don't use those in extensions). You may find the [scratch-vm source code](https://github.com/TurboWarp/scratch-vm/) or [@turbowarp/types](https://github.com/turboWarp/types) to be useful resources.
 
 Here is an example of an extension that uses Scratch.vm to toggle turbo mode, similar to the "runtime options" extension on [extensions.turbowarp.org](https://extensions.turbowarp.org/):
 
@@ -124,7 +124,7 @@ Here is an example of an extension that uses Scratch.vm to toggle turbo mode, si
 
 ## The block utility object
 
-When a sandboxed custom extension is run, all it receives is the arguments that the scripts provide. It doesn't even know which sprite is executing it. We now introduce the second argument passed to block functions: BlockUtility.
+When a sandboxed custom extension is run, all it receives are the arguments that the scripts provided. It doesn't even know which sprite is executing it. We now introduce the second argument passed to block functions: BlockUtility.
 
 The BlockUtility object, conventionally called `util`, allows blocks in unsandboxed extensions to get direct access to the sprite that is running them using `util.target`. Similar to the VM, this is the actual object used internally. You have full access to it.
 
@@ -155,7 +155,7 @@ Whereas sandboxed extensions are free to use APIs such as fetch() as they please
  - Scratch.redirect() - analogous to location.href = ...
  - Scratch.canRedirect()
 
-These methods are all asyncronous and return a Promise as they may involve user interaction. The canXYZ methods return a boolean that resolves with true or false while the others return a Promise that either resolves with an appropriate response or rejects with an error. These APIs are available in both sandboxed and unsandboxed methods.
+These methods are all asynchronous and return a Promise as they may involve user interaction. The canXYZ methods return a boolean that resolves with true or false while the others return a Promise that either resolves with an appropriate response or rejects with an error. These APIs are available in both sandboxed and unsandboxed methods.
 
 ```js
 // Do not do this:

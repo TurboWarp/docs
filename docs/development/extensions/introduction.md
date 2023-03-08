@@ -22,7 +22,7 @@ When people refer to "extensions", there are a few things they could be referrin
 |Sandboxed custom extensions|❌|✅|
 |Unsandboxed custom extensions|✅|✅|
 
-The documentation in these segments refer only to custom extensions. While core extensions have many of the same fundamental ideas, the process of developing them is significantly different. See [getting started](../getting-started) as a starting point for building core extensions.
+The documentation in these segments refers only to custom extensions. While core extensions have many of the same fundamental ideas, the process of developing them is significantly different. See [getting started](../getting-started) as a starting point for building core extensions.
 
 We will discuss the difference between sandboxed and unsandboxed extensions at a later time.
 
@@ -34,13 +34,13 @@ Custom extensions are not compatible with Scratch. Projects made using custom ex
 
 Custom extension development requires knowledge of JavaScript and currently requires access to a terminal. While there are ways to develop custom extensions on Chromebooks, note that compatibility with these workarounds is not currently a priority for us.
 
-If you're not familiar with these, we encourage you to learn them first (your favorite search engine can help), and then come back to this later when you are familiar with concepts such as classes, and know what the difference between `"1"` and `1` is. As volunteers, we don't have a lot of time to spend helping you learn JavaScript -- sorry.
+If you're not familiar with these, we encourage you to learn them first (your favorite search engine can help), and then come back to this later when you are familiar with concepts such as classes, and know the difference between `"1"` and `1`. As volunteers, we don't have a lot of time to spend helping you learn JavaScript -- sorry.
 
-You can use either the web app or the desktop app. We assume you have access to the developer tools in to your browser. Typically this is Right click > Inspect element. In the desktop app it can be shown with Ctrl+Shift+I or on macOS, Option+Command+I. Writing JavaScript without access to the developer tools is extremely painful and not something we can provide help for.
+You can use either the web app or the desktop app. We assume you have access to the developer tools in your browser. Typically this is Right click > Inspect element. In the desktop app, it can be shown with Ctrl+Shift+I or on macOS, Option+Command+I. Writing JavaScript without access to the developer tools is extremely painful and not something we can provide help for.
 
 ## Tutorial structure
 
-This tutorial is follows a "fundamentals up" order. We're going to start with the most basic extensions imaginable, ones that are effectively useless, and gradually build up to things that are more useful.
+This tutorial follows a "fundamentals up" order. We're going to start with the most basic extensions imaginable that are effectively useless and gradually build up to things that are more useful.
 
 We know that some of you will be eager to start sharing your extensions around, but **we ask that you read through this whole tutorial before publishing your extensions or submitting them to us** so that the extensions you share are actually useful.
 
@@ -63,4 +63,4 @@ Create a file called `hello-world.js` and put any text in it (we will discuss wh
 
 ## Next steps
 
-Next, let's [actually make an extension](./hello-world).
+Next, let's [make an extension](./hello-world).

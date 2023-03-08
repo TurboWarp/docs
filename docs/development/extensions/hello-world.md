@@ -20,9 +20,9 @@ After a second, an extension named "It works!" should appear in the sidebar. If 
 
  - Syntax error in the JavaScript. This should appear in your browser's developer tools.
  - Runtime error in the JavaScript. This should appear in your browser's developer tools.
- - Your adblocker or browser is blocking requests to localhost. Try turning off your adblocker. Once your extension is published on an internet-facing website this shouldn't be a problem.
+ - Your ad blocker or browser is blocking requests to localhost. Try turning off your ad blocker. Once your extension is published on an internet-facing website this shouldn't be a problem.
 
-Now, disect what is going on in this file. We will explain the code in the order it will run.
+Now, we will dissect what is going on in this file in the order it runs.
 
 ## Constructing and registering
 
@@ -30,13 +30,13 @@ Now, disect what is going on in this file. We will explain the code in the order
 class MyExtension {
 ```
 
-This is a standard [JavaScript class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes). It is convention to define your extension in the form of a class. The name of the class doesn't matter, but we suggest making it somehow based on the extension's name. It doesn't have to be unique at this stage.
+This is a standard [JavaScript class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes). It is conventional to define your extension in the form of a class. The name of the class doesn't matter, but we suggest making it somehow based on the extension's name. It doesn't have to be unique at this stage.
 
 ```js
 Scratch.extensions.register(new HelloWorld());
 ```
 
-This contructs your class into an object and introduces the special API that allows extensions to function: `Scratch`. There's a lot on `Scratch`, but one of the most important functions is `Scratch.extensions.register`.
+This constructs your class into an object and introduces the special API that allows extensions to function: `Scratch`. There's a lot on `Scratch`, but one of the most important functions is `Scratch.extensions.register`.
 
 Make sure to always call register() exactly once. If you don't call it, your extension will never get added and we will keep waiting for it to load. If you call it multiple times, the behavior is undefined, so don't rely on it.
 
@@ -71,19 +71,20 @@ Here's a short summary of what each block should have:
 | | Type | Description |
 |:-:|:-:|:-:|
 | opcode | string | The name of the function that should run when this block runs. For example, if this is "hello", then the class's "hello" method will be run. Each opcode must be unique within each extension, so multiple extensions can each have a block with opcode "hello".|
-| blockType | Scratch.BlockType.* | Determine's the block's shape. Most commonly Scratch.BlockType.COMMAND, Scratch.BlockType.REPORTER, or Scratch.BlockType.BOOLEAN. See table below for details. |
+| blockType | Scratch.BlockType.* | Determines the block's shape. Most commonly Scratch.BlockType.COMMAND, Scratch.BlockType.REPORTER, or Scratch.BlockType.BOOLEAN. See the table below for details. |
 | text | string | The text that will appear in the editor for the block. There is a bit of special syntax here for dealing with arguments that will be discussed in the next segment. |
 | arguments | object | Optional. Discussed in the next section. |
 
-These are the acceptible values for blockType:
+These are the acceptable values for blockType:
 
 | | Description | Example |
 |:-:|:-:|:-:|
 |Scratch.BlockType.COMMAND|A block that doesn't report a value|move 10 steps|
 |Scratch.BlockType.REPORTER|A round block that reports a string or number|x position, costume name|
 |Scratch.BlockType.BOOLEAN|A block with pointy edges that reports a boolean (true or false)|mouse down|
+|Scratch.BlockType.HAT|An block that starts in response to events. Discussed later.|when this sprite clicked|
 
-There are a couple others, but they don't work well or we aren't ready to discuss them.
+While other BlockTypes do exist, they do not work well and will not be discussed at this time.
 
 ## The blocks
 
@@ -93,9 +94,9 @@ There are a couple others, but they don't work well or we aren't ready to discus
   }
 ```
 
-This defines the function that will run the block with the opcode "hello" runs. In this case, our block is very simple, and just returns a string. REPORTER blocks are expected to return a string, number, or boolean, and BOOLEAN blocks are expected to only return a boolean. Note that `null`, `undefined`, lists, and objects are not expected return values for these blocks.
+This defines the function that will run the block with the opcode "hello" runs. In this case, our block is very simple and just returns a string. REPORTER blocks are expected to return a string, number, or boolean, and BOOLEAN blocks are expected to only return a boolean. Note that `null`, `undefined`, lists, and objects are not expected return values for these blocks.
 
-When you want to change the extension, simply modify the extension and reload the page. Here's a tip to make your life easier: You can use the `?extension=` URL parameter to load an extension automatically instead of requing going into the library. For example, if your extension URL is http://localhost:8080/hello-world.js, you could use https://turbowarp.org/editor?extension=http://localhost:8080/hello-world.js to load it automatically.
+When you want to change the extension, simply modify the extension and reload the page. Here's a tip to make your life easier: You can use the `?extension=` URL parameter to load an extension automatically instead of requiring going into the library. For example, if your extension URL is http://localhost:8080/hello-world.js, you could use https://turbowarp.org/editor?extension=http://localhost:8080/hello-world.js to load it automatically.
 
 If you observe that your changes aren't being applied when you refresh, try your browser's "hard refresh" or "refresh without cache" shortcuts.
 

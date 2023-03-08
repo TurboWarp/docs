@@ -22,7 +22,7 @@ Once projects exist using your extension, it is critical that you do not change 
   }
 ```
 
-### Block opcodes and types must never changed
+### Block opcodes and types must never change
 
 Instead, create a new block and mark the old one as `hideFromPalette: true`.
 
@@ -136,7 +136,7 @@ Instead, create a new block and mark the old one as `hideFromPalette: true`. The
 
 ### Don't significantly change block behavior
 
-Trivial bug fixes are typically fine, but significant changes may break projects. This is a bit harder to quanitfy; the best way to make sure your changes don't break projects is extensive testing.
+Trivial bug fixes are typically fine, but significant changes may break projects. This is a bit harder to quantify; the best way to make sure your changes don't break projects is extensive testing.
 
 ## What you can change
 
@@ -159,7 +159,7 @@ For menus, you can always change `text`, but you should not change `value` witho
 
 ## What if you need to break compatibility?
 
-There are times where old version of an extension has a fundamental flaw and there is no way for existing projects to continue working with the update. In these instances, you should **create a brand new extension with an entirely new ID** and leave the old version untouched.
+There are times when there is no option but to break backward compatibility. In these instances, you should **create a brand new extension with an entirely new ID** and leave the old version untouched.
 
 For example, if your extension `fetch` needs a complete redesign, you could create a new extension with the ID `fetch2`.
 

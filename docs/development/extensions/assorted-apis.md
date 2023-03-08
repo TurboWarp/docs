@@ -10,7 +10,7 @@ Now that you are familiar with writing custom extensions, we will share some mor
 
 ## color1, color2, color3
 
-There are three properties that determine the color of each block. The general advice is that color1 should be the brightest, color3 the darkest, and color2 somewhere between. They should be set to hex color codes.
+These three properties determine the color of each extension. The general advice is that `color1` should be the brightest, `color3` the darkest, and `color2` somewhere between. They should be set to hex color codes.
 
 <ExtensionCode title="color">{require("!raw-loader!@site/static/example-extensions/color.js")}</ExtensionCode>
 
@@ -36,7 +36,7 @@ The way that Scratch handles operations such as type conversions or comparisons 
 
 ## hideFromPalette
 
-Sometimes you might want to hide a block from the flyout, but you don't want to remove it. This is useful to make sure that your changes are [backwards compatible](./compatibility). Blocks with the property hideFromPalette will be hidden from the flyout, but any copies of them that are already in the project will continue to work the same.
+Sometimes you might want to hide a block from the flyout, but you don't want to remove it. This is useful to make sure that your changes are [backward compatible](./compatibility). Blocks with the property hideFromPalette will be hidden from the flyout, but any copies of them that are already in the project will continue to work the same.
 
 For example, load the first extension here, and save a project using its block:
 
@@ -52,7 +52,7 @@ See that the copies of the block that already exist continue to work, but it is 
 
 Some of your blocks may only work in sprites or only work in the stage. For these blocks, you can use the filter property to an array containing either `Scratch.TargetType.STAGE` or `Scratch.TargetType.SPRITE` to make it only visible in that type of target.
 
-Note that it is still possible to get blocks that violate the filter setting by, for example, using drag and drop or the backpack. Thus, your blocks must still check if the target is a stage or sprite with `util.target.isStage`.
+Note that it is still possible to get blocks that violate the filter property by, for example, using drag and drop or the backpack. Thus, your blocks must still check if the target is a stage or sprite with `util.target.isStage`.
 
 <ExtensionCode title="filter">{require("!raw-loader!@site/static/example-extensions/filter.js")}</ExtensionCode>
 
@@ -64,13 +64,13 @@ There are three different ways to add images to your extension:
  - blockIconURI for the whole extension. This will be the default for all blocks that don't override it.
  - blockIconURI for each block. This overrides the blockIconURI set on the entire extension.
 
-Each of these properties should be inline [data: URLs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs). SVG is preferred, but PNG or JPG at least 64x64 in size also work well. Icons should be square.
+Each of these properties should be inline [data: URLs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs). SVG is preferred, but PNG or JPG at least 64x64 in size also works well. Icons should be square.
 
 <ExtensionCode title="icons">{require("!raw-loader!@site/static/example-extensions/icons.js")}</ExtensionCode>
 
 ## Inline images
 
-You can also put images anywhere in a block using an "argument" of type IMAGE and setting `dataURI` on the argument. Like the other images, this is a [data: URLs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs). SVG is preferred, but PNG or JPG at least 64x64 in size also work well. Icons should be square.
+You can also put images anywhere in a block using an "argument" of type IMAGE and setting `dataURI` on the argument. Like the other images, this is a [data: URLs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs). SVG is preferred, but PNG or JPG at least 64x64 in size also works well. Icons should be square.
 
 Additionally, if you set `flipRTL` to true, the image will be horizontally flipped in right-to-left languages.
 
@@ -84,4 +84,4 @@ If your extension has a lot of blocks you may want to put some space between gro
 
 ## Next steps
 
-Next, let's see [how to make blocks like "when I receive" or "when timer greater than.](./hats)
+Next, let's see [how to make blocks like "when I receive" or "when timer greater than".](./hats)

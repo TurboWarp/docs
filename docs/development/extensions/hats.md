@@ -8,7 +8,7 @@ import {ExtensionCode} from './utils.js';
 
 Hat or event blocks allow scripts to run in response to arbitrary events.
 
-## Edge activated hats
+## Edge-activated hats
 
 This will be easiest to understand by comparing it to concepts you are already familiar with. How would you make a script run something when some boolean condition *becomes true*? You could do something like this:
 
@@ -22,18 +22,18 @@ Almost. This has an issue: If "something" is still true when "do something" fini
 
 ![](./assets/forever-wait-until-something-true-then-not-true.svg)
 
-In essence, "edge activated hats" let us rewrite that loop as:
+In essence, "edge-activated hats" let us rewrite that loop as:
 
 ![](./assets/when-something-is-true.svg)
 
-For each instance of an edge activated hat in a project, Scratch will run it once each frame. Only when the script switches from returning false to returning true will the script will run. Once the script starts, the hat function will not be called again until the script stops. This is available in both sandboxed and unsandboxed extensions.
+For each instance of an edge-activated hat in a project, Scratch will run it once each frame. Only when the script switches from returning false to returning true will the script will run. Once the script starts, the hat function will not be called again until the script stops. This is available in both sandboxed and unsandboxed extensions.
 
-There is one subtle difference between edge activated hats and the loops above: Edge activated hats can run even when the green flag isn't pressed.
+There is one subtle difference between edge-activated hats and the loops above: Edge-activated hats can run even when the green flag isn't pressed.
 
 To demonstrate this, we can reimplement the "when timer greater than" block in Scratch:
 
 :::caution
-TurboWarp's compiler currently does not support edge activated hats, so these scripts will run in the slower Scratch interpreter.
+TurboWarp's compiler currently does not support edge-activated hats, so these scripts will run in the slower Scratch interpreter.
 :::
 
 <ExtensionCode title="timer-reimplementation">{require("!raw-loader!@site/static/example-extensions/timer-reimplementation.js")}</ExtensionCode>
@@ -64,7 +64,7 @@ To test this, create a script such as "when timer > 3, say Hello for 1 second", 
 
 As you can see, the moment the time reached 3 seconds, our function returned true, and the script began running. While the script is running, the hat function won't be called so the logs stop for one second. When the script finishes, the hat block will begin running again. As it continues to return true, there is no "edge activation" caused by switching from false to true, thus the script will not run again until the timer is reset.
 
-Like any other block, hat function can return a Promise that resolves to a boolean. Scratch will wait for it to resolve. Additionally, edge-activated hats can themselves contain arbitrarily complex hats such as variables or math. These are passed to the edge-activated hat, just like `TIME` in the example above.
+Like any other block, a hat function can return a Promise that resolves to a boolean. Scratch will wait for it to resolve. Additionally, edge-activated hats can themselves contain arbitrarily complex hats such as variables or math. These are passed to the edge-activated hat, just like `TIME` in the example above.
 
 ## Event-based hats
 
@@ -100,7 +100,7 @@ Then, the broadcast block can use the second parameter of startHats. startHats's
 
 In this example, the "broadcast [dropdown]" block only runs hats with that specific option, while the "broadcast all" block runs all hats regardless of dropdown value.
 
-A hat can contain multiple fields. For example if a hat has two dropdowns and you call startHats using a second argument that only has 1 value, it will only check that dropdown. If you specify multiple values in the second argument, it will check all of them.
+A hat can contain multiple fields. For example, if a hat has two dropdowns and you call startHats using a second argument that only has 1 value, it will only check that dropdown. If you specify multiple values in the second argument, it will check all of them.
 
 ## Restart existing threads
 
@@ -112,7 +112,7 @@ If you make the same script using this example and repeatedly run "broadcast Eve
 
 ## Starting scripts in only certain sprites
 
-Consider a builtin hat block such as "when this sprite clicked" -- how does Scratch know that it should only start the hat in one specific sprite instead of all of them? It does this using the third argument to `startHats` which is the target you want to start it in. If set to null or not supplied at all, it will run for all sprites.
+Consider a built-in hat block such as "when this sprite clicked" -- how does Scratch know that it should only start the hat in one specific sprite instead of all of them? It does this using the third argument to `startHats` which is the target you want to start it in. If set to null or not supplied at all, it will run for all sprites.
 
 <ExtensionCode title="unsandboxed/broadcast-4">{require("!raw-loader!@site/static/example-extensions/unsandboxed/broadcast-4.js")}</ExtensionCode>
 
@@ -129,7 +129,7 @@ Scratch.BlockType.EVENT exists, but there is no reason to use it instead of Scra
 ## Exercises
 
 1. Create an event-based hat block that runs every second.
-2. Create a block with a text input that will run a normal Scratch broadcast. The builtin "when I receive" block has the full opcode "event_whenbroadcastreceived" and its single argument is called "BROADCAST_OPTION" which is the name of the broadcast.
+2. Create a block with a text input that will run a normal Scratch broadcast. The built-in "when I receive" block has the full opcode "event_whenbroadcastreceived" and its single argument is called "BROADCAST_OPTION" which is the name of the broadcast.
 
 ## Next steps
 

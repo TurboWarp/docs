@@ -6,13 +6,13 @@ hide_table_of_contents: true
 
 import {Spoiler} from './utils.js';
 
-The HTTP server built in to Python is simple to use, but it's primitive. We can do better. This section is strictly optional, but we think it will make your life easier.
+The HTTP server built into Python is simple to use, but it's primitive. We can do better. This section is strictly optional, but we think it will make your life easier.
 
 ## TurboWarp/extensions
 
 The GitHub repository of extensions.turbowarp.org is [TurboWarp/extensions](https://github.com/TurboWarp/extensions). One of the things available here is the development server that we use, along with the code that makes the website. You can run it locally too.
 
-This will require Git and Node.js being installed locally. Run these commands to download the server and install its dependencies:
+This will require Git and Node.js to be installed locally. Run these commands to download the server and install its dependencies:
 
 ```bash
 git clone https://github.com/TurboWarp/extensions.git
@@ -28,7 +28,7 @@ Close your old development server and start the new one with:
 npm run dev
 ```
 
-Now navigate to [http://localhost:8000](http://localhost:8000) -- you should see a list similar to [extensions.turbowarp.org](https://extensions.turbowarp.org/). For now we're not going to worry about the list, we're just going to use the development server part.
+Now navigate to [http://localhost:8000](http://localhost:8000) -- you should see a list similar to [extensions.turbowarp.org](https://extensions.turbowarp.org/). For now, we're not going to worry about the list, we're just going to use the development server part.
 
 The place to save your extension JS is in the `extensions` folder inside of the repository. If you intend to submit these to us later, you should create a user folder for your extensions. For example, if your username is `TestMuffin`, you might save your fetching extension in the folder `extensions/TestMuffin/fetch.js` and load it using http://localhost:8000/TestMuffin/fetch.js. The extension should then also use an ID similar to `testmuffinfetch`.
 
@@ -40,7 +40,7 @@ In the future, we may consider adding more development features.
 
 1. Can you figure out how to add a new HTML file to the development server? (Hint: <Spoiler>look into the "website" folder</Spoiler>)
 1. Can you figure out how to add your extension to the homepage list? (Hint: <Spoiler>look at "website/index.ejs"</Spoiler>)
-1. Can you figure out how to add an image for your extension on the homepage? (Hint: <Spoiler>create an image in "images" with the same fodler and basename as the file in "extensions"</Spoiler>)
+1. Can you figure out how to add an image for your extension on the homepage? (Hint: <Spoiler>create an image in "images" with the same folder and basename as the file in "extensions"</Spoiler>)
 
 ## Next steps
 
