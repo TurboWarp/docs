@@ -4,7 +4,7 @@ hide_table_of_contents: true
 
 # Hats and events
 
-import {ExtensionCode} from './utils.js';
+import {ExtensionCode, Spoiler} from './utils.js';
 
 Hat or event blocks allow scripts to run in response to arbitrary events.
 
@@ -110,6 +110,8 @@ If you create a script using the previous example such as "when I receive event 
 
 If you make the same script using this example and repeatedly run "broadcast Event 1", the "say Hello" block won't run as the script is constantly being restarted, thus restarting the 1 second timer.
 
+Note that if a script whose top block is an event-based hat with `shouldRestartExistingThreads: true` runs a block that restarts itself (similar to "when I receive message1, broadcast message1"), the currently running script will not immediately stop; it may continue to run until it yields.
+
 ## Starting scripts in only certain sprites
 
 Consider a built-in hat block such as "when this sprite clicked" -- how does Scratch know that it should only start the hat in one specific sprite instead of all of them? It does this using the third argument to `startHats` which is the target you want to start it in. If set to null or not supplied at all, it will run for all sprites.
@@ -128,8 +130,9 @@ Scratch.BlockType.EVENT exists, but there is no reason to use it instead of Scra
 
 ## Exercises
 
+1. Create an edge-activated hat that runs when a specific variable becomes greater than a given number. (Hint: <Spoiler>Get a variable object with util.target.lookupVariableByNameAndType(variableName, variableType). variableType for normal variable is an empty string. Use debugger to see what properties variable has.</Spoiler>)
 1. Create an event-based hat block that runs every second.
-2. Create a block with a text input that will run a normal Scratch broadcast. The built-in "when I receive" block has the full opcode "event_whenbroadcastreceived" and its single argument is called "BROADCAST_OPTION" which is the name of the broadcast.
+1. Create a block with a text input that will run a normal Scratch broadcast. The built-in "when I receive" block has the full opcode "event_whenbroadcastreceived" and its single argument is called "BROADCAST_OPTION" which is the name of the broadcast.
 
 ## Next steps
 
