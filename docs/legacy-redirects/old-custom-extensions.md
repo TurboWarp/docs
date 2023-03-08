@@ -11,3 +11,5 @@ import {Redirect} from '@docusaurus/router';
 </head>
 
 <Redirect to="/development/extensions/introduction" />
+
+Please go to [the new page](/development/extensions/introduction)!
