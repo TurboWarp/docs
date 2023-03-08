@@ -15,5 +15,4 @@ Thank you for reading this far.
 ## Remaining topics to include in the future
 
  - Hat blocks: event-based and edge activated
- - Image inputs
  - Dynamic menus

@@ -64,9 +64,17 @@ There are three different ways to add images to your extension:
  - blockIconURI for the whole extension. This will be the default for all blocks that don't override it.
  - blockIconURI for each block. This overrides the blockIconURI set on the entire extension.
 
-Each of these properties should be inline [data: URLs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) containing an SVG.
+Each of these properties should be inline [data: URLs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs). SVG is preferred, but PNG or JPG at least 64x64 in size also work well. Icons should be square.
 
 <ExtensionCode title="icons">{require("!raw-loader!@site/static/example-extensions/icons.js")}</ExtensionCode>
+
+## Inline images
+
+You can also put images anywhere in a block using an "argument" of type IMAGE and setting `dataURI` on the argument. Like the other images, this is a [data: URLs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs). SVG is preferred, but PNG or JPG at least 64x64 in size also work well. Icons should be square.
+
+Additionally, if you set `flipRTL` to true, the image will be horizontally flipped in right-to-left languages.
+
+<ExtensionCode title="inline-images">{require("!raw-loader!@site/static/example-extensions/inline-images.js")}</ExtensionCode>
 
 ## Separators
 
