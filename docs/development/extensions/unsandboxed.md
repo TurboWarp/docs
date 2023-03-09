@@ -132,6 +132,25 @@ Here is an example extension that demonstrates using `util.target` to get the na
 
 <ExtensionCode title="unsandboxed/block-utility-examples">{require("!raw-loader!@site/static/example-extensions/unsandboxed/block-utility-examples.js")}</ExtensionCode>
 
+Note that every sprite, script, and block shares the same block utility object. Instead of making a object each time your block runs, it just updates the properties of the shared object for performance. Thus, the only safe time to access `util` is immediately when the block runs. Trying to access `util` in a setTimeout, setInterval, Promise callback, or other non-syncronous callback will not work correctly. If you need to access properties from `util` later, save them in a variable ahead of time.
+
+```js
+  // This is NOT reliable and may alert the wrong thing:
+  myBlock(args, util) {
+    setTimeout(() => {
+      alert(util.target.getName());
+    }, 1000);
+  }
+
+  // This will always work:
+  myBlock(args, util) {
+    const target = util.target;
+    setTimeout(() => {
+      alert(target.getName());
+    }, 1000);
+  }
+```
+
 ## Common templates
 
 Here are some common copy-and-pasteable code snippets that can be used:
