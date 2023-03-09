@@ -74,7 +74,7 @@ While edge-activated hats work well for blocks like "when timer greater than", t
 Unlike edge-activated hats, TurboWarp's compiler fully supports event-based hats.
 :::
 
-To create an event-based HAT, define `isEdgeActivated: false` on the block. To run an event block, use `Scratch.vm.runtime.startHats("extensionid_opcode")`.
+To create an event-based HAT, define `isEdgeActivated: false` on the block. To run an event block from inside of another block, use `util.startHats("extensionid_opcode")`.
 
 To demonstrate event-based hats, we will create several extensions similar to the broadcast system already in Scratch. These extensions do not interact with Scratch's broadcast system at all. It's just an easy way to demonstrate how event-based hats work.
 
@@ -124,15 +124,27 @@ Finally, `startHats` returns a list of the `Thread` objects that it started. You
 
 <ExtensionCode title="unsandboxed/broadcast-5">{require("!raw-loader!@site/static/example-extensions/unsandboxed/broadcast-5.js")}</ExtensionCode>
 
+## Starting events externally
+
+Inside a block, you should use `util.startHats` to start hat blocks. Outside of blocks, you should instead use `Scratch.vm.runtime.startHats` as you don't have access to `util`. It works the exact same way; the arguments and return value are all the same.
+
+Here is an extension that will start a hat block once every second from an external interval:
+
+<ExtensionCode title="unsandboxed/every-second">{require("!raw-loader!@site/static/example-extensions/unsandboxed/every-second.js")}</ExtensionCode>
+
+`Scratch.vm.runtime.startHats` can be called from anywhere in your extension such as WebSocket message handlers, DOM event listeners, etc.
+
 ## EVENT blocks
 
 Scratch.BlockType.EVENT exists, but there is no reason to use it instead of Scratch.BlockType.HAT.
 
 ## Exercises
 
-1. Create an edge-activated hat that runs when a specific variable becomes greater than a given number. (Hint: <Spoiler>Get a variable object with util.target.lookupVariableByNameAndType(variableName, variableType). variableType for normal variable is an empty string. Use debugger to see what properties variable has.</Spoiler>)
-1. Create an event-based hat block that runs every second.
+1. Create an edge-activated hat that runs when a specific variable becomes greater than a given number. (Hint: <Spoiler>Get a variable object with util.target.lookupVariableByNameAndType(variableName, variableType). variableType for normal variable is an empty string. Use developer tools to see what properties the variable object has.</Spoiler>)
+1. Create several hat blocks in one extension: one that runs every second, one every 5th second, and one every 10th second.
+1. Combine the hat blocks from the previous exercise into one hat block with a field dropdown.
 1. Create a block with a text input that will run a normal Scratch broadcast. The built-in "when I receive" block has the full opcode "event_whenbroadcastreceived" and its single argument is called "BROADCAST_OPTION" which is the name of the broadcast.
+1. Modify the previous exercise's broadcast block to be a reporter that returns a comma-separated list containing the name of each sprite that a new thread was started in. (Hint: <Spoiler>Each thread object contains a .target property, and each target object has a .getName() method.</Spoiler>)
 
 ## Next steps
 
