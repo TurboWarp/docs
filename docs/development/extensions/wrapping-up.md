@@ -15,7 +15,7 @@ Thank you for reading this far.
 ## Remaining topics to include in the future
 
  - Dynamic menus
- - Block utility stack frames
+ - Block utility stack frames, yield, yieldTick, etc.
 
 ## Things that are not supported yet
 

@@ -134,6 +134,14 @@ Instead, create a new block and mark the old one as `hideFromPalette: true`. The
   }
 ```
 
+### Don't modify isTerminal
+
+If a COMMAND block does not already have `isTerminal: true`, then don't add it as doing so will cause existing projects that connect blocks underneath to break. Instead, create a new block and optionally hide the old one.
+
+### Don't modify acceptReporters
+
+Converting an input menu to a field menu and vice-versa does not work and will corrupt projects. Create a new menu and block instead.
+
 ### Don't significantly change block behavior
 
 Trivial bug fixes are typically fine, but significant changes may break projects. This is a bit harder to quantify; the best way to make sure your changes don't break projects is extensive testing.
@@ -145,17 +153,18 @@ You can always change these parts of extension metadata:
  - name
  - docsURI
  - color1, color2, color3
- - icons
+ - menuIconURI and blockIconURI
 
-You can always change these parts of blocks:
+You can always change these parts of blocks and arguments:
 
- - text, as long as it contains the same arguments (you can change argument order)
- - disableMonitor
+ - text, as long as it contains the same arguments (changing argument order is safe)
+ - disableMonitor (enabling true just hides checkmark, does not remove existing monitors)
  - hideFromPalette
- - filter
- - argument defaultValue
+ - filter (adding filter just hides from palette, does not remove existing blocks)
+ - defaultValue
+ - dataURI and flipRTL in image inputs
 
-For menus, you can always change `text`, but you should not change `value` without careful consideration.
+For menus, you can always change `text`, but you should not change `value` without careful consideration. Adding menu items is always okay, but removing menu items is dangerous.
 
 ## What if you need to break compatibility?
 

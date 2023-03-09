@@ -82,6 +82,14 @@ If your extension has a lot of blocks you may want to put some space between gro
 
 <ExtensionCode title="separators">{require("!raw-loader!@site/static/example-extensions/separators.js")}</ExtensionCode>
 
+## Terminal blocks
+
+To prevent connecting a block underneath a COMMAND block, set `isTerminal: true` on the block.
+
+While the block's shape will look similar to "stop this script" and "stop all", the behavior matches neither. If this block is placed at the end of a loop for example, the loop will continue to run unless additional code stops the current thread. This just prevents connecting a block underneath.
+
+<ExtensionCode title="terminal">{require("!raw-loader!@site/static/example-extensions/terminal.js")}</ExtensionCode>
+
 ## Next steps
 
 Next, let's see [how to make blocks like "when I receive" or "when timer greater than".](./hats)
