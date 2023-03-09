@@ -1,8 +1,8 @@
 class TerminalExample {
   getInfo() {
     return {
-      id: 'iconsexample',
-      name: 'Icons Example',
+      id: 'terminalexample',
+      name: 'Terminal Example',
       blocks: [
         {
           opcode: 'terminalBlock',
