@@ -23,7 +23,7 @@ For this reason, sandboxed extensions:
 
 They can, however:
 
- - Access most public APIs, as long as [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) allows
+ - Access most public APIs, as long as [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) allows it
  - Access some JavaScript Web APIs, such as the [Gamepad API](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
 
 It is worthwhile to note that in other Scratch mods, the extension sandbox may be a `Worker` instead of an `<iframe>`. We use an `<iframe>` instead as it is more secure (cross origin vs. same origin) and allows access to more Web APIs.

@@ -57,7 +57,7 @@ This will start a local HTTP server on http://localhost:8080/ in whatever folder
 
 We will eventually introduce the official development server, but given that this is a fundamentals-up tutorial, we will start using the most primitive server possible.
 
-For now, you should use a part **other than 8000**. We will talk more about this later, but for now we want the extensions you write to run in the sandbox. We will talk about what this means later.
+For now, you should use a port **other than 8000**. We will talk more about this later, but for now we want the extensions you write to run in the sandbox. We will talk about what this means later.
 
 Create a file called `hello-world.js` and put any text in it (we will discuss what to put in it later). Make sure you're able to read the contents of the file in your browser by visiting a link like [http://localhost:8080/hello-world.js](http://localhost:8080/hello-world.js).
 
