@@ -70,7 +70,7 @@ Each of these properties should be inline [data: URLs](https://developer.mozilla
 
 ## Inline images
 
-You can also put images anywhere in a block using an "argument" of type IMAGE and setting `dataURI` on the argument. Like the other images, this is a [data: URLs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs). SVG is preferred, but PNG or JPG at least 64x64 in size also works well. Icons should be square.
+You can also put images anywhere in a block using an "argument" of type IMAGE and setting `dataURI` on the argument. Like the other images, this is a [data: URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs). SVG is preferred, but PNG or JPG at least 64x64 in size also works well. Icons should be square.
 
 Additionally, if you set `flipRTL` to true, the image will be horizontally flipped in right-to-left languages.
 
