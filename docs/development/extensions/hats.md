@@ -64,7 +64,7 @@ To test this, create a script such as "when timer > 3, say Hello for 1 second", 
 
 As you can see, the moment the time reached 3 seconds, our function returned true, and the script began running. While the script is running, the hat function won't be called so the logs stop for one second. When the script finishes, the hat block will begin running again. As it continues to return true, there is no "edge activation" caused by switching from false to true, thus the script will not run again until the timer is reset.
 
-Like any other block, a hat function can return a Promise that resolves to a boolean. Scratch will wait for it to resolve. Additionally, edge-activated hats can themselves contain arbitrarily complex hats such as variables or math. These are passed to the edge-activated hat, just like `TIME` in the example above.
+Like any other block, a hat function can return a Promise that resolves to a boolean. Scratch will wait for it to resolve. Additionally, edge-activated hats can themselves contain arbitrarily complex inputs such as variables or math. These are passed to the edge-activated hat, just like `TIME` in the example above.
 
 ## Event-based hats
 
