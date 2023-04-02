@@ -49,12 +49,13 @@ This section is for people developing third-party Scratch-related tools.
 
 The new procedure to download projects is to first fetch "project_token" field from `https://api.scratch.mit.edu/projects/ID` then use that to generate the URL `https://projects.scratch.mit.edu/ID?token=TOKEN`
 
-If you're using JavaScript, here's some sample code to get you started. If your code runs in a web browser, you need to replace `https://api.scratch.mit.edu/projects/` with `https://trampoline.turbowarp.org/proxy/projects/` as Scratch doesn't let other websites directly access it from a browser (We make no guarantees about the uptime or service level of trampoline.turbowarp.org; use at your own risk). You may also be interested in [sb-downloader](https://github.com/forkphorus/sb-downloader) for a complete project downloader.
+If you're using JavaScript, here's some sample code to get you started that will work in web browsers. If your code is running server-side in a place like Node.js, you should replace `https://trampoline.turbowarp.org/proxy/projects/` with `https://api.scratch.mit.edu/projects/` with as you can access the Scratch API directly. We make no guarantees about the uptime or service level of trampoline.turbowarp.org; use at your own risk. You may also be interested in [sb-downloader](https://github.com/forkphorus/sb-downloader) for a more complete project downloader.
 
 ```js
 const getProjectMetadata = async (projectId) => {
-    // SEE ABOVE: If you're in a web browser, use https://trampoline.turbowarp.org/proxy/projects/ instead.
-    const response = await fetch(`https://api.scratch.mit.edu/projects/${projectId}`);
+    // IF IN A WEB BROWSER, you needto use a service like trampoline.turbowarp.org to access the API
+    // IF IN NODE.JS, you should use https://api.scratch.mit.edu/projects/${projectId} directly instead.
+    const response = await fetch(`https://trampoline.turbowarp.org/proxy/projects/${projectId}`);
     if (response.status === 404) {
         throw new Error('The project is unshared or does not exist');
     }
