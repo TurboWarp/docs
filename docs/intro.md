@@ -14,5 +14,8 @@ Related projects:
  - [TurboWarp Packager](https://packager.turbowarp.org/)
  - [TurboWarp Unpackager](https://turbowarp.github.io/unpackager/)
  - [TurboWarp Extension Gallery](https://extensions.turbowarp.org/)
+ - [sb3fix](https://turbowarp.github.io/sb3fix/)
+ - [sb-downloader](https://forkphorus.github.io/sb-downloader/)
+ - [forkphorus](https://forkphorus.github.io/)
 
 These pages are [open source](https://github.com/TurboWarp/docs). Contributions are welcome.
