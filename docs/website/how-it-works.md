@@ -114,7 +114,7 @@ Things to notice:
  - No more looking up inputs manually: they're just JavaScript arguments.
  - No more manual state maintaining: it's just JavaScript.
  - As this is a single JavaScript function, we can't easily implement [live script editing](#live-script-editing)
- - If the JavaScript JIT notices that a certain variable is always a number, it can theoertically optimize accordingly.
+ - If the JavaScript JIT notices that a certain variable is always a number, it can theoretically optimize accordingly.
  - This JavaScript looks very strange compared to typical human-written JavaScript and runs slower because we maintain compatibility with edge case Scratch behaviors.
  - We manually formatted the JavaScript and renamed some variables to make it more readable. The real code uses variable names like `b0` and has no formatting.
 
