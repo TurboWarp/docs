@@ -6,15 +6,15 @@ hide_table_of_contents: true
 
 import {ExtensionCode} from './utils.js';
 
-Let's start by creating a very simple sandboxed extension. We assume you have set up an HTTP server in the previous step.
-
-Here is a simple extension that adds a block that reports "Hello, world!"
+Let's start by creating a very simple extension. This extension just adds a block that reports "Hello, world!":
 
 <ExtensionCode title="hello-world">{require('!raw-loader!@site/static/example-extensions/hello-world.js')}</ExtensionCode>
 
 The above is a standard component we will use for showing extension code. Make note of the "Try this extension" button by the title -- that link will let you see what this extension does without having to do anything locally. Note that these extensions are primarily for demonstrating API features; they are not intended to be actually used in projects. There will almost always be another extension on [extensions.turbowarp.org](https://extensions.turbowarp.org/) that does the same thing, but better.
 
-Save this code into the hello-world.js you created earlier so that you can access it using your HTTP server. Now, go to the TurboWarp editor, go to the extension menu, scroll down to and choose the Custom Extension option, then enter the full URL to your HTTP server that gets the extension's source code.
+If you're just using simple files to develop extensions, save this code into a file called "hello-world.js". If you're using a local HTTP server, save the code in a file called "hello-world.js" that the server will let you access.
+
+Now, go to the TurboWarp editor, click on the add extension button, scroll to the bottom, and choose the "Custom Extension" option. Either enter the full URL to your local HTTP server or use one of the other tabs to select your file. For now, **do not** check the "Run extension without sandbox" box.
 
 After a second, an extension named "It works!" should appear in the sidebar. If it doesn't appear, open up your developer tools and look for any warnings in the console. Some of the most common errors are:
 

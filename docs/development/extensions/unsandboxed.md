@@ -10,14 +10,14 @@ Unsandboxed extensions run as plain `<script>` tags in the main window rather th
 
 ## URL restrictions
 
-Only extensions loaded from URLs that start with these strings *exactly* will be treated as unsandboxed, and all others will be sandboxed:
+To protect users from malicious extensions, extensions loaded from URLs will only run unsandboxed if their URL begins with one of these *exactly*:
 
  - `https://extensions.turbowarp.org/`
  - `http://localhost:8000/`
 
-As you don't have control over extensions.turbowarp.org, you will have to use the latter option. For this, you will *need* a local HTTP server running on port 8000 *exactly*.
+As you don't have control over extensions.turbowarp.org, you will have to use the latter option. For this, configure your local HTTP server to run on port 8000 instead of what you've been using so far.
 
-Up until this point, we've suggested using a port other than 8000, but now that we're going to write extensions without the sandbox, you should start using **port 8000 exactly.**
+When manually loading an extension from a file or JavaScript source code, there is an option to load the extension without the sandbox. This option to force an extension to run unsandboxed does not exist when using URLs due to security concerns.
 
 ## Syntax
 
@@ -76,7 +76,9 @@ Here you can see a complete unsandboxed extension:
 
 <ExtensionCode title="unsandboxed/hello-world-unsandboxed" sandbox={false}>{require("!raw-loader!@site/static/example-extensions/unsandboxed/hello-world-unsandboxed.js")}</ExtensionCode>
 
-Save this so that you can access it with your local HTTP server, then load the exact URL [http://localhost:8000/hello-world-unsandboxed.js](http://localhost:8000/hello-world-unsandboxed.js) in TurboWarp. If nothing appears, see the developer console. If you see an error that the extension must be run unsandboxed, most likely you are using an old version of TurboWarp or you didn't load it from a URL that starts with `http://localhost:8000/` exactly. 127.0.0.1 and 0.0.0.0 won't work! It must be localhost, port 8000 exactly.
+If you're using a local HTTP server, save this so you can access it through the server, then load the exact URL [http://localhost:8000/hello-world-unsandboxed.js](http://localhost:8000/hello-world-unsandboxed.js) in TurboWarp. If nothing appears, see the developer console. If you see an error that the extension must be run unsandboxed, most likely you are using an old version of TurboWarp or you didn't load it from a URL that starts with `http://localhost:8000/` exactly. 127.0.0.1 and 0.0.0.0 won't work! It must be localhost, port 8000 exactly.
+
+If you're just using files, make sure to check the "Run extension without sandbox" box each time you load the extension.
 
 Create a new empty project with a repeat (30) loop that adds the "hello" block to a list. Notice that it now runs instantly while the sandboxed version would've taken at least a second.
 

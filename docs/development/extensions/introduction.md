@@ -22,9 +22,9 @@ When people refer to "extensions", there are a few things they could be referrin
 |Sandboxed custom extensions|❌|✅|
 |Unsandboxed custom extensions|✅|✅|
 
-The documentation in these segments refers only to custom extensions. While core extensions have many of the same fundamental ideas, the process of developing them is significantly different. See [getting started](../getting-started) as a starting point for building core extensions.
+The documentation in these segments refers only to custom extensions. While core extensions share many fundamentals, the process of developing them is significantly different. See [getting started](../getting-started) as a starting point for building core extensions.
 
-We will discuss the difference between sandboxed and unsandboxed extensions at a later time.
+We will discuss the difference between sandboxed and unsandboxed extensions at [a later time](./unsandboxed).
 
 ## Compatibility
 
@@ -32,35 +32,43 @@ Custom extensions are not compatible with Scratch. Projects made using custom ex
 
 ## Prerequisites
 
-Custom extension development requires knowledge of JavaScript and currently requires access to a terminal. While there are ways to develop custom extensions on Chromebooks, note that compatibility with these workarounds is not currently a priority for us.
+Custom extension development requires knowledge of writing JavaScript. If you aren't familiar with JavaScript, please learn it first. You favorite search engine can help you find places to learn.If you don't know things like the difference between `"1"` and `1`, developing extensions will be very difficult. As volunteers, we don't have a lot of time to spend helping you learn JavaScript -- sorry.
 
-If you're not familiar with these, we encourage you to learn them first (your favorite search engine can help), and then come back to this later when you are familiar with concepts such as classes, and know the difference between `"1"` and `1`. As volunteers, we don't have a lot of time to spend helping you learn JavaScript -- sorry.
+Extensions can be developed using either the website or desktop app.
 
-You can use either the web app or the desktop app. We assume you have access to the developer tools in your browser. Typically this is Right click > Inspect element. In the desktop app, it can be shown with Ctrl+Shift+I or on macOS, Option+Command+I. Writing JavaScript without access to the developer tools is extremely painful and not something we can provide help for.
+We assume that you have access to the developer tools built in to your browser or the desktop app. Typically this is accessible through right click > inspect element. In the desktop app, it can be shown with Ctrl+Shift+I (Option+Command+I on macOS). Writing JavaScript without access to the developer tools is extremely painful and not something we can provide help for.
 
 ## Tutorial structure
 
-This tutorial follows a "fundamentals up" order. We're going to start with the most basic extensions imaginable that are effectively useless and gradually build up to things that are more useful.
+This tutorial is follows a fundamentals-up approach. We're going to start with the most basic extensions imaginable that are effectively useless and gradually build up to things that are more useful.
 
 We know that some of you will be eager to start sharing your extensions around, but **we ask that you read through this whole tutorial before publishing your extensions or submitting them to us** so that the extensions you share are actually useful.
 
 ## Prepare a development environment
 
-Custom extension development requires a place for TurboWarp to be able to fetch your extension from. Most often this is in the form of a local static HTTP server. There are a lot of options for installing one of these. However, if you have Python installed, you already have one:
+In recent versions of TurboWarp, there are several ways to develop extensions.
+
+### Files (simplest)
+
+Recent versions of the TurboWarp website (desktop app not updated yet) have an option in the custom extension menu to load extensions either from local files or from copied and pasted JavaScript code. This will be the easiest way to develop extensions as it can be done on any computer with just a text editor.
+
+### Local HTTP Server (preferred)
+
+However, if possible, you should use a local HTTP server that lets TurboWarp fetch your extension from your computer. There are a lot of options for installing one of these.If you have Python installed, you already have one:
 
 ```bash
 cd path/to/where/you/will/store/your/extensions
 python3 -m http.server 8080
 ```
 
-This will start a local HTTP server on http://localhost:8080/ in whatever folder you ran that command in.
+This starts a local HTTP server on http://localhost:8080/ in whatever folder you ran that command in.
 
-We will eventually introduce the official development server, but given that this is a fundamentals-up tutorial, we will start using the most primitive server possible.
+We will [eventually](./better-development-server) introduce the official development server, but we recommend starting with the most primitive setup possible for now.
 
-For now, you should use a port **other than 8000**. We will talk more about this later, but for now we want the extensions you write to run in the sandbox. We will talk about what this means later.
+For now, you should use a port **other than 8000**. We will talk more about this later, but currently we want the extensions you write to run in the sandbox. Extensions that run outside of the sandbox have some extra responsibilities that we will discuss [later](./unsandboxed).
 
-Create a file called `hello-world.js` and put any text in it (we will discuss what to put in it later). Make sure you're able to read the contents of the file in your browser by visiting a link like [http://localhost:8080/hello-world.js](http://localhost:8080/hello-world.js).
+To test that your server works, create a file called `hello-world.js` and put any text in it. Make sure you're able to read the contents of the file in your browser by visiting a link like [http://localhost:8080/hello-world.js](http://localhost:8080/hello-world.js).
 
 ## Next steps
 
-Next, let's [make an extension](./hello-world).
+Next, let's [make your first extension](./hello-world).
