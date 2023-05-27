@@ -22,6 +22,6 @@ hide_table_of_contents: true
 
 1. 探索TurboWarp拓展库的问题追踪以获得灵感: https://github.com/TurboWarp/extensions/issues
 
-## Next steps
+## 下一步
 
 [总结](./wrapping-up).
