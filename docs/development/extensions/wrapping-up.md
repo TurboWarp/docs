@@ -2,22 +2,22 @@
 hide_table_of_contents: true
 ---
 
-# Wrapping up
+# 总结
 
-We hope that you found this tutorial helpful. Please give feedback and ask questions:
+我们希望这些教程对你有帮助。请在此反馈和提问:
 
- - Feedback about the tutorial: https://scratch.mit.edu/users/GarboMuffin/#comments
- - Bug tracker and suggestion tracker: https://github.com/TurboWarp/extensions/issues
- - General discussion: https://github.com/TurboWarp/extensions/discussions
+ - 关于教程的反馈: https://scratch.mit.edu/users/GarboMuffin/#comments
+ - Bug和建议追踪: https://github.com/TurboWarp/extensions/issues
+ - 讨论社区: https://github.com/TurboWarp/extensions/discussions
 
-Thank you for reading this far.
+感谢您读到这里。
 
-## Remaining topics to include in the future
+## 未来将包含的主题
 
- - Dynamic menus
- - Block utility stack frames, yield, yieldTick, etc.
+ - 动态菜单栏
+ - 积木堆栈程序框架，收益，收益记录等。
 
-## Things that are not supported yet
+## 暂时不支持的项目
 
- - Buttons
- - C-shape blocks such as "if", "if else", "repeat"
+ - 按钮
+ - “C”形积木(Scratch积木块)，例如 "if", "if else", "repeat"
