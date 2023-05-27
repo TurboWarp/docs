@@ -12,7 +12,7 @@ hide_table_of_contents: true
 
 沙盒拓展能够托管提交的静态文件或HTTP。
 
-一个常见的选择[GitHub Pages](https://pages.github.com/)。注意Github的原始链接并不起作用(raw.githubusercontent.com),你必须用Gihutb Page.
+一个常见的选择是[GitHub Pages](https://pages.github.com/)。注意Github的原始链接并不起作用(raw.githubusercontent.com),你必须用Gihutb Page.
 
 ## 非沙盒拓展
 
