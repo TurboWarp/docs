@@ -54,13 +54,3 @@ The `project_url` option tells TurboWarp to download project data from an arbitr
 https://turbowarp.org/?project_url=projects.scratch.mit.edu/10128407
 
 This works with any URL that supports CORS, not just projects.scratch.mit.edu. https:// is optional, but it is recommended to not put it for brevity. http:// URLs generally will generally not work for security reasons. Note that the URL needs to be a direct download and must support CORS (`Access-Control-Allow-Origin: *`). [GitHub Pages](https://pages.github.com/) will do this automatically and is known to work well.
-
-## Project token {#token}
-
-The `token` option tells TurboWarp what it should use as the project token when it fetches a project from Scratch. This can allow users to work around the [unshared projects changes](unshared-projects).
-
-Finding the project token for an unshared project requires using tools that we can't discuss here due to Scratch policies. We want to be clear that project tokens are not session tokens; you won't find a project token in your cookies. Please do not send your session cookies to us. Project tokens are from the "project_token" field in `https://api.scratch.mit.edu/projects/ID`. Including authentication to fetch unshared project metadata is left as an exercise to the reader.
-
-Note that project tokens expire after around 300 seconds, so links that use this feature are temporary. When sharing a project with a friend, this might be enough, but if you need the link to last longer, you will have to find another option (Remember: File > Save to your computer and File > Load from your computer always work).
-
-Some may be uncomfortable putting the project token in the URL because it will be sent to TurboWarp's servers. We do not log project tokens specified using a URL parameter. If this promise isn't enough for you, you can also put the token in the fragment or hash part of the URL which won't be sent to our server. For example: `https://turbowarp.org/1#?token=1234567_abcdef...`. Note that some apps remove the fragment part of URLs you share which would break the link.
