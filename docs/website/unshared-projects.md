@@ -29,8 +29,6 @@ Unshared projects were always something that just happened to work and weren't t
 
 **For embedding in other websites:** To embed unshared projects in other websites, either Share the project on Scratch or download the project to your computer with the File > Save to your computer menu in the Scratch editor, and use the [TurboWarp Packager](https://packager.turbowarp.org/) to convert this project to a standalone file that [can be embedded](/packager/embedding).
 
-There may be ways to generate links for unshared or "unlisted" projects that Scratch's policies do not allow us to discuss on this page.
-
 ## This is a good thing {#good-thing}
 
 Securing unshared projects is a decade overdue.
