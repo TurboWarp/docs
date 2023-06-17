@@ -32,7 +32,7 @@ Custom extensions are not compatible with Scratch. Projects made using custom ex
 
 ## Prerequisites
 
-Custom extension development requires knowledge of writing JavaScript. If you aren't familiar with JavaScript, please learn it first. You favorite search engine can help you find places to learn.If you don't know things like the difference between `"1"` and `1`, developing extensions will be very difficult. As volunteers, we don't have a lot of time to spend helping you learn JavaScript -- sorry.
+Custom extension development requires knowledge of writing JavaScript. If you aren't familiar with JavaScript, please learn it first. Your favorite search engine can help you find places to learn. If you don't know things like the difference between `"1"` and `1`, developing extensions will be very difficult. As volunteers, we don't have a lot of time to spend helping you learn JavaScript -- sorry.
 
 Extensions can be developed using either the website or desktop app.
 
@@ -52,9 +52,9 @@ In recent versions of TurboWarp, there are several ways to develop extensions.
 
 Recent versions of the TurboWarp website (desktop app not updated yet) have an option in the custom extension menu to load extensions either from local files or from copied and pasted JavaScript code. This will be the easiest way to develop extensions as it can be done on any computer with just a text editor.
 
-### Local HTTP Server (preferred)
+### Local HTTP Server (recommended)
 
-However, if possible, you should use a local HTTP server that lets TurboWarp fetch your extension from your computer. There are a lot of options for installing one of these.If you have Python installed, you already have one:
+However, if possible, you should use a local HTTP server that lets TurboWarp fetch your extension from your computer. This speeds up the process because you don't have to select/paste the JavaScript code in TurboWarp every time you make changes. There are a lot of options for installing one of these. If you have Python installed, you already have one:
 
 ```bash
 cd path/to/where/you/will/store/your/extensions
