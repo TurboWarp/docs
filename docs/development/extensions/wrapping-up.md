@@ -19,5 +19,4 @@ Thank you for reading this far.
 
 ## Things that are not supported yet
 
- - Buttons
  - C-shape blocks such as "if", "if else", "repeat"
