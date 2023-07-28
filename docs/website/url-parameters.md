@@ -51,6 +51,6 @@ https://turbowarp.org/?nocompile
 
 The `project_url` option tells TurboWarp to download project data from an arbitrary URL. Do not use together with a regular project ID.
 
-https://turbowarp.org/?project_url=projects.scratch.mit.edu/10128407
+https://turbowarp.org/?project_url=packager.turbowarp.org/example.sb3
 
-This works with any URL that supports CORS, not just projects.scratch.mit.edu. https:// is optional, but it is recommended to not put it for brevity. http:// URLs generally will generally not work for security reasons. Note that the URL needs to be a direct download and must support CORS (`Access-Control-Allow-Origin: *`). [GitHub Pages](https://pages.github.com/) will do this automatically and is known to work well.
+https:// is implied if you don't include a protocol. http:// URLs generally will generally not work for security reasons. Note that the URL needs to be a direct download and must support CORS (`Access-Control-Allow-Origin: *`). [GitHub Pages](https://pages.github.com/) will do this automatically and is known to work well.
