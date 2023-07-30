@@ -23,6 +23,7 @@ module.exports = {
     'website/embedding',
     'website/how-it-works',
     'website/javascript',
+    'website/return',
     'website/turbowarp-blocks',
     'website/translate',
     'website/url-parameters',
