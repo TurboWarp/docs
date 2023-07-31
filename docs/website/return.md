@@ -25,7 +25,7 @@ This works, but it's pretty ugly, and will only get worse as you use the block m
 
 ## How to use {#usage}
 
-First, enable the custom reporters extension through the menu in the bottom left corner:
+Open the extension library by clicking the button in the bottom left of the editor (same place where you find things like "pen"), then enable "Custom Reporters":
 
 ![](./assets/return-library.png)
 
