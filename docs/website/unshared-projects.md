@@ -10,7 +10,7 @@ Unshared projects can no longer be opened on TurboWarp, forkphorus, and other th
 This page answers most of the questions people have and lists some workarounds. Please read it in full before discussing these changes with other people to avoid misinformation.
 
 :::warning
-ANY website other than scratch.mit.edu that asks for your Scratch password is a SCAM, even if it supposedly lets you share your unshared projects with other users. You WILL have your account stolen and projects deleted. There are NO EXCEPTIONS to this rule.
+ANY website other than scratch.org that asks for your Scratch password is a SCAM, even if it supposedly lets you share your unshared projects with other users. You WILL have your account stolen and projects deleted. There are NO EXCEPTIONS to this rule.
 :::
 
 ## What happened {#what-happened}

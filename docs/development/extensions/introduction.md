@@ -11,7 +11,7 @@ In this tutorial, we will describe how to build custom extensions. The pages can
 :::info
 **We just rewrote this entire tutorial from the ground up.**
 
-It uses a completely different structure and style. We hope it's easier to follow. There's a good chance there are some errors and omissions in this tutorial. [Let me know what you think](https://scratch.mit.edu/users/GarboMuffin/#comments). Thanks!
+It uses a completely different structure and style. We hope it's easier to follow. There's a good chance there are some errors and omissions in this tutorial. [Let me know what you think](https://scratch.org/users/GarboMuffin/#comments). Thanks!
 :::
 
 When people refer to "extensions", there are a few things they could be referring to:

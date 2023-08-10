@@ -17,6 +17,6 @@ If you used costumes, sounds, or scripts created by other people, make sure you 
 
 Note that the Scratch trademarks such as the Scratch Logo, Scratch cat, Gobo, Pico, etc. are an exception to the CC BY-SA 2.0 license, and you might not have permission to use them.
 
-For more information, see "May I use / remix Scratch support materials, sprites, images, sounds or sample projects I’ve found on the website?" and "Can I sell my Scratch projects?" in https://scratch.mit.edu/faq
+For more information, see "May I use / remix Scratch support materials, sprites, images, sounds or sample projects I’ve found on the website?" and "Can I sell my Scratch projects?" in https://scratch.org/faq
 
 If you make money off of the packager, you are encouraged to [donate to us and the projects we rely upon](/donate). ❤️

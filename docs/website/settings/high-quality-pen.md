@@ -26,4 +26,4 @@ Not all projects will look better with high quality pen enabled.
   </tbody>
 </table>
 
-Project pictured: https://scratch.mit.edu/projects/437594584/ with seed 803258.
+Project pictured: https://scratch.org/projects/437594584/ with seed 803258.
