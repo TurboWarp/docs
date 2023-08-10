@@ -45,7 +45,7 @@ We've always had the stance that if people want unshared projects to actually be
 
 This section is for people developing third-party Scratch-related tools.
 
-The new procedure to download projects is to first fetch "project_token" field from `https://api.scratch.mit.edu/projects/ID` then use that to generate the URL `https://projects.scratch.mit.edu/ID?token=TOKEN`
+The new procedure to download projects is to first fetch "project_token" field from `https://api.scratch.mit.edu/projects/ID` then use that to generate the URL `https://scratch-projects.scratch.org/ID?token=TOKEN`
 
 If you're using JavaScript, here's some sample code to get you started that will work in web browsers. If your code is running server-side (eg. Node.js), you should replace `https://trampoline.turbowarp.org/api/projects/` with `https://api.scratch.mit.edu/projects/` as servers are immune to [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing). We make no guarantees about the uptime of trampoline.turbowarp.org; use at your own risk. You may also be interested in [sb-downloader](https://github.com/forkphorus/sb-downloader) (includes easy API) for a complete full project downloader.
 
@@ -67,7 +67,7 @@ const getProjectMetadata = async (projectId) => {
 const getProjectData = async (projectId) => {
     const metadata = await getProjectMetadata(projectId);
     const token = metadata.project_token;
-    const response = await fetch(`https://projects.scratch.mit.edu/${projectId}?token=${token}`);
+    const response = await fetch(`https://scratch-projects.scratch.org/${projectId}?token=${token}`);
     if (!response.ok) {
         throw new Error(`HTTP error ${response.status} fetching project data`);
     }
