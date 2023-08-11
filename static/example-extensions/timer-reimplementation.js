@@ -11,6 +11,7 @@ class TimerReimplementationExample {
           opcode: 'whenTimerGreaterThan',
           blockType: Scratch.BlockType.HAT,
           text: 'when timer > [TIME]',
+          isEdgeActivated: true,
           arguments: {
             TIME: {
               type: Scratch.ArgumentType.NUMBER,
@@ -34,7 +35,7 @@ class TimerReimplementationExample {
   }
   // highlight-start
   whenTimerGreaterThan({TIME}) {
-    // console.log(this.timer(), this.timer() > Scratch.Cast.toNumber(TIME));
+    console.log(this.timer(), this.timer() > Scratch.Cast.toNumber(TIME));
     return this.timer() > Scratch.Cast.toNumber(TIME);
   }
   // highlight-end

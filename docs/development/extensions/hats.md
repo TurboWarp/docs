@@ -2,45 +2,163 @@
 hide_table_of_contents: true
 ---
 
-# Hats and events
+# Events and hats
 
 import {ExtensionCode, Spoiler} from './utils.js';
 
-Hat or event blocks allow scripts to run in response to arbitrary events.
+Event blocks and hat blocks are two types of blocks that allow you to control when a script runs. Even though they look similar, they are different.
 
-## Edge-activated hats
+## Event blocks
 
-This will be easiest to understand by comparing it to concepts you are already familiar with. How would you make a script run something when some boolean condition *becomes true*? You could do something like this:
+Event blocks are for running scripts in response to an external event. An example of this is "when flag clicked" - the event is when the user clicks on the flag button. "when this sprite clicked" similarly is run in response to a click event, though Scratch does a bit more work to figure out which sprite the event happened on. Event blocks can be used for any external event that lets you run a callback.
+
+:::warning
+Event blocks are only supported in unsandboxed extensions.
+:::
+
+Event blocks never get executed; they just mark which scripts to run. For example, consider this block you're familiar with:
+
+![when space key pressed](./assets/when-space-key-pressed.svg)
+
+When you run this block, it doesn't do anything on its own. It just indicates that the things under it should be run. We can create our own event block with similar functionality using `Scratch.BlockType.EVENT`:
+
+<ExtensionCode title="unsandboxed/when-space-key-pressed">{require("!raw-loader!@site/static/example-extensions/unsandboxed/when-space-key-pressed.js")}</ExtensionCode>
+
+We'll talk about what `isEdgeActivated: false` means later, but for event blocks this is **required boilerplate**.
+
+In this example we define the opcode `whenSpacePressed`, but **because it is an event block, we don't write any code for it.**
+
+To start an event block, you use startHats. There are two versions of this:
+
+ - `Scratch.vm.runtime.startHats` which should be used outside of a block  (for example, clicking the green flag)
+ - `util.startHats` which should be used when inside of a block (for example, the broadcast block)
+
+:::warning
+Using `Scratch.vm.runtime.startHats` instead of `util.startHats` inside of a block can break script execution.
+:::
+
+The arguments and return values are the *exact* same. The first argument passed to startHats is the *full* block opcode, which is `extensionid_opcode`. In this example that is `eventexampleunsandboxed_whenSpacePressed`. This will start running all of the scripts in the project whose top block is this opcode.
+
+In this example we used the keydown event, but you can use anything you want. Try using a click event instead, or a setTimeout/setInterval, fetch(), and other APIs. As long as you get a callback, this will work.
+
+## Filtering by menu
+
+You may notice that Scratch's builtin "when key pressed" block has a menu. With our current extension, we would need to add a new block for every key. That's not ideal. Instead, we too can use a menu.
+
+<ExtensionCode title="unsandboxed/when-key-pressed">{require("!raw-loader!@site/static/example-extensions/unsandboxed/when-key-pressed.js")}</ExtensionCode>
+
+The block is defined similar to every other block. Note that event blocks **only support field menus**. You can't have text inputs or anywhere for someone to drop a block. To filter by an argument, it **must be a menu with acceptReporters: false**. (Block types discussed later are more relaxed about this.)
+
+The first argument to startHats is again the full opcode. The second argument to startHats is an object that is used to filter which events to activate. The name of the keys in this object are the names of the block's arguments (`KEY`, in this example) and the values correspond to the menu's values (not text!). You can filter by multiple keys if you want, and all will have to match.
+
+The real "when key pressed" block in Scratch is a bit more complicated than this. This is just an example.
+
+## Filtering by sprite
+
+Scratch's "when this sprite clicked" block only runs on one sprite, not every sprite. To do this yourself, you can use the third (and final) argument of startHats. The third argument can be set to a target object -- every sprite or clone is a "target". If set, only the event blocks in that target will run.
+
+The most common ways to get target objects are:
+
+ - `Scratch.vm.runtime.getTargetForStage()` to get the stage target
+ - `Scratch.vm.runtime.getSpriteTargetByName("Sprite1")` to get the non-clone target with a given name
+ - `Scratch.vm.runtime.targets` for the full list to search on your own
+
+In this example, we've modified the previous extension to only run the block if they're in the stage.
+
+<ExtensionCode title="unsandboxed/when-key-pressed-stage">{require("!raw-loader!@site/static/example-extensions/unsandboxed/when-key-pressed-stage.js")}</ExtensionCode>
+
+To filter by only sprite and not fields, you can set the second argument to null or an empty object (`{}`).
+
+## Restarting existing threads
+
+Consider this script:
+
+![](./assets/when-space-pressed-wait-then-say.svg)
+
+You may observe that if you repeatedly press space, the script doesn't restart (which would reset the wait block timer) -- it just keeps executing. If this isn't what you want, set `shouldRestartExistingThreads: true` on the block.
+
+<ExtensionCode title="unsandboxed/when-key-pressed-restart">{require("!raw-loader!@site/static/example-extensions/unsandboxed/when-key-pressed-restart.js")}</ExtensionCode>
+
+If you recreate the same script, as long as you repeatedly press space, the say block will never execute as the script is restarted each time which resets the wait block timer.
+
+Note that if a script whose top block has `shouldRestartExistingThreads: true` runs calls startHats on itself (similar to "when I receive message1: broadcast message1"), the currently running script will be marked to be restarted but continue to run blocks until it yields.
+
+## Started thread list
+
+Finally, startHats returns an array of the Thread objects that it started. You could use this to monitor thread status, determine how many threads were started, etc.
+
+<ExtensionCode title="unsandboxed/broadcast-5">{require("!raw-loader!@site/static/example-extensions/unsandboxed/broadcast-5.js")}</ExtensionCode>
+
+## Predicate-based hat blocks
+
+:::info
+Predicate-based hats are only supported in unsandboxed extensions.
+:::
+
+Predicate-based hat blocks let you create something similar to:
+
+![](./assets/forever-if-something-then.svg)
+
+A predicate-based hat is basically a more powerful version of event blocks. It uses the same startHats and supports `shouldRestartExistingThreads`. In addition to that, hat block can have actual code. All of the block's inputs will beevaluated, and then the hat block can use that information to determine whether or not the blocks under it should run. The block type is `Scratch.BlockType.HAT`. We can approximate the above as something like:
+
+<ExtensionCode title="unsandboxed/when">{require("!raw-loader!@site/static/example-extensions/unsandboxed/when.js")}</ExtensionCode>
+
+You can test the block like this:
+
+![](./assets/when-touching-mouse-change-by-1.svg)
+
+Note that this is not quite the same. The forever block will run many, many times per frame if there are no visual changes or if the project is in turbo mode, while the hat block will run exactly once per frame.
+
+`isEdgeActivated: false` is again required boilerplate. The block is defined the same as any other. startHats works the exact same as it does for event blocks: the first argument is the *full* opcode, then optional field filters, then optional target filter.
+
+The important difference is that `when` actually has code. After you do startHats, the block's inputs and arguments will be evaluated and passed to the block. The block can either return `true` to let the script run or `false` to prevent it from running. The block can also return a Promise that resolves to either `true` or `false` if necessary.
+
+One tricky thing here is that Scratch won't automatically start predicate-based hat blocks -- you need to do so yourself. In this example we use the `BEFORE_EXECUTE` event (It runs, as the name implies, before any scripts get run, so anything you start here will be run during that frame). As with event blocks, you can run your predicat-based hat blocks from anywhere that you get a callback.
+
+## Edge-activated hat blocks
+
+Predicate-based hats let you run a script when a condition *is* true. Edge-activated hat blocks let you run a script when a condition *becomes* true.
+
+This is a subtle but important difference. Consider these two scripts:
+
+![](./assets/when-timer-differences.svg)
+
+While the blocks may look similar, they have a significant difference. The top one will only run *once* when the timer *becomes* 5 while the bottom one will run repeatedly after the timer reaches 5.
+
+:::info
+Edge-activated hats can be used in any extension, even sandboxed ones
+:::
+
+Let's think about how you would implement this using normal Scratch blocks. You could try something like this:
 
 ![](./assets/wait-until-something-true.svg)
 
-This is great, but it will only work once. How could we make it work infinitely many times?
+This will only work once. How could we make it work infinitely many times?
 
 ![](./assets/forever-wait-until-something-true.svg)
 
-Almost. This has an issue: If "something" is still true when "do something" finishes, the loop will begin again immediately even though the condition didn't *become true*; it was *already true*. This can be fixed easily:
+Almost. Edge activated hats wait for the condition to become false before the script can run again -- a condition can't become true if it is already true.
 
 ![](./assets/forever-wait-until-something-true-then-not-true.svg)
 
-In essence, "edge-activated hats" let us rewrite that loop as:
+In essence, edge-activated hats let us rewrite that loop as:
 
 ![](./assets/when-something-is-true.svg)
 
-For each instance of an edge-activated hat in a project, Scratch will run it once each frame. Only when the script switches from returning false to returning true will the script will run. Once the script starts, the hat function will not be called again until the script stops. This is available in both sandboxed and unsandboxed extensions.
-
-There is one subtle difference between edge-activated hats and the loops above: Edge-activated hats can run even when the green flag isn't pressed.
-
-To demonstrate this, we can reimplement the "when timer greater than" block in Scratch:
-
-:::caution
-TurboWarp's compiler currently does not support edge-activated hats, so these scripts will run in the slower Scratch interpreter.
-:::
+To demonstrate this, we can write an extension similar to Scratch's "when timer greater than" block. The blockType is again `Scratch.BlockType.HAT`, but this time using `isEdgeActivated: true`:
 
 <ExtensionCode title="timer-reimplementation">{require("!raw-loader!@site/static/example-extensions/timer-reimplementation.js")}</ExtensionCode>
 
-To test this, create a script such as "when timer > 3, say Hello for 1 second", run the reset timer block, then wait a few seconds. If you uncomment the comment in `whenTimerGreaterThan`, you will see an output like this in the JavaScript console when the script runs:
+Notice that we don't have to run startHats -- Scratch automatically runs startHats for each edge activated hat at the beginning of a frame. This lets you use edge activated hats in sandboxed extensions. You also should not use `shouldRestartExistingThreads: true` for edge-activated hats.
+
+To test this use a script like this:
+
+![](./assets/when-timer-gt-say.svg)
+
+Open up the JavaScript console, press the green flag, then wait a few seconds. You'll see something like this:
 
 ```js
+...
 2.719 false
 2.753 false
 2.785 false
@@ -62,83 +180,13 @@ To test this, create a script such as "when timer > 3, say Hello for 1 second", 
 4.381 true
 ```
 
-As you can see, the moment the time reached 3 seconds, our function returned true, and the script began running. While the script is running, the hat function won't be called so the logs stop for one second. When the script finishes, the hat block will begin running again. As it continues to return true, there is no "edge activation" caused by switching from false to true, thus the script will not run again until the timer is reset.
+The moment the extension's timer reached 3 seconds, the block returned true, and the script began running. The logs stop for 1 second because the script was running. Once the script finished, the hat block started running again. As it is still returning true, the script will not run again as the condition did not *become true*.
 
-Like any other block, a hat function can return a Promise that resolves to a boolean. Scratch will wait for it to resolve. Additionally, edge-activated hats can themselves contain arbitrarily complex inputs such as variables or math. These are passed to the edge-activated hat, just like `TIME` in the example above.
-
-## Event-based hats
-
-While edge-activated hats work well for blocks like "when timer greater than", they don't work well for blocks like "when green flag pressed", "when I receive", or "when this sprite clicked". Unsandboxed extensions can instead use event-based hats which use an event-oriented system rather than constant polling.
-
-:::info
-Unlike edge-activated hats, TurboWarp's compiler fully supports event-based hats.
-:::
-
-To create an event-based HAT, define `isEdgeActivated: false` on the block. To run an event block from inside of another block, use `util.startHats("extensionid_opcode")`.
-
-To demonstrate event-based hats, we will create several extensions similar to the broadcast system already in Scratch. These extensions do not interact with Scratch's broadcast system at all. It's just an easy way to demonstrate how event-based hats work.
-
-Consider this extension that implements a very primitive version of broadcasts:
-
-<ExtensionCode title="unsandboxed/broadcast-1">{require("!raw-loader!@site/static/example-extensions/unsandboxed/broadcast-1.js")}</ExtensionCode>
-
-To test this, create a script using "when I receive the event" and then run "broadcast the event". Any scripts that begin with "when I receive the event" in any sprite will then begin to run.
-
-The first argument that is passed into `startHats` is the block's full opcode, which is the extension ID, followed by an underscore, followed by the opcode specified in getInfo.
-
-For event-based hats, the block itself doesn't run, so you don't need to create a function for the hat block. Notice how there is no "whenReceived" method in the extension class.
-
-## Arguments
-
-You may notice that having only one broadcast is a bit limiting. How do we make it so that there can be multiple broadcasts without making infinitely many unique blocks? We can add a menu with `acceptReporters: false` to the hat block and add a menu to the broadcast block. **The only arguments that event-based hats should contain are field menus (`acceptReporters: false`). Even simple text inputs are not supported.** This is the only time you should use `acceptReporters: false`.
-
-Although in the example here the broadcast block uses the same menu, in real extensions this is not necessary. The broadcast block can use any type of arbitrarily complex input.
-
-Then, the broadcast block can use the second parameter of startHats. startHats's second parameter is an object mapping the name of fields in the hat block to the expected value. Hat blocks that have a different value will not be started. If you specify no second argument, that means no filter, so all of the hats of that type will run.
-
-<ExtensionCode title="unsandboxed/broadcast-2">{require("!raw-loader!@site/static/example-extensions/unsandboxed/broadcast-2.js")}</ExtensionCode>
-
-In this example, the "broadcast [dropdown]" block only runs hats with that specific option, while the "broadcast all" block runs all hats regardless of dropdown value.
-
-A hat can contain multiple fields. For example, if a hat has two dropdowns and you call startHats using a second argument that only has 1 value, it will only check that dropdown. If you specify multiple values in the second argument, it will check all of them.
-
-## Restart existing threads
-
-If you create a script using the previous example such as "when I receive event 1, wait 1 second, say Hello" and repeatedly run a "broadcast Event 1" block, you will see that the script keeps running instead of restarting when you broadcast it again as the 1 second timer is uninterrupted. If this isn't what you want, you can set `shouldRestartExistingThreads: true` on the hat block.
-
-<ExtensionCode title="unsandboxed/broadcast-3">{require("!raw-loader!@site/static/example-extensions/unsandboxed/broadcast-3.js")}</ExtensionCode>
-
-If you make the same script using this example and repeatedly run "broadcast Event 1", the "say Hello" block won't run as the script is constantly being restarted, thus restarting the 1 second timer.
-
-Note that if a script whose top block is an event-based hat with `shouldRestartExistingThreads: true` runs a block that restarts itself (similar to "when I receive message1, broadcast message1"), the currently running script will not immediately stop; it may continue to run until it yields.
-
-## Starting scripts in only certain sprites
-
-Consider a built-in hat block such as "when this sprite clicked" -- how does Scratch know that it should only start the hat in one specific sprite instead of all of them? It does this using the third argument to `startHats` which is the target you want to start it in. If set to null or not supplied at all, it will run for all sprites.
-
-<ExtensionCode title="unsandboxed/broadcast-4">{require("!raw-loader!@site/static/example-extensions/unsandboxed/broadcast-4.js")}</ExtensionCode>
-
-## Started thread list
-
-Finally, `startHats` returns a list of the `Thread` objects that it started. You could use this to monitor thread status, determine how many threads were started, etc.
-
-<ExtensionCode title="unsandboxed/broadcast-5">{require("!raw-loader!@site/static/example-extensions/unsandboxed/broadcast-5.js")}</ExtensionCode>
-
-## Starting events externally
-
-Inside a block, you should use `util.startHats` to start hat blocks. Outside of blocks, you should instead use `Scratch.vm.runtime.startHats` as you don't have access to `util`. It works the exact same way; the arguments and return value are all the same.
-
-Here is an extension that will start a hat block once every second from an external interval:
-
-<ExtensionCode title="unsandboxed/every-second">{require("!raw-loader!@site/static/example-extensions/unsandboxed/every-second.js")}</ExtensionCode>
-
-`Scratch.vm.runtime.startHats` can be called from anywhere in your extension such as WebSocket message handlers, DOM event listeners, etc.
-
-## EVENT blocks
-
-Scratch.BlockType.EVENT exists, but there is no reason to use it instead of Scratch.BlockType.HAT.
+Similar to predicate-based hats, edge-activated hats can accept arbitrary inputs and return a Promise if necessary.
 
 ## Exercises
+
+TODO
 
 1. Create an edge-activated hat that runs when a specific variable becomes greater than a given number. (Hint: <Spoiler>Get a variable object with util.target.lookupVariableByNameAndType(variableName, variableType). variableType for normal variable is an empty string. Use developer tools to see what properties the variable object has.</Spoiler>)
 1. Create several hat blocks in one extension: one that runs every second, one every 5th second, and one every 10th second.
@@ -148,4 +196,4 @@ Scratch.BlockType.EVENT exists, but there is no reason to use it instead of Scra
 
 ## Next steps
 
-We know a lot of APIs now, but [how do we make sure that the changes we make won't break projects?](./compatibility)
+We've covered a lot of APIs, but [how do we make sure that the changes we make won't break projects?](./compatibility)
