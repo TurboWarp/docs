@@ -99,7 +99,7 @@ Predicate-based hat blocks let you create something similar to:
 
 ![](./assets/forever-if-something-then.svg)
 
-A predicate-based hat is basically a more powerful version of event blocks. It uses the same startHats and supports `shouldRestartExistingThreads`. In addition to that, hat block can have actual code. All of the block's inputs will beevaluated, and then the hat block can use that information to determine whether or not the blocks under it should run. The block type is `Scratch.BlockType.HAT`. We can approximate the above as something like:
+A predicate-based hat is basically a more powerful version of event blocks. It uses the same startHats and supports `shouldRestartExistingThreads`. In addition to that, hat block can have actual code. All of the block's inputs will be evaluated, and then the hat block can use that information to determine whether or not the blocks under it should run. The block type is `Scratch.BlockType.HAT`. We can approximate the above as something like:
 
 <ExtensionCode title="unsandboxed/when">{require("!raw-loader!@site/static/example-extensions/unsandboxed/when.js")}</ExtensionCode>
 
@@ -137,7 +137,7 @@ This will only work once. How could we make it work infinitely many times?
 
 ![](./assets/forever-wait-until-something-true.svg)
 
-Almost. Edge activated hats wait for the condition to become false before the script can run again -- a condition can't become true if it is already true.
+Almost. Edge activated hats wait for the condition to become false before the script can run again -- a condition can't *become true* if it is already true.
 
 ![](./assets/forever-wait-until-something-true-then-not-true.svg)
 
@@ -145,7 +145,7 @@ In essence, edge-activated hats let us rewrite that loop as:
 
 ![](./assets/when-something-is-true.svg)
 
-To demonstrate this, we can write an extension similar to Scratch's "when timer greater than" block. The blockType is again `Scratch.BlockType.HAT`, but this time using `isEdgeActivated: true`:
+To demonstrate this, we can write an extension similar to Scratch's "when timer greater than" block. The blockType is again `Scratch.BlockType.HAT`, but this time with `isEdgeActivated: true`:
 
 <ExtensionCode title="timer-reimplementation">{require("!raw-loader!@site/static/example-extensions/timer-reimplementation.js")}</ExtensionCode>
 
@@ -178,6 +178,7 @@ Open up the JavaScript console, press the green flag, then wait a few seconds. Y
 4.314 true
 4.347 true
 4.381 true
+...
 ```
 
 The moment the extension's timer reached 3 seconds, the block returned true, and the script began running. The logs stop for 1 second because the script was running. Once the script finished, the hat block started running again. As it is still returning true, the script will not run again as the condition did not *become true*.
@@ -186,12 +187,9 @@ Similar to predicate-based hats, edge-activated hats can accept arbitrary inputs
 
 ## Exercises
 
-TODO
-
-1. Create an edge-activated hat that runs when a specific variable becomes greater than a given number. (Hint: <Spoiler>Get a variable object with util.target.lookupVariableByNameAndType(variableName, variableType). variableType for normal variable is an empty string. Use developer tools to see what properties the variable object has.</Spoiler>)
-1. Create several hat blocks in one extension: one that runs every second, one every 5th second, and one every 10th second.
-1. Combine the hat blocks from the previous exercise into one hat block with a field dropdown.
-1. Create a block with a text input that will run a normal Scratch broadcast. The built-in "when I receive" block has the full opcode "event_whenbroadcastreceived" and its single argument is called "BROADCAST_OPTION" which is the name of the broadcast.
+1. Create an event-based block that runs once every second, another one every 5th second, and another every 10th second.
+1. Combine each of those event blocks into one block with a menu.
+1. Create a command block with a text input that will run a normal Scratch broadcast. The built-in "when I receive" block has the full opcode `event_whenbroadcastreceived` and its single argument is called `BROADCAST_OPTION` which is the name of the broadcast.
 1. Modify the previous exercise's broadcast block to be a reporter that returns a comma-separated list containing the name of each sprite that a new thread was started in. (Hint: <Spoiler>Each thread object contains a .target property, and each target object has a .getName() method.</Spoiler>)
 
 ## Next steps
