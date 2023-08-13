@@ -99,7 +99,7 @@ Predicate-based hat blocks let you create something similar to:
 
 ![](./assets/forever-if-something-then.svg)
 
-A predicate-based hat is basically a more powerful version of event blocks. It uses the same startHats and supports `shouldRestartExistingThreads`. In addition to that, hat block can have actual code. All of the block's inputs will be evaluated, and then the hat block can use that information to determine whether or not the blocks under it should run. The block type is `Scratch.BlockType.HAT`. We can approximate the above as something like:
+A predicate-based hat is basically a more powerful version of event blocks. It uses the same startHats and supports `shouldRestartExistingThreads`. In addition to that, hat block must define a function that returns true or false. All of the block's inputs will be evaluated, and then the hat block can use that information to determine whether or not the blocks under it should run. The block type is `Scratch.BlockType.HAT`. We can approximate the above as something like:
 
 <ExtensionCode title="unsandboxed/when">{require("!raw-loader!@site/static/example-extensions/unsandboxed/when.js")}</ExtensionCode>
 
