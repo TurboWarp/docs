@@ -63,26 +63,10 @@ Before we talk about the new APIs, we want to note some additional requirements 
 The big thing that unsandboxed extensions can do is directly access Scratch internals.
 
 ```js
-  const vm = Scratch.vm;
+const vm = Scratch.vm;
 ```
 
 That's full access to the actual Scratch VM object. There is a lot you can do with this.
-
-Remember -- every variable declaration must happen *inside* the IIFE.
-
-```js
-// GOOD CODE
-(function(Scratch) {
-  const vm = Scratch.vm;
-  // ...
-}(Scratch));
-
-// BAD CODE
-const vm = Scratch.vm;
-(function(Scratch) {
-  // ...
-}(Scratch));
-```
 
 Dig around for a while to find what you're looking for. Your developer tools will be immensely useful as you can access `Scratch` from there after an extension is loaded, or use the other [debugging global variables](../globals) that are available (but please don't use those in extensions). You may find the [scratch-vm source code](https://github.com/TurboWarp/scratch-vm/) or [@turbowarp/types](https://github.com/turboWarp/types) to be useful resources.
 
