@@ -63,9 +63,9 @@ python3 -m http.server 8080
 
 This starts a local HTTP server on http://localhost:8080/ in whatever folder you ran that command in.
 
-We will [eventually](./better-development-server) introduce the official development server, but we recommend starting with the most primitive setup possible for now.
+We will [eventually](./better-development-server) introduce the official development server, but we recommend starting with the most primitive setup possible for now so that you understand what extensions *actually* are.
 
-For now, you should use a port **other than 8000**. We will talk more about this later, but currently we want the extensions you write to run in the sandbox. Extensions that run outside of the sandbox have some extra responsibilities that we will discuss [later](./unsandboxed).
+For now, you should use a port **other than 8000**. We will talk more about this later, but currently we want the extensions you write to run in the sandbox. Most static HTTP servers (such as Python's) do not set certain headers required for unsandboxed extensions, and they have a lot more extra responsibilities to worry about.
 
 To test that your server works, create a file called `hello-world.js` and put any text in it. Make sure you're able to read the contents of the file in your browser by visiting a link like [http://localhost:8080/hello-world.js](http://localhost:8080/hello-world.js).
 

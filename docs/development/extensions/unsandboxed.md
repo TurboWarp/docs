@@ -15,18 +15,13 @@ To protect users from malicious extensions, extensions loaded from URLs will onl
  - `https://extensions.turbowarp.org/`
  - `http://localhost:8000/`
 
-As you don't have control over extensions.turbowarp.org, you will have to use the latter option. For this, configure your local HTTP server to run on port 8000 instead of what you've been using so far.
-
-When manually loading an extension from a file or JavaScript source code, there is an option to load the extension without the sandbox. This option to force an extension to run unsandboxed does not exist when using URLs due to security concerns.
+Additionally, **the server must support [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)**. It is likely the development server you're using does not support CORS by default. Until we introduce our development server on the next stage, it may be easiest to just manually load extensions as text or files as doing so lets you run them without the sandbox.
 
 ## Syntax
 
-The syntax for unsandboxed extensions is very familiar but has some differences. Technically, if you just copy and paste your old sandboxed extensions as unsandboxed extensions, it will appear to just work. However, this is dangerous and is likely to cause bugs later.
-
-If your sandboxed extension has code like like this:
+The syntax for unsandboxed extensions is exactly the same as sandboxed extensions:
 
 ```js
-// Old sandboxed extensions (worker or <iframe> sandbox):
 class MyExtension {
   getInfo () {
     return { /* ... */ };
@@ -35,40 +30,11 @@ class MyExtension {
 Scratch.extensions.register(new MyExtension());
 ```
 
-Or if your extension uses an old "plugin" mechanism, such as this one: (if you don't recognize this code then don't worry about it)
+:::info
+Previously there was a lot of required boilerplate, but this is no longer the case. The boilerplate will not cause issues, so you don't need to remove it if you already have it.
+:::
 
-```js
-class MyExtension {
-  getInfo () {
-    return { /* ... */ };
-  }
-}
-(function() {
-  var extensionInstance = new MyExtension(window.vm.extensionManager.runtime)
-  var serviceName = window.vm.extensionManager._registerInternalExtension(extensionInstance)
-  window.vm.extensionManager._loadedExtensions.set(extensionInstance.getInfo().id, serviceName)
-})();
-```
-
-The unsandboxed version would have code like this:
-
-```js
-(function(Scratch) {
-  'use strict';
-  class MyExtension {
-    getInfo () {
-      return { /* ... */ };
-    }
-  }
-  Scratch.extensions.register(new MyExtension());
-})(Scratch);
-```
-
-Using this template prevents unsandboxed extensions from interfering with each other when they try to define variables, classes, or functions with the same name. By requiring everything to be defined in an [immediately-invoked-function-expression (IIFE)](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) and enabling [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode), we prevent variables from accidentally leaking to the global scope.
-
-*All* functions and variables defined by the extension must be defined within the IIFE. Additionally, each extension must make sure to use its own personal copy of the `Scratch` API, which this template does automatically.
-
-An interesting thing to note about this template is that it is backward compatible with sandboxed extensions. As long as the extension doesn't use any of the features given to unsandboxed extensions, it will continue to work the same as a sandboxed extension.
+Do note that your script will run be run as an async function, so you can use `await` if you want to. This also means that, by default, `var x = 3;` will not create a global variable; rather it will be scoped to the function. Unsandboxed extensions really should not be creating global variables anyways, so this is a good thing.
 
 ## A more complete example
 
