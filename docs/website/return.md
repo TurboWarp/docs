@@ -3,9 +3,9 @@ slug: /return
 hide_table_of_contents: true
 ---
 
-# Custom Reporters
+# Custom Reporters (Tutorial)
 
-TurboWarp now supports custom reporters which lets you use any custom block in your project as a reporter, like the addition block built into Scratch. This is a pretty standard feature in text-based programming languages, but it can be hard to understand initially.
+TurboWarp now supports custom reporters which lets you use any custom block in your project as a reporter, like the addition block built into Scratch. This is a pretty standard feature in text-based programming languages, but it can be hard to understand initially. Yep
 
 :::info
 This is an experimental new feature. We're expecting there to be quite a few bugs, and we will be experimenting with ways to make these easier to understand.
