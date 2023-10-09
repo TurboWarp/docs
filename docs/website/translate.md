@@ -7,48 +7,69 @@ hide_table_of_contents: true
 
 We're looking for people to help translate TurboWarp into languages other than English. If that interests you, read on.
 
-## Requests to join are on hold and will be ignored {#on-hold}
+## Requirements to join as a translator {#requirements}
 
-Due to persistent and pervasive translation quality issues, requests to join the translation team sent through Transifex **WILL BE IGNORED**. We apologize for the inconvenience.
+ - You must be **FLUENT IN THE ENGLISH LANGUAGE**.
+ - For example, you’re fluent in English if you can use the Scratch Addons settings page in English, or if you understand griffpatch’s videos. If you struggle to understand sentences without a translator, you’re not fluent.
+ - You must be a **NATIVE SPEAKER** of the language you want to translate to.
+ - You must have an email address, which you should ideally check at least once a week.
+ - You must own an account on [scratch.mit.edu](https://scratch.mit.edu/).
 
-## Requirements {#requirements}
+If you’re not a native speaker but consider yourself fluent enough, you may also request to join. Keep in mind taking some language classes does not make you fluent. If you wouldn’t change your smartphone’s system language to it, you’re not fluent enough!
 
-**We would rather have no translations than bad translations.**
+We only support languages that Scratch itself supports. Support for RTL languages such as Arabic and Hebrew is currently a work-in-progress. They should mostly work in the editor, but places like the desktop app and packager require additional changes. Efforts to improve this will be prioritized when some more translations are written.
 
- - You MUST be **at least 18 years old**. We know this is a significant barrier, but if you are less than 18 years old, your language skills are not sufficient for us to trust you with translating our project, and creating a Transifex account would violate the Transifex Terms of Service.
- - You MUST be fluent in both English and another language. Taking a couple years of a language class in school DOES NOT make you fluent.
- - You MUST write translations yourself. **NO Google Translate or other machine translators**.
+## Steps to join as a translator {#request-to-join}
 
-If you do not meet these requirements, please DO NOT request to join our Transifex. It will do a favor for both of us.
+### 1. Verify your Scratch account
 
-Joining the translation team DOES NOT confer you any extra benefits, clout, or get your name listed on the credits page. ONLY join if you want to help translate and are *actually* fluent.
+1. Visit [this Scratch studio](https://scratch.mit.edu/studios/33984446/comments) with your Scratch account.
+2. Send a studio comment indicating the language you want to translate to (for example, `Greek`).  
+    ![](./assets/scratch-req-language.png)
 
-## Request to join {#request-to-join}
- 
- - Go to [our Transifex page](https://www.transifex.com/turbowarp/turbowarp/), and click on the purple "Join this project" button.
- - You'll probably have to create a Transifex account. Enter your email, a new password, then Sign Up.
- - When asked for your name, enter your username as your name and surname instead of your real name. For "department" and "job title", select "localization" and "individual contributor".
- - On then next step, select "join an existing project".
- - Choose the language(s) you want to translate into.
+If you don’t own a Scratch account, please send an email to translation@turbowarp.org instead.
 
-The request will be accepted within a few days.
+### 2. Create a Transifex account
 
-If the request is rejected, that most likely means that Scratch (and by extension, TurboWarp) does not support that language.
+1. Go to [Transifex Sign Up](https://app.transifex.com/signup/).
+2. You will be shown Transifex’s "Sign Up" screen. DO NOT sign up with Google.
+3. In the "username" field, we highly recommend you enter your Scratch username, or a slight variation of it.  
+   For example, if your Scratch username is `john_walker954`, your Transifex username can be exactly the same (`john_walker954`) or `john_walker954_scratch`.
+4. In the "business email" field, enter your email (it can be Gmail, Outlook, or any other).
+5. In the "password" field, enter a password.
+6. Click the "Sign Up" button.
+7. Choose "**Join an existing organization**".
+8. Click the "Continue" button.
+9. You’ll be asked for your First name and Last name.  
+   - In the **First name**, we recommend you enter your Scratch username.
+   - In the **Last name**, we recommend you enter the language you want to translate to (for example, `Greek`).
+10. In the "languages you speak" field, select at least one language you’re fluent with (for example, English).
+11. Click the "Continue" button.
+12. Continue with the "requesting a language" steps below.
 
-## Writing translations {#writing-translations}
+If you already own a Transifex account and don’t want to create a new one, please send an email to translation@turbowarp.org indicating your Transifex account’s username. Then, continue with the "requesting a language" section below.
 
-Find your language on https://www.transifex.com/turbowarp/turbowarp/dashboard/ and click the Translate button.
+### 3. Requesting a language
 
-Read https://docs.transifex.com/translation/translating-with-the-web-editor to learn how to use the Transifex translator.
+1. Make sure you’re logged in to Transifex. If you just signed up, you are already logged in.
+2. Go to [TurboWarp's Transifex page](https://app.transifex.com/join/?o=turbowarp&p=turbowarp&t=opensource).
+3. You’ll be prompted to choose the language you want to translate to.
+4. Choose one of the languages which are "available to join". We do not support languages that are not available to join.  
+    ![](./assets/transifex-req-language.png)
+5. Click the "Join Project" button.
+6. Wait until your request is accepted.
 
-Translations are pulled from Transifex periodically.
+:::tip
+If your request is accepted, you’ll receive an email from Transifex. We usually review requests every 48 hours.
+:::
 
-Our translations are broken up into a different resource for each subproject:
+:::warning
+If your request is denied, you’ll receive an email. If you believe this was a mistake, please send an email to translation@turbowarp.org indicating your Transifex username. See below for other contact methods. 
+:::
 
- - `gui.json` is for the [website and editor](https://turbowarp.org). This is the most important file to translate.
- - `desktop.json` is for [the desktop app](https://desktop.turbowarp.org/).
- - `desktop-web.json` is for [the desktop app's website](https://desktop.turbowarp.org/).
- - `addons.json` is for the [addon settings page](https://turbowarp.org/addons) (not the addons themselves).
- - Translations for the addons themselves are maintained externally. Due to Scratch's policy on browser extensions, we will not link that page here, sorry.
- - `packager.json` is for [the packager](https://packager.turbowarp.org/).
- - `store-listings.yaml` is for the desktop app's listings in places like the [Microsoft Store](https://apps.microsoft.com/store/detail/9P4DPZGV5ZKL)
+## Help or contact
+
+If you have any questions about translating, you may choose one of the following options:
+
+ - Send an email to translation@turbowarp.org.
+ - [Open a discussion on GitHub](https://github.com/TurboWarp/scratch-gui/discussions) (GitHub account required).
