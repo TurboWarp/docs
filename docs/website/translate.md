@@ -23,7 +23,7 @@ We only support languages that Scratch itself supports. Support for RTL language
 
 ### 1. Verify your Scratch account
 
-1. Visit [this Scratch studio](https://scratch.mit.edu/studios/33984446/comments) with your Scratch account.
+1. Visit [this Scratch studio](https://scratch.mit.edu/studios/33665222/comments) with your Scratch account.
 2. Send a studio comment indicating the language you want to translate to (for example, `Greek`).  
     ![](./assets/scratch-req-language.png)
 
