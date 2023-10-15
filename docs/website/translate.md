@@ -10,7 +10,7 @@ We're looking for people to help translate TurboWarp into languages other than E
 ## Requirements to join as a translator {#requirements}
 
  - You must be **FLUENT IN THE ENGLISH LANGUAGE**.
- - For example, you’re fluent in English if you can use the Scratch Addons settings page in English, or if you understand griffpatch’s videos. If you struggle to understand sentences without a translator, you’re not fluent.
+ - For example, you’re fluent if you can use TurboWarp in English, or if you understand griffpatch’s videos. If you struggle to understand sentences without a translator, you’re not fluent.
  - You must be a **NATIVE SPEAKER** of the language you want to translate to.
  - You must have an email address, which you should ideally check at least once a week.
  - You must own an account on [scratch.mit.edu](https://scratch.mit.edu/).
