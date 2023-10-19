@@ -53,4 +53,4 @@ The `project_url` option tells TurboWarp to download project data from an arbitr
 
 https://turbowarp.org/?project_url=packager.turbowarp.org/example.sb3
 
-https:// is implied if you don't include a protocol. http:// URLs generally will generally not work for security reasons. Note that the URL needs to be a direct download and must support CORS (`Access-Control-Allow-Origin: *`). [GitHub Pages](https://pages.github.com/) will do this automatically and is known to work well.
+https:// is implied if you don't include a protocol. http:// URLs generally will not work for security reasons. Note that the URL needs to be a direct download and must support CORS (`Access-Control-Allow-Origin: *`). [GitHub Pages](https://pages.github.com/) will do this automatically and is known to work well.
