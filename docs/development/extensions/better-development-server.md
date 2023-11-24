@@ -39,7 +39,7 @@ In the future, we may consider adding more development features.
 ## Exercises
 
 1. Can you figure out how to add a new HTML file to the development server? (Hint: <Spoiler>look into the "website" folder</Spoiler>)
-1. Can you figure out how to add your extension to the homepage list? (Hint: <Spoiler>look at "website/index.ejs"</Spoiler>)
+1. Can you figure out how to add your extension to the homepage list? (Hint: <Spoiler>look at "extensions/extensions.json"</Spoiler>)
 1. Can you figure out how to add an image for your extension on the homepage? (Hint: <Spoiler>create an image in "images" with the same folder and basename as the file in "extensions"</Spoiler>)
 
 ## Next steps
