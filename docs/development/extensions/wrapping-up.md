@@ -16,7 +16,4 @@ Thank you for reading this far.
 
  - Dynamic menus
  - Block utility stack frames, yield, yieldTick, etc.
-
-## Things that are not supported yet
-
  - C-shape blocks such as "if", "if else", "repeat"
