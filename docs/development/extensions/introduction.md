@@ -50,7 +50,7 @@ In recent versions of TurboWarp, there are several ways to develop extensions.
 
 ### Files (simplest)
 
-Recent versions of the TurboWarp website (desktop app not updated yet) have an option in the custom extension menu to load extensions either from local files or from copied and pasted JavaScript code. This will be the easiest way to develop extensions as it can be done on any computer with just a text editor.
+Recent versions of the TurboWarp website and desktop app have an option in the custom extension menu to load extensions either from local files or from copied and pasted JavaScript code. This will be the easiest way to develop extensions as it can be done on any computer with just a text editor.
 
 ### Local HTTP Server (recommended)
 
