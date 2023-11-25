@@ -194,7 +194,7 @@ if (await Scratch.canFetch(url)) {
 const image = new Image();
 image.src = src;
 // Do this instead:
-if (await Scratch.canFetch(url)) {
+if (await Scratch.canFetch(src)) {
   const image = new Image();
   image.src = src;
 }
