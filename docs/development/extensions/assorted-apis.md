@@ -10,7 +10,7 @@ Now that you are familiar with writing custom extensions, we will share some mor
 
 ## color1, color2, color3
 
-These three properties determine the color of each extension. The general advice is that `color1` should be the brightest, `color2` slightly darker, and `color3` the darkest. They should be set to hex color codes.
+These three properties determine, respectively, the color of the blocks, the color of the block inputs, and the color of the block menus of each extension. The general advice is that `color1` should be the brightest, `color2` slightly darker, and `color3` the darkest. They should be set to hex color codes.
 
 <ExtensionCode title="color">{require("!raw-loader!@site/static/example-extensions/color.js")}</ExtensionCode>
 
