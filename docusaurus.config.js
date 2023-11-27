@@ -55,7 +55,9 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
-          editUrl: 'https://github.com/TurboWarp/docs/edit/master/',
+          editUrl: ({ docPath }) => {
+            return `https://holocron.so/github/pr/TurboWarp/docs/master/editor/docs/${docPath}`
+          },
           breadcrumbs: false,
         },
         theme: {
