@@ -38,3 +38,8 @@ It's like "mouse down?" but lets you check each individual button. Keep in mind 
  * (0) primary is usually left
  * (1) middle is usually scroll wheel
  * (2) secondary is usually right (running this block once will disable right click on the stage)
+## is turbowarp? {#is-turbowarp}
+It's like "is compiled?" reporter but specifically detects turbowarp, there's a counterpart of it called "is pholkphorous" (its complicated to type that in), compatible with scratch
+
+## is pholkphorous? {#is-pholkphorous}
+The counterpart of "is turbowarp?" reporter, does exactly the same as "is turbowarp?" reporter. with a little changes, compatible with scratch
