@@ -12,11 +12,11 @@ If you just want to develop custom extensions, see [the custom extension documen
 
 ## Dependencies {#dependencies}
 
-You will need Git and Node.js v16 or later. We assume you have some familiarity with the command line.
-
-TurboWarp is a large app that can require multiple gigabytes of disk space and memory to build.
+All of our packages need Git and Node.js **v20** (likely anything v18 or later works, but we can't promise that). We assume you are familiar with the command line.
 
 Some packages may want some additional things installed, so check the README in each package you want to develop.
+
+TurboWarp is a large app that can require multiple gigabytes of disk space and memory to build.
 
 ## A note on how Scratch is organized {#organization}
 
@@ -25,12 +25,12 @@ Scratch is broken up into a bunch of different packages, each implementing one p
  - **scratch-gui** implements much of the interface (eg. the sprite list), connects everything together, and is where addons live
  - **scratch-vm** runs projects. It's where the compiler lives.
  - **scratch-render** is what displays things like the stage, sprites, text bubbles, and pen. It also implements blocks like "touching". Note that things that are rendered on top of sprites such as variable monitors are actually part of scratch-gui.
- - **scratch-svg-renderer** helps fix various SVG rendering problems
+ - **scratch-svg-renderer** helps fix various SVG rendering problems (we rename this to **@turbowarp/scratch-svg-renderer**)
  - **scratch-render-fonts** contains all the fonts that SVG costumes can use
  - **scratch-paint** is the costume editor
  - **scratch-parser** extracts and validates sb2 and sb3 files
- - **scratch-storage** is an abstraction around fetch() used for downloading (and theoretically uploading) files
- - **scratch-l10n** contains some translations
+ - **scratch-storage** is an abstraction around fetch() used for downloading (and theoretically uploading) files (we rename this to **@turbowarp/scratch-storage**)
+ - **scratch-l10n** contains some translations (we rename this to **@turbowarp/scratch-l10n**)
 
 In addition, the desktop app and packager are also support repositories.
 
