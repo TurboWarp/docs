@@ -4,65 +4,65 @@ sidebar_position: 2
 hide_table_of_contents: true
 ---
 
-# Getting Started
+# Modding Introduction
 
-These are the instructions for setting a development environment for TurboWarp/scratch-gui, scratch-vm, scratch-render, etc. or making custom builds on your own computer.
+These are the instructions for setting up a development environment for TurboWarp itself. This is useful if you want to submit pull requests to us or make your own mod.
 
-If you just want to use TurboWarp, visit https://turbowarp.org/. You don't need to follow these instructions.
+If you just want to develop custom extensions, see [the custom extension documentation](./extensions/introduction.md) instead.
 
-If you want to develop custom extensions, see [the custom extension documentation](./extensions/introduction.md) instead.
+## Dependencies {#dependencies}
 
-### Dependencies {#dependencies}
+You will need Git and Node.js v16 or later. We assume you have some familiarity with the command line.
 
-Make sure you have these installed:
+TurboWarp is a large app that can require multiple gigabytes of disk space and memory to build.
 
- - [Git](https://git-scm.com)
- - [Node.js](https://nodejs.org/en/)
+Some packages may want some additional things installed, so check the README in each package you want to develop.
 
-The process works best with [Node.js v14.x](https://nodejs.org/download/release/v14.21.0/) and npm v6.x. Later versions work, but this process will be a lot slower. We want to migrate to newer Node.js versions, but time is very limited and we inherit a lot from Scratch. You can use managers such as [volta](https://volta.sh/) to make it easier to manage having multiple versions of Node.js.
+## A note on how Scratch is organized {#organization}
 
-You might have to restart your terminal or computer for them to be fully installed. We assume you have some familiarity with the command line. Note that TurboWarp is a large app that may take a lot of resources to build.
+Scratch is broken up into a bunch of different packages, each implementing one part of the app.
 
-### A note on how Scratch is organized {#organization}
+ - **scratch-gui** implements much of the interface (eg. the sprite list), connects everything together, and is where addons live
+ - **scratch-vm** runs projects. It's where the compiler lives.
+ - **scratch-render** is what displays things like the stage, sprites, text bubbles, and pen. It also implements blocks like "touching". Note that things that are rendered on top of sprites such as variable monitors are actually part of scratch-gui.
+ - **scratch-svg-renderer** helps fix various SVG rendering problems
+ - **scratch-render-fonts** contains all the fonts that SVG costumes can use
+ - **scratch-paint** is the costume editor
+ - **scratch-parser** extracts and validates sb2 and sb3 files
+ - **scratch-storage** is an abstraction around fetch() used for downloading (and theoretically uploading) files
+ - **scratch-l10n** contains some translations
 
-Scratch 3 is organized into a bunch of different repositories. Each implements a part of the app. Here's the ones that TurboWarp cares enough about to fork:
+In addition, the desktop app and packager are also support repositories.
 
- - scratch-vm executes the project and is where the compiler lives
- - scratch-render renders sprites and implements "touching" blocks and is where high quality pen lives
- - scratch-blocks is the script editor
- - scratch-gui implements the outer interface, connects everything together, and is where addons live
- - scratch-paint is the costume editor
- - scratch-parser extracts sb2 and sb3 files
- - scratch-svg-renderer renders SVG files
- - scratch-storage downloads and uploads files
- - scratch-l10n contains translations
+## Building the GUI {#gui}
 
-### Building the GUI {#gui}
+If you want to mod Scratch, you'll need to be able to build the GUI. This is a common pattern you'll use for developing on Scratch packages:
 
 ```bash
+# clone it
 git clone https://github.com/TurboWarp/scratch-gui
 cd scratch-gui
+
+# install dependencies (preferred over `npm install` as it is faster and won't modify package-lock.json)
 npm ci
+
+# start development playground
 npm start
 ```
 
-If the repository has a package-lock.json, we recommend using `npm ci` instead of `npm install`.
+This starts the live development server for most packages, if there is one. For example, for scratch-gui, the playground can be accessed at [http://localhost:8601/](http://localhost:8601/). See the README or the output of `npm start` for information for other packages.
 
-scratch-gui's development playground is accessible on [http://localhost:8601/](http://localhost:8601/)
+## Build {#build}
 
-If you just want to build the GUI, you can stop here.
+While `npm start` is useful for development, at some point you'll need to get raw files out. You can do this with:
 
-### Build {#build}
-
-While `npm start` is useful for development, at some point you'll need to get files out. To do this, run this in the scratch-gui folder:
-
-```
+```bash
 npm run build
 ```
 
-Output goes in the `build` folder.
+The output will be in the `build` folder.
 
-When deploying TurboWarp to a website, you should enable production mode. This will result in faster execution and a greatly reduced file size.
+When deploying TurboWarp to a live website, you should enable production mode. This will result in faster execution and a greatly reduced file size:
 
 ```bash
 # mac, linux
@@ -77,33 +77,29 @@ $env:NODE_ENV="production"
 npm run build
 ```
 
-By default TurboWarp generates links like https://turbowarp.org/editor.html#123 However, by setting `ROOT=/` and `ROUTING_STYLE=wildcard` (in the same way that you set `NODE_ENV=production`), you can get routes like https://turbowarp.org/123/editor instead. Note that this requires a server that will setup the proper aliases. The webpack development server in scratch-gui is setup for this. For production you'd want something more like https://github.com/TurboWarp/turbowarp.org
+By default TurboWarp generates links like `https://turbowarp.org/editor.html#123`. However, by setting the variables `ROOT=/` and `ROUTING_STYLE=wildcard` (in the same way that you set `NODE_ENV=production`), you can get routes like `https://turbowarp.org/123/editor` instead. Note that this requires a server that will setup the proper aliases. The webpack development server in scratch-gui is setup for this. For production you'd want something more like https://github.com/TurboWarp/turbowarp.org.
 
-### Linking other packages {#linking}
+## Linking other packages {#linking}
 
-If you're interested in changing parts of TurboWarp other than the GUI, you have to do extra steps. You do not need to do this if you are only interesting in scratch-gui.
-
-It's probably easiest to understand by example, so here's how you would link local instances of scratch-vm and scratch-render to your local scratch-gui:
+To develop packages other than scratch-gui, you need to tell npm to use local copies of the package instead of the ones it downloaded from the internet. This is called *linking*. The pattern is:
 
 ```bash
-# Clone the other scratch-* repositories alongside (not inside) scratch-gui
-cd scratch-gui
-cd ..
+# clone the package you want to develop in the same folder as scratch-gui
+# (folder doesn't really matter but it makes things easier to keep track of)
+cd scratch-gui/..
 git clone https://github.com/TurboWarp/scratch-vm
-git clone https://github.com/TurboWarp/scratch-render
 
-# Set up each repository
+# install dependencies in the child package
 cd scratch-vm
 npm ci
-npm link
-cd ..
 
-cd scratch-render
-npm ci
+# tell npm that this is your local copy of the package
 npm link
-cd ..
 
-# Tell scratch-gui to use the local versions instead
-cd scratch-gui
-npm link scratch-vm scratch-render
+# for some packages (eg. storage, svg-renderer), you may need to build for your changes to apply
+npm run build
+
+# tell scratch-gui to use your local copy of the package
+cd ../scratch-gui
+npm link scratch-vm
 ```
