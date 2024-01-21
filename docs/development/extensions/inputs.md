@@ -42,6 +42,8 @@ These are the acceptible values for type:
 |Scratch.ArgumentType.MATRIX|A 5x5 matrix represented in binary| 11101010101... |
 |Scratch.ArgumentType.NOTE|A note on a piano keyboard.| ? |
 |Scratch.ArgumentType.IMAGE|Displays an inline image, not actually an input. Described later.| N/A |
+|Scratch.ArgumentType.COSTUME|Names of costumes within that sprite.| costume1 |
+|Scratch.ArgumentType.SOUND|Names of sounds within that sprite.| recording1 |
 
 Next, Scratch needs to know where to put each of the arguments in the block. Are they at the start, end, or somewhere in the middle? It can't guess, so you have to tell it. To do this, you use the `text` property on the block by using `[ARGUMENT_NAME]` syntax to denote where each input goes. Each argument in the `arguments` object should appear in `text` exactly once. Arguments can be in any order; it doesn't matter.
 
@@ -80,7 +82,7 @@ To make an argument into a menu, set its `type` to `Scratch.ArgumentType.STRING`
 
 A field is an argument that can only be set to a fixed string. As an example, see the input in the "stop all" block. An input is an argument that can be set to any value. As an example, see the steps input in the "move 10 steps" block or the costume input in the "switch costume" block. You almost always want an input, not a field.
 
-While it is possible to set the menu object itself to an array, this is highly discouraged as it implicitly sets `acceptReporters` to `false` which, again, is almost never what you want. Almost every menu you use should explicitly set `acceptReporters` to true so that it is an "input" instead of a "field". Note that switching an argument from a field to an input or the other way around is a backward-incompatible change. The only exception to this rule is when using [event-based hat blocks](./hats), which will be discussed much later.
+While it is possible to set the menu object itself to an array, this is highly discouraged as it implicitly sets `acceptReporters` to `false` which, again, is almost never what you want. Almost every menu you use should explicitly set `acceptReporters` to true so that it is an "input" instead of a "field". The only exception to this rule is when using [event-based hat blocks](./hats), which will be discussed much later. Note that switching an argument from a field to an input or the other way around is a backward-incompatible change.
 
 The default value will typically be the first item in the menu's item list. The item list must not be empty.
 

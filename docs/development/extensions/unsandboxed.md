@@ -165,6 +165,14 @@ If the extension MUST be run unsandboxed, add this around the start:
   }
 ```
 
+If you're using the `vm`, `runtime` or `Cast` APIs a lot, common practise is to define them around the start to save time:
+
+```js
+  const vm = Scratch.vm;
+  const runtime = vm.runtime;
+  const Cast = Scratch.Cast; // Discussed later.
+```
+
 ## Permissioned APIs
 
 Whereas sandboxed extensions are free to use APIs such as fetch() as they please, unsandboxed extensions should instead ask for permission before making a request to any remote service. This gives the user control over their privacy. While there is no technical measures enforcing this at runtime, it is required for all extensions on [extensions.turbowarp.org](https://extensions.turbowarp.org).
