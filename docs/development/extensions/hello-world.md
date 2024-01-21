@@ -58,12 +58,12 @@ Make sure to always call register() exactly once. If you don't call it, your ext
   }
 ```
 
-When you call register(), Scratch will then call the getInfo() function on the provided object. This object must return an object with metadata about the extension. Some required fields are `id`, `name`, and `blocks`. Here's a short summary of those:
+When you call register(), Scratch will then call the getInfo() function on the provided object. This object must return an object with metadata about the extension. Some of the fields are `id`, `name` and `blocks`. Here's a short summary of those:
 
 | | Type | Description |
 |:-:|:-:|:-:|
-| id | string | A unique ID used only by this extension. Multiple extensions cannot share the same ID. Can only use the letters a-z and 0-9 -- no uppercase letters, spaces, or special characters. |
-| name | string | The name of the extension that appears in the toolbox. |
+| id | string | A unique ID used only by this extension. Multiple extensions cannot share the same ID. Can only use the letters a-z and 0-9 -- no spaces or special characters. |
+| name | string | The name of the extension that appears in the toolbox. If not provided, it will default to the extension id. |
 | blocks | array | A list of objects that describe the blocks in the project. |
 
 Here's a short summary of what each block should have:
@@ -82,7 +82,8 @@ These are the acceptable values for blockType:
 |Scratch.BlockType.COMMAND|A block that doesn't report a value|move 10 steps|
 |Scratch.BlockType.REPORTER|A round block that reports a string or number|x position, costume name|
 |Scratch.BlockType.BOOLEAN|A block with pointy edges that reports a boolean (true or false)|mouse down|
-|Scratch.BlockType.HAT|A block that starts in response to events. Discussed later.|when this sprite clicked|
+|Scratch.BlockType.HAT|A block that starts in response to specific conditions. Discussed later.|when loudness > 10|
+|Scratch.BlockType.EVENT|A block that starts in response exclusively to events. Discussed later.|when this sprite clicked|
 
 While other BlockTypes do exist, they do not work well and will not be discussed at this time.
 
