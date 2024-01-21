@@ -58,7 +58,7 @@ Make sure to always call register() exactly once. If you don't call it, your ext
   }
 ```
 
-When you call register(), Scratch will then call the getInfo() function on the provided object. This object must return an object with metadata about the extension. Some of the fields are `id`, `name` and `blocks`. Here's a short summary of those:
+When you call register(), Scratch will then call the getInfo() function on the provided object. This object must return an object with metadata about the extension. Some of the fields are `id`, `name`, and `blocks`. Here's a short summary of those:
 
 | | Type | Description |
 |:-:|:-:|:-:|
