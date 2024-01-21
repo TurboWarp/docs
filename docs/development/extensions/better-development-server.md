@@ -30,7 +30,7 @@ npm run dev
 
 Now navigate to [http://localhost:8000](http://localhost:8000) -- you should see a list similar to [extensions.turbowarp.org](https://extensions.turbowarp.org/). For now, we're not going to worry about the list, we're just going to use the development server part.
 
-The place to save your extension JS is in the `extensions` folder inside of the repository. If you intend to submit these to us later, you should create a user folder for your extensions. For example, if your username is `TestMuffin`, you might save your fetching extension in the folder `extensions/TestMuffin/fetch.js` and load it using http://localhost:8000/TestMuffin/fetch.js. The extension should then also use an ID similar to `testmuffinfetch`.
+The place to save your extension JS is in the `extensions` folder inside of the repository. If you intend to submit these to us later, you should create a user folder for your extensions. For example, if your username is `TestMuffin`, you might save your fetching extension in the folder `extensions/TestMuffin/fetch.js` and load it using http://localhost:8000/TestMuffin/fetch.js. The extension should then also use an ID that contains your username, such as `testmuffinfetch`.
 
 The local development server is set up with the correct headers so that you don't need to manually hard refresh to ensure your script changes apply, and it tries to mimic the real extensions.turbowarp.org website as much as possible. It also includes TypeScript hints for many common Scratch APIs and ESLint rules for common mistakes.
 
