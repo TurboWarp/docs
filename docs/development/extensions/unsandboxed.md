@@ -165,7 +165,7 @@ If the extension MUST be run unsandboxed, add this around the start:
   }
 ```
 
-If you're using the `vm`, `runtime` or `Cast` a lot, it's advised to define them around the start:
+If you're using the `vm`, `runtime` or `Cast` APIs a lot, common practise is to define them around the start to save time:
 
 ```js
   const vm = Scratch.vm;
