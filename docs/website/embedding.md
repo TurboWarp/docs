@@ -8,10 +8,10 @@ hide_table_of_contents: true
 TurboWarp can be embedded with a standard iframe:
 
 ```html
-<iframe src="https://turbowarp.org/414716080/embed" width="499" height="416" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+<iframe src="https://turbowarp.org/414716080/embed" width="482" height="412" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
 ```
 
-Replace `414716080` with the ID of your project. You can change the width and height of the iframe and the player will automatically resize to fit (499x416 will result in the stage rendering at an undistorted 480x360).
+Replace `414716080` with the ID of your project. You can change the width and height of the iframe and the player will automatically resize to fit (482x412 will result in the stage rendering at an undistorted 480x360).
 
 TurboWarp's embeds will have a transparent background if the iframe is allowed to be transparent. TurboWarp's embeds will have a fullscreen button if the iframe is allowed to become fullscreen. The example code above enables both of these feature.
 
