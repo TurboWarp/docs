@@ -113,7 +113,7 @@ Note that this is not quite the same. The forever block will run many, many time
 
 The important difference is that `when` actually has code. After you do startHats, the block's inputs and arguments will be evaluated and passed to the block. The block can either return `true` to let the script run or `false` to prevent it from running. The block can also return a Promise that resolves to either `true` or `false` if necessary.
 
-One tricky thing here is that Scratch won't automatically start predicate-based hat blocks -- you need to do so yourself. In this example we use the `BEFORE_EXECUTE` event (It runs, as the name implies, before any scripts get run, so anything you start here will be run during that frame). As with event blocks, you can run your predicat-based hat blocks from anywhere that you get a callback.
+One tricky thing here is that Scratch won't automatically start predicate-based hat blocks -- you need to do so yourself. In this example we use the `BEFORE_EXECUTE` event (It runs, as the name implies, before any scripts get run, so anything you start here will be run during that frame). As with event blocks, you can run your predicate-based hat blocks from anywhere that you get a callback.
 
 ## Edge-activated hat blocks
 
