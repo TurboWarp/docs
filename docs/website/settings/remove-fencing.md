@@ -10,5 +10,5 @@ Allows sprites to move offscreen, become as large or as small as they want, and 
 This may slightly improve performance in some projects.
 
 :::caution
-This may break some projects.
+This may break some projects or make you device lag.
 :::
