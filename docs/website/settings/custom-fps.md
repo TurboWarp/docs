@@ -18,6 +18,6 @@ When running at 30 FPS (as Scratch typically does), this script will run 30 time
 To make projects that are compatible with custom framerates, you should use techniques such as delta time:
 
  - https://en.wikipedia.org/wiki/Delta_timing
- - https://scratch.mit.edu/projects/487694716/ (Scratch example)
+ - https://scratch.org/projects/487694716/ (Scratch example)
 
 These techniques may require significant changes to your project.

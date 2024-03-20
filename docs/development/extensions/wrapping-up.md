@@ -6,7 +6,7 @@ hide_table_of_contents: true
 
 We hope that you found this tutorial helpful. Please give feedback and ask questions:
 
- - Feedback about the tutorial: https://scratch.mit.edu/users/GarboMuffin/#comments
+ - Feedback about the tutorial: https://scratch.org/users/GarboMuffin/#comments
  - Bug tracker and suggestion tracker: https://github.com/TurboWarp/extensions/issues
  - General discussion: https://github.com/TurboWarp/extensions/discussions
 

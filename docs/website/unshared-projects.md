@@ -10,7 +10,7 @@ Unshared projects can no longer be opened on TurboWarp, forkphorus, and other th
 This page answers most of the questions people have and lists some workarounds. Please read it in full before discussing these changes with other people to avoid misinformation.
 
 :::warning
-ANY website other than scratch.mit.edu that asks for your Scratch password is a SCAM, even if it supposedly lets you share your unshared projects with other users. You WILL have your account stolen and projects deleted. There are NO EXCEPTIONS to this rule.
+ANY website other than scratch.org that asks for your Scratch password is a SCAM, even if it supposedly lets you share your unshared projects with other users. You WILL have your account stolen and projects deleted. There are NO EXCEPTIONS to this rule.
 :::
 
 ## What happened {#what-happened}
@@ -45,14 +45,14 @@ We've always had the stance that if people want unshared projects to actually be
 
 This section is for people developing third-party Scratch-related tools.
 
-The new procedure to download projects is to first fetch "project_token" field from `https://api.scratch.mit.edu/projects/ID` then use that to generate the URL `https://projects.scratch.mit.edu/ID?token=TOKEN`
+The new procedure to download projects is to first fetch "project_token" field from `https://scratch-api.scratch.org/projects/ID` then use that to generate the URL `https://scratch-projects.scratch.org/ID?token=TOKEN`
 
-If you're using JavaScript, here's some sample code to get you started that will work in web browsers. If your code is running server-side (eg. Node.js), you should replace `https://trampoline.turbowarp.org/api/projects/` with `https://api.scratch.mit.edu/projects/` as servers are immune to [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing). We make no guarantees about the uptime of trampoline.turbowarp.org; use at your own risk. You may also be interested in [sb-downloader](https://github.com/forkphorus/sb-downloader) (includes easy API) for a complete full project downloader.
+If you're using JavaScript, here's some sample code to get you started that will work in web browsers. If your code is running server-side (eg. Node.js), you should replace `https://trampoline.turbowarp.org/api/projects/` with `https://scratch-api.scratch.org/projects/` as servers are immune to [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing). We make no guarantees about the uptime of trampoline.turbowarp.org; use at your own risk. You may also be interested in [sb-downloader](https://github.com/forkphorus/sb-downloader) (includes easy API) for a complete full project downloader.
 
 ```js
 const getProjectMetadata = async (projectId) => {
     // IF IN A WEB BROWSER, you need to use a service like trampoline.turbowarp.org to access the Scratch API.
-    // IF IN NODE.JS, you should use https://api.scratch.mit.edu/projects/${projectId} directly instead.
+    // IF IN NODE.JS, you should use https://scratch-api.scratch.org/projects/${projectId} directly instead.
     const response = await fetch(`https://trampoline.turbowarp.org/api/projects/${projectId}`);
     if (response.status === 404) {
         throw new Error('The project is unshared or does not exist');
@@ -67,7 +67,7 @@ const getProjectMetadata = async (projectId) => {
 const getProjectData = async (projectId) => {
     const metadata = await getProjectMetadata(projectId);
     const token = metadata.project_token;
-    const response = await fetch(`https://projects.scratch.mit.edu/${projectId}?token=${token}`);
+    const response = await fetch(`https://scratch-projects.scratch.org/${projectId}?token=${token}`);
     if (!response.ok) {
         throw new Error(`HTTP error ${response.status} fetching project data`);
     }

@@ -13,7 +13,7 @@ NEW: TurboWarp now supports unsandboxed extensions which add new blocks! https:/
 
 ![is compiled?](./assets/is-compiled.svg)
 
-See https://scratch.mit.edu/projects/414716080/
+See https://scratch.org/projects/414716080/
 
 These blocks are "compatible" with Scratch because they're actually just modified argument reporters.
 
