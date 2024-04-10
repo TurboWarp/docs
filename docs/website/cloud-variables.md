@@ -20,15 +20,95 @@ Some things to keep in mind:
  - There are no public cloud variable history logs.
  - Sensing the color of the video sensing extension is disabled when cloud variables or custom extensions are used. This fixes the same issue as Scratch's "For privacy reasons, cloud variables have been disabled in this project because it contains video sensing blocks" warning.
 
+---
+
 ## For bot developers and advanced users {#advanced}
 
-Connecting to our servers using bots and other custom clients is acceptable, within reason. We have some guidelines that we expect bot developers to follow:
+We allow using bots and custom clients, however due to persistent abuse we have some requirements and expectations. Remember that **this is a free service operated by volunteers.** The CPU to parse messages and the bandwidth to send messages to other users is not free. The information below is applicable to both users and authors of cloud variable libraries.
 
- * When using custom project IDs, don't use random numbers. Project IDs aren't contrained to numbers, so use text that lets us verify that your use is legitimate. For example, `example.com/my-project` is a lot more useful than `3498394834`. **If we see excessive cloud variable traffic to a numerical project ID that corresponds to a project that doesn't make sense, we will disable variables for that project.**
- * Bots must set a proper `User-Agent` header. Include something like a Scratch username, GitHub repository, website, etc. so we can learn more about your bot. Cloud variable libraries should set a default User-Agent with generic library information and provide an API for library users to add their own contact information (ideally, make using this API mandatory). An example User-Agent would be `foo-client/1.0.0 ExampleBot/4.2 scratch.mit.edu/users/TestMuffin`. Pretending to be a web browser is not okay and is trivial to detect. **Connections that do not provide a valid User-Agent will be rejected immediately.**
- * Remember that a WebSocket is a bi-directional pipe, not a single-use HTTP request. If you need to read variables as they change, open exactly one WebSocket connection and let the server send updates as they happen. Once a WebSocket is no longer needed, close it. If you only want to read changes on intervals of several minutes or more, it would be better to open a WebSocket, wait to receive any variables, then close the connection. **Bots that constantly open and close connections will be blocked.**
- * Bots must not send more than 10 cloud variable updates per second. It is server-side throttled at that point; sending more just wastes bandwidth. **Bots that set variables more rapidly will be blocked.**
- * In order to reduce CPU and network usage, the server batches multiple cloud variable updates to send as a group. The server doesn't promise that it will send each variable update in the same order as they were received or that it won't skip some updates that were replaced by more recent values.
- * Please don't include Scratch session cookies when connecting to our servers.
+### User-Agent is required {#user-agent}
 
-Remember that this is a free service. Act accordingly.
+Bots must provide a valid [User-Agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) header in their connection. That includes contact information (such as a Scratch profile link, email address, GitHub issue page, etc.) and, ideally, the name and version of the library being used. Some examples of good User-Agents:
+
+ - `multiplayer leaderboard bot by https://scratch.mit.edu/users/TestMuffin`
+ - `cloud-variable-library/1.0.1 contact@example.com`
+
+Only exception is if your bot is running in a browser where you can't control the User-Agent. In this case the browser will automatically include other headers like Origin with the name of your website anyways. Pretending to be a browser is not okay and is easy to detect.
+
+Ask the author of your cloud variable or WebSocket library how to specify a User-Agent.
+
+<details>
+<summary>If you are developing a cloud variable library</summary>
+
+You should expose an API to set the User-Agent, and you should make using this API mandatory. For example, for some hypothetical cloud variable API, you might have an option like this:
+
+```js
+const CloudConnection = require('...');
+
+const connection = new CloudConnection({
+    username: '...',
+    projectId: '...',
+    // highlight-start
+    // UPDATE THIS!
+    contactInformation: 'contact@example.com'
+    // highlight-end
+});
+
+connection.on('connected', () => { /* ... */ });
+connection.on('set', (name, value) => { /* ... */ });
+```
+
+Your library will see the `contactInformation` option and concatenate it with the name and version of your library, resulting in a final User-Agent like `CloudConnectionLib/0.3.3 contact@example.com`.
+
+If someone does not specify `contactInformation`, you should not let them continue anyways. User-Agents that are lacking information will be blocked, and you will end up with nonsense bug reports from users saying "cloud variable wont connect" with no further details. Good luck diagnosing that! Instead, give them a nice error message so they can figure it out without bothering you.
+
+To actually set the User-Agent, look at the documentation for the WebSocket library you use. They probably won't mention User-Agent specifically, but they should mention how to set headers in general. For example, using the Node.js [ws](https://www.npmjs.com/package/ws) client, you would do:
+
+```js
+const ws = new WebSocket("wss://clouddata.turbowarp.org", {
+  headers: {
+    "user-agent": userAgentGoesHere
+  }
+});
+```
+
+</details>
+
+### Project ID {#project-id}
+
+Project IDs are not limited to just numbers -- they can be any text you want. If you're using a custom ID for a project that doesn't live on the Scratch website, use text like `example.com/my-project` so that we can verify your project is legitimate. If we see a lot of cloud variable activity using a project ID that doesn't make sense, we will disable that project ID.
+
+### Usernames {#username}
+
+The cloud variable protocol requires you to provide a username. The server tries to ensure that all usernames are safe before allowing the connection. We recommend just setting the username to `player` followed by between 2 and 7 random numbers as your connection will start faster (we won't ask the Scratch API to validate it). If your bot needs a specific username, store it in a separate variable.
+
+### Don't rapidly open and close connections {#one-connection}
+
+We've seen a pattern of bots opening a connection, closing it, and then immediately opening a new one in an endless loop. The end result is a slow bot that uses way more network and CPU resources than it has any reason to, which is not allowed. We think this is because some poorly designed libraries have APIs that let people write code like this:
+
+```py
+while True:
+    value = cloudlibrary.get_var(project_id, username, user_agent, variable_name)
+    print(f"{variable_name} is {value}")
+```
+
+Where `cloudlibrary.get_var` is implemented by opening a connection and then closing it immediately. Instead, libraries should offer [event-driven](https://en.wikipedia.org/wiki/Event-driven_programming) APIs. Instead of constantly asking the server for the latest values, just open a connection, and let the server send them to you as changes happen. WebSockets are very efficient: If no variables are changing, the connection remains idle. If there are a lot of variables changing, you'll the updates as soon as possible. Equivalent code might instead be:
+
+```py
+def on_set(name, value):
+    print(f"{name} is {value}")
+connection = cloudlibrary.connect(project_id, username, user_agent, on_set)
+```
+
+It is possible to offer an API like `get_var` as long as the implementation of those is event-driven and uses one connection internally (then `get_var` just return the most recently received value). It just takes a little bit of work.
+
+### Updates are buffered {#buffering}
+
+For performance, the server will buffer up several cloud variable updates to send out as one group. Updates are not guaranteed to be sent in the same order they are received, and some updates may be skipped entirely. As a result of this buffering, updating variables more than 10 times per second is redundant and will just cause updates to be skipped.
+
+### Important debug information {#debug}
+
+To make things easier for us, you, and anyone using your library, please log these things somewhere (such as in error messages) instead of silently ignoring them:
+
+ - WebSocket close codes. All of the 4XXX codes are [listed in this table](https://github.com/TurboWarp/cloud-server/blob/master/doc/protocol.md#server---client). Would you rather see `connection closed` or `connection closed with code 4002`? Looking up the latter's code in the table makes it clear that the username is the problem.
+ - Invalid JSON received from the server. If the server has something to tell you beyond just what the close code list says, it will send you a plain English sentence on one line instead of a JSON object. When your JSON parser throws an error, you should log the actual raw text received from the server so you get error messages like `Recieved invalid JSON from server: The cloud data library you are using is putting your Scratch account at risk by sending us your login token for no reason` instead of `JSON.parse: unexpected character at line 1 column 1 of the JSON data`. Which of those would you rather see?
