@@ -92,7 +92,7 @@ while True:
     print(f"{variable_name} is {value}")
 ```
 
-Where `cloudlibrary.get_var` is implemented by opening a connection and then closing it immediately. Instead, libraries should offer [event-driven](https://en.wikipedia.org/wiki/Event-driven_programming) APIs. Instead of constantly asking the server for the latest values, just open a connection, and let the server send them to you as changes happen. WebSockets are very efficient: If no variables are changing, the connection remains idle. If there are a lot of variables changing, you'll the updates as soon as possible. Equivalent code might instead be:
+Where `cloudlibrary.get_var` is implemented by opening a connection and then closing it immediately. Instead, libraries should offer [event-driven](https://en.wikipedia.org/wiki/Event-driven_programming) APIs. Instead of constantly asking the server for the latest values, open exactly one WebSocket, and let the server send updates as they happen. WebSockets are very efficient: If no variables are changing, the connection remains idle. If there are a lot of variables changing, you'll the updates as soon as possible. Equivalent code might instead be:
 
 ```py
 def on_set(name, value):
@@ -100,7 +100,7 @@ def on_set(name, value):
 connection = cloudlibrary.connect(project_id, username, user_agent, on_set)
 ```
 
-It is possible to offer an API like `get_var` as long as the implementation of those is event-driven and uses one connection internally (then `get_var` just return the most recently received value). It just takes a little bit of work.
+It is possible to offer an API like `get_var` as long as the implementation is event-driven and uses one connection internally (then `get_var` just returns the most recently received value). It just takes a little bit of work.
 
 ### Updates are buffered {#buffering}
 
