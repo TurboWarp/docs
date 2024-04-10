@@ -24,7 +24,7 @@ Some things to keep in mind:
 
 ## For bot developers and advanced users {#advanced}
 
-We allow using bots and custom clients, however due to persistent abuse we have some requirements and expectations. Remember that **this is a free service operated by volunteers.** The CPU to parse messages and the bandwidth to send messages to other users is not free. The information below is applicable to both users and authors of cloud variable libraries.
+We allow using bots and custom clients. However, due to persistent abuse, we have some requirements and expectations. Remember that **this is a free service operated by volunteers.** The CPU to parse messages and the bandwidth to send messages to other users is not free. The information below is applicable to both users and authors of cloud variable libraries.
 
 ### User-Agent is required {#user-agent}
 
@@ -33,7 +33,7 @@ Bots must provide a valid [User-Agent](https://developer.mozilla.org/en-US/docs/
  - `multiplayer leaderboard bot by https://scratch.mit.edu/users/TestMuffin`
  - `cloud-variable-library/1.0.1 contact@example.com`
 
-Only exception is if your bot is running in a browser where you can't control the User-Agent. In this case the browser will automatically include other headers like Origin with the name of your website anyways. Pretending to be a browser is not okay and is easy to detect.
+The only exception is if your bot is running in a browser where you can't control the User-Agent. In this case, your browser will automatically include other headers like Origin with the name of your website anyway. Pretending to be a browser is not okay and is easy to detect.
 
 Ask the author of your cloud variable or WebSocket library how to specify a User-Agent.
 
@@ -125,4 +125,4 @@ For performance, the server will buffer up several cloud variable updates to sen
 To make things easier for us, you, and anyone using your library, please log these things somewhere (such as in error messages) instead of silently ignoring them:
 
  - WebSocket close codes. All of the 4XXX codes are [listed in this table](https://github.com/TurboWarp/cloud-server/blob/master/doc/protocol.md#server---client). Would you rather see `connection closed` or `connection closed with code 4002`? Looking up the latter's code in the table makes it clear that the username is the problem.
- - Invalid JSON received from the server. If the server has something to tell you beyond just what the close code list says, it might send you a plain English sentence instead of a JSON object. When your JSON parser throws an error, you should log the actual raw text received from the server so you get error messages like `Recieved invalid JSON from server: The cloud data library you are using is putting your Scratch account at risk by sending us your login token for no reason` instead of `JSON.parse: unexpected character at line 1 column 1 of the JSON data`. Which of those would you rather see?
+ - Invalid JSON received from the server. If the server has something to tell you beyond just what the close code table says, it might send you a plain English sentence instead of a JSON object. When your JSON parser throws an error, you should log the actual raw text received from the server so you get error messages like `Received invalid JSON from server: The cloud data library you are using is putting your Scratch account at risk by sending us your login token for no reason` instead of `JSON.parse: unexpected character at line 1 column 1 of the JSON data`. Which of those would you rather see?
