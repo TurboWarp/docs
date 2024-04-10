@@ -82,6 +82,8 @@ Project IDs are not limited to just numbers -- they can be any text you want. If
 
 The cloud variable protocol requires you to provide a username. The server tries to ensure that all usernames are safe before allowing the connection. We recommend just setting the username to `player` followed by between 2 and 7 random numbers as your connection will start faster (we won't ask the Scratch API to validate it). If your bot needs a specific username, store it in a separate variable.
 
+For cloud variable library authors, as long as you are forcing users to have a valid User-Agent, the username is redundant, so you can eschew the username option and generate a random one automatically.
+
 ### Don't rapidly open and close connections {#one-connection}
 
 We've seen a pattern of bots opening a connection, closing it, and then immediately opening a new one in an endless loop. The end result is a slow bot that uses way more network and CPU resources than it has any reason to, which is not allowed. We think this is because some poorly designed libraries have APIs that let people write code like this:
