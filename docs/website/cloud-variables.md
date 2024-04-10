@@ -78,11 +78,23 @@ const ws = new WebSocket("wss://clouddata.turbowarp.org", {
 
 Project IDs are not limited to just numbers -- they can be any text you want. If you're using a custom ID for a project that doesn't live on the Scratch website, use text like `example.com/my-project` so that we can verify your project is legitimate. If we see a lot of cloud variable activity using a project ID that doesn't make sense, we will disable that project ID.
 
+<details>
+<summary>If you are developing a cloud variable library</summary>
+
+For this reason, your project ID options should be strings, not an integer or other numeric type.
+
+</details>
+
 ### Usernames {#username}
 
 The cloud variable protocol requires you to provide a username. The server tries to ensure that all usernames are safe before allowing the connection. We recommend just setting the username to `player` followed by between 2 and 7 random numbers as your connection will start faster (we won't ask the Scratch API to validate it). If your bot needs a specific username, store it in a separate variable.
 
-For cloud variable library authors, as long as you are forcing users to have a valid User-Agent, the username is redundant, so you can eschew the username option and generate a random one automatically.
+<details>
+<summary>If you are developing a cloud variable library</summary>
+
+As long as you are forcing users to have a valid User-Agent, the username is redundant, so you can eschew the username option and generate a random one automatically.
+
+</details>
 
 ### Don't rapidly open and close connections {#one-connection}
 
@@ -113,4 +125,4 @@ For performance, the server will buffer up several cloud variable updates to sen
 To make things easier for us, you, and anyone using your library, please log these things somewhere (such as in error messages) instead of silently ignoring them:
 
  - WebSocket close codes. All of the 4XXX codes are [listed in this table](https://github.com/TurboWarp/cloud-server/blob/master/doc/protocol.md#server---client). Would you rather see `connection closed` or `connection closed with code 4002`? Looking up the latter's code in the table makes it clear that the username is the problem.
- - Invalid JSON received from the server. If the server has something to tell you beyond just what the close code list says, it will send you a plain English sentence on one line instead of a JSON object. When your JSON parser throws an error, you should log the actual raw text received from the server so you get error messages like `Recieved invalid JSON from server: The cloud data library you are using is putting your Scratch account at risk by sending us your login token for no reason` instead of `JSON.parse: unexpected character at line 1 column 1 of the JSON data`. Which of those would you rather see?
+ - Invalid JSON received from the server. If the server has something to tell you beyond just what the close code list says, it might send you a plain English sentence instead of a JSON object. When your JSON parser throws an error, you should log the actual raw text received from the server so you get error messages like `Recieved invalid JSON from server: The cloud data library you are using is putting your Scratch account at risk by sending us your login token for no reason` instead of `JSON.parse: unexpected character at line 1 column 1 of the JSON data`. Which of those would you rather see?
