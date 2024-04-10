@@ -26,6 +26,8 @@ Some things to keep in mind:
 
 We allow using bots and custom clients. However, due to persistent abuse, we have some requirements and expectations. Remember that **this is a free service operated by volunteers.** The CPU to parse messages and the bandwidth to send messages to other users is not free. The information below is applicable to both users and authors of cloud variable libraries.
 
+Nothing here is hard to follow. Largely just standard internet bot etiquette and some other tips.
+
 ### User-Agent is required {#user-agent}
 
 Bots must provide a valid [User-Agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) header in their connection. That includes contact information (such as a Scratch profile link, email address, GitHub issue page, etc.) and, ideally, the name and version of the library being used. Some examples of good User-Agents:
@@ -118,7 +120,7 @@ It is possible to offer an API like `get_var` as long as the implementation is e
 
 ### Updates are buffered {#buffering}
 
-For performance, the server will buffer up several cloud variable updates to send out as one group. Updates are not guaranteed to be sent in the same order they are received, and some updates may be skipped entirely. As a result of this buffering, updating variables more than 10 times per second is redundant and will just cause updates to be skipped.
+For performance, the server will buffer up several cloud variable updates to send out as one group. Updates are not guaranteed to be sent in the same order they are received, and some updates may be skipped entirely. Because of this buffering, sending updated variables more than 10 times per second is completely redundant.
 
 ### Important debug information {#debug}
 
