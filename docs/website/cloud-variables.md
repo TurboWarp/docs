@@ -24,20 +24,22 @@ Some things to keep in mind:
 
 ## For bot developers and advanced users {#advanced}
 
-We allow using bots and custom clients. However, due to persistent abuse, we have some requirements and expectations. Remember that **this is a free service operated by volunteers.** The CPU to parse messages and the bandwidth to send messages to other users is not free. The information below is applicable to both users and authors of cloud variable libraries.
+We allow and encourage developing bots and custom clients. However, due to persistent abuse, we ask you to follow a few rules. Remember that **this is a free service operated by volunteers.** The CPU to parse messages and the bandwidth to send messages to other users is not free. The information below is applicable to both users and authors of cloud variable libraries.
 
-Nothing here is hard to follow. Largely just standard internet bot etiquette and some other tips.
+### Protocol {#protocol}
+
+The protocol is the [same as Scratch's cloud variables](https://github.com/TurboWarp/cloud-server/blob/master/doc/protocol.md). We provide a [barebones reference library for Node.js](https://www.npmjs.com/package/@turbowarp/mist). As the protocol is fully open, you do not need to use our library if you don't want to.
 
 ### User-Agent is required {#user-agent}
 
-Bots must provide a valid [User-Agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) header in their connection. That includes contact information (such as a Scratch profile link, email address, GitHub issue page, etc.) and, ideally, the name and version of the library being used. Some examples of good User-Agents:
+Bots must provide a valid [User-Agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) header in their connection. That includes contact information (such as a Scratch profile link, email address, GitHub issue page, etc.) and the name and version of the cloud variable library being used (if applicable). Some examples of good User-Agents:
 
  - `multiplayer leaderboard bot by https://scratch.mit.edu/users/TestMuffin`
  - `cloud-variable-library/1.0.1 contact@example.com`
 
 The only exception is if your bot is running in a browser where you can't control the User-Agent. In this case, your browser will automatically include other headers like Origin with the name of your website anyway. Pretending to be a browser is not okay and is easy to detect.
 
-Ask the author of your cloud variable or WebSocket library how to specify a User-Agent.
+Ask the author of your cloud variable library or refer to your WebSocket library's documentation about custom headers to learn how to add a User-Agent.
 
 <details>
 <summary>If you are developing a cloud variable library</summary>
