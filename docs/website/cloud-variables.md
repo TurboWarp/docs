@@ -124,6 +124,10 @@ It is possible to offer an API like `get_var` as long as the implementation is e
 
 For performance, the server will buffer up several cloud variable updates to send out as one group. Updates are not guaranteed to be sent in the same order they are received, and some updates may be skipped entirely. Because of this buffering, sending updated variables more than 10 times per second is completely redundant.
 
+### Respond to pings {#pings}
+
+The server will periodically send a [WebSocket ping frame](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_servers#pings_and_pongs_the_heartbeat_of_websockets), and you must respond with a pong or else the connection will drop. Refer to the documentation for your WebSocket library to see how to enable ping/pong support if it isn't enabled by default.
+
 ### Important debug information {#debug}
 
 To make things easier for us, you, and anyone using your library, please log these things somewhere (such as in error messages) instead of silently ignoring them:
