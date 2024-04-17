@@ -32,7 +32,7 @@ The protocol is the [same as Scratch's cloud variables](https://github.com/Turbo
 
 ### User-Agent is required {#user-agent}
 
-Bots must provide a valid [User-Agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) header in their connection. That includes contact information (such as a Scratch profile link, email address, GitHub issue page, etc.) and the name and version of the cloud variable library being used (if applicable). Some examples of good User-Agents:
+Bots must provide a valid [User-Agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) header in their connection. That includes contact information (such as a Scratch profile link, email address, GitHub issue page, etc.) and the name and version of the cloud variable library being used (if applicable). Exact syntax does not matter; just needs to be human readable. Some examples of good User-Agents:
 
  - `multiplayer leaderboard bot by https://scratch.mit.edu/users/TestMuffin`
  - `cloud-variable-library/1.0.1 contact@example.com`
