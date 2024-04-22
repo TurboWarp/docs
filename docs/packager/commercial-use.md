@@ -6,16 +6,14 @@ hide_table_of_contents: true
 # Can I sell projects made with the TurboWarp Packager?
 
 :::note
-We are NOT lawyers. This page is NOT legal advice. If this is important, talk to a real lawyer.
+We are not lawyers. This page is not legal advice. Talk to a real lawyer if this is important.
 :::
 
-We won't comment on whether this is a good idea or not, but if you have the rights to all the costumes, sounds, and scripts inside the project you package, it is *possible* to sell it.
+Yes, if you have the rights to all the costumes, sounds, scripts, and extensions inside the project you package, it is possible to sell it.
 
-The open source components of Scratch and TurboWarp used by the packager are available under open source licenses that allow you to use, modify, distribute, and sell your projects without license fees or royalties. It is also worthwhile to note that these licenses explicitly do not offer a warranty of any kind, so can't be held responsible for damage caused by things like bugs.
+The open source components of Scratch and TurboWarp used by the packager are available under open source licenses that allow you to use, modify, distribute, and sell packaged projects without fees or royalties. It is also important to note that these licenses do not offer a warranty. Some parts of TurboWarp use "weak" copyleft licenses such as the [Mozilla Public License version 2.0](https://mozilla.org/MPL/2.0/). Grossly simplified, this means that if you modify the those parts of the code, you must share just that specific code under the same license.
 
-The TurboWarp Packager itself and some of our extensions use the [Mozilla Public License version 2.0](https://mozilla.org/MPL/2.0/) or other copyleft licenses. Grossly simplified, this means that if you modify the packager or runtime itself, you must share that code under the same license. This license doesn't force you to share the source code for the projects you package.
-
-If you used costumes, sounds, or scripts created by other people, make sure you have permission from these people to sell their work. Most things you find on the Scratch website are supposed to be available under the [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) license which technically doesn't prevent you from re-selling the work, but it requires attribution and the share-alike clause may have significant license implications on the rest of your project. Project creators can grant you additional permissions on top of the CC BY-SA 2.0 if they choose.
+If you used costumes, sounds, scripts, or extensions created by other people, make sure you have permission from those people to sell their work. Most things you find on the Scratch website are supposed to be available under the [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) license which technically doesn't prevent you from re-selling the work, but it requires attribution and the share-alike clause may have significant implications. Creators can grant you additional permissions on top of the CC BY-SA 2.0 if they choose.
 
 Note that the Scratch trademarks such as the Scratch Logo, Scratch cat, Gobo, Pico, etc. are an exception to the CC BY-SA 2.0 license, and you might not have permission to use them.
 
