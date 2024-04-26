@@ -27,7 +27,7 @@ We only support languages that Scratch itself supports. Support for RTL language
 2. Send a studio comment indicating the language you want to translate to (for example, `Greek`).  
     ![](./assets/scratch-req-language.png)
 
-If you don’t own a Scratch account, please send an email to translation@turbowarp.org instead.
+If you don’t own a Scratch account, please send an email to contact@turbowarp.org instead.
 
 ### 2. Create a Transifex account
 
@@ -62,12 +62,12 @@ If your request is accepted, you’ll receive an email from Transifex. We usuall
 :::
 
 :::warning
-If your request is denied, you’ll receive an email. If you believe this was a mistake, please send an email to translation@turbowarp.org indicating your Transifex username. See below for other contact methods. 
+If your request is denied, you’ll receive an email. If you believe this was a mistake, please send an email to contact@turbowarp.org indicating your Transifex username. See below for other contact methods. 
 :::
 
 ## Help or contact
 
 If you have any questions about translating, you may choose one of the following options:
 
- - Send an email to translation@turbowarp.org.
+ - Send an email to contact@turbowarp.org.
  - [Open a discussion on GitHub](https://github.com/TurboWarp/scratch-gui/discussions) (GitHub account required).
