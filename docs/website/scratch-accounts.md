@@ -7,7 +7,7 @@ hide_table_of_contents: true
 
 While you can't sign in to your Scratch account on TurboWarp (any website other than scratch.mit.edu that asks you for your Scratch password is a SCAM -- no exceptions), you can still run projects without sharing them, upload projects to Scratch, and use your own username.
 
-**To run a project made in Scratch using TurboWarp without sharing it**: Use File > Save to your computer in the Scratch editor to save the project to a file on your computer, and use select that file using File > Load from your computer in TurboWarp.
+**To run a project made in Scratch using TurboWarp without sharing it**: Use File > Save to your computer in the Scratch editor to save the project to a file on your computer, and select that file using File > Load from your computer in TurboWarp.
 
 **To upload a project made in TurboWarp to Scratch**: Use File > Save to your computer in TurboWarp's editor to save the project to a file on your computer, and select that file using File > Load from your computer in Scratch's editor.
 
