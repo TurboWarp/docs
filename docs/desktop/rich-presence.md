@@ -38,19 +38,36 @@ Rich Presence works in Windows regardless of how you installed TurboWarp Desktop
 
 ### macOS {#mac}
 
-Rich Presence will not work if TurboWarp Desktop was installed from the Mac App Store.
+:::warning
+Rich Presence will not work if TurboWarp Desktop is installed from the Mac App Store.
+:::
 
 ### Linux {#linux}
 
-If TurboWarp Desktop was installed as a native app (Debian package/repository, Arch User Repository, AppImage, or extracted tarball) then it will always work. If TurboWarp Desktop was installed using Flatpak then Chat App must also be installed using Flatpak. This table should help clarify:
+For best results, install TurboWarp Desktop as a native app using the .deb package, Debian repository, Arch User Repository, AppImage, or tarball. TurboWarp Desktop installed as a Flatpak may require manual permission overrides. TurboWarp Desktop installed as a Snap does not work at all. See the table below for more details:
 
 | | Chat App Native | Chat App Flatpak | Chat App Snap |
 | :-: | :-: | :-: | :-: |
 | **TurboWarp Desktop Native** | ✅ | ✅ | ✅ |
-| **TurboWarp Desktop Flatpak** | ❌ | ✅ | ❌ |
+| **TurboWarp Desktop Flatpak** | See commands below | ✅ | See commands below |
 | **TurboWarp Desktop Snap** | ❌ | ❌ | ❌ |
 
-You can check how you installed TurboWarp Desktop by pressing the ? button in the top right corner, opening the About menu, then looking for the Platform section of the Debug Info line. A native installation will be just `linux` while the Flatpak version will show `linux-flatpak` and the Snap version will show `linux-snap`.
+For the Flatpak version of TurboWarp Desktop, you may need to run these commands in a terminal and restart TurboWarp Desktop for Rich Presence to function:
+
+```bash
+# For Chat App Native
+flatpak override org.turbowarp.TurboWarp --user --filesystem=xdg-run/$(printf "\x64\x69\x73\x63\x6f\x72\x64")-ipc-{0..9}
+# For Chat App Snap
+flatpak override org.turbowarp.TurboWarp --user --filesystem=xdg-run/snap.$(printf "\x64\x69\x73\x63\x6f\x72\x64"):create
+```
+
+There is still a small caveat: Rich Presence may not work if TurboWarp Desktop is started before Chat App.
+
+These permissions can be later revoked with:
+
+```bash
+flatpak override org.turbowarp.TurboWarp --user --reset
+```
 
 ### Chat App modifications {#mods}
 
