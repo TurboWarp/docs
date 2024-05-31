@@ -24,6 +24,7 @@ module.exports = {
     'website/how-it-works',
     'website/javascript',
     'website/return',
+    'website/cors',
     'website/turbowarp-blocks',
     'website/translate',
     'website/url-parameters',
