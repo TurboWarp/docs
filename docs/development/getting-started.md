@@ -12,7 +12,7 @@ If you just want to develop custom extensions, see [the custom extension documen
 
 ## Dependencies {#dependencies}
 
-All of our packages need Git and Node.js **v20** (likely anything v18 or later works, but we can't promise that). We assume you are familiar with the command line.
+All of our packages need [Git](https://git-scm.com/download) and [Node.js **v20**](https://nodejs.org/en/download) (likely anything v18 or later works, but we can't promise that). We assume you are familiar with the command line.
 
 Some packages may want some additional things installed, so check the README in each package you want to develop.
 
