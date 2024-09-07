@@ -29,7 +29,7 @@ class IconsExample {
           }
         },
         {
-          opcode: 'overridden icon',
+          opcode: 'overriddenIcon',
           blockType: Scratch.BlockType.COMMAND,
           text: 'command with overridden icon [INPUT]',
           // highlight-next-line
