@@ -5,7 +5,7 @@ hide_table_of_contents: true
 
 # How TurboWarp runs Scratch projects 10-100x faster
 
-TurboWarp uses a *compiler* to while Scratch uses an *interpreter*. This allows TurboWarp to run somewhere between 10-100x faster depending on the project, but it makes live script editing [impracticable](#live-script-editing).
+TurboWarp uses a *compiler* while Scratch uses an *interpreter*. This allows TurboWarp to run somewhere between 10-100x faster depending on the project, but it makes live script editing [impracticable](#live-script-editing).
 
 export const Test = ({name, id, scratch, tw}) => (
   <tr>
