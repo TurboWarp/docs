@@ -4,7 +4,7 @@ hide_table_of_contents: true
 ---
 
 # Custom Stage Size
-
+1920x1080
 Changes the size of the Scratch stage from 480x360 (4:3) to something else.
 
 :::caution
