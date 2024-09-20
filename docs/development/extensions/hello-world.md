@@ -14,7 +14,7 @@ The above is a standard component we will use for showing extension code. Make n
 
 If you're just using simple files to develop extensions, save this code into a file called "hello-world.js". If you're using a local HTTP server, save the code in a file called "hello-world.js" that the server will let you access.
 
-Now, go to the TurboWarp editor, click on the add extension button, scroll to the bottom, and choose the "Custom Extension" option. Either enter the full URL to your local HTTP server or use one of the other tabs to select your file. For now, **do not** check the "Run extension without sandbox" box.
+Now, go to the TurboWarp editor, click on the add extension button (a + next to 2 blocks), scroll to the bottom of the Scratch section, and choose the "Custom Extension" option. Either enter the full URL to your local HTTP server or use one of the other tabs to select your file or paste in code. For now, **do not** check the "Run extension without sandbox" box.
 
 After a second, an extension named "It works!" should appear in the sidebar. If it doesn't appear, open up your developer tools and look for any warnings in the console. Some of the most common errors are:
 
