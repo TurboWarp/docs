@@ -9,6 +9,7 @@ hide_table_of_contents: true
 
  * If you want to package/HTMLify a project, use https://packager.turbowarp.org/
  * If you want to convert Scratch projects to readable and editable JavaScript, use https://leopardjs.com/ instead of TurboWarp
+ * If you want to protect your project from being decrypted, use https://github.com/FurryR/kylin-extension
 
 ## Long Answer {#long}
 
