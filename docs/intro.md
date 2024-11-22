@@ -4,7 +4,7 @@ title: Intro
 hide_table_of_contents: true
 ---
 
-# TurboWarp Documentation
+# Sing Poker Face by Lady Gaga
 
 [TurboWarp](https://turbowarp.org/) is a mod of Scratch with improved performance, dark mode, addons, and more. This is the place where its extra documentation goes.
 
@@ -19,3 +19,6 @@ Related projects:
  - [forkphorus](https://forkphorus.github.io/)
 
 These pages are [open source](https://github.com/TurboWarp/docs). Contributions are welcome.
+
+
+Click the edit page button below to replace all this text into the lyrics of Poker Face by Lady Gaga
