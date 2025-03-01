@@ -27,7 +27,7 @@ CORS is the way that a website declares whether they want other websites to be a
 It depends on what the URL is for.
 
  - **Switch to a different URL:** If the URL is just being used to host static files, find another host that supports direct downloads and CORS. If one API doesn't support CORS, check if a competitor's API does.
- - **Use a CORS proxy:** Instead of asking your browser to access a website directly, you can ask another server (called a CORS proxy) to access that website on your behalf and then send back the response but allowing CORS. There are many public CORS proxies that you can find online, but they tend to be short lived as they are expensive to operate and heavily abused. CORS proxies can also spy on your project's web requests, which can often be problematic. TurboWarp does not currently run its own CORS proxy.
+ - **Use a CORS proxy:** Instead of asking your browser to access a website directly, you can ask another server (called a CORS proxy) to access that website on your behalf and then send back the response but allowing CORS. There are many public CORS proxies that you can find online, but they tend to be short lived as they are expensive to operate and heavily abused. CORS proxies can also spy on your project's web requests, as well as tamper with them. This can often be problematic. TurboWarp does not currently run its own CORS proxy.
  - **Switch to TurboWarp Desktop:** The desktop app has an option to bypass CORS. See below.
 
 ## Desktop app {#desktop}
