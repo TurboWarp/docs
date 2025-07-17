@@ -3,7 +3,7 @@ slug: /donate
 hide_table_of_contents: true
 ---
 
-# Donatations
+# Donations
 
 TurboWarp will not be accepting donations after July 22, 2025. Until then, you can donate at the places below.
 
