@@ -18,7 +18,7 @@ See https://scratch.mit.edu/projects/414716080/
 These blocks are "compatible" with Scratch because they're actually just modified argument reporters.
 
 :::warning
-Every block beyond this warning is **incompatible** with Scratch. Projects that use them **can not** be uploaded to the Scratch website. If you don't use any TurboWarp-exclusive blocks, then there should be no issue with making your project in TurboWarp and uploading it to Scratch.
+Every block beyond this warning is **incompatible** with Scratch. Projects that use them **cannot** be uploaded to the Scratch website. If you don't use any TurboWarp exclusive blocks, then there should be no issue with making your project in TurboWarp and uploading it to Scratch.
 :::
 
 ## last key pressed {#last-key-pressed}
@@ -35,6 +35,6 @@ It tells you the last key that was pressed. It's intended to be used something l
 
 It's like "mouse down?" but lets you check each individual button. Keep in mind that due to how Scratch interprets mouse input, it's possible for a block like "is primary mouse button down?" to report true while the standard "mouse down?" reports false.
 
- * (0) primary is usually left
+ * (0) primary is usually left click
  * (1) middle is usually scroll wheel
- * (2) secondary is usually right (running this block once will disable right click on the stage)
+ * (2) secondary is usually right click (running this block once will disable right click on the stage)
