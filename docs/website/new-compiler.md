@@ -108,7 +108,7 @@ for (var a0 = 100; a0 >= 0.5; a0--) {
 
 No more unnecessary type conversions. Small changes like this can add up to be significant.
 
-If warp timer is enabled or the script is not marked as "run without screen refresh", the new compiler generates the same code as the old compiler. This is because the repeat block might pause before it finishes all iterations, so other scripts have the opportunity to change variables in unknown ways. For example, if another script changed the `i` variable to a string, `i.value + 1` would act like the `join` block instead of the `+` block.
+If warp timer is enabled or the script is not marked as "run without screen refresh", the new compiler generates the same code as the old compiler. This is because the repeat block might pause before it finishes all iterations, so other scripts have the opportunity to change variables in unknown ways. For example, if another script changed the "i" variable to a string, `i.value + 1` would act like the "join" block instead of addition. The type conversion would be necessary to ensure the script always works correctly in this case.
 
 (We manually cleaned up the JavaScript for this page. The actual code has no formatting and does not have meaningful variable names.)
 
