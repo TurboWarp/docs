@@ -5,7 +5,7 @@ hide_table_of_contents: true
 
 # New Compiler
 
-The compiler is the part of TurboWarp that converts projects to JavaScript. On September 19, 2025, we released a new compiler that is better at analyzing the scripts inside projects to generate even faster JavaScript.
+The compiler is the part of TurboWarp that converts projects to JavaScript. On September 20, 2025, we released a new compiler that is better at analyzing the scripts inside projects to generate even faster JavaScript.
 
 This is the largest single change we've ever made. We've tried to test it thoroughly, but **it's quite likely there are still a few more bugs**. You should report broken projects at [the usual place](https://scratch.mit.edu/users/GarboMuffin/#comments). If your project is broken, you can use https://experiments.turbowarp.org/old-compiler/ instead until we fix the bug in the new compiler.
 
