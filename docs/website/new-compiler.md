@@ -76,37 +76,41 @@ A small handful of custom extensions use an API called `i_will_not_ask_for_help_
 
 ## Brief technical overview {#technical-overview}
 
-The broad idea is that the new compiler tracks what type a variable has at all points, including through conditionals and loops. This allows it to remove unnecessary type conversions and generate more specialized code.
+The broad idea is that the compiler analyzes scripts to determine what kinds of values each variable may have at each point in the script. This allows it to remove unnecessary type conversions and generate more specialized code. The old compiler tried to do this too, but was unable to reason about loops or conditionals.
 
 Consider this script that sums integers from 1 to 100. Suppose that the block is marked as "run without screen refresh" and warp timer is disabled.
 
-![](./assets/sum-1-to-100.svg)
+![Script that sums 1 to 100](./assets/sum-1-to-100.svg)
 
 The old compiler generates:
 
 ```js
-b0.value = 0;
-b1.value = 1;
+sum.value = 0;
+i.value = 1;
 for (var a0 = 100; a0 >= 0.5; a0--) {
-    b0.value = ((+b0.value || 0) + (+b1.value || 0));
-    b1.value = ((+b1.value || 0) + 1);
+    sum.value = ((+sum.value || 0) + (+i.value || 0));
+    i.value = ((+i.value || 0) + 1);
 }
 ```
 
-`(+b0.value || 0)` is how the compiler converts values to numbers. In this case it is redundant as the variables are already always numbers, but the only compiler did not realize this.
+`(+something.value || 0)` is how the compiler converts a variable to a number. In this case it is redundant as the variables are already always numbers, but the old compiler did not realize this.
 
-The new compiler can reason about the loops and does realize that the variables are always numbers, so it generates:
+The new compiler instead generates:
 
 ```js
-b0.value = 0;
-b1.value = 1;
+sum.value = 0;
+i.value = 1;
 for (var a0 = 100; a0 >= 0.5; a0--) {
-    b0.value = (b0.value + b1.value);
-    b1.value = (b1.value + 1);
+    sum.value = (sum.value + i.value);
+    i.value = (i.value + 1);
 }
 ```
 
-Much simpler and would run a bit faster.
+No more unnecessary type conversions. Small changes like this can add up to be significant.
+
+If warp timer is enabled or the script is not marked as "run without screen refresh", the new compiler generates the same code as the old compiler. This is because the repeat block might pause before it finishes all iterations, so other scripts have the opportunity to change variables in unknown ways. For example, if another script changed the `i` variable to a string, `i.value + 1` would act like the `join` block instead of the `+` block.
+
+(We manually cleaned up the JavaScript for this page. The actual code has no formatting and does not have meaningful variable names.)
 
 ## Credits {#credits}
 
@@ -118,6 +122,6 @@ Early testers helped us find and fix many bugs before release:
  * [Vadik1](https://scratch.mit.edu/users/Vadik1/)
  * [SpinningCube](https://scratch.mit.edu/users/SpinningCube/)
  * [GamingWithDominic](https://scratch.mit.edu/users/GamingWithDominic/)
- * scratchfakemon
+ * [Scratch_Fakemon](https://scratch.mit.edu/users/Scratch_Fakemon/)
  * [LSPECTRONIZTAR](https://scratch.mit.edu/users/LSPECTRONIZTAR/)
  * termy
