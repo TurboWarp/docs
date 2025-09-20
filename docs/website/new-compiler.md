@@ -124,4 +124,4 @@ Early testers helped us find and fix many bugs before release:
  * [GamingWithDominic](https://scratch.mit.edu/users/GamingWithDominic/)
  * [Scratch_Fakemon](https://scratch.mit.edu/users/Scratch_Fakemon/)
  * [LSPECTRONIZTAR](https://scratch.mit.edu/users/LSPECTRONIZTAR/)
- * termy
+ * [Terminal](https://scratch.mit.edu/users/windowscj/)
