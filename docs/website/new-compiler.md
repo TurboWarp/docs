@@ -110,14 +110,14 @@ Much simpler and would run a bit faster.
 
 ## Credits {#credits}
 
-[Tacodiva](https://scratch.mit.edu/users/Tacodiva7729/) did largely all the hard parts and persevered through an impossibly long review process.
+[Tacodiva](https://scratch.mit.edu/users/Tacodiva7729/) did almost all the work and persevered through an impossibly long review process.
 
 Early testers helped us find and fix many bugs before release:
 
- * Krypto
- * Vadik1
- * SpinningCube
- * Dominic
+ * [Krypto](https://scratch.mit.edu/users/KryptoScratcher/)
+ * [Vadik1](https://scratch.mit.edu/users/Vadik1/)
+ * [SpinningCube](https://scratch.mit.edu/users/SpinningCube/)
+ * [GamingWithDominic](https://scratch.mit.edu/users/GamingWithDominic/)
  * scratchfakemon
- * lspectroniztar
+ * [LSPECTRONIZTAR](https://scratch.mit.edu/users/LSPECTRONIZTAR/)
  * termy
