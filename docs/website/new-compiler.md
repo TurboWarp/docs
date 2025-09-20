@@ -58,7 +58,7 @@ The performance gain varies a lot depending on the project. Some projects run tw
     </tbody>
 </table>
 
-(Chromium 140, Arch Linux, i7 4790k, warp timer disabled)
+(Tested using Chromium 140, Arch Linux, i7 4790k, warp timer disabled)
 
 ## Limitations {#limitations}
 
