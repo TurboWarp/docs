@@ -7,29 +7,46 @@ hide_table_of_contents: true
 
 TurboWarp uses a *compiler* while Scratch uses an *interpreter*. This allows TurboWarp to run somewhere between 10-100x faster depending on the project, but it makes live script editing [impracticable](#live-script-editing).
 
-export const Test = ({name, id, scratch, tw}) => (
-  <tr>
-    <td><a href={`https://scratch.mit.edu/projects/${id}/`}>{name}</a></td>
-    <td>{scratch}</td>
-    <td>{tw}</td>
-  </tr>
-);
-
 <table style={{textAlign: "center"}}>
-  <thead>
-    <tr>
-      <th>Test</th>
-      <th>Scratch</th>
-      <th>TurboWarp</th>
-    </tr>
-  </thead>
-  <tbody>
-    <Test name="Quicksort 200000 items" id="310372816" scratch="10.746s" tw="0.0528s" />
-    <Test name="Cycles Raytracer r=1 s=10 dof=.08" id="412737809" scratch="832s" tw="16s" />
-  </tbody>
+    <thead>
+        <tr>
+            <th>Test</th>
+            <th>Scratch</th>
+            <th>TurboWarp</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <div><a href="https://scratch.mit.edu/projects/310372816/">Quicksort</a></div>
+                <div>Sort 200000 random items</div>
+                <div>Lower is better</div>
+            </td>
+            <td>8.871 seconds</td>
+            <td>0.0451 seconds</td>
+        </tr>
+        <tr>
+            <td>
+                <div><a href="https://scratch.mit.edu/projects/412737809/">Cycles Raytracer</a></div>
+                <div>res=1 samp=10 dof=.08</div>
+                <div>Lower is better</div>
+            </td>
+            <td>814 seconds</td>
+            <td>15 seconds</td>
+        </tr>
+        <tr>
+            <td>
+                <div><a href="https://scratch.mit.edu/projects/611788242/">Faster SHA-256 Hash</a></div>
+                <div>Hashes per second</div>
+                <div>Higher is better</div>
+            </td>
+            <td>146 per second</td>
+            <td>3010 per second</td>
+        </tr>
+    </tbody>
 </table>
 
-(Tested in Chromium 103 on Linux)
+(Tested using Chromium 140, Arch Linux, i7 4790k)
 
 Consider the following script:
 

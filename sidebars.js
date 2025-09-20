@@ -20,6 +20,7 @@ module.exports = {
         'website/settings/disable-compiler'
       ]
     },
+    'website/new-compiler',
     'website/embedding',
     'website/how-it-works',
     'website/javascript',
