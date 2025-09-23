@@ -137,7 +137,7 @@ Things to notice:
 
 Of course, this is a very simple script where the interpreter overhead is negligible, which is the case for most projects. It's only when you execute thousands of blocks per frame that the interpreter's overhead becomes significant.
 
-Here's a more complex example: a naive sorting algorithm (bubble sort).
+Here's a more complex example: a sorting algorithm - bubble sort.
 
 ```js
 const length = stage.variables["O;aH~(njYNn}Bl@}!%pS-length-"];
@@ -179,6 +179,90 @@ return function fun1_sort () {
     }
     length.value = newLength.value;
   }
+};
+```
+
+Functions such as `listGet`, `listReplace`, and `compareEqual` are part of the TurboWarp runtime and are implemented to match the strange behaviors of Scratch. The functions used by bubble sort are shown below, for your reference. Accuracy and performance are a higher priority than readability for these functions as they tend to be quite hot.
+
+```js
+const isNotActuallyZero = val => {
+  if (typeof val !== 'string') return false;
+  for (let i = 0; i < val.length; i++) {
+    const code = val.charCodeAt(i);
+    if (code === 48 || code === 9) {
+      return false;
+    }
+  }
+  return true;
+};
+
+const compareEqualSlow = (v1, v2) => {
+  const n1 = +v1;
+  if (isNaN(n1) || (n1 === 0 && isNotActuallyZero(v1))) return ('' + v1).toLowerCase() === ('' + v2).toLowerCase();
+  const n2 = +v2;
+  if (isNaN(n2) || (n2 === 0 && isNotActuallyZero(v2))) return ('' + v1).toLowerCase() === ('' + v2).toLowerCase();
+  return n1 === n2;
+};
+
+const compareEqual = (v1, v2) => (typeof v1 === 'number' && typeof v2 === 'number' && !isNaN(v1) && !isNaN(v2) || v1 === v2) ? v1 === v2 : compareEqualSlow(v1, v2);
+
+const compareGreaterThanSlow = (v1, v2) => {
+  let n1 = +v1;
+  let n2 = +v2;
+  if (n1 === 0 && isNotActuallyZero(v1)) {
+    n1 = NaN;
+  } else if (n2 === 0 && isNotActuallyZero(v2)) {
+    n2 = NaN;
+  }
+  if (isNaN(n1) || isNaN(n2)) {
+    const s1 = ('' + v1).toLowerCase();
+    const s2 = ('' + v2).toLowerCase();
+    return s1 > s2;
+  }
+  return n1 > n2;
+};
+
+const compareGreaterThan = (v1, v2) => typeof v1 === 'number' && typeof v2 === 'number' && !isNaN(v1) ? v1 > v2 : compareGreaterThanSlow(v1, v2);
+
+const listIndexSlow = (index, length) => {
+  if (index === 'last') {
+    return length - 1;
+  } else if (index === 'random' || index === 'any') {
+    if (length > 0) {
+      return (Math.random() * length) | 0;
+    }
+    return -1;
+  }
+  index = (+index || 0) | 0;
+  if (index < 1 || index > length) {
+    return -1;
+  }
+  return index - 1;
+};
+
+const listIndex = (index, length) => {
+  if (typeof index !== 'number') {
+    return listIndexSlow(index, length);
+  }
+  index = index | 0;
+  return index < 1 || index > length ? -1 : index - 1;
+};
+
+const listGet = (list, idx) => {
+  const index = listIndex(idx, list.length);
+  if (index === -1) {
+    return '';
+  }
+  return list[index];
+};
+
+const listReplace = (list, idx, value) => {
+  const index = listIndex(idx, list.value.length);
+  if (index === -1) {
+    return;
+  }
+  list.value[index] = value;
+  list._monitorUpToDate = false;
 };
 ```
 
