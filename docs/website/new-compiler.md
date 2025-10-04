@@ -13,7 +13,7 @@ This is the largest single change we've ever made. We've tried to test it thorou
 The new compiler breaks a small handful of custom extensions. See the [extensions](#extensions) section below for details and workarounds.
 :::
 
-The new compiler is currently only available on the website. The packager, desktop app, and other experiment branches will be updated later.
+The new compiler is currently used on the website and the packager. It will be included in the next update of TurboWarp Desktop (v1.15.0).
 
 ## Performance comparison {#performance}
 
@@ -73,6 +73,8 @@ Unfortunately, the warp timer breaks many of the assumptions that the new compil
 All extensions included in the TurboWarp extension list will work the same, and a vast majority of custom extensions will also continue to work the same.
 
 A small handful of custom extensions use an API called `i_will_not_ask_for_help_when_these_break` to integrate more directly with the compiler. We gave this API that crazy name because we knew it was going to break at some point, and we didn't want a small handful of extensions to restrict us from being able to change the compiler's internals when needed. If your project requires these extensions, you can use https://experiments.turbowarp.org/old-compiler/ instead until extensions become compatible.
+
+If you also need to package your project, you can use https://packager-legacy.turbowarp.org/old-compiler/.
 
 ## Brief technical overview {#technical-overview}
 
