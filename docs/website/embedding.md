@@ -27,7 +27,7 @@ The rest of the attributes should not be changed. Here's what they do if you wer
 
 Here's what that example embed looks like in action:
 
-<iframe src="https://turbowarp.org/414716080/embed" width="482" height="412" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen="" style={{colorScheme: "auto"}} loading="lazy"></iframe>
+<iframe src="https://turbowarp.org/414716080/embed" width="482" height="412" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen="" style={{colorScheme: "auto"}}></iframe>
 
 ## Unshared projects can't be embedded {#unshared-projects}
 
