@@ -15,6 +15,7 @@ You should change these attributes appropriately:
 
  - `src="https://turbowarp.org/414716080/embed"` contains the ID of the project you want to embed. You should change this. We're using 414716080 as an example, but you can replace that number with any other project ID. You can also include other URL paramters as listed below.
  - `width="482" height="412"` defines the size of the embed. The player will automatically resize to whatever you specify here, so you can change the numbers. The border around the stage takes two pixels of width and height, and the controls take an extra 50 pixels of height. Thus, to get a 480x360 stage, you would use 482 and 412.
+ - Optionally, you may want to add `loading="lazy"` to the attributes which lets the browser wait to load the iframe until the user scrolls closer to it. This can improve performance if the embed is pretty far down the page and doesn't need to be loaded right away.
 
 The rest of the attributes should not be changed. Here's what they do if you were curious:
 
@@ -26,7 +27,7 @@ The rest of the attributes should not be changed. Here's what they do if you wer
 
 Here's what that example embed looks like in action:
 
-<iframe src="https://turbowarp.org/414716080/embed" width="482" height="412" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen="" style={{colorScheme: "auto"}}></iframe>
+<iframe src="https://turbowarp.org/414716080/embed" width="482" height="412" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen="" style={{colorScheme: "auto"}} loading="lazy"></iframe>
 
 ## Unshared projects can't be embedded {#unshared-projects}
 
