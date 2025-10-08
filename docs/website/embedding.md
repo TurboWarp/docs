@@ -5,15 +5,28 @@ hide_table_of_contents: true
 
 # Embedding
 
-TurboWarp can be embedded with a standard iframe:
+You can use TurboWarp to embed a Scratch project in your website using an `<iframe>`. For the best experience, use this template:
 
 ```html
-<iframe src="https://turbowarp.org/414716080/embed" width="482" height="412" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+<iframe src="https://turbowarp.org/414716080/embed" width="482" height="412" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen="" style="color-scheme: auto"></iframe>
 ```
 
-Replace `414716080` with the ID of your project. You can change the width and height of the iframe and the player will automatically resize to fit (482x412 will result in the stage rendering at an undistorted 480x360).
+You should change these attributes appropriately:
 
-TurboWarp's embeds will have a transparent background if the iframe is allowed to be transparent. TurboWarp's embeds will have a fullscreen button if the iframe is allowed to become fullscreen. The example code above enables both of these feature.
+ - `src="https://turbowarp.org/414716080/embed"` contains the ID of the project you want to embed. You should change this. We're using 414716080 as an example, but you can replace that number with any other project ID. You can also include other URL paramters as listed below.
+ - `width="482" height="412"` defines the size of the embed. The player will automatically resize to whatever you specify here, so you can change the numbers. The border around the stage takes two pixels of width and height, and the controls take an extra 50 pixels of height. Thus, to get a 480x360 stage, you would use 482 and 412.
+
+The rest of the attributes should not be changed. Here's what they do if you were curious:
+
+ - `allowtransparency="true"` allows the embed to have a transparent background, so any color or images you have behind the embed can still be seen.
+ - `frameborder="0"` removes an ugly border around the iframe.
+ - `scrolling="no"` ensures that there won't be any unexpected scrollbars in the iframe.
+ - `allowfullscreen=""` allows the fullscreen button to work. If this attribute is removed or if the device does not support fullscreen, the button will not show up.
+ - `style="color-scheme: auto"` ensures that the embed's transparent background works if your page uses the dark color-scheme. This attribute doesn't let you control how the stuff inside the embed appears. It just fixes the transparency.
+
+Here's what that example embed looks like in action:
+
+<iframe src="https://turbowarp.org/414716080/embed" width="482" height="412" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen="" style={{colorScheme: "auto"}}></iframe>
 
 ## Unshared projects can't be embedded {#unshared-projects}
 
