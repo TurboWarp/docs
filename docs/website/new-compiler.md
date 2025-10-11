@@ -66,7 +66,7 @@ The performance gain varies a lot depending on the project. Some projects run tw
 
 The [warp timer](warp-timer) forces blocks marked as "run without screen refresh" to briefly pause after running for 500 ms to prevent an infinite loop from causing you to lose unsaved work. This is why the warp timer is automatically enabled when you open the TurboWarp editor.
 
-Unfortunately, the warp timer breaks many of the assumptions that the new compiler relies on to optimize projects, so do not expect major performance improvements while you are in the editor or otherwise have the warp timer enabled. They won't run slower than they did in the old compiler, though.
+Unfortunately, the warp timer breaks many of the assumptions that the new compiler uses to optimize projects, so do not expect major performance improvements while you are in the editor or otherwise have the warp timer enabled. They won't run slower than they did in the old compiler, though.
 
 ### Extension compatibility {#extensions}
 
@@ -108,7 +108,7 @@ for (var a0 = 100; a0 > 0; a0--) {
 }
 ```
 
-No more unnecessary type conversions. Small changes like this can add up to be significant.
+No more unnecessary type conversions. The compiler also now realizes that the iteration count is always an integer, so it doesn't need to handle the edge case of decimal iteration counts. Small changes like this can add up to be significant.
 
 If warp timer is enabled or the script is not marked as "run without screen refresh", the new compiler generates the same code as the old compiler. This is because the repeat block might pause before it finishes all iterations, so other scripts have the opportunity to change variables in unknown ways. For example, if another script changed the "i" variable to a string, `i.value + 1` would act like the "join" block instead of addition. The type conversion would be necessary to ensure the script always works correctly in this case.
 
