@@ -89,7 +89,7 @@ The old compiler generates:
 ```js
 sum.value = 0;
 i.value = 1;
-for (var a0 = 100; a0 >= 0.5; a0--) {
+for (var a0 = 100; a0 >= 0; a0--) {
     sum.value = ((+sum.value || 0) + (+i.value || 0));
     i.value = ((+i.value || 0) + 1);
 }
