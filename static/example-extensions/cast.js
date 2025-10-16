@@ -2,12 +2,12 @@ class CastingExample {
   getInfo() {
     return {
       id: 'castexample',
-      name: 'Casting Example',
+      name: Scratch.translate('Casting Example'),
       blocks: [
         {
           opcode: 'toNumber',
           blockType: Scratch.BlockType.REPORTER,
-          text: 'convert [INPUT] to number',
+          text: Scratch.translate('convert [INPUT] to number'),
           arguments: {
             INPUT: {
               type: Scratch.ArgumentType.STRING,
@@ -20,7 +20,7 @@ class CastingExample {
           // treatment in JS, it seems a bit dangerous to use
           opcode: 'castToString',
           blockType: Scratch.BlockType.REPORTER,
-          text: 'convert [INPUT] to string',
+          text: Scratch.translate('convert [INPUT] to string'),
           arguments: {
             INPUT: {
               type: Scratch.ArgumentType.STRING,
@@ -31,7 +31,7 @@ class CastingExample {
         {
           opcode: 'toBoolean',
           blockType: Scratch.BlockType.BOOLEAN,
-          text: 'convert [INPUT] to boolean',
+          text: Scratch.translate('convert [INPUT] to boolean'),
           arguments: {
             INPUT: {
               type: Scratch.ArgumentType.STRING,
@@ -42,7 +42,7 @@ class CastingExample {
         {
           opcode: 'compare',
           blockType: Scratch.BlockType.REPORTER,
-          text: 'compare [A] to [B]',
+          text: Scratch.translate('compare [A] to [B]'),
           arguments: {
             A: {
               type: Scratch.ArgumentType.STRING,
