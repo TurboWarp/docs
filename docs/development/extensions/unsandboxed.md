@@ -175,7 +175,7 @@ If you're using the `vm`, `runtime` or `Cast` APIs a lot, common practise is to 
 
 ## Permissioned APIs
 
-Whereas sandboxed extensions are free to use APIs such as fetch() as they please, unsandboxed extensions should instead ask for permission before making a request to any remote service. This gives the user control over their privacy. While there is no technical measures enforcing this at runtime, it is required for all extensions on [extensions.turbowarp.org](https://extensions.turbowarp.org).
+Whereas sandboxed extensions are free to use APIs such as fetch() as they please, unsandboxed extensions should instead ask for permission before making a request to any remote service. This gives the user control over their privacy. While there are no technical measures enforcing this at runtime, it is required for all extensions on [extensions.turbowarp.org](https://extensions.turbowarp.org).
 
 Requests to some popular services such as [GitHub Pages](https://pages.github.com/) or [GitLab Pages](https://about.gitlab.com/stages-devops-lifecycle/pages/) may be automatically approved, while requests to other random websites may show a prompt to the user. You shouldn't make any assumptions about this, and your code needs to ensure that it can gracefully handle the user rejecting the prompt (the extension should behave the same as it does when there is no internet connection).
 
