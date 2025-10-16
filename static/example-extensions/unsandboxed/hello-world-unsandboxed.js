@@ -9,12 +9,12 @@
     getInfo() {
       return {
         id: 'helloworldunsandboxed',
-        name: 'Unsandboxed Hello World',
+        name: Scratch.translate('Unsandboxed Hello World'),
         blocks: [
           {
             opcode: 'hello',
             blockType: Scratch.BlockType.REPORTER,
-            text: 'Hello!'
+            text: Scratch.translate('Hello!')
           }
         ]
       };
