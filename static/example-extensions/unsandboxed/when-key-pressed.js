@@ -9,12 +9,12 @@
     getInfo() {
       return {
         id: 'eventexample2unsandboxed',
-        name: 'Event Block Example 2',
+        name: Scratch.translate('Event Block Example 2'),
         blocks: [
           {
             blockType: Scratch.BlockType.EVENT,
             opcode: 'whenPressed',
-            text: 'when [KEY] key pressed',
+            text: Scratch.translate('when [KEY] key pressed'),
             isEdgeActivated: false, // required boilerplate
             // highlight-start
             arguments: {

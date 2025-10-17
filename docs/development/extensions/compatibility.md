@@ -105,7 +105,7 @@ Instead, create a new block and mark the old one as `hideFromPalette: true`. The
         {
           blockType: Scratch.BlockType.REPORTER,
           id: "oldBlock",
-          text: "old [INPUT1]",
+          text: Scratch.translate("old [INPUT1]"),
           arguments: {
             INPUT1: { /* ... */ }
           },
@@ -114,7 +114,7 @@ Instead, create a new block and mark the old one as `hideFromPalette: true`. The
         {
           blockType: Scratch.BlockType.REPORTER,
           opcode: "newBlock",
-          text: "new [INPUT1] [INPUT2]",
+          text: Scratch.translate("new [INPUT1] [INPUT2]"),
           arguments: {
             INPUT1: { /* ... */ },
             INPUT2: { /* ... */ }
