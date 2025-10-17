@@ -17,4 +17,3 @@ Thank you for reading this far.
  - Dynamic menus
  - Block utility stack frames, yield, yieldTick, etc.
  - C-shape blocks such as "if", "if else", "repeat"
- - how to use `Scratch.translate()` and why you should
