@@ -13,7 +13,7 @@ This is the largest single change we've ever made. We've tried to test it thorou
 The new compiler breaks a small handful of custom extensions. See the [extensions](#extensions) section below for details and workarounds.
 :::
 
-The new compiler is currently used on the website and the packager. It will be included in the next update of TurboWarp Desktop (v1.15.0).
+The new compiler is used on the website, the packager, and the desktop app (v1.15.0 and later).
 
 ## Performance comparison {#performance}
 
