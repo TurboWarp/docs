@@ -9,12 +9,12 @@
     getInfo() {
       return {
         id: 'restartexampleunsandboxed',
-        name: 'Restart Threads Example',
+        name: Scratch.translate('Restart Threads Example'),
         blocks: [
           {
             blockType: Scratch.BlockType.EVENT,
             opcode: 'whenPressed',
-            text: 'when [KEY] key pressed',
+            text: Scratch.translate('when [KEY] key pressed'),
             isEdgeActivated: false,
             // highlight-next-line
             shouldRestartExistingThreads: true,
