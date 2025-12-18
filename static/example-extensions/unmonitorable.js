@@ -2,17 +2,17 @@ class DisableMonitorExample {
   getInfo() {
     return {
       id: 'disablemonitorexample',
-      name: 'disableMonitor Example',
+      name: Scratch.translate('disableMonitor Example'),
       blocks: [
         {
           opcode: 'monitorable',
           blockType: Scratch.BlockType.REPORTER,
-          text: 'this block can be monitored'
+          text: Scratch.translate('this block can be monitored')
         },
         {
           opcode: 'unmonitorable',
           blockType: Scratch.BlockType.REPORTER,
-          text: 'but this one can not',
+          text: Scratch.translate('but this one can not'),
           // highlight-next-line
           disableMonitor: true
         },
