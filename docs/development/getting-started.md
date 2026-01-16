@@ -8,6 +8,12 @@ hide_table_of_contents: true
 
 These are the instructions for setting up a development environment for TurboWarp itself. This is useful if you want to submit pull requests to us or make your own mod.
 
+:::warning
+Heads up. This page is a bit outdated :(
+
+We'll try to get it fixed soon (writing this on Jan 15 2026, did we forget?)
+:::
+
 If you just want to develop custom extensions, see [the custom extension documentation](./extensions/introduction.md) instead.
 
 ## Dependencies {#dependencies}
@@ -80,6 +86,12 @@ npm run build
 By default TurboWarp generates links like `https://turbowarp.org/editor.html#123`. However, by setting the variables `ROOT=/` and `ROUTING_STYLE=wildcard` (in the same way that you set `NODE_ENV=production`), you can get routes like `https://turbowarp.org/123/editor` instead. Note that this requires a server that will setup the proper aliases. The webpack development server in scratch-gui is setup for this. For production you'd want something more like https://github.com/TurboWarp/turbowarp.org.
 
 ## Linking other packages {#linking}
+
+Linking packages lets you run use your local versions of packages in your other local packages. So you can use your local scratch-vm inside your local scratch-gui. That lets you actually see what your scratch-vm changes do in a real GUI.
+
+We used to recommend using `npm link` to do this. Unfortunately, npm is an awful piece of software that gets worse every update. This command used to work perfectly, but they broke it because of course. It's now better to manually create symlinks yourself in node_modules. (We are amazed how they were able to take a perfectly functional command and make it slow and break if you go more than one level deep)
+
+We need to update this section still to reflect the new recommendations. In the mean time `npm link` does somewhat still work if you only need to go one level deep and are okay with waiting a long time for what should be a single system call.
 
 To develop packages other than scratch-gui, you need to tell npm to use local copies of the package instead of the ones it downloaded from the internet. This is called *linking*. The pattern is:
 
