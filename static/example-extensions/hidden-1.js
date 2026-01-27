@@ -2,12 +2,12 @@ class HideFromPaletteExample {
   getInfo() {
     return {
       id: 'hidefrompaletteexample',
-      name: 'hideFromPalette Example',
+      name: Scratch.translate('hideFromPalette Example'),
       blocks: [
         {
           opcode: 'hidden',
           blockType: Scratch.BlockType.REPORTER,
-          text: 'example block (visible)'
+          text: Scratch.translate('example block (visible)')
         },
       ]
     };

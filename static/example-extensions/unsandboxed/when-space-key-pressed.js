@@ -9,13 +9,13 @@
     getInfo() {
       return {
         id: 'eventexampleunsandboxed',
-        name: 'Event Block Example',
+        name: Scratch.translate('Event Block Example'),
         blocks: [
           // highlight-start
           {
             blockType: Scratch.BlockType.EVENT,
             opcode: 'whenSpacePressed',
-            text: 'when space key pressed',
+            text: Scratch.translate('when space key pressed'),
             isEdgeActivated: false // required boilerplate
           }
           // highlight-end
