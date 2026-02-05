@@ -11,7 +11,7 @@ class IconsExample {
   getInfo() {
     return {
       id: 'iconsexample',
-      name: 'Icons Example',
+      name: Scratch.translate('Icons Example'),
       // highlight-start
       menuIconURI: blocksIcon,
       blockIconURI: dangoIcon,
@@ -20,7 +20,7 @@ class IconsExample {
         {
           opcode: 'defaultIcon',
           blockType: Scratch.BlockType.REPORTER,
-          text: 'reporter with default icon [INPUT]',
+          text: Scratch.translate('reporter with default icon [INPUT]'),
           arguments: {
             INPUT: {
               type: Scratch.ArgumentType.STRING,
@@ -31,7 +31,7 @@ class IconsExample {
         {
           opcode: 'overriddenIcon',
           blockType: Scratch.BlockType.COMMAND,
-          text: 'command with overridden icon [INPUT]',
+          text: Scratch.translate('command with overridden icon [INPUT]'),
           // highlight-next-line
           blockIconURI: colorIcon,
           arguments: {
