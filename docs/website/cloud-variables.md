@@ -18,7 +18,7 @@ Some things to keep in mind:
  - Cloud variables are disabled when the editor is opened.
  - Do not abuse cloud variables to make unmoderated chat rooms.
  - There are no public cloud variable history logs.
- - Sensing the color of the video sensing extension is disabled when cloud variables or custom extensions are used. This fixes the same issue as Scratch's "For privacy reasons, cloud variables have been disabled in this project because it contains video sensing blocks" warning.
+ - Sensing colors or motion using the video sensing extension is disabled when cloud variables or custom extensions are used.
 
 ---
 
