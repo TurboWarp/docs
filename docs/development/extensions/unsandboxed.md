@@ -23,7 +23,7 @@ When manually loading an extension from a file or JavaScript source code, there 
 
 The syntax for unsandboxed extensions is very familiar but has some differences. Technically, if you just copy and paste your old sandboxed extensions as unsandboxed extensions, it will appear to just work. However, this is dangerous and is likely to cause bugs later.
 
-If your sandboxed extension has code like like this:
+If your sandboxed extension has code like this:
 
 ```js
 // Old sandboxed extensions (worker or <iframe> sandbox):
