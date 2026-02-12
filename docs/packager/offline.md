@@ -14,9 +14,7 @@ Large assets such as Electron, NW.js, or WKWebView executables are *not* include
 
 ## Desktop App {#desktop}
 
-You can download [TurboWarp Desktop](https://desktop.turbowarp.org/), which includes an offline version of the packager. You can access it by pressing the "(?)" button in the top right corner then select the packager.
-
-The built-in packager will automatically load the project you have open in the editor.
+You can download [TurboWarp Desktop](https://desktop.turbowarp.org/), which includes an offline version of the packager. You can access it by pressing file > package project. The built-in packager will automatically load the project you have open in the editor.
 
 ## Standalone HTML {#html}
 
