@@ -182,7 +182,7 @@ return function fun1_sort () {
 };
 ```
 
-Functions such as `listGet`, `listReplace`, and `compareEqual` are part of the TurboWarp runtime and are implemented to match the strange behaviors of Scratch. The functions used by bubble sort are shown below, for your reference. Accuracy and performance are a higher priority than readability for these functions as they tend to be quite hot.
+Functions such as `listGet`, `listReplace`, and `compareEqual` are part of the TurboWarp runtime and are implemented to match the strange behaviors of Scratch. The functions used by bubble sort are shown below, for your reference. Accuracy and performance are a higher priority than readability for these functions as they are frequently called by TurboWarp.
 
 ```js
 const isNotActuallyZero = val => {
