@@ -4,12 +4,12 @@
     getInfo() {
       return {
         id: 'broadcast5example',
-        name: 'Broadcast Example 5',
+        name: Scratch.translate('Broadcast Example 5'),
         blocks: [
           {
             opcode: 'whenReceived',
             blockType: Scratch.BlockType.HAT,
-            text: 'when I receive [EVENT_OPTION]',
+            text: Scratch.translate('when I receive [EVENT_OPTION]'),
             isEdgeActivated: false,
             arguments: {
               EVENT_OPTION: {
@@ -21,7 +21,7 @@
           {
             opcode: 'broadcast',
             blockType: Scratch.BlockType.REPORTER,
-            text: 'broadcast [EVENT]',
+            text: Scratch.translate('broadcast [EVENT]'),
             arguments: {
               EVENT: {
                 type: Scratch.ArgumentType.STRING,

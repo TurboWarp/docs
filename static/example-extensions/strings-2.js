@@ -2,12 +2,12 @@ class Strings2 {
   getInfo() {
     return {
       id: 'strings2example',
-      name: 'Encoding',
+      name: Scratch.translate('Encoding'),
       blocks: [
         {
           opcode: 'convert',
           blockType: Scratch.BlockType.REPORTER,
-          text: 'convert [TEXT] to [FORMAT]',
+          text: Scratch.translate('convert [TEXT] to [FORMAT]'),
           arguments: {
             TEXT: {
               type: Scratch.ArgumentType.STRING,

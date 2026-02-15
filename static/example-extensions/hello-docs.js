@@ -2,14 +2,14 @@ class HelloDocs {
   getInfo() {
     return {
       id: 'hellodocs',
-      name: 'Hello Docs!',
+      name: Scratch.translate('Hello Docs!'),
       // highlight-next-line
       docsURI: 'https://docs.turbowarp.org/development/extensions/docsURI-demo',
       blocks: [
         {
           opcode: 'hello',
           blockType: Scratch.BlockType.REPORTER,
-          text: 'Hello!'
+          text: Scratch.translate('Hello!')
         }
       ]
     };

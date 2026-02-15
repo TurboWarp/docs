@@ -13,7 +13,7 @@ class ColorExample {
         {
           opcode: 'reporter',
           blockType: Scratch.BlockType.REPORTER,
-          text: 'string [STRING] boolean [BOOLEAN] menu [MENU] field [FIELD]',
+          text: Scratch.translate('string [STRING] boolean [BOOLEAN] menu [MENU] field [FIELD]'),
           arguments: {
             STRING: {
               type: Scratch.ArgumentType.STRING,

@@ -2,12 +2,12 @@ class HelloWorld {
   getInfo() {
     return {
       id: 'helloworld',
-      name: 'It works!',
+      name: Scratch.translate('It works!'),
       blocks: [
         {
           opcode: 'hello',
           blockType: Scratch.BlockType.REPORTER,
-          text: 'Hello!'
+          text: Scratch.translate('Hello!')
         }
       ]
     };

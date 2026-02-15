@@ -46,12 +46,12 @@ Make sure to always call register() exactly once. If you don't call it, your ext
   getInfo() {
     return {
       id: 'helloworld',
-      name: 'It works!',
+      name: Scratch.translate('It works!'),
       blocks: [
         {
           opcode: 'hello',
           blockType: Scratch.BlockType.REPORTER,
-          text: 'Hello, world!'
+          text: Scratch.translate('Hello, world!')
         }
       ]
     };

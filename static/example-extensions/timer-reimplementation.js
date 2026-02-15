@@ -4,13 +4,13 @@ class TimerReimplementationExample {
   getInfo() {
     return {
       id: 'timerreimplementationexample',
-      name: 'Timer Example',
+      name: Scratch.translate('Timer Example'),
       blocks: [
         // highlight-start
         {
           opcode: 'whenTimerGreaterThan',
           blockType: Scratch.BlockType.HAT,
-          text: 'when timer > [TIME]',
+          text: Scratch.translate('when timer > [TIME]'),
           isEdgeActivated: true,
           arguments: {
             TIME: {
@@ -23,12 +23,12 @@ class TimerReimplementationExample {
         {
           opcode: 'timer',
           blockType: Scratch.BlockType.REPORTER,
-          text: 'timer'
+          text: Scratch.translate('timer')
         },
         {
           opcode: 'resetTimer',
           blockType: Scratch.BlockType.COMMAND,
-          text: 'reset timer'
+          text: Scratch.translate('reset timer')
         }
       ]
     };
