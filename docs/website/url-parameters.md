@@ -54,3 +54,9 @@ The `project_url` option tells TurboWarp to download project data from an arbitr
 https://turbowarp.org/?project_url=packager.turbowarp.org/example.sb3
 
 https:// is implied if you don't include a protocol. http:// URLs generally will not work for security reasons. Note that the URL needs to be a direct download and must support CORS (`Access-Control-Allow-Origin: *`). [GitHub Pages](https://pages.github.com/) will do this automatically and is known to work well.
+
+## Project title {#project_title}
+
+The `project_title` option tells TurboWarp what to name the project. Works with `project_url`. Do not use together with a project loaded from Scratch.
+
+https://turbowarp.org/editor?project_title=It+just+works!
