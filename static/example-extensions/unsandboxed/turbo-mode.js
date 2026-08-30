@@ -12,12 +12,12 @@
     getInfo() {
       return {
         id: 'turbomodeunsandboxed',
-        name: 'Turbo Mode',
+        name: Scratch.translate('Turbo Mode'),
         blocks: [
           {
             opcode: 'set',
             blockType: Scratch.BlockType.COMMAND,
-            text: 'set turbo mode to [ENABLED]',
+            text: Scratch.translate('set turbo mode to [ENABLED]'),
             arguments: {
               ENABLED: {
                 type: Scratch.ArgumentType.STRING,

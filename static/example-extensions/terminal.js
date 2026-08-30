@@ -2,14 +2,14 @@ class TerminalExample {
   getInfo() {
     return {
       id: 'terminalexample',
-      name: 'Terminal Example',
+      name: Scratch.translate('Terminal Example'),
       blocks: [
         {
           opcode: 'terminalBlock',
           blockType: Scratch.BlockType.COMMAND,
           // highlight-next-line
           isTerminal: true,
-          text: 'you can not connect another block under this one!'
+          text: Scratch.translate('you can not connect another block under this one!')
         }
       ]
     };

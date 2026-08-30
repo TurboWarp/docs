@@ -2,13 +2,13 @@ class StrictEqualityExtension {
   getInfo() {
     return {
       id: 'strictequalityexample',
-      name: 'Strict Equality',
+      name: Scratch.translate('Strict Equality'),
       blocks: [
         // highlight-start
         {
           opcode: 'strictlyEquals',
           blockType: Scratch.BlockType.BOOLEAN,
-          text: '[ONE] strictly equals [TWO]',
+          text: Scratch.translate('[ONE] strictly equals [TWO]'),
           arguments: {
             ONE: {
               type: Scratch.ArgumentType.STRING

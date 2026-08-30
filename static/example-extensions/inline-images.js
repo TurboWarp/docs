@@ -8,13 +8,13 @@ class InlineImagesExample {
   getInfo() {
     return {
       id: 'inlineimagesexample',
-      name: 'Inline Images Example',
+      name: Scratch.translate('Inline Images Example'),
       blocks: [
         {
           opcode: 'reporter',
           blockType: Scratch.BlockType.REPORTER,
           // highlight-start
-          text: 'some text [IMAGE] more text',
+          text: Scratch.translate('some text [IMAGE] more text'),
           arguments: {
             IMAGE: {
               type: Scratch.ArgumentType.IMAGE,
@@ -28,7 +28,7 @@ class InlineImagesExample {
           blockType: Scratch.BlockType.COMMAND,
           blockIconURI: colorIcon,
           // highlight-start
-          text: 'some text [IMAGE] more text',
+          text: Scratch.translate('some text [IMAGE] more text'),
           arguments: {
             IMAGE: {
               type: Scratch.ArgumentType.IMAGE,

@@ -9,13 +9,13 @@
     getInfo() {
       return {
         id: 'whenunsandboxed',
-        name: 'When',
+        name: Scratch.translate('When'),
         blocks: [
           {
             // highlight-start
             blockType: Scratch.BlockType.HAT,
             opcode: 'when',
-            text: 'when [CONDITION]',
+            text: Scratch.translate('when [CONDITION]'),
             isEdgeActivated: false, // required boilerplate
             arguments: {
               CONDITION: {

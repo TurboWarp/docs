@@ -92,6 +92,13 @@ While the block's shape will look similar to "stop this script" and "stop all", 
 
 <ExtensionCode title="terminal">{require("!raw-loader!@site/static/example-extensions/terminal.js")}</ExtensionCode>
 
+## Translations
+Use the `Scratch.translate()` API to translate text for use in block text and extension names. This is NOT the same as the Translate extension from Scratch; `Scratch.translate()` does not use the Internet and exclusively uses man-made translations.
+
+`Scratch.translate()` is not intended for translating user input and will leave most user-generated text untranslated.
+
+If you want to help translate text from your extension, [click here](https://docs.turbowarp.org/translate).
+
 ## Next steps
 
 Next, let's see [how to make blocks like "when I receive" or "when timer greater than".](./hats)

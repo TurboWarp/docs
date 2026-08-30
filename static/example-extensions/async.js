@@ -2,11 +2,11 @@ class AsyncExtension {
   getInfo() {
     return {
       id: 'asyncexample',
-      name: 'Async Blocks',
+      name: Scratch.translate('Async Blocks'),
       blocks: [
         {
           opcode: 'wait',
-          text: 'wait [TIME] seconds',
+          text: Scratch.translate('wait [TIME] seconds'),
           blockType: Scratch.BlockType.COMMAND,
           arguments: {
             TIME: {
@@ -17,7 +17,7 @@ class AsyncExtension {
         },
         {
           opcode: 'fetch',
-          text: 'fetch [URL]',
+          text: Scratch.translate('fetch [URL]'),
           blockType: Scratch.BlockType.REPORTER,
           arguments: {
             URL: {

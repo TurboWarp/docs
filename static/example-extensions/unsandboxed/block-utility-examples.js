@@ -9,16 +9,16 @@
     getInfo() {
       return {
         id: 'blockutilityexamples',
-        name: 'BlockUtility Examples',
+        name: Scratch.translate('BlockUtility Examples'),
         blocks: [
           {
             opcode: 'getSpriteName',
-            text: 'sprite name',
+            text: Scratch.translate('sprite name'),
             blockType: Scratch.BlockType.REPORTER,
           },
           {
             opcode: 'doesVariableExist',
-            text: 'is there a [TYPE] named [NAME]?',
+            text: Scratch.translate('is there a [TYPE] named [NAME]?'),
             blockType: Scratch.BlockType.BOOLEAN,
             arguments: {
               NAME: {
