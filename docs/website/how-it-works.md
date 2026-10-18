@@ -118,8 +118,9 @@ TurboWarp's compiler removes all of that overhead by converting scripts directly
 ```js
 const myVariable = stage.variables["`jEk@4|i[#Fk?(8x)AV.-my variable"];
 return function* () {
+  let t;
   while (true) {
-    runtime.ext_scratch3_motion._moveSteps((+myVariable.value || 0), target);
+    runtime.ext_scratch3_motion._moveSteps(((t = +myVariable.value) === t ? t : 0), target);
     yield;
   }
 };
@@ -148,30 +149,30 @@ const temp = stage.variables["O;aH~(njYNn}Bl@}!%pS-tmp-"];
 return function fun1_sort () {
   length.value = list.value.length;
   // repeat until length = 0
-  while (!compareEqual(length.value, 0)) {
+  while (!(length.value === 0)) {
     newLength.value = 0;
     i.value = 1;
     // repeat length - 1 times
-    for (var counter = ((+length.value || 0) - 1) || 0; counter >= 0.5; counter--) {
+    for (var counter = (length.value - 1); counter > 0; counter--) {
       // change i by 1
-      i.value = ((+i.value || 0) + 1);
+      i.value = (i.value + 1);
       // if item i - 1 of list is greater than item i of list
       if (
         compareGreaterThan(
-          list.value[((((i.value || 0) - 1) || 0) | 0) - 1] ?? "",
-          list.value[((i.value || 0) | 0) - 1] ?? ""
+          (list.value[(i.value - 1) - 1] ?? ""),
+          (list.value[i.value - 1] ?? "")
         )
       ) {
         // swap item i and i - 1 of list
-        temp.value = listGet(list.value, i.value);
+        temp.value = (list.value[i.value - 1] ?? "");
         listReplace(
           list,
           i.value,
-          list.value[((((+i.value || 0) - 1) || 0) | 0) - 1] ?? ""
+          (list.value[(i.value - 1) - 1] ?? "")
         );
         listReplace(
           list,
-          (+i.value || 0) - 1,
+          (i.value - 1),
           temp.value
         );
         newLength.value = i.value;
@@ -179,32 +180,23 @@ return function fun1_sort () {
     }
     length.value = newLength.value;
   }
+  return "";
 };
 ```
 
-Functions such as `listGet`, `listReplace`, and `compareEqual` are part of the TurboWarp runtime and are implemented to match the strange behaviors of Scratch. The functions used by bubble sort are shown below, for your reference. Accuracy and performance are a higher priority than readability for these functions as they tend to be quite hot.
+Functions such as `compareGreaterThan` and `listReplace` are part of the TurboWarp runtime and are implemented to match the strange behaviors of Scratch. The functions used by bubble sort are shown below, for your reference. Accuracy and performance are a higher priority than readability for these functions as they tend to be quite hot.
 
 ```js
 const isNotActuallyZero = val => {
   if (typeof val !== 'string') return false;
   for (let i = 0; i < val.length; i++) {
     const code = val.charCodeAt(i);
-    if (code === 48 || code === 9) {
+    if ((code >= 48 && code <= 57) || code === 9) {
       return false;
     }
   }
   return true;
 };
-
-const compareEqualSlow = (v1, v2) => {
-  const n1 = +v1;
-  if (isNaN(n1) || (n1 === 0 && isNotActuallyZero(v1))) return ('' + v1).toLowerCase() === ('' + v2).toLowerCase();
-  const n2 = +v2;
-  if (isNaN(n2) || (n2 === 0 && isNotActuallyZero(v2))) return ('' + v1).toLowerCase() === ('' + v2).toLowerCase();
-  return n1 === n2;
-};
-
-const compareEqual = (v1, v2) => (typeof v1 === 'number' && typeof v2 === 'number' && !isNaN(v1) && !isNaN(v2) || v1 === v2) ? v1 === v2 : compareEqualSlow(v1, v2);
 
 const compareGreaterThanSlow = (v1, v2) => {
   let n1 = +v1;
@@ -214,7 +206,7 @@ const compareGreaterThanSlow = (v1, v2) => {
   } else if (n2 === 0 && isNotActuallyZero(v2)) {
     n2 = NaN;
   }
-  if (isNaN(n1) || isNaN(n2)) {
+  if (Number.isNaN(n1) || Number.isNaN(n2)) {
     const s1 = ('' + v1).toLowerCase();
     const s2 = ('' + v2).toLowerCase();
     return s1 > s2;
@@ -222,7 +214,7 @@ const compareGreaterThanSlow = (v1, v2) => {
   return n1 > n2;
 };
 
-const compareGreaterThan = (v1, v2) => typeof v1 === 'number' && typeof v2 === 'number' && !isNaN(v1) ? v1 > v2 : compareGreaterThanSlow(v1, v2);
+const compareGreaterThan = (v1, v2) => typeof v1 === 'number' && typeof v2 === 'number' && !Number.isNaN(v1) ? v1 > v2 : compareGreaterThanSlow(v1, v2);
 
 const listIndexSlow = (index, length) => {
   if (index === 'last') {
@@ -246,14 +238,6 @@ const listIndex = (index, length) => {
   }
   index = index | 0;
   return index < 1 || index > length ? -1 : index - 1;
-};
-
-const listGet = (list, idx) => {
-  const index = listIndex(idx, list.length);
-  if (index === -1) {
-    return '';
-  }
-  return list[index];
 };
 
 const listReplace = (list, idx, value) => {
