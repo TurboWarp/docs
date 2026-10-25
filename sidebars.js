@@ -17,7 +17,8 @@ module.exports = {
         'website/settings/infinite-clones',
         'website/settings/warp-timer',
         'website/settings/custom-stage-size',
-        'website/settings/disable-compiler'
+        'website/settings/disable-compiler',
+        'website/settings/relaxed-math'
       ]
     },
     'website/new-compiler',
@@ -28,6 +29,7 @@ module.exports = {
     'website/cors',
     'website/turbowarp-blocks',
     'website/translate',
+    'website/type-hints',
     'website/url-parameters',
     'website/scratch-accounts',
     'website/donate',
