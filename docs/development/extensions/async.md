@@ -28,4 +28,4 @@ This also demonstrates error handling. Whenever your promises can reject, fail, 
 
 ## Next steps
 
-You may have realized that even your blocks that don't return a Promise don't actually run instantly and your extension can't access many APIs. To determine why, we need to [discuss what the "sandbox" really is, and what it means for your extensions](./sandbox.md).
+If you've read older guides about custom extensions, you may have seen them talk about a "sandbox". Next, we will [discuss what the sandbox was, and why it no longer matters for your extensions](./sandbox.md).
