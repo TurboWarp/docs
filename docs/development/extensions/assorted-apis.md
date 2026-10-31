@@ -6,7 +6,7 @@ hide_table_of_contents: true
 
 import {ExtensionCode} from './utils.js';
 
-Now that you are familiar with writing custom extensions, we will share some more APIs. These APIs are available in **both** sandboxed and unsandboxed extensions. They can all be used together.
+Now that you are familiar with writing custom extensions, we will share some more APIs. They can all be used together.
 
 ## color1, color2, color3
 

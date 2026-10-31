@@ -6,27 +6,32 @@ hide_table_of_contents: true
 
 import {ExtensionCode, Spoiler} from './utils.js';
 
-Unsandboxed extensions run as plain `<script>` tags in the main window rather than in a sandbox. They have access to a lot of new powers and responsibilities that we will discuss below.
+All custom extensions in TurboWarp run unsandboxed: as plain `<script>` tags in the main window, with full access to the page. This gives them a lot of powers and responsibilities that we will discuss below.
 
-## URL restrictions
+## Loading extensions and permission prompts
 
-To protect users from malicious extensions, extensions loaded from URLs will only run unsandboxed if their URL begins with one of these *exactly*:
+Because extensions have full access to the page, a malicious extension could corrupt projects, delete settings, phish for passwords, and more. To protect users:
+
+ - The custom extension menu warns users to only load extensions from authors they trust. Extensions loaded by URL, file, or pasted code all behave the same.
+ - When a project contains extensions, TurboWarp shows a single prompt listing all of the ones that aren't from a trusted URL: URLs are shown as URLs, and extensions embedded in the project are shown as embedded code that the user can view. If the user allows them, they are all loaded. If the user denies them, the project will not load.
+
+Extensions whose URL begins with one of these *exactly* are trusted and load automatically without a prompt:
 
  - `https://extensions.turbowarp.org/`
- - `http://localhost:8000/`
+ - `http://localhost:8000/` (for development)
 
-As you don't have control over extensions.turbowarp.org, you will have to use the latter option. For this, configure your local HTTP server to run on port 8000 instead of what you've been using so far.
+Extensions that the user approved in a prompt or loaded manually are remembered for the rest of the session, so they won't cause another prompt.
 
-When manually loading an extension from a file or JavaScript source code, there is an option to load the extension without the sandbox. This option to force an extension to run unsandboxed does not exist when using URLs due to security concerns.
+During development, running your local HTTP server on port 8000 avoids these prompts. It must be `localhost`, port 8000 exactly: `127.0.0.1` and `0.0.0.0` don't count.
 
 ## Syntax
 
-The syntax for unsandboxed extensions is very familiar but has some differences. Technically, if you just copy and paste your old sandboxed extensions as unsandboxed extensions, it will appear to just work. However, this is dangerous and is likely to cause bugs later.
+The extensions we've written so far define everything at the top level of the script. Because every extension runs directly on the page, this will appear to just work. However, this is dangerous and is likely to cause bugs later.
 
-If your sandboxed extension has code like this:
+If your extension has code like this, which is how extensions written for the old sandbox usually looked:
 
 ```js
-// Old sandboxed extensions (worker or <iframe> sandbox):
+// Code that defines everything at the top level:
 class MyExtension {
   getInfo () {
     return { /* ... */ };
@@ -50,7 +55,7 @@ class MyExtension {
 })();
 ```
 
-The unsandboxed version would have code like this:
+It should instead have code like this:
 
 ```js
 (function(Scratch) {
@@ -68,33 +73,29 @@ Using this template prevents unsandboxed extensions from interfering with each o
 
 *All* functions and variables defined by the extension must be defined within the IIFE. Additionally, each extension must make sure to use its own personal copy of the `Scratch` API, which this template does automatically.
 
-An interesting thing to note about this template is that it is backward compatible with sandboxed extensions. As long as the extension doesn't use any of the features given to unsandboxed extensions, it will continue to work the same as a sandboxed extension.
-
 ## A more complete example
 
 Here you can see a complete unsandboxed extension:
 
-<ExtensionCode title="unsandboxed/hello-world-unsandboxed" sandbox={false}>{require("!raw-loader!@site/static/example-extensions/unsandboxed/hello-world-unsandboxed.js")}</ExtensionCode>
+<ExtensionCode title="unsandboxed/hello-world-unsandboxed">{require("!raw-loader!@site/static/example-extensions/unsandboxed/hello-world-unsandboxed.js")}</ExtensionCode>
 
-If you're using a local HTTP server, save this so you can access it through the server, then load the exact URL [http://localhost:8000/hello-world-unsandboxed.js](http://localhost:8000/hello-world-unsandboxed.js) in TurboWarp. If nothing appears, see the developer console. If you see an error that the extension must be run unsandboxed, most likely you are using an old version of TurboWarp or you didn't load it from a URL that starts with `http://localhost:8000/` exactly. 127.0.0.1 and 0.0.0.0 won't work! It must be localhost, port 8000 exactly.
+Load this extension the same way you've been loading your other extensions. If nothing appears, see the developer console. If you see an error that the extension must be run unsandboxed, you are most likely using an old version of TurboWarp that still had the sandbox.
 
-If you're just using files, make sure to check the "Run extension without sandbox" box each time you load the extension.
-
-Create a new empty project with a repeat (30) loop that adds the "hello" block to a list. Notice that it now runs instantly while the sandboxed version would've taken at least a second.
+Create a new empty project with a repeat (30) loop that adds the "hello" block to a list. Notice that it runs instantly.
 
 Observe that the majority of the code is still identical: You still create a class, then call Scratch.extensions.register(), then Scratch calls getInfo() which returns the same type of object. Just the surrounding template is different.
 
 ## Increased power brings increased responsibility
 
-Before we talk about the new APIs, we want to note some additional requirements for unsandboxed extensions:
+Before we talk about the new APIs, we want to note some requirements that come from running directly on the page:
 
- - Blocks must not throw errors. While sandboxed extensions could, unsandboxed extensions that do this may break scripts.
- - Input and boolean blocks must return a valid value. While sandboxed extensions are free to neglect this, unsandboxed extensions that don't return proper values (string, number, or boolean) can break scripts in unknown ways.
- - Blocks must not get stuck in infinite loops. While sandboxed extensions will usually not be able to freeze the entire window if they get stuck in a loop, unsandboxed extensions will. This can result in **data loss**.
+ - Blocks must not throw errors. Extensions that do this may break scripts.
+ - Input and boolean blocks must return a valid value. Extensions that don't return proper values (string, number, or boolean) can break scripts in unknown ways.
+ - Blocks must not get stuck in infinite loops. An extension that gets stuck in a loop will freeze the entire window. This can result in **data loss**.
 
 ## Accessing Scratch internals
 
-The big thing that unsandboxed extensions can do is directly access Scratch internals.
+The biggest thing that this access allows extensions to do is directly access Scratch internals.
 
 ```js
   const vm = Scratch.vm;
@@ -126,9 +127,9 @@ Here is an example of an extension that uses Scratch.vm to toggle turbo mode, si
 
 ## The block utility object
 
-When a sandboxed custom extension is run, all it receives are the arguments that the scripts provided. It doesn't even know which sprite is executing it. We now introduce the second argument passed to block functions: BlockUtility.
+So far, our blocks have only used the arguments that the scripts provided. They don't even know which sprite is executing them. We now introduce the second argument passed to block functions: BlockUtility.
 
-The BlockUtility object, conventionally called `util`, allows blocks in unsandboxed extensions to get direct access to the sprite that is running them using `util.target`. Similar to the VM, this is the actual object used internally. You have full access to it.
+The BlockUtility object, conventionally called `util`, allows blocks to get direct access to the sprite that is running them using `util.target`. Similar to the VM, this is the actual object used internally. You have full access to it.
 
 Here is an example extension that demonstrates using `util.target` to get the name of the current sprite or access variables.
 
@@ -157,7 +158,7 @@ Note that every sprite, script, and block shares the same block utility object. 
 
 Here are some common copy-and-pasteable code snippets that can be used:
 
-If the extension MUST be run unsandboxed, add this around the start:
+Old versions of TurboWarp and some other Scratch mods may still run extensions in a sandbox. If the extension MUST be run unsandboxed, add this around the start so that it fails with a clear error in those environments instead of breaking in confusing ways:
 
 ```js
   if (!Scratch.extensions.unsandboxed) {
@@ -175,7 +176,7 @@ If you're using the `vm`, `runtime` or `Cast` APIs a lot, common practise is to 
 
 ## Permissioned APIs
 
-Whereas sandboxed extensions are free to use APIs such as fetch() as they please, unsandboxed extensions should instead ask for permission before making a request to any remote service. This gives the user control over their privacy. While there are no technical measures enforcing this at runtime, it is required for all extensions on [extensions.turbowarp.org](https://extensions.turbowarp.org).
+Instead of using APIs such as fetch() directly, extensions should ask for permission before making a request to any remote service. This gives the user control over their privacy. While there are no technical measures enforcing this at runtime, it is required for all extensions on [extensions.turbowarp.org](https://extensions.turbowarp.org).
 
 Requests to some popular services such as [GitHub Pages](https://pages.github.com/) or [GitLab Pages](https://about.gitlab.com/stages-devops-lifecycle/pages/) may be automatically approved, while requests to other random websites may show a prompt to the user. You shouldn't make any assumptions about this, and your code needs to ensure that it can gracefully handle the user rejecting the prompt (the extension should behave the same as it does when there is no internet connection).
 

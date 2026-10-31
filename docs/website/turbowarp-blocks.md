@@ -7,7 +7,7 @@ hide_table_of_contents: true
 
 TurboWarp has a section of blocks that allows you to use certain features previously not accessible to Scratch projects.
 
-NEW: TurboWarp now supports unsandboxed extensions which add new blocks! https://extensions.turbowarp.org/
+NEW: TurboWarp now supports extensions which add new blocks! https://extensions.turbowarp.org/
 
 ## is compiled? and is TurboWarp? {#is-compiled}
 

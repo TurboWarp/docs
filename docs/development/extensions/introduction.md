@@ -19,12 +19,11 @@ When people refer to "extensions", there are a few things they could be referrin
 | |Can access Scratch internals|Can be loaded by URL|
 |:-:|:-:|:-:|
 |Core extensions (pen, translate, etc.)|✅|❌|
-|Sandboxed custom extensions|❌|✅|
-|Unsandboxed custom extensions|✅|✅|
+|Custom extensions|✅|✅|
 
 The documentation in these segments refers only to custom extensions. While core extensions share many fundamentals, the process of developing them is significantly different. See [getting started](../getting-started) as a starting point for building core extensions.
 
-We will discuss the difference between sandboxed and unsandboxed extensions at [a later time](./unsandboxed).
+In TurboWarp, custom extensions run directly on the page, with the same access to the page as TurboWarp itself. We will discuss what this means for your extensions at [a later time](./unsandboxed).
 
 ## Compatibility
 
@@ -65,7 +64,7 @@ This starts a local HTTP server on http://localhost:8080/ in whatever folder you
 
 We will [eventually](./better-development-server) introduce the official development server, but we recommend starting with the most primitive setup possible for now.
 
-For now, you should use a port **other than 8000**. We will talk more about this later, but currently we want the extensions you write to run in the sandbox. Extensions that run outside of the sandbox have some extra responsibilities that we will discuss [later](./unsandboxed).
+Any port will work. We use 8080 in this tutorial because the [official development server](./better-development-server) we introduce later uses port 8000.
 
 To test that your server works, create a file called `hello-world.js` and put any text in it. Make sure you're able to read the contents of the file in your browser by visiting a link like [http://localhost:8080/hello-world.js](http://localhost:8080/hello-world.js).
 

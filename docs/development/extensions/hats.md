@@ -12,10 +12,6 @@ Event blocks and hat blocks are two types of blocks that allow you to control wh
 
 Event blocks are for running scripts in response to an external event. An example of this is "when flag clicked" - the event is when the user clicks on the flag button. "when this sprite clicked" similarly is run in response to a click event, though Scratch does a bit more work to figure out which sprite the event happened on. Event blocks can be used for any external event that lets you run a callback.
 
-:::warning
-Event blocks are only supported in unsandboxed extensions.
-:::
-
 Event blocks never get executed; they just mark which scripts to run. For example, consider this block you're familiar with:
 
 ![when space key pressed](./assets/when-space-key-pressed.svg)
@@ -91,10 +87,6 @@ Finally, startHats returns an array of the Thread objects that it started. You c
 
 ## Predicate-based hat blocks
 
-:::info
-Predicate-based hats are only supported in unsandboxed extensions.
-:::
-
 Predicate-based hat blocks let you create something similar to:
 
 ![](./assets/forever-if-something-then.svg)
@@ -125,10 +117,6 @@ This is a subtle but important difference. Consider these two scripts:
 
 While the blocks may look similar, they have a significant difference. The top one will only run *once* when the timer *becomes* 5 while the bottom one will run repeatedly after the timer reaches 5.
 
-:::info
-Edge-activated hats can be used in any extension, even sandboxed ones
-:::
-
 Let's think about how you would implement this using normal Scratch blocks. You could try something like this:
 
 ![](./assets/wait-until-something-true.svg)
@@ -149,7 +137,7 @@ To demonstrate this, we can write an extension similar to Scratch's "when timer 
 
 <ExtensionCode title="timer-reimplementation">{require("!raw-loader!@site/static/example-extensions/timer-reimplementation.js")}</ExtensionCode>
 
-Notice that we don't have to run startHats -- Scratch automatically runs startHats for each edge activated hat at the beginning of a frame. This lets you use edge activated hats in sandboxed extensions. You also should not use `shouldRestartExistingThreads: true` for edge-activated hats.
+Notice that we don't have to run startHats -- Scratch automatically runs startHats for each edge activated hat at the beginning of a frame. You also should not use `shouldRestartExistingThreads: true` for edge-activated hats.
 
 To test this use a script like this:
 
